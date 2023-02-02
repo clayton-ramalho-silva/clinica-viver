@@ -1,0 +1,262 @@
+@import "lightbox"; 
+//@import "../reset"; 
+//@import "../helpers"; 
+
+@import "galerias1"; 
+@import "galerias2"; 
+@import "galerias3"; 
+@import "galerias4"; 
+@import "galerias5"; 
+@import "galerias6"; 
+
+@import "videos/video1"; 
+@import "videos/video2"; 
+
+@import "videos/video-auto"; 
+@import "videos/video-auto2"; 
+
+@import "videos/video-unico"; 
+
+
+
+.galeria{
+    .bloco(3);
+
+    img{
+        .fl;
+    }
+
+    .modo(@tipo-galeria);
+
+    .modo(@a) when (@a=1){
+        .galeria1;
+    }
+    .modo(@a) when (@a=2){
+        .galeria2;
+    }
+    .modo(@a) when (@a=3){
+        .galeria3;
+    }
+    .modo(@a) when (@a=4){
+        .galeria4;
+    }
+    .modo(@a) when (@a=5){
+        .galeria5;
+    }
+    .modo(@a) when (@a=6){
+        .galeria6;
+    }
+
+
+    @media only screen and (min-width:1024px){
+
+        .col1{
+            .grid-columns(1) !important;
+        }
+        .col2{
+            .grid-columns(2) !important;
+        }
+        .col3{
+            .grid-columns(3) !important;
+        }
+        .col4{
+            .grid-columns(4) !important;
+        }
+        .col5{
+            .grid-columns(5) !important;
+        }
+        .col6{
+            .grid-columns(6) !important;
+        }
+        .col7{
+            .grid-columns(7) !important;
+        }
+        .col8{
+            .grid-columns(8) !important;
+        }
+        .col9{
+            .grid-columns(9) !important;
+        }
+        .col10{
+            .grid-columns(10) !important;
+        }
+    }
+
+    @media only screen and (max-width:1023px) and (min-width:600px){
+        .col2,.col8,.col10{
+            .dg !important;
+            .grid-columns(2) !important;
+        }
+
+        .col3,.col6{
+            .grid-columns(3) !important;
+        }
+
+        .col4{
+            .df !important;
+            .wrap;
+            .sc;
+
+            li{
+                .flex-meio;
+                .fb(47%);
+            }
+        }
+
+        .col5,.col7,.col9{
+            .df !important;
+
+            article{
+                .fb(47%);
+            }
+        }
+    }
+
+
+}
+
+
+
+
+.logos{
+    .bloco(3,3,transparent);
+
+    ul{
+        .dg;
+        gap:25px;
+        .grid-columns(4);
+
+        @media only screen and (max-width:1023px){
+            .grid-columns(2);
+            gap:25px;
+        }
+    }
+
+    li{
+        .flex-meio;
+    }
+
+    @media only screen and (min-width:1024px){
+
+        .col1{
+            .grid-columns(1) !important;
+        }
+        .col2{
+            .grid-columns(2) !important;
+        }
+        .col3{
+            .grid-columns(3) !important;
+        }
+        .col4{
+            .grid-columns(4) !important;
+        }
+        .col5{
+            .grid-columns(5) !important;
+        }
+        .col6{
+            .grid-columns(6) !important;
+        }
+        .col7{
+            .grid-columns(7) !important;
+        }
+        .col8{
+            .grid-columns(8) !important;
+        }
+        .col9{
+            .grid-columns(9) !important;
+        }
+        .col10{
+            .grid-columns(10) !important;
+        }
+    }
+
+    @media only screen and (max-width:1023px) and (min-width:600px){
+        .col2,.col8,.col10{
+            .dg !important;
+            .grid-columns(2) !important;
+        }
+
+        .col3,.col6{
+            .grid-columns(3) !important;
+        }
+
+        .col4{
+            .df !important;
+            .wrap;
+            .sc;
+
+            li{
+                .flex-meio;
+                .fb(47%);
+            }
+        }
+
+        .col5,.col7,.col9{
+            .df !important;
+
+            article{
+                .fb(47%);
+            }
+        }
+    }
+}
+
+.interna{
+    .logos{
+        .bloco(0,0,transparent);
+
+    }
+} 
+
+
+
+@media only screen and (min-width:1024px){
+
+    //Videos Responsivo
+
+    a.bt-video-responsivo{
+        .dn !important;
+    }
+
+    a.video-resp{
+        .dn !important;
+    }
+
+}
+
+@media only screen and (max-width:1023px){
+
+    a.bt-modal{    
+        .dn;
+        &.bt-video-responsivo{
+            .dib;
+        }
+    }
+
+    .link-video{
+        a{
+            .dn;
+        }
+
+        a.video-resp{
+            .db;
+        }
+    }
+
+}   
+
+.bloco-videos{
+    .bloco(3);
+}
+
+.video-unico{
+    .video-unico;
+}
+
+.img-unica{
+    .bloco-full;
+
+    section{
+        .flex-meio;
+    }
+}

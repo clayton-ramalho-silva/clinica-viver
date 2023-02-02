@@ -1,0 +1,50 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.submenu4(){
+
+    .psubmenu{
+        .fundo(@submenu[fundo]); 
+        .ease-out;
+        .rotatex(90deg);
+        .origem(top);
+
+        a{
+            .op(0.7);
+            border:none !important;
+
+            &:hover{
+                .op;
+                .fundo(transparent) !important;
+                .pdl(@submenu[padding]+5px) !important;
+            }
+        }
+
+        .tipo-menu(@tipo-menu);
+        .tipo-menu(@a) when (@a=1){
+            .mgt(-5px);
+        }
+
+        .tipo-menu(@a) when (@a=3){
+            border-top-left-radius: 0px;
+        }
+
+
+        .tipo-menu(@a) when (@a=5){
+            border-top-left-radius: 0px;
+            border-top-right-radius: 0px;
+        }
+
+        .tipo-menu(@a) when (@a=8){
+            border-top-left-radius: 0px;
+        }
+    }
+
+    li{
+        &:hover > .psubmenu{
+            .vv;
+            .rotatex(0deg);
+            .tdelay(0s); 
+        }
+    }
+}

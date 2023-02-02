@@ -1,0 +1,43 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.campos1(
+@fundo:@formulario[@campos][fundo],
+@borda:@formulario[@campos][borda],
+@cor:@formulario[@campos][cor],
+@placeholder:@formulario[@campos][placeholder]
+){
+ 
+    .placeholder(@placeholder);
+    
+    .campo(){
+        .fundo(@fundo);
+        .bd(@borda);
+        .c(@cor);
+        .radius(@formulario[@campos][radius]);
+        .pd(10px 35px 10px 10px);
+        .box;
+    }
+
+    [type=text],[type=email],[type=password],[type=file],[type=date],select,textarea{
+        .campo;
+    }     
+
+    textarea{
+        .pd(10px);
+        .radius(if((@formulario[@campos][radius] > 25px), 25px, @formulario[@campos][radius]));
+    }
+
+    [type=date]{
+        .pdr(10px);
+    }
+
+    .form-checkbox, .form-radio{
+        label{
+            &:before{
+                .fundo(@fundo);
+                .bd(@borda);
+            }
+        }
+    }
+} 

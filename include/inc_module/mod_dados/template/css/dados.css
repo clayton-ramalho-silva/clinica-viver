@@ -1,0 +1,279 @@
+/* Reset */
+body, span, p, form, img, a,ul, li{margin:0; padding:0; border:none; outline:none; list-style: none;}.fl{float:left}.fr{float:right}.pr{position:relative}.cb{clear:both}input[type=submit]{outline:none}
+
+h1{margin-bottom:25px; position:relative}
+h3{font-size:13px; color:#000; padding:0 0 5px; margin:0}
+h3 b{font-size:10px; color:#878787; line-height:22px; font-weight:normal}
+
+.rowspacer7x7{margin:0 0 13px; float:left; width:100%}
+
+.mensagem-alteracao{width:100%; font-size:15px; color:#fff; display: none; z-index: 1000; position: fixed; top:0; left: 0; font-weight: bolder; text-transform: uppercase;}
+.mensagem-alteracao span{text-align:center; padding:20px 10px; box-sizing:border-box; float: left; width: 100%; }
+.mensagem-alteracao.sucesso{background:#9C6;}
+.mensagem-alteracao.erro {background:#AC0505;}
+
+button{width:120px; height:35px; line-height:35px; background:#1173b8; color:#fff; font-size:12px; border:0; border-radius:5px; cursor:pointer; outline: none; transition: all linear 0.2s; padding: 0}
+button:hover{background:#0a456e;}
+label, p{width:100%; float:left; padding:0 0 11px}
+
+.cke_contents{height:200px !important}
+
+
+.tab-content [type=text], .tab-content select{
+    width: 100%; 
+    box-sizing: border-box;
+    float: left;
+    border-radius: 5px;
+    font-family: Roboto;
+    background-color: #fff;
+    font-size: 15px;
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    color: #333;
+    padding: 5px;
+    height: 50px;
+    width: 100% !important;
+    font-weight: 700;
+    padding: 15px 10px 0 !important;
+    font-size: 18px;
+    box-shadow: none !important;
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    float: left;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -ms-border-radius: 5px;
+    font-family: Roboto;
+    background-color: #fff;
+    font-size: 15px;
+    border-color: #ccc;
+    border-width: 1px;
+    border-style: solid;
+    color: #333;
+    height: 250px;
+    padding: 25px 10px 10px;
+    width: 100% !important;
+}
+
+.tab-content p {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.tab-content b{
+    font-size: 12px;
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    z-index: 1;
+    color: #666666;
+    font-weight: normal;
+}
+
+.tab-content form{
+    width: 100%;
+}
+
+.tab-content p.b1 {
+    width: 100%;
+}
+
+.tab-content p.b2 {
+    width: 50%;
+}
+
+
+.tab-content p.b2b {
+    width: 75%;
+}
+
+
+.tab-content p.b4 {
+    width: 23%;
+    margin-left: 2%;
+}
+
+.tab-content .dn{
+    display: none;
+} 
+ 
+
+
+
+/* ---- Configura��es dos boxs ---- */
+/* Box Geral */
+.box-modulo{width:100%; box-sizing:border-box;}
+
+/* Box Nome da Empresa */
+
+/* Box Telefones */
+.box-telefone{width:50%; border-right:1px solid #BBBBBB; box-sizing: border-box; padding-right: 30px; float: left; font-size: 12px;}
+.box-telefone span{width:100%; padding:0 10px 0 0; float:left}
+
+.box-telefone input[type=text]{box-sizing:border-box; padding: 10px !important;}
+.box-telefone input[type=checkbox]{float:left; margin:0 10px 0 0}
+.box-telefone .classe-fone{width:100%; padding:0 0 13px 2px; box-sizing:border-box}
+.classe-fone label{width:238px; background:#f3f3f3; padding:6px 10px 6px 4px; border-radius:6px}
+.box-telefone .classe-fone input[type=checkbox]{margin:1px 6px 0 6px}
+.box-telefone label{ display: flex; align-items: center;}
+
+
+/* Box Whatsapp */
+.box-whatsapp{width:50%; padding-left:30px; box-sizing:border-box; float: left;}
+.box-whatsapp #whatsapp{float:left}
+.box-whatsapp span{float:left; width:100%;}
+.box-whatsapp strong{font-size:12px; color:#000000; float:left; padding:2px 0 0 7px}
+.box-whatsapp input[type=text]{box-sizing:border-box; padding: 10px !important;}
+.box-whatsapp button{float:left}
+
+/* Box Endere�o */
+.box-endereco{width:100%; box-sizing:border-box; padding-top:15px; position:relative; border-top: 2px solid #999;}
+.box-endereco h3{padding:0 0 15px}
+
+
+#ativar-endereco{width:100%; padding-top:15px; box-sizing:border-box; float:left}
+#ativar-endereco input[type=checkbox]{float:left; margin:0 6px 0 4px}
+#ativar-endereco label{width:auto;}
+#ativar-endereco.on label{border-radius:6px 6px 0 0}
+
+.segundo-endereco{display:none;}
+
+.checkbox-mapa{
+    margin-bottom: 10px;
+    width: 100%;
+    float:left;    
+}
+
+.checkbox-mapa label{background:#bf7165; padding:7px; box-sizing:border-box; border-radius:6px; color:#ffffff; float: left; width: auto; font-size: 12px;}
+.checkbox-mapa input[type=checkbox]{float:left; margin:2px 5px 0 0;}
+
+/* Box Meta */
+
+
+/* Box Redes Sociais */
+.box-redes h3{padding:0 0 15px}
+.lista-redes{width:49%; position: relative; margin-right: 2%; float: left; margin-bottom: 10px; height: 50px;}
+.lista-redes:nth-of-type(2n){margin-right: 0%;}
+.tab-content .lista-redes input[type=checkbox]{margin:0 5px 0 0}
+.tab-content .lista-redes input[type=text]{padding:10px 10px 10px 65px !important;}
+.lista-redes i{ font-size: 25px;}
+.lista-redes label{position: absolute; top: 0;left: 0; box-sizing: border-box; height: 50px; display: flex; align-items: center;  width: 60px; padding: 5px; } 
+.box-redes .lista-redes span{float:left; width:29px; height:28px; margin:4px 10px 6px 7px}
+.box-redes .rede-right{padding:0 0 10px 75px !important}
+
+.img-facebook{background:url(../images/bg-redes.png) repeat-x left top;}
+.img-skype{background:url(../images/bg-redes.png) repeat-x left -28px;}
+.img-google{background:url(../images/bg-redes.png) repeat-x left -56px;}
+.img-linkedin{background:url(../images/bg-redes.png) repeat-x left -84px;}
+.img-twitter{background:url(../images/bg-redes.png) repeat-x left -112px;}
+.img-instagram{background:url(../images/bg-redes.png) repeat-x left -140px;}
+.img-youtube{background:url(../images/bg-redes.png) repeat-x left -168px;} 
+.img-outro{background:url(../images/bg-redes.png) repeat-x left -196px;}
+.img-picassa{background:url(../images/bg-redes.png) repeat-x left -224px;}
+.box-redes .img-rss{background:url(../images/bg-redes.png) repeat-x left -252px;}
+
+/* Box E-mails */ 
+/*.box-emails input[type=text]{width:591px}  
+.box-emails button{position:absolute; bottom:67px; right:40px}*/
+
+/* Box Formul�rios */
+/*.box-forms strong{width:100%; float:left; padding:2px 0 4px; font-size:12px; color:#D86C00}
+.box-forms input[type=text]{width:100%; box-sizing:border-box}
+.box-forms em{background:#f5f5f5; padding:8px; width:100%; box-sizing:border-box; border-radius:6px; float:left; margin:3px 0 0; font-weight:bold}*/
+
+.lista-emails label{ display: flex; align-items: center;} 
+.tab-content .lista-emails input{ padding: 10px !important;}  
+/* Box Analytics */ 
+ 
+
+/* Box Webmaster */
+.box-webmaster input[type=text]{width:100%; box-sizing:border-box}
+
+/* Configura��es dos campos */
+.botao-salvar{width:100%;}
+.botao-salvar input[type=submit]{padding:10px 25px; font-size:13px; color:#fff; text-transform:uppercase; background:#177f24; font-family:Verdana, Geneva, sans-serif; float:right;  cursor:pointer; font-weight: bold; border:0; border-radius:5px; transition: all linear 0.2s;}
+.botao-salvar input[type=submit]:hover{background:#125a1b; }
+
+/*#be_main_content input[type=text], #be_main_content input[type=email], #be_main_content select, #be_main_content textarea{background:#FFFFFF; border:1px solid #DDDDDD; border-radius:6px; padding:9px; box-shadow:inset 2px 2px 5px #DDDDDD; outline:none;}*/
+#be_main_content textarea{width:100%; box-sizing:border-box}
+
+/* Modal de Tags */
+.lista-tags{position:absolute; top:-4px; right:0; font-size:11px; line-height:30px; padding:2px 12px 0; background:#ff8000; border-radius:4px; color:#fff; transition:all linear 0.3s}
+.lista-tags:hover{background:#e27406; color:#fff; text-decoration:none}
+.modal-wrapper{position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%; display:flex; align-items:center; justify-content:center; z-index:20; visibility:hidden}
+.modal-tags{width:90%; margin:0 5%; max-width:1200px; max-height:80vh; background:#fff; padding:15px; z-index:25; line-height:1.5; overflow-x:scroll}
+.modal-tags .lista-left{float:left; width:49%; margin-right:2%}
+.modal-tags .lista-right{float:left; width:49%;}
+.modal-tags h3{width:100%; float:left; text-align:center; border-bottom:2px solid #eee; padding-bottom:10px; margin-bottom:20px; font-size:18px; color:#333}
+.modal-tags p{float:left; width:100%; border-bottom:1px solid #f3f3f3; padding-bottom:10px; margin-bottom:15px; padding:0 5px 10px; box-sizing:border-box}
+.modal-tags strong{float:left; width:100%; font-size:12px; color:#FF8000; padding-bottom:5px;}
+.modal-tags span{float:left; background:#ECECEC; border-radius:4px; padding:6px 10px 5px; margin:0 6px 6px 0}
+.modal-tags i{color:#a91b68; font-style:normal}
+.fundo-modal{display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:10; background:#000; background:rgba(0,0,0,0.6)}
+
+/* Mensagem de Erro da conex�o */
+.erro-sql{float:left; width:100%; padding:10px; background-color:#E45E61; color:#fff; margin:10px 0 35px; text-align:center; box-sizing:border-box; font-size:13px; border:1px solid #cb3b3b;}
+.erro-sql strong{display:inline-block; font-size:15px; padding-bottom:3px}
+
+.tab-container {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+}
+.tabs {
+    margin: 0;
+    margin-bottom: -1px;
+    width: 100%;
+    float: left;
+}
+.tabs li {
+    display: inline-block;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.3s all ease-out;
+    float: left;
+    box-sizing: border-box;
+    border: 1px solid transparent;
+}
+.tabs li:hover {
+    background-color: #f2f2f2;
+    border-bottom: #ccc 1px solid;
+}
+
+.tabs li.current {
+    background: #fff;
+    color: #222;
+    border:1px #ccc solid;
+    border-bottom: #fff 1px solid;
+}
+.tab-content {
+    display: none;
+    background: #fff;
+    border:1px #ccc solid;
+    padding: 20px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.tab-content.current {
+    display: flex;
+}
+
+.barra { 
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    border-top-color: #ccc;
+    border-top-width: 1px;
+    border-top-style: solid;
+    float: left;
+}

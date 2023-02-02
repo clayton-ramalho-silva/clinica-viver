@@ -1,0 +1,60 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.newsletter1(){
+    .ac;
+    .campos2(
+    @cor:@newsletter[@campos][texto],
+        @borda:@newsletter[@campos][borda],
+        @placeholder:@newsletter[@campos][texto]
+        );
+
+
+
+    h3{
+        .mgt(5px);
+        .mgb(15px);
+    }
+
+
+    #newsletter{
+        .flex-meio;
+        .column;
+        .mw(600px);
+        .mg-auto;
+    }
+
+    form{
+        .full;
+        .df;
+
+        [type=submit]{
+            .botao1(@fundo:@newsletter[@submit][fundo],@hover:@newsletter[@submit][hover]);
+
+            @media only screen and (min-width:1024px){
+                .bt-medio;
+                .mgl(@espacom);
+            }
+
+            @media only screen and (max-width:1023px){
+                .mg(@espacom auto 0);
+                .bt-pequeno;
+                .mw(280px);
+            }
+        }
+
+        @media only screen and (max-width:1023px){
+            .column;
+            .wrap;
+        }
+    }
+
+    .texto-erro{
+        .full;
+        .fs(@newsletter[@erro][tamanho]);
+        .c(@newsletter[@erro][cor]);
+        .al;
+    }
+
+
+} 

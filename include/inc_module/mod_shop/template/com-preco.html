@@ -1,0 +1,493 @@
+<!--CONFIG_START//-->
+ 
+cat_all = "Produtos em Destaque"
+cat_list_products = Off
+ 
+; sort list by fieldnames, check DB
+; sort by Name - "shopprod_name1 ASC"
+; sort by Viewed - "shopprod_track_view DESC"
+cat_list_sort_by = "shopprod_name1 ASC"
+cat_subcat_spacer = "_\_"
+ 
+;shop_css = "shop.css"
+shop_wrap = "<div class="shop">|</div>"
+ 
+price_decimals = 2
+vat_decimals = 0
+weight_decimals = 2
+dec_point = ","
+thousands_sep = "."
+ 
+ 
+image_list_width = 191
+image_list_height = 191
+image_list_crop = 1
+image_detail_width = 370
+image_detail_height = 
+image_detail_crop = 0
+image_detail_more_width = 106
+image_detail_more_height = 79
+image_detail_more_crop = 1
+image_detail_more_lightbox = 1
+image_detail_more_start = 2
+image_zoom_width = 600
+image_zoom_height = 600
+image_list_lightbox = FALSE
+image_detail_lightbox = TRUE
+ 
+files_direct_download = 0
+files_template = shop.tmpl
+ 
+on_request_trigger = -999
+ 
+mail_customer_subject = "[#{ORDER}] Engenharia do Som - Você fez uma solicitação"
+mail_neworder_subject = "[#{ORDER}] Novo Pedido"
+ 
+label_payby_paypal = "Pag Seguro"
+label_payby_ccard = "Cartão de Crédito"
+label_payby_prepay = "Boleto Bancário"
+label_payby_pod = "Transferência Online"
+label_payby_onbill = "Depósito Bancário"
+ 
+; Add custom fields, only for step 1
+; (where customer fill in address information)
+; The label information is just optional
+; and only used to set default error messages
+; format: shop_field_1 = STRING_REQ_Label
+shop_field_1 = STRING_REQ_Label
+shop_field_2 = STRING_My custom field
+shop_field_3 = STRING_My custom field
+ 
+; possible:
+; ---------
+; RANDOM or
+; sprintf() formatted http://php.net/sprintf
+; sample: %05s -> 00001
+order_number_style = EN%05s
+<!--CONFIG_END//-->
+ 
+ 
+<!--LIST_HEADER_START//-->
+<h1>{CATEGORY}</h1>
+<!--LIST_HEADER_END//-->
+ 
+<!--LIST_ENTRY_START//-->
+ <div class="lista-produtos fl">
+ 	
+	<div class="entry{CLASSE} fl">
+   	  <a href="{PRODUCT_DETAIL_LINK}" class="fl">
+      	{IMAGE}
+		<strong>{PRODUCT_TITLE}</strong>			
+		</a>
+    	
+      
+    </div>  
+        	<em>C&oacute;d.{ORDER_NUM} <b>R$ {PRODUCT_GROSS_PRICE}</b></em>
+        	<a href="{PRODUCT_DETAIL_LINK}" class="detalhe-produto fl">VER DETALHES <i></i></a>
+		
+</div>
+<!--LIST_ENTRY_END//-->
+ 
+<!--LIST_NONE_START//-->
+	<p>Nenhum produto cadastrado</p>
+<!--LIST_NONE_END//-->
+ 
+<!--LIST_SPACE_START//-->
+ 
+<!--LIST_SPACE_END//-->
+ 
+<!--LIST_FOOTER_START//-->
+<div class="ul-paginate fl">
+	<div class="article_paginate_navi">{PAGINATE}</div>
+</div>
+<!--LIST_FOOTER_END//-->
+ 
+<!--DETAIL_START//-->
+<script src="Scripts/tabs-lateral.js" type="text/javascript"></script>
+<script type="text/javascript"> 
+$(function() {
+    $(".quantidade").append('<div class="inc button">+</div><div class="dec button">-</div>');
+    $(".button").click(function() {
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+        if ($button.text() == "+") {
+    	  var newVal = parseFloat(oldValue) + 1;
+    	} else {
+    	  if (oldValue >= 1) {
+    	      var newVal = parseFloat(oldValue) - 1;
+    	  }
+		  if(isNaN(newVal)){
+			  return
+			  }
+    	}
+    	$button.parent().find("input").val(newVal);
+    });
+});
+</script>
+
+<div class="detail fl pr">
+<h1>{CATEGORY}</h1>
+<h3>{PRODUCT_TITLE}</h3> 	
+<div class="caracteristicas fl"> 
+{PRODUCT_SHORT}
+{PRODUCT_DESC1}
+{PRODUCT_LONG}
+</div>
+    	<div class="image fl pr">
+        	<div class="precos">R$ {PRODUCT_GROSS_PRICE}</div>
+        	<b>C&Oacute;DIGO.{ORDER_NUM}</b>
+            {IMAGE}
+        </div>
+      
+    	
+        
+       
+        	
+           
+        
+</div>
+
+        
+        
+       		<a class="botao-voltar fr db" onClick="history.go(-1)">Voltar</a>
+ 
+<!--DETAIL_END//-->
+ 
+<!--IMAGE_SPACE_START//-->
+ 
+<!--IMAGE_SPACE_END//-->
+ 
+<!--CART_SMALL_START//-->
+<div class="cart-small fl">[COUNT]{COUNT}[/COUNT][COUNT_ELSE]0[/COUNT_ELSE] produto(s) <span>no carrinho</span></div>
+<a class="finalizar fl" href="index.php?aid=16">Finalizar <span>solicitação</span></a>
+<!--CART_SMALL_END//-->
+ 
+<!--CART_HEADER_START//-->
+<script type="text/javascript"> 
+$(function() {
+    $(".input-itens").append('<div class="inc button">+</div><div class="dec button">-</div>');
+    $(".button").click(function() {
+        var $button = $(this);
+        var oldValue = $button.parent().find("input").val();
+        if ($button.text() == "+") {
+    	  var newVal = parseFloat(oldValue) + 1;
+    	  // AJAX save would go here
+    	} else {
+    	  // Don't allow decrementing below zero
+    	  if (oldValue >= 1) {
+    	      var newVal = parseFloat(oldValue) - 1;
+    	      // AJAX save would go here
+    	  }
+		  if(isNaN(newVal)){
+			  return
+			  }
+    	}
+    	$button.parent().find("input").val(newVal);
+    });
+});
+</script>
+<script type="text/javascript"> 
+$().ready(function() {
+	$(".lista-quantidade-produto").each(function(i) {
+		$(this).addClass("valor"+i+"");
+		$(".valor"+i+" .botao-remover").click(function(){
+			$(".valor"+i+" input").val("0");				
+		});
+	});
+	
+});
+</script>
+
+<div class="cart">
+	<div  summary="cart" class="tabela-finalizar-produtos">
+		 Utilize as setas para aumentar ou diminuir a quantidade de produtos.<br /> Para que as alterações sejam salvas, clique no botão <img src="images/bt-atualizar.png" width="16px" height="16px" style="display:inline-block;" /> ao lado da lixeira ou em "atualizar" ao final da lista. </td>
+	  
+		<ul class="topo-tabela fl pr">
+		  <li class="tit-cod fl"><strong>C&Oacute;D</strong>.</li>
+		  <li class="tit-nome-produto fl"><strong>Produto</strong></li>
+		  <li class="tit-quantidade fl"><strong>Qtd.</strong></li>
+		  <li class="tit-valor-unitario fl"><strong>Valor Unit.</strong></li>
+	    </ul>
+        
+<!--CART_HEADER_END//-->
+ 
+<!--CART_ENTRY_START//-->
+	  <ul class="lista-produtos-final fl">
+	    <li class="lista-cod">{ORDER_NUM}</li>
+	    <li class="lista-nome-produto">{PRODUCT_TITLE}</li>
+	    <li class="lista-quantidade-produto"><div class="input-itens fl pr">{COUNT}</div> <a class="botao-remover fl" href="javascript:void(0)"></a>
+        <input type="submit" title="atualizar cesta" alt="atualizar cesta" class="bt-atualizar-cesta fl" value=""/>	
+	    </li>
+		 <li class="lista-preco-produto"><strong>R$ {PRODUCT_GROSS_PRICE}</strong></li>
+	  </ul>
+<!--CART_ENTRY_END//-->
+ 
+<!--CART_SPACE_START//-->
+ 
+<!--CART_SPACE_END//-->
+ 
+<!--CART_FOOTER_START//-->	
+      <div class="valor-total fl">Valor Total: <span>R$ {TOTAL_GROSS}</span></div>
+    
+	</div>
+	<div class="botoes-finalizar fr"> 
+		
+		[CHECKOUT]Finalizar[/CHECKOUT]
+		[UPDATE]Atualizar[/UPDATE]
+       <a href="index.php?aid=15" class="continuar-comprando">Continuar comprando</a>
+		
+  </div>
+</div>
+<!--CART_FOOTER_END//-->
+ 
+<!--CART_NONE_START//-->
+<div class="cart">
+	<h3>Carrinho Vazio</h3>
+    
+</div>
+<!--CART_NONE_END//-->
+ 
+<!--ORDER_INV_ADDRESS_START//-->
+<h4>Dados para Contato</h4>
+Preencha seus dados de cadastro e informações de endereço de <strong>entrega</strong>.<br /><br />
+[IF_ERROR]<p style="margin:15px 0 10px 0; color:#F00"><strong>Preencha todos os campos marcados com * para continuar!</strong></p>[/IF_ERROR]
+ 
+<script src="Scripts/jquery.validate.js" type="text/javascript"></script>
+ 
+<script type="text/javascript"> 
+$().ready(function() {	  
+$("#form-shop").validate({
+rules:{
+	shop_inv_firstname: "required",	
+	shop_inv_zip: "required",			
+	shop_email: {required: true, email: true},
+	shop_phone: "required",
+	shop_inv_address: "required",
+	shop_inv_city: "required"},		
+messages:{
+	shop_inv_firstname: "",
+	shop_phone:"",
+	shop_email: {required: "", email: ""}, 	
+ 	shop_inv_name: "",
+	shop_inv_zip:"",
+	shop_inv_address:"",
+	shop_inv_city:""}
+});
+});
+</script>
+ 
+ 
+<div class="formulario-shop">
+<font size="1">Os campos marcados com <font color="#FF0000">*</font> s&atilde;o obrigat&oacute;rios para o envio do formul&aacute;rio.</font><br /><br />
+<p><strong>Nome:</strong><input type="text" name="shop_inv_firstname" id="shop_inv_firstname"  value="{INV_FIRSTNAME}" /> <font size="1" color="#FF0000">*</font>[ERROR_INV_FIRSTNAME]<font size="1" color="#FF0000">*</font>[/ERROR_INV_FIRSTNAME]</p>
+ 
+<p style="display:none;"><strong>Sobrenome:</strong><input type="text" name="shop_inv_name" id="shop_inv_name" value="{INV_NAME}" /> <font size="1" color="#FF0000">*</font>[ERROR_INV_NAME]<font size="1" color="#FF0000">*</font>[/ERROR_INV_NAME]</p>
+ 
+<p><strong>E-mail:</strong> <input type="text" name="shop_email" id="shop_email" value="{EMAIL}"/> <font size="1" color="#FF0000">*</font>[ERROR_EMAIL]<font size="1" color="#FF0000">*</font>[/ERROR_EMAIL]</p>
+ 
+<p><strong>Telefone:</strong> <input type="text" name="shop_phone" id="shop_phone" value="{PHONE}" /> <font size="1" color="#FF0000">*</font>[ERROR_PHONE]<font size="1" color="#FF0000">*</font>[/ERROR_PHONE] <b>Ex: (11) 1234-5678</b></p>
+	
+<p><strong>CEP:</strong> <input type="text" name="shop_inv_zip" id="shop_inv_zip" value="{INV_ZIP}"/> <font size="1" color="#FF0000">*</font>[ERROR_INV_ZIP]<font size="1" color="#FF0000">*</font>[/ERROR_INV_ZIP]</p>
+	
+<p><strong>Endere&ccedil;o:</strong> <input type="text" name="shop_inv_address" id="shop_inv_address" value="{INV_ADDRESS}"/> <font size="1" color="#FF0000">*</font>[ERROR_INV_ADDRESS]<font size="1" color="#FF0000">*</font>[/ERROR_INV_ADDRESS]</p>
+ 
+<p><strong>Complemento:</strong> <input type="text" name="shop_field_3" id="shop_field_3" value="{shop_field_3}"/> [ERROR_INV_ADDRESS]<font size="1" color="#FF0000">*</font>[/ERROR_INV_ADDRESS]</p>
+ 
+<p><strong>Bairro:</strong><input type="text" name="shop_inv_region" id="shop_inv_region" value="{INV_REGION}" /></p>
+	
+<p><strong>Cidade:</strong> <input type="text" name="shop_inv_city" id="shop_inv_city" value="{INV_CITY}" /> <font size="1" color="#FF0000">*</font>[ERROR_INV_CITY]<font size="1" color="#FF0000">*</font>[/ERROR_INV_CITY]</p>
+ 
+<p><strong>Estado:</strong>
+<select name="shop_field_1" id="shop_field_1" value="{shop_field_1}">
+<option value="AC">AC</option>
+<option value="AL">AL</option>
+<option value="AM">AM</option>
+<option value="AP">AP</option>
+<option value="BA">BA</option>
+<option value="CE">CE</option>
+<option value="DF">DF</option>
+<option value="ES">ES</option>
+<option value="GO">GO</option>
+<option value="MA">MA</option>
+<option value="MG">MG</option>
+<option value="MS">MS</option>
+<option value="MT">MT</option>
+<option value="PA">PA</option>
+<option value="PB">PB</option>
+<option value="PE">PE</option>
+<option value="PI">PI</option>
+<option value="PR">PR</option>
+<option value="RJ">RJ</option>
+<option value="RN">RN</option>
+<option value="RO">RO</option>
+<option value="RR">RR</option>
+<option value="RS">RS</option>
+<option value="SC">SC</option>
+<option value="SE">SE</option>
+<option value="SP" selected="selected">SP</option>
+<option value="TO">TO</option>
+</select></p>
+
+<!-- <p style="visibility:hidden;"><input name="shopping_payment" type="radio" id="shopping_payment_onbill" value="onbill" checked="checked"></p> -->
+ 
+<div class="spacer fl"></div>
+<p><strong>Informações:</strong><textarea name="shop_field_2" id="shop_field_2" value="{shop_field_2}" class="fl"></textarea></p>
+ 
+<p><strong>&nbsp;</strong><input name="shop_order_step1" type="submit" value="Continuar" class="bt-continuar" /></p></div>
+<!--ORDER_INV_ADDRESS_END//-->
+ 
+<!--ORDER_TERMS_START//-->
+ 
+ <div class="cart">
+<div class="formulario-shop-2 fl">
+<h3>Dados para envio de Orçamento</h3>
+<p><b>{INV_FIRSTNAME}</b></p>
+<p>{INV_ADDRESS} {shop_field_3} - {INV_REGION} - {INV_ZIP}</p>
+<p style="padding:2px 0 5px 10px">{INV_CITY} - {shop_field_1}</p>
+<p class="cor-linha" style="padding:5px 0 2px 10px"><b>Email:</b> {EMAIL}</p>
+<p class="cor-linha"><b>Telefone:</b> {PHONE}</p>
+<p class="cor-linha" style="padding:2px 0 5px 10px"><b>Dúvidas e Informações:</b> {shop_field_2}</p>
+ 
+<span><form action="{CART_LINK}" method="post"> 
+	<strong>&nbsp;</strong><input name="shop_edit_address" type="submit" value="Corrigir informações acima" />
+</form></span>
+</div>
+ 
+  <div class="form-confirmacao fl" style="width:100%">
+  <h3>Itens Selecionados para Orçamento</h3>
+  <table width="100%" border="0" cellpadding="5" cellspacing="0">
+<tr bgcolor="#000" style="font-size:13px; color:#FFF;" >
+		  <td width="10%" align="center"><strong>Cód.</strong></td>
+          <td width="10%" align="center"><strong>Qtde</strong></td>
+          <td width="60%"><strong>Produto</strong></td>
+          <td width="10%" align="right"><strong>Valor</strong></td>
+		  
+	    </tr>
+    {ITEMS}
+    	<td colspan="4" align="right" bgcolor="#efefef">Valor total: <b>R$ {TOTAL_GROSS}</b> </td>
+</table>
+	
+
+	</div>
+    
+    <div class="termos-condicoes fl">
+<h4>Termos e Condi&ccedil;&otilde;es</h4>
+        {TERMS}
+</div>
+<div class="termos fl">
+	<form action="{CART_LINK}" method="post"> 
+	<label><input type="checkbox" name="shop_terms_agree" value="1" checked="checked" /><b>Declaro que li e aceito os termos e condi&ccedil;&otilde;es.</b><span style="color:#F00;"> [IF_ERROR]Voc&ecirc; precisa aceitar os termos para continuar[/IF_ERROR]</span></label>
+	<p>
+	<input name="shop_order_submit" type="submit" value="Enviar Pedido" class="enviar-pedido" />
+	</p>
+	</form>
+</div>
+
+</div>
+<!--ORDER_TERMS_END//-->
+ 
+<!--ORDER_TERMS_ITEM_START//-->
+ 		<tr class="cinza">
+        	<td width="10%" align="center" valign="top" >{ORDER_NUM}</td>
+            <td width="10%" align="center" valign="top" >{COUNT}</td>
+			<td width="70%" valign="top">{PRODUCT_TITLE}</td>
+            <td width="10%" align="right" valign="top"><strong>{PRODUCT_GROSS_PRICE}</strong></td>
+            
+		</tr>
+<!--ORDER_TERMS_ITEM_END//-->
+ 
+<!--ORDER_TERMS_ITEMSPACE_START//-->
+ 
+<!--ORDER_TERMS_ITEMSPACE_END//-->
+ 
+<!--MAIL_ITEM_START//-->
+C&oacute;d: {ORDER_NUM}
+Qtd: {COUNT}
+Produto: {PRODUCT_TITLE}
+Valor: {PRODUCT_GROSS_PRICE}
+
+<!--MAIL_ITEM_END//-->
+ 
+<!--MAIL_CUSTOMER_START//-->
+Segue abaixo informa&ccedil;&otilde;es de sua solicita&ccedil;&atilde;o.
+=====================================================================
+N&deg; do Pedido: {ORDER} - Data: {DATE:d/m/Y - H:i}
+  
+Seus Dados:
+===========
+Nome: {INV_FIRSTNAME}
+Email: {EMAIL}
+Telefone: {PHONE} 
+Endere&ccedil;o: {INV_ADDRESS} {shop_field_2}
+CEP: {INV_ZIP}
+Cidade: {INV_CITY} - {shop_field_1}
+Bairro: {INV_REGION}
+ 
+Informa&ccedil;&otilde;es e Dúvidas:
+{shop_field_2}
+ 
+Itens Solicitados:
+=====================================================================
+{ITEMS}
+ 
+
+Valor Total: (sem frete) R$ {TOTAL_GROSS}
+=====================================================================
+ 
+Obrigado.
+<!--MAIL_CUSTOMER_END//-->
+ 
+<!--MAIL_NEWORDER_START//-->
+Novo pedido
+ 
+N&deg; do Pedido: {ORDER} - Data {DATE:d/m/Y H:i}
+		 
+Dados do Cliente:
+=====================================================================
+Nome: {INV_FIRSTNAME}
+Email: {EMAIL}
+Telefone: {PHONE} 
+Endere&ccedil;o: {INV_ADDRESS} {shop_field_2}
+CEP: {INV_ZIP}
+Cidade: {INV_CITY} - {shop_field_1}
+Bairro: {INV_REGION}
+ 
+Informa&ccedil;&otilde;es e Dúvidas:
+{shop_field_2}
+ 
+Itens Solicitados:
+=====================================================================
+{ITEMS}
+ 
+
+Valor Total: (sem frete) R$ {TOTAL_GROSS}
+=====================================================================
+ 
+Seu cliente j&aacute; recebeu um e-mail com os produtos solicitados.
+ 
+Obrigado.
+<!--MAIL_NEWORDER_END//-->
+ 
+<!--ORDER_DONE_START//-->
+ 
+<h4>A solicita&ccedil;&atilde;o de or&ccedil;amento foi enviado com sucesso!</h4><br />
+<strong>Código do Seu Pédido:</strong> <br />
+<span style="font-size:30px; font-family:fonte; color:#F00; line-height:normal !important">{ORDER}</span>
+<br />
+<br />
+	<p>Ol&aacute; <strong>{INV_FIRSTNAME}</strong>,<br />
+	Agradecemos pela sua visita ao nosso site e pela oportunidade de poder enviar nossa proposta comercial para o(s) item(s) selecionado(s). Em breve voc&ecirc; receber&aacute; a confirma&ccedil;&atilde;o no e-mail<strong> {EMAIL}</strong>.</p><br />
+ 
+<p>O n&uacute;mero da sua solicita&ccedil;&atilde;o &eacute;: <strong>{ORDER}</strong>. Por favor use este n&uacute;mero caso seje necess&aacute;rio entrar em contato conosco.</p>
+<!--ORDER_DONE_END//-->
+ 
+<!--ORDER_NOT_DONE_START//-->
+	<h3>Pedido n&atilde;o enviado</h3>
+	<p>Lamentamos, mas devido a problemas t&eacute;cnicos o seu pedido n&atilde;o foi enviado ou nÃ£o pode ser armazenado.</p>
+	<p>Por favor tente novamente ou entre em contato conosco para verificar os problemas ocorridos</p>
+	<p>O n&uacute;mero potencial do seu produto seria: <strong>{ORDER}</strong>.</p>
+	<p>Se voc&ecirc; preferir <a href="mailto:contato@engenhariadosom.com.br?subject={SUBJECT}&amp;body={MSG}">clique aqui</a> para enviar sua mensagem para nossa administraÃ§Ã£o.</p>
+<!--ORDER_NOT_DONE_END//-->
+ 
+ 
+

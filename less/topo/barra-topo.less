@@ -1,0 +1,177 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.barra-topo{
+    .center-flex;
+    .esconder(@barra-topo);
+
+    .bg-color(@topo[@barra-topo][fundo]);
+    .h(@topo[@barra-topo][altura]);
+
+    .fs(@topo[@barra-topo][@fontes][tamanho]);
+    .c(@topo[@barra-topo][@fontes][cor]);
+
+    a{
+        .c(@topo[@barra-topo][@fontes][link]);
+        .ease-out;
+        &:hover{
+            .c(@topo[@barra-topo][@fontes][hover]);        
+        }
+    }
+
+    i{
+        .fs(@topo[@barra-topo][@icones][tamanho]);
+        .c(@topo[@barra-topo][@icones][cor]);
+        .mgr(10px);
+        .esconder(@icones-topo);
+    } 
+
+    .full-max{
+        .df;
+        .aic;
+        .sb;
+        .a(@btl);
+        .a(@a) when (@a=off){ justify-content: flex-end}
+        .b(@btr);
+        .b(@b) when (@b=off){ justify-content: flex-end}
+    }
+
+    //Busca  ----------------------------------------------------------------
+    .busca{
+        .mgl;
+        .i-xsmall;
+        .bg-color(@busca[@barra-topo][fundo]);
+        .pd(@busca[@barra-topo][padding]);
+        .borda(@busca[@barra-topo][radius]);
+        .bd(@busca[@barra-topo][borda]);
+        .placeholder(@busca[@barra-topo][@fonte][cor]);
+        .esconder(@barra-topo-busca);
+
+        input{
+            background: none;
+            .c(@busca[@barra-topo][@fonte][cor]);
+            .fs(@busca[@barra-topo][@fonte][tamanho]);
+            .w(@busca[@barra-topo][largura]);
+            .h(20px);
+        }
+
+        i{
+            .fs(@busca[@barra-topo][@icone][tamanho]);
+            .c(@busca[@barra-topo][@icone][cor]);
+            .mgr(0px);
+        }
+
+        form{
+            .flex-meio;
+        }
+    }
+
+    //Redes ----------------------------------------------------------------
+    .redes-topo{
+        .esconder(@barra-topo-redes);
+        .mgl(@espacom);
+
+        i{
+            .mgr(0);
+        }
+    }
+
+    //Telefone ----------------------------------------------------------------
+
+    .telefone{
+        .esconder(@barra-topo-telefone);
+        .mgl(@espaco);
+        .flex-meio;
+
+        a{
+            cursor:default;
+            .bdr(@topo[@barra-topo][@fontes][cor]);
+            .pdr(10px);
+            .mgr(10px);
+
+            &:last-of-type{
+                border:none;
+                .pdr(0px);
+                .mgr(0px);
+            }
+        }
+    }
+
+    //Whatsapp ----------------------------------------------------------------
+    .whatsapp{
+        .mgl(@espaco);
+        .esconder(@barra-topo-whatsapp);
+        .flex-meio;
+
+        a{
+            cursor:default;
+            .bdr(@topo[@barra-topo][@fontes][cor]);
+            .pdr(10px);
+            .mgr(10px);
+
+            &:last-of-type{
+                border:none;
+                .pdr(0px);
+                .mgr(0px);
+            }
+        }
+    }
+
+    //Endereço ----------------------------------------------------------------
+    .endereco{
+        .esconder(@barra-topo-endereco);
+        .mgl(@espaco);
+        .flex-meio;
+    }
+
+    .email{
+        .esconder(@barra-topo-email);
+        .mgl(@espaco);
+        .flex-meio;
+
+    }
+
+    .acesso-restrito{
+        .esconder(@barra-topo-restrita); 
+        .mgl(@espaco);
+    }
+
+    @media only screen and (max-width:1023px){
+        .dn;
+    }
+}
+
+.btl{
+    .df;
+    .mgr;
+    .esconder(@btl);
+    .aic;
+    .h(100%);
+
+    .barra-right(@btr); 
+    .barra-right(@a) when (@a=off){
+        .mgr(0);
+    }
+    .endereco{
+        .mgl(0);
+    }
+
+    .cor-bt(@a) when (@a=on){
+        .fundo(@fundo-btr);
+        .pdl(15px);
+    }
+}
+
+.btr{
+    .df;
+    .mgl;
+    .aic;
+    .esconder(@btr);
+    .h(100%);
+
+
+    .cor-bt(@a) when (@a=on){
+        .fundo(@fundo-btr);
+        .pdr(15px);
+    }
+}

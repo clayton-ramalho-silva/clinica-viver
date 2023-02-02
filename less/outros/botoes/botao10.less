@@ -1,0 +1,50 @@
+//@import "../conf-site";
+//@import "../helpers";
+ 
+
+.botao10(
+@fundo:@cor1
+)
+{
+    .pr;
+    .c(@fundo);
+
+    &:after,&:before{
+        .ab;
+        .pa;
+        .box;
+        .size(20%,25%);        
+
+        border: 2px solid;
+        transition: all 0.6s ease;
+        border-radius: 2px !important;
+    }
+
+    &:after{
+        bottom: 0;
+        right: 0;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: @fundo;
+        border-right-color: @fundo;
+    }
+
+    &:before{
+        top: 0;
+        left: 0;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-top-color: @fundo;
+        border-left-color: @fundo;
+    }
+
+    &:hover{
+        &:after,&:before{
+            .size(100%);
+        }
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+}

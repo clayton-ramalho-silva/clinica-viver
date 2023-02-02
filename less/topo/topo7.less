@@ -1,0 +1,139 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo7(){
+    .bg-color(@topo[fundo]);
+
+    @media only screen and (min-width:1024px){
+        &:after{
+            .ab;
+            .full;
+            .h(@menu[@link][altura]);
+            .fundo(@menu[fundo]);
+            .pa-bl;
+        }
+    }
+
+    .topo{
+        .full-max;
+        .pr;
+        @media only screen and (min-width:1024px){
+            .pdb(@menu[@link][altura]);
+        }
+    }
+
+    .menu{
+        .full-max;
+        .pa-br(0,0,1);
+        .box;
+        .mw(@site-size + 30px);
+
+        .pmenu{
+            a{
+                .linha(@menu[@link][altura]);
+            }
+        }
+    }
+
+    .tipo-menu(@tipo-menu);
+    .tipo-menu(@a) when (@a=2){
+        .topo{
+            .pdb(@menu[@link][altura] + 10px);
+        }
+
+        &:after{
+            .h(@menu[@link][altura] + 10px);
+        }
+        .menu{
+            .pdt(5px);
+            .pdb(5px);
+        }
+        .menu-fixo{
+            .menu{
+                .pdt(0);
+                .pdb(0);
+            }
+        }
+    }
+
+    .tipo-menu(@a) when (@a=3){
+        .pmenu{
+            a{
+                .linha(@menu[@link][altura]);
+            }
+
+            .psubmenu{
+                top:@menu[@link][altura];
+            }
+        }
+    }
+
+    .tipo-menu(@a) when (@a=4){
+        .pmenu{
+            .psubmenu{
+                top:@menu[@link][altura];
+            }
+        }
+    }
+
+    .tipo-menu(@a) when (@a=5){
+        .pmenu{
+            .psubmenu{
+                top:@menu[@link][altura];
+            }
+        }
+    }
+
+    .tipo-menu(@a) when (@a=6){
+        .topo{
+            .pdb(@menu[@link][altura] + 10px);
+        }
+
+        &:after{
+            .h(@menu[@link][altura] + 10px);
+        }
+        .menu{
+            .pdt(5px);
+            .pdb(5px);
+        }
+        .menu-fixo{
+            .menu{
+                .pdt(0);
+                .pdb(0);
+            }
+        } 
+    }
+
+
+    .bloco-telefone{
+        order:0;
+    }
+
+    .redes-topo{
+        order:1;
+        .mgl(@espaco);
+
+        &:before{
+            content:'Siga-nos';
+            .fl;
+            .pdr(10px);
+            .fs(@topo[@fontes][tamanho]);
+            .c(@topo[@fontes][cor]);
+            .flex-meio;
+        }
+    }
+
+
+    .busca{
+        order:2;
+    }
+
+    .menu-fixo{
+        .menu{
+            .clear-pa !important;
+            border:none;
+        }
+    }
+}
+

@@ -1,0 +1,40 @@
+<!--TABS_START//-->
+<!-- <style>
+#abas{width:927px; float:left; margin:15px 0 0;}
+#abas a{float:left; display:block; height:50px; padding:0; background:url(../../images/top-tabs.png) no-repeat top #FBF4EC; color:#CAA6A6; font-size:15px; font-family:fonte; width:124px; margin:0 2px 0 0; line-height:1; padding:0 5px}
+#abas a i{font-style:normal; display:table-cell; text-align:center; vertical-align: middle; width:124px; height:50px; }
+
+#abas a:hover{text-decoration:none; color:#600;}
+#abas .primeiro{}
+#abas a.selected{ background:url(../../images/top-tabs.png) no-repeat top #FFF; color:#600}
+#conteudos li{background:#fff; border-top:0; float:left; padding:25px 15px; width:897px; font-size:11px; border-bottom:5px solid #600; border-radius:0 10px 10px 10px; height:360px}
+#conteudos li span{display:none}
+
+
+</style>-->
+
+
+
+<script type="text/javascript">
+$().ready(function() {
+    $('.content-full').find('#conteudos li').each(function(i) {
+        $('#abas').append('<a href="#aba'+i+'">a</a>')
+		$('#abas a:first').addClass('selected').addClass('primeiro');
+		$(this).attr('id','aba'+i+'');
+		$('#abas a:eq('+i+')').html($('#aba'+i+' span').html())
+    });
+});
+</script> 
+
+<script type="text/javascript" src="Scripts/tabs-lateral.js"></script>
+	
+<p id="abas"></p>
+<ul id="conteudos">{TABS_ENTRIES}</ul>
+<!--TABS_END//-->
+
+<!--TABS_ENTRY_START//-->
+<li>
+	<span><i>{TABTITLE}</i></span>
+    {TABTEXT}
+ </li>  
+<!--TABS_ENTRY_END//-->

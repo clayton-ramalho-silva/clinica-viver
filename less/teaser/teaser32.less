@@ -1,0 +1,128 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+//TEASER 3 ---------------------------------------------------------------------------------------------------------------------------------
+
+.teaser32(
+@item:4,
+@cor-titulo:@cor1,
+@tamanho-titulo:25px,
+@cor-texto:@cor-fonte-site,
+@tamanho-texto:14px,
+@gap:15px,
+@radius:@radius-padrao-botoes,
+@cor-borda:@cor3,
+@fundo:#fff,
+@img:on
+
+)
+{
+
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+
+
+    h4{
+        .pr;
+        .fs(@tamanho-titulo);
+        .fw(700);
+        .c(@cor-titulo);
+        .pdt(@espacom);
+
+        &:before{
+            .ab;
+            .pa-tl;
+            .size(15px,5px);
+            .fundo(@cor-titulo);
+            transition: all .5s ease-in-out !important;
+        }
+    }
+
+    h5{
+        .dn;
+    }
+
+    article{
+        .pd(@espaco);
+        .box;
+        .pr;
+        .radius(if((@radius > 25px), 25px, @radius));
+        .bd(@cor-titulo);
+        .fundo(@fundo);
+        transition: all .5s ease-in-out !important;
+
+        @media only screen and (max-width:600px){
+            .mgb(@gap);
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+
+        figure{
+            .mgb(@espaco);
+            .fl;
+
+
+            .img(@img);
+            .img(@a) when (@a=off){
+                .dn !important;
+            }
+        }
+
+        @media only screen and (min-width:1024px){
+
+            &:hover{
+                .translatey(-15px);
+
+                h4{
+                    &:before{
+                        .fundo(@cor-borda);
+                        .w(50px);
+                    }
+                }
+
+                .link{
+                    .op;
+                }
+            }
+        }
+    }
+
+    .servico-info{
+        .full;
+        .fl;
+        /*.c(@cor-texto);*/
+        .fs(@tamanho-texto);
+    }
+
+    img{
+        .fl;
+    }
+
+    p{
+        .mgt(10px);
+    }
+
+    .link{
+        .mgt(@espaco);
+        .botao1;
+        .bt-extra-pequeno;
+        .full;
+        .box;
+        .op(0.5);
+    }
+
+}

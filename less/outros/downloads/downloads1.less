@@ -1,0 +1,62 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+
+.downloads1(){
+    .downloads{
+        li{
+            .bd(@downloads[borda]);
+            .pd(5px);
+            .radius(@downloads[radius]);
+            .fs(@downloads[@texto][tamanho]);
+            .df;
+            .aic;
+            justify-content: flex-start;
+            .mgb(10px);
+
+            &:last-of-type{
+                .mgb(0);
+            }
+
+            &:hover{
+                .bd(@downloads[hover]);
+
+                i{
+                    .op;
+                }
+            }
+
+            @media only screen and (max-width:1023px){
+                a{
+                    .df;
+                    .aic;
+                    .lh(1.2);
+                }
+
+                i{
+                    .h(100%);
+                }
+                
+                .fs(14px);
+            }
+
+        } 
+
+        a{
+            .c(@downloads[@texto][cor]);
+        }
+
+        i{
+            .fs(@downloads[@icone][tamanho]);
+            .c(@downloads[@icone][cor]);
+            .fundo(@downloads[@icone][fundo]);
+            .radius(@downloads[radius]);
+            .box;
+            .mgr(@espacom);
+            .pd(10px);
+            .ease-out;
+            .op(.5);
+        }
+    }
+}

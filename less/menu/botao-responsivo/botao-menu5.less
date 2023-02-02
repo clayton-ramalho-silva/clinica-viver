@@ -1,0 +1,35 @@
+//@import "../conf-site";
+
+
+.botao-menu5(){
+    @media only screen and (min-width:1024px){
+        &:before{
+            content:'Menu';
+            .c(@menu[@botao][icone]);
+            .fs(12px);
+            .mgr(10px);
+        }
+    }
+
+    .size(80px,35px);
+    cursor: pointer;
+    .flex-meio;
+    .pf-tr(25px,15px,1);
+    .fundo(@menu[@botao][fundo]); 
+    .bd(@menu[@botao][icone]);
+    .sombra(0 0 0 5px @menu[@botao][fundo]);
+    .radius(@radius-padrao-botoes);
+    .ease;
+
+    i{
+        .c(@menu[@botao][icone]) !important;
+        .fs(25px);
+    }
+
+    &:hover{
+        .fundo(@menu[@botao][hover]); 
+        .sombra(0 0 0 5px @menu[@botao][hover]);
+
+    }
+
+}

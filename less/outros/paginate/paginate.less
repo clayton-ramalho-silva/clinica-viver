@@ -1,0 +1,34 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+@import "paginate1";
+
+
+
+.paginacao{
+
+    .modo(@tipo-paginate);
+
+    .modo(@a) when (@a=1){
+        .paginate1;
+    }
+
+    .full;
+    .flex-meio;
+    .mgt(@espaco * 2);
+    .lh(0);
+    
+    a{
+        .ease-out;
+    }
+
+    i{
+        .ease-out;
+    }
+} 
+
+.link-page{
+    .flex-meio;
+}
+

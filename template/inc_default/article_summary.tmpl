@@ -1,0 +1,53 @@
+[TITLE] <div class="titulo">[/TITLE]
+[TITLE]<h1><span>{TITLE}</span></h1>[/TITLE]
+[SUB]<h5><span>{SUB}</span></h5>[/SUB]
+[TITLE]</div>[/TITLE]
+[IMAGE]
+	<div class="article-summary-image">
+		{IMAGE}[CAPTION]<span class="caption">
+			{CAPTION}[COPYRIGHT]
+			<span class="copyright">{COPYRIGHT}</span>[/COPYRIGHT]
+		</span>[/CAPTION]
+	</div>
+[/IMAGE]
+[SUMMARY]
+	<div class="article-summary-text">
+		{SUMMARY}
+	</div>
+[/SUMMARY]
+[SYSTEM]
+	<div class="article-system">
+		{SYSTEM}
+	</div>
+[/SYSTEM]
+<!--CP_PAGINATE_START//-->
+<div class="pagination">
+[CP_PAGINATE_PREV]<a href="{CP_PAGINATE_PREV}" class="pagination-prev">&laquo; Previous</a>[/CP_PAGINATE_PREV]
+[CP_PAGINATE]{CP_PAGINATE}[/CP_PAGINATE]
+[CP_PAGINATE_NEXT]<a href="{CP_PAGINATE_NEXT}" class="pagination-next">Next &raquo;</a>[/CP_PAGINATE_NEXT]
+[CP_PAGINATE_MENU]
+	<!-- when no item prefix/suffix/... is given the default will be used (ul/li) -->
+	<!-- with parameter: [ CP_PAGINATE_MENU : item_prefix|item_suffix|active_class|hide_active ] -->
+	{CP_PAGINATE_MENU}
+[/CP_PAGINATE_MENU]
+</div>
+<!--CP_PAGINATE_END//-->
+
+<!--
+	Livedate: {LIVEDATE:d.m.Y H:i:s lang=EN} / Killdate: {KILLDATE:d.m.Y H:i:s lang=EN} [IMAGE]
+
+	Image ID   {IMAGE_ID}
+	Image Hash {IMAGE_HASH}
+	cmsImage   <img src="img/cmsimage.php/100x100/{IMAGE_ID}.jpg" alt="" border="0" />
+
+	Thumbnail  {THUMB_NAME}
+	Relative   {THUMB_REL}
+	Absolute   {THUMB_ABS}
+	WxH        {THUMB_WIDTH}px x {THUMB_HEIGHT}px[ZOOMIMAGE]
+
+	Zoomimage  {IMAGE_NAME}
+	Relative   {IMAGE_REL}
+	Absolute   {IMAGE_ABS}
+	WxH        {IMAGE_WIDTH}px x {IMAGE_HEIGHT}px
+	[/ZOOMIMAGE][/IMAGE]
+-->

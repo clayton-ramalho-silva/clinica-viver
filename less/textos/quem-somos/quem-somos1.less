@@ -1,0 +1,66 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+.quem-somos1(){
+    section{
+        .df;
+        gap:50px;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+        }
+    }
+
+    h2, h3{
+        .al;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+
+        a{
+            .bt-pequeno;
+        }
+    }
+
+    .link{
+        .bt-pequeno;
+        .botao1(@fundo:@quem-somos[@botao][fundo],@cor-texto:@quem-somos[@botao][texto]);
+    }
+
+    img{
+        @media only screen and (min-width:1024px){
+            .mw(none);
+            .fl;
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        section{
+            .column;
+        }
+
+        .texto{
+            order: 0;
+        }
+
+        figure{
+            .flex-meio;
+            order:1
+        }
+    }    
+
+    .direcao(@quem-somos[direcao]);
+    .direcao(@a) when (@a=left){
+        .texto{
+            order: 0;
+        }
+
+        figure{
+            order:1;
+        }
+    }
+}

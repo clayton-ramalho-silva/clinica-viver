@@ -1,0 +1,129 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+
+.img-fundo4(
+@direcao:right,
+@largura:50%,
+@altura:50vh,
+@fundo:#000,
+@cor-texto:#fff,
+@cor-titulo:@cor1,
+@cor-subtitulo:@cor2
+)
+{
+    background-position:center !important;
+    @media only screen and (min-width:1024px){
+
+        .box;
+        .bg-size(@site-size) !important;
+    }
+
+    @media only screen and (max-width:1023px){
+        .bg-size(cover) !important;
+    }
+
+    .pdt(0);
+    .pdb(0);
+
+    h2{
+        .c(@cor-titulo);
+    }
+
+    h3{
+        .c(@cor-subtitulo);
+    }
+
+    section{
+        .flex-meio;
+        .pdl(0);
+        .pdr(0);
+        @media only screen and (min-width:1024px){
+            min-height: @altura;
+            .pr;
+            .box;
+            .h(100%);
+
+
+            &:before{
+                .ab;
+
+                min-height: @altura;
+                .mw(@largura);
+                .fundo(fade(@fundo,80));
+                .size(100%);
+            }
+        }
+
+
+    }
+
+    .texto{
+        .df;
+        .column;
+        .mw(@largura);
+        .c(@cor-texto);
+        .pd(50px);
+        .box;
+        z-index: 0;
+
+        @media only screen and (max-width:1023px){
+            .fundo(fade(@fundo,80));
+            .mw(100%);
+        }
+
+    }
+
+    span{
+        .full;
+        .fl;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+    }
+
+    .link{
+        .bt-pequeno;
+    }
+
+    @media only screen and (min-width:1024px){
+
+
+        .img-fundo-direcao(@direcao);    
+        .img-fundo-direcao(@a) when (@a=left){
+            section{
+                justify-content: flex-start;
+
+                &:before{
+                    .pa-tl;
+                }
+            }
+        }
+
+        .img-fundo-direcao(@a) when (@a=right){
+            section{
+                justify-content: flex-end;
+
+                &:before{
+                    .pa-tr;
+                }
+            }
+        }
+
+    }
+
+    @media only screen and (max-width:1023px){
+
+        section{
+            min-height: 1px;
+        }
+
+        .texto{
+            .full;
+        }
+
+    }
+}

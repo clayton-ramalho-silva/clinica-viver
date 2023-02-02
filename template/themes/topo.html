@@ -1,0 +1,183 @@
+
+
+<div class="barra-topo">
+    <div class="full-max">
+        <div class="btl">
+            [RUA]<div class="endereco"><i class="fas fa-map-marker-alt"></i> {RUA}[NUMERO], {NUMERO}[/NUMERO][COMPLEMENTO] - {COMPLEMENTO}[/COMPLEMENTO][BAIRRO] - {BAIRRO}[/BAIRRO][CIDADE] - {CIDADE}[/CIDADE][UF] - {UF}[/UF][CEP] - {CEP}[/CEP]</div>[/RUA]
+            [TELEFONE-TOPO]<div class="telefone"><i class="fa fa-phone"></i>{TELEFONE-TOPO}</div>[/TELEFONE-TOPO]
+            [WHATSAPP]<div class="whatsapp"><i class="fab fa-whatsapp"></i>{WHATSAPP}</div>[/WHATSAPP]
+            [EMAILS-RODAPE]<div class="email"><i class="fa fa-envelope"></i>{EMAILS-RODAPE}</div>[/EMAILS-RODAPE]
+        </div>
+
+        <div class="btr">
+            [TELEFONE-TOPO]<div class="telefone"><i class="fa fa-phone"></i>{TELEFONE-TOPO}</div>[/TELEFONE-TOPO]
+            [WHATSAPP]<div class="whatsapp"><i class="fab fa-whatsapp"></i>{WHATSAPP}</div>[/WHATSAPP]
+            [EMAILS-RODAPE]<div class="email"><i class="fa fa-envelope"></i>{EMAILS-RODAPE}</div>[/EMAILS-RODAPE]
+
+            <div class="acesso-restrito">
+                <a href="#">Login</a> | <a href="#">Cadastre-se</a>
+
+            </div>
+            <div class="busca">
+                <form name="search_input_field" action="busca.html" method="post">
+
+                    <input name="search_input_field" type="text" placeholder="Busca" />
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </form>
+            </div>
+
+            [REDES-SOCIAIS]<div class="redes redes-topo">{REDES-SOCIAIS}</div>[/REDES-SOCIAIS]
+
+            <!--            <div class="idiomas">
+                            <span><i class="fas fa-globe"></i>Idioma</span>
+                            <div class="menu-idiomas">
+                                <a href="#" class="pt"><img src="images/default/pt-br.png" alt="">Português</a>
+                                <a href="#" class="ing"><img src="images/default/ing.png" alt="">Inglês</a>
+                                <a href="#" class="esp"><img src="images/default/es.png" alt="">Espanhol</a>
+                            </div>
+                        </div>-->
+        </div> 
+
+    </div>
+</div>
+
+<div class="topo">
+    <div class="button_container" id="toggle">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <a class="logo" href="/"></a>
+
+    <div class="topo-right">
+
+        <nav class="menu nav">{MENU:0,2}</nav>
+        [REDES-SOCIAIS]<div class="redes redes-topo">{REDES-SOCIAIS}</div>[/REDES-SOCIAIS]
+
+        <div class="bloco-telefone">
+            [TELEFONE-TOPO]<div class="telefone"><i class="fa fa-phone"></i>{TELEFONE-TOPO}</div> [/TELEFONE-TOPO]
+            [WHATSAPP]<div class="whatsapp"><i class="fab fa-whatsapp"></i>{WHATSAPP}</div>[/WHATSAPP]
+        </div>
+
+        <div class="busca">
+            <i class="fa fa-search" aria-hidden="true"></i>
+            <form action="busca.html" method="post">
+                <label>
+                    <input type="text"  name="search_input_field" placeholder="Faça a sua busca"> <i class="fas fa-times"></i>
+                </label>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="overlay" id="overlay">
+    <div class="fechar-menu">
+        <span>
+            <svg viewBox="0 0 800 600">
+            <path d="M300,220 C300,220 520,220 540,220 C740,220 640,540 520,420 C440,340 300,200 300,200" id="top"></path>
+            <path d="M300,320 L540,320" id="middle"></path>
+            <path d="M300,210 C300,210 520,210 540,210 C740,210 640,530 520,410 C440,330 300,190 300,190" id="bottom" transform="translate(480, 320) scale(1, -1) translate(-480, -318) "></path>
+            </svg>
+        </span>
+    </div>
+
+    <div class="busca-responsivo">
+        <form name="search_input_field" action="busca.html" method="post">
+
+            <input name="search_input_field" type="text" placeholder="Busca" />
+            <i class="fa fa-search" aria-hidden="true"></i>
+        </form>
+    </div>
+    <nav class="overlay-menu">
+        {MENU:0,2}
+    </nav>
+
+    <div class="acesso-restrito">
+        <a href="#">Login</a> | <a href="#">Cadastre-se</a>
+    </div>
+
+    <i id="abrir-contato-responsivo" class="fa fa-phone"></i>
+
+    <div class="contato-responsivo">
+        [TELEFONE-TOPO]<p class="telefone-responsivo">
+            <i class="fa fa-phone"></i>
+            {TELEFONE-TOPO}
+        </p>[/TELEFONE-TOPO]
+        [WHATSAPP]
+        <p class="whatsapp-responsivo">
+            <i class="fab fa-whatsapp"></i>
+            {WHATSAPP}
+        </p> 
+        [/WHATSAPP]
+
+        [EMAILS-RODAPE]
+        <p class="email-responsivo">
+            <i class="fa fa-envelope"></i>
+            {EMAILS-RODAPE}
+        </p>
+        [/EMAILS-RODAPE]
+        [RUA]
+        <p class="endereco-responsivo">
+            <i class="fas fa-map-marker-alt"></i>
+            {RUA}[NUMERO], {NUMERO}[/NUMERO][COMPLEMENTO] - {COMPLEMENTO}[/COMPLEMENTO][BAIRRO] - {BAIRRO}[/BAIRRO][CIDADE] - {CIDADE}[/CIDADE][UF] - {UF}[/UF][CEP] - {CEP}[/CEP]
+        </p>
+        [/RUA]
+        [REDES-SOCIAIS]
+        <div class="redes-responsivo">
+            {REDES-SOCIAIS}
+        </div>
+        [/REDES-SOCIAIS]
+    </div>
+
+</div>
+
+<div class="menu-fixo">
+    <div class="barra-topo">
+        <div class="full-max">
+            <div class="btl">
+                [RUA]<div class="endereco"><i class="fas fa-map-marker-alt"></i> {RUA}[NUMERO], {NUMERO}[/NUMERO][COMPLEMENTO] - {COMPLEMENTO}[/COMPLEMENTO][BAIRRO] - {BAIRRO}[/BAIRRO][CIDADE] - {CIDADE}[/CIDADE][UF] - {UF}[/UF][CEP] - {CEP}[/CEP]</div>[/RUA]
+                [TELEFONE-TOPO]<div class="telefone"><i class="fa fa-phone"></i>{TELEFONE-TOPO}</div>[/TELEFONE-TOPO]
+                [WHATSAPP]<div class="whatsapp"><i class="fab fa-whatsapp"></i>{WHATSAPP}</div>[/WHATSAPP]
+                [EMAILS-RODAPE]<div class="email"><i class="fa fa-envelope"></i>{EMAILS-RODAPE}</div>[/EMAILS-RODAPE]
+            </div>
+
+            <div class="btr">
+                [TELEFONE-TOPO]<div class="telefone"><i class="fa fa-phone"></i>{TELEFONE-TOPO}</div>[/TELEFONE-TOPO]
+                [WHATSAPP]<div class="whatsapp"><i class="fab fa-whatsapp"></i>{WHATSAPP}</div>[/WHATSAPP]
+                [EMAILS-RODAPE]<div class="email"><i class="fa fa-envelope"></i>{EMAILS-RODAPE}</div>[/EMAILS-RODAPE]
+
+                <div class="acesso-restrito">
+                    <a href="#">Login</a> | <a href="#">Cadastre-se</a>
+
+                </div>
+                <div class="busca">
+                    <form name="search_input_field" action="busca.html" method="post">
+
+                        <input name="search_input_field" type="text" placeholder="Busca" />
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </form>
+                </div>
+
+                [REDES-SOCIAIS]<div class="redes redes-topo">{REDES-SOCIAIS}</div>[/REDES-SOCIAIS]
+
+            </div> 
+
+        </div>
+    </div>
+    <div class="menu">
+        <a class="logo" href="/"></a>
+        <nav>{MENU:0,2}</nav>
+    </div>
+</div>
+
+
+
+<a href="#container" id="return-to-top" class="cd-top"><i class="fas fa-angle-up"></i></a>
+
+
+
+
+
+
+

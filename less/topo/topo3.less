@@ -1,0 +1,33 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo3(){ 
+    .pa-tl(0,0,100) !important;
+
+    @media only screen and (min-width:1024px){
+
+        .topo{ 
+            .full-max;
+            .fundo(@topo[fundo]);
+            width:~'calc(100% - 30px) !important';
+            .mgt(@espacom);
+            .radius(@topo[radius]);
+            .box;
+            .topo-full(@topo-full);
+            .topo-full(@a) when (@a=on){
+                .mgl;
+                .mgr;
+            }
+        }
+    } 
+
+
+    @media only screen and (max-width:1023px){
+        .topo{
+            .full-max;
+        }
+    }
+}
+
+

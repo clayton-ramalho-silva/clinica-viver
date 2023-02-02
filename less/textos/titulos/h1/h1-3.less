@@ -1,0 +1,54 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h1-3(){
+
+    .titulo{
+        .h(@banner[@interna][altura]);
+        .flex-meio;
+        .ac;
+        .column;
+
+        @media only screen and (max-width:1023px){
+            .h(@banner[@interna][responsivo]);
+        }
+
+    }
+
+    h5{
+        .ac;
+        .pdt(10px);
+        .c(@titulo[@h1][cor]);
+    }
+
+    .breadcrumb{
+        .ac;
+        .pa-tl(@banner[@interna][altura]/2);
+        .mgt(@titulo[@h1][tamanho] * 1.5);
+        .c(@titulo[@h1][cor]);
+
+        a{
+            .c(@titulo[@h1][cor]);
+        }
+
+    }
+
+    .banner-interna{
+        .pa-tl(0,0,-1);
+    }
+
+    .banner-interna(@banner-interna);
+    .banner-interna(@a) when (@a=off){
+        h1{
+            .fundo(@titulo[@h1][fundo]);
+        }
+    }
+
+    .direcao-titulo(@titulo[@h1][direcao]);
+    .direcao-titulo(@a) when (@a=left){
+        h1,h5,.breadcrumb{
+            .al;
+        }
+    }
+}

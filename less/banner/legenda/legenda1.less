@@ -1,0 +1,114 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner1(){
+    @media only screen and (min-width:1024px){
+        .direcao-legenda-slogan(@banner[@legenda][direcao]);
+        .direcao-legenda-slogan(@a) when (@a=left){
+            .slogan{
+                .translatex(75px);
+                animation: legendab 0.5s 0.5s ease-out forwards;
+            }
+        }
+
+        .direcao-legenda-slogan(@a) when (@a=center){
+            .aic;
+            .ac;
+            .slogan{
+                .translatey(50px);
+                animation: legenda 0.5s 0.5s ease-out forwards;
+            }
+        }
+        .direcao-legenda-slogan(@a) when (@a=right){
+            align-items: flex-end;
+            .ar;
+
+            .slogan{
+                .translatex(-75px);
+                animation: legendab 0.5s 0.5s ease-out forwards;
+            }
+        }
+
+        .direcao-v-legenda-slogan(@banner[@legenda][alinhamento]);
+        .direcao-v-legenda-slogan(@a) when (@a=center){
+            .sc;
+        }
+
+        .direcao-v-legenda-slogan(@a) when (@a=bottom){
+            justify-content: flex-end;
+            .slogan{
+                .mgb(90px);
+            }
+
+        }
+
+        .slogan{
+            .pdl(45px);
+            .pdr(45px);
+            .op(0);
+            .mw(@banner[@legenda][largura]);
+
+        }
+
+        .fundo-titulo-slogan(@fundo-titulo-slogan);
+        .fundo-titulo-slogan(@a) when (@a=on){
+            .titulo-banner{
+                width: fit-content;
+                .box;
+                .pd(@espacom @espaco * 2);
+                .fundo(@banner[@titulo][fundo]);
+
+                .direcao-legenda-slogan(@banner[@legenda][direcao]);
+                .direcao-legenda-slogan(@a) when (@a=right){
+                    .mgr(-50px);
+                }
+                .direcao-legenda-slogan(@a) when (@a=left){
+                    .mgl(-50px);
+                }
+            }
+        }
+
+        .fundo-subtitulo-slogan(@fundo-subtitulo-slogan);
+        .fundo-subtitulo-slogan(@a) when (@a=on){
+            .subtitulo-banner{
+                width: fit-content;
+                .box;
+                .pd(10px @espaco * 2);
+                .fundo(@banner[@subtitulo][fundo]);
+
+                .direcao-legenda-slogan(@banner[@legenda][direcao]);
+                .direcao-legenda-slogan(@a) when (@a=right){
+                    .mgr(-50px);
+                }
+                .direcao-legenda-slogan(@a) when (@a=left){
+                    .mgl(-50px);
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .sc;
+        .aic;
+        .ac;
+        .slogan{
+            .pd(15px);
+            .box;
+            .translatey(50px);
+            animation: legenda 0.5s 0.5s ease-out forwards;
+            .op(0);
+        }
+
+        .link{
+            .bt-extra-pequeno !important;
+        }
+    }
+
+    @keyframes legenda{
+        to{.translatey(0); .op;}
+    }
+    @keyframes legendab{
+        to{.translatex(0); .op;}
+    }
+
+}

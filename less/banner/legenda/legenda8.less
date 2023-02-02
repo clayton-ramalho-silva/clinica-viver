@@ -1,0 +1,60 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner8(){
+    @media only screen and (min-width:1024px){
+        .mw(@site-size);
+        .ma;
+        .pr;
+        .df;
+        .sc;
+        .pdl(15px);
+        .pdr(15px);
+
+        &:before{
+            .ab;
+            .size(150%,100vh);
+            .fundo(@banner[@titulo][fundo]);
+            .pa-tl(0,-150%,-1);
+            .translatex(@logo[largura] + 150px);
+        }
+        .slogan{
+
+            .mw(@banner[@legenda][largura]);
+
+        }
+
+
+        .barra-link{
+            .mgt(50px) !important;
+            a{
+                .fl
+            }
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .sc;
+        .al;
+
+        &:before{
+            .ab;
+            .size(40%,100%);
+            .fundo(@banner[@titulo][fundo]);
+            .pa-tl(0,0,-1);
+
+        }
+
+
+        .slogan{
+            .pd(15px);
+            .box;
+            .mw(70%);
+        }
+
+        .link{
+            .bt-extra-pequeno !important;
+        }
+    }
+
+}

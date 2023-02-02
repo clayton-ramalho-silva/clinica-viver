@@ -1,0 +1,132 @@
+
+.redes1(
+@cores:@redes-topo-cores-originais;
+@coresr:@redes-rodape-cores-originais;
+){
+
+    i{
+        .pd(2px);
+    }
+
+    &.redes-topo{
+
+        .cores-redes(@cores);
+        .cores-redes(@a) when (@a=off){
+
+            i{
+                .c(@redes-sociais[@topo][cor]) !important;
+
+                &:hover{
+                    .c(@redes-sociais[@topo][hover]) !important;
+                    .fundo(@redes-sociais[@topo][fundo]) !important;
+
+                } 
+            }
+        }
+    }
+
+    &.redes-rodape{
+        .cores-redes-r(@coresr);
+        .cores-redes-r(@a) when (@a=off){
+
+            i{
+                .c(@redes-sociais[@rodape][cor]) !important;
+
+                &:hover{
+                    .c(@redes-sociais[@rodape][hover]) !important;
+                    .fundo(@redes-sociais[@rodape][fundo]) !important;
+
+                } 
+            }
+        }
+    }
+
+
+    i.fa-facebook-f{
+        .c(@redes-sociais[facebook]);
+
+        &:hover{
+            .c(#fff);
+            .fundo(@redes-sociais[facebook]) ;
+        }
+    }
+
+    i.fa-google{
+        .c(@redes-sociais[google]);
+
+        &:hover{
+            .c(#fff);
+            .fundo(@redes-sociais[google]);
+        }
+    }
+
+    i.fa-instagram{
+        .c(@redes-sociais[instagram]);
+
+        &:hover{
+            .c(#fff);
+            .fundo(@redes-sociais[instagram]);
+        }
+    }
+
+    i.fa-twitter{
+        .c(@redes-sociais[twitter]);
+
+        &:hover{
+            .c(#fff);
+            .fundo(@redes-sociais[twitter]);
+        }
+    }
+
+    i.fa-linkedin-in{
+        .c(@redes-sociais[linkedin]);
+
+        &:hover{
+            .c(#fff);
+            .fundo(@redes-sociais[linkedin]);
+        }
+    }
+    i.fa-youtube{
+        .c(@redes-sociais[youtube]);
+
+        &:hover{
+            .fundo(@redes-sociais[youtube]);
+            .c(#fff);
+        }
+    }
+    i.fa-pinterest{
+        .c(@redes-sociais[pinterest]);
+
+        &:hover{
+            .fundo(@redes-sociais[pinterest]);
+            .c(#fff);
+        }
+    }
+
+    i.fa-blogger{
+        .c(@redes-sociais[blogger]);
+
+        &:hover{
+            .fundo(@redes-sociais[blogger]);
+            .c(#fff);
+        }
+    }
+    i.fa-rss{
+        .c(@redes-sociais[rss]);
+
+        &:hover{
+            .fundo(@redes-sociais[rss]);
+            .c(#fff);
+        }
+    }
+
+    i.fa-skype{
+        .c(@redes-sociais[skype]);
+
+        &:hover{
+            .fundo(@redes-sociais[skype]);
+            .c(#fff);
+        }
+    }
+
+}

@@ -1,0 +1,48 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.botao12(
+@cor-texto:@cor1,
+@fundo:@cor1
+){
+    .pr;
+    .c(@cor-texto);
+    .ease;
+
+    &:before {
+        .ab;
+        .pa-tl(0,0,1);
+        .size(100%);
+        .fundo(fade(@fundo,10));
+        .ease;
+        .radius(@radius-padrao-botoes);
+
+    } 
+
+    &:after {
+        .ab;
+        .pa-tl(0,0,1);
+        .size(100%);
+        .op(0);
+        .ease;
+        .bd(fade(@cor-texto,50));
+        transform: scale(1.2,1.2);
+        .radius(@radius-padrao-botoes);
+    }
+
+    &:hover{
+        &:before {
+            .op(0);
+            transform: scale(0.5,0.5);
+        }
+
+        &:after {
+            .op(1);
+            transform: scale(1,1);
+        }
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+}

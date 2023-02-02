@@ -1,0 +1,217 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+.rodape4(){
+    .slogan-rod{
+        .dn;  
+    }
+
+    @media only screen and(min-width:1024px){
+        .rodape{
+            .pdt(@espaco);
+            .df;
+            .sb;
+            .pr;
+            .esconder-menu(@menu-rodape);
+            .esconder-menu(@a) when (@a=on){
+                .pdt(@espaco * 4);
+            }
+        }
+
+        .logo-rod{
+            min-width:@logo[@rodape][largura];
+        }
+
+        .menu-rod{
+            .bdt(@rodape[@borda][cor]);
+            .bdb(@rodape[@borda][cor]);
+            .w(~'calc(100% - 30px)');
+            .mgb(@espaco);
+            .pa-tl(30px,15px);
+        }
+
+        .tels-rod{
+            .df;
+        }
+
+        .rod-info{
+            .df;
+            .wrap;
+            justify-content: flex-end;
+            .full;
+        }
+
+        .redes-rodape{
+            .h(@logo[@rodape][altura]);
+            .mgl(@espaco);
+            .aic;
+
+            &:before{
+                .w(50px);
+                .fs(11px);
+                .fw(700);
+                .pdr(5px);
+                .ar;;
+            }
+        }
+
+
+        .endereco-rodape{
+            .pa-bl(-55px,@espacom);
+            .w(~'calc(100% - 30px)');
+            .pdt(@espaco);
+            .pdl(@endereco[@rodape][@icone][tamanho] + 10px);
+
+            .box;
+            i{
+                .pa-tl(50%);
+                .mgt(0);
+            }
+
+            .endereco-2{
+                .dn;
+            }
+        }
+
+        .copyright{
+            .center-flex;
+            .fb(100%);
+            .ar;
+            .pdb(@espacom);
+            .fundo(transparent);
+            .c(@rodape[@fontes][cor]) !important;
+            .lh(1.4);
+            .full-max{
+                &:before{
+                    .ab;
+                    .full;
+                    .bdt(@rodape[@borda][cor]);
+                    .mgt(@espacom);
+                    .mgb(@espacom);
+                }
+            }
+        }
+    }
+
+    .telefone-rodape,.whatsapp-rodape,.email-rodape{
+        .df;
+        .sc;
+        .column;
+        .lh(1.6);
+        .mgl(@espaco);
+    }
+
+    .telefone-rodape{
+        .pdl(@telefone[@rodape][@icone][tamanho] + 10px);
+
+        i{
+            .pa-tl(50%);
+            .mgt(-@telefone[@rodape][@icone][tamanho]/2);
+        }
+    }
+
+    .whatsapp-rodape{
+        .pdl(@whatsapp[@rodape][@icone][tamanho]+10px);
+
+        i{
+            .pa-tl(50%);
+            .mgt(-@whatsapp[@rodape][@icone][tamanho]/2);
+        }
+    }
+
+    .email-rodape{
+        .pdl(@email[@rodape][@icone][tamanho]+10px);
+
+        i{
+            .pa-tl(50%);
+            .mgt(-@email[@rodape][@icone][tamanho]/2);
+        }
+
+        br{
+            .dn;
+        }
+    }
+
+    .telefone-rodape, .email-rodape, .whatsapp-rodape{
+        &:before{
+            .dn;
+        }
+    }
+
+    @media only screen and(max-width:1023px){
+        .sc;
+        .pdt(0);
+        .pdb(0);
+
+        .logo-rod{
+            .ma(20px);
+        }
+
+        .tels-rod{
+            .flex-meio;
+            .column;
+        }
+
+        .rod-info{
+            .flex-meio;
+            .column;
+
+            i{
+                .mgr(15px);
+            }
+        }
+
+        .telefone-rodape{
+            .mgl(0);
+            .mgb(15px);
+        }
+
+        .email-rodape{
+            .mgb(@espacom);
+        }
+
+        .endereco-rodape{
+            .pdb(@espacom);
+            .df;
+            .aic;
+            .column;
+        }
+
+        .whatsapp-rodape{
+            .mgl(0);
+        }
+
+        .redes-rodape{
+            .pdt(@espacom);
+            
+            .sc;
+            .aic;
+
+            &:before{
+                .w(50px);
+                .fs(11px);
+                .fw(700);
+                .pdr(5px);
+                .ar;
+            }
+
+            i{
+                .mg(0);
+            }
+
+            .endereco-2{
+                .pdt(10px);
+            }
+        }
+
+        .copyright{
+            .center-flex;
+            .ac;
+            .pdt(10px);
+            .pdb(10px);
+
+            line-height: 1.4;
+        }
+    }
+
+}

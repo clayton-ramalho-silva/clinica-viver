@@ -1,0 +1,1159 @@
+// main: ../../../../../../../less/tema-site.less
+
+
+// CONFIGURAÇÃO PADRÃO - INICIO ========================================================================================
+
+// Topo-----------------------------------------------------------------------------------------------------------------
+@cor-fundo-topo:fade(#FFF, 0%);
+@cor-borda-topo:@cor1;
+
+@logo-w:222px;                                  // Largura logo
+@logo-h:90px;                                   // Altura logo
+
+@logo-fixo-w:120px;                             // Largura logo do Menu Fixo
+@logo-fixo-h:72px;                              // Altura logo do Menu Fixo
+
+@cor-texto-telefone-topo:@cor3;                 // Cor dos textos e links do telefone do topo
+@tamanho-fonte-telefone-topo:18px;              // Tamanho das fontes dos textos e links do telefone do topo
+@cor-icone-telefone-topo:@cor-texto-telefone-topo; // Cor do icone do telefone do topo
+@tamanho-icone-telefone-topo:22px;              // Tamanho do icone do telefone do topo
+
+@cor-texto-whatsapp-topo:@cor3;                 // Cor dos textos e links do whatsapp do topo
+@tamanho-fonte-whatsapp-topo:18px;              // Tamanho das fontes dos textos e links do whatsapp do topo
+@cor-icone-whatsapp-topo:#309645;             // Cor do icone do whatsapp do topo
+@tamanho-icone-whatsapp-topo:20px;              // Tamanho do icone do whatsapp do topo
+
+@cor-texto-email-topo:#000;                   // Cor dos textos e links do email do topo
+@tamanho-fonte-email-topo:14px;                 // Tamanho das fontes dos textos e links do email do topo
+@cor-icone-email-topo:@cor-texto-email-topo;    // Cor do icone do email do topo
+@tamanho-icone-email-topo:22px;                 // Tamanho do icone do email do topo
+
+
+// Menu ----------------------------------------------------------------------------------------------------------------
+@cor-fundo-menu:#fff;
+@cor-fonte-menu:#FFF;
+@padding-link-menu:0 24px;
+@tamanho-fonte-menu:16px;
+@linha-menu:63px;
+@cor-hover-menu:darken(@cor1,10%);
+@cor-fonte-menu-hover:@cor3;
+
+
+// Sub-Menu ------------------------------------------------------------------------------------------------------------
+@cor-fundo-submenu:@cor3;                       // Cor do fundo do Sub-menu
+@posicao-submenu-v:@linha-menu;                 // valor do PA Top
+@posicao-submenu-h:0px;                         // valor de PA Left
+@padding-submenu:10px;                          // Padding em volta do Submenu
+@padding-link-submenu:0 10px;                   // Padding da <li> do Submenu
+@largura-submenu:310px;                         // Largura do Submenu
+@tamanho-fonte-submenu:15px;                    // Tamanho da Fonte do Submenu
+@linha-submenu:45px;                            // Line-height da <li>
+@cor-fonte-submenu:#fff;                      // Cor da fonte do Submenu
+@cor-fonte-submenu-hover:@cor-fonte-submenu;    // Cor do hover da fonte do Menu
+@cor-hover-submenu:darken(@cor3,8%);            // Cor do hover do fundo do menu
+@cor-fonte-menu-responsivo:#fff;              // Cor da Fonte do Menu Responsivo
+
+
+//Telefone Dropdown ----------------------------------------------------------------------------------------------------
+@botao-telefone-cor-fundo:@cor1;                // Cor do Fundo dos botao telefone
+@botao-telefone-cor-icone:#fff;               // Cor de dentro do icone do botao telefone
+@botao-telefone-tamanho:45px;                   // Tamanho do botao do telefone
+@botao-telefone-tamanho-icone:25px;             // Tamanho do icone do botao do telefone
+@botao-telefone-radius:50px;                    // Valor do border-radius do botao
+@botao-telefone-margin:15px;                    // Valor da margin-left do botao
+
+@botao-telefone-cor-fundo-hover:darken(@botao-telefone-cor-fundo,10);
+
+@menu-telefone-cor-fundo:@botao-telefone-cor-fundo-hover;
+@menu-telefone-tamanho:190px;
+@menu-telefone-cor-texto:#fff;
+@menu-telefone-font-size:15px;
+
+@menu-telefone-cor-icone-telefone:@menu-telefone-cor-texto;     //cor do icone do telefone do dropdown telefone
+@menu-telefone-tamanho-icone-telefone:21px;                     //Tamanho do icone do telefone do dropdown telefone
+
+@menu-telefone-cor-icone-whatsapp:@menu-telefone-cor-texto;     //cor do icone do whatsapp do dropdown telefone
+@menu-telefone-tamanho-icone-whatsapp:21px;                     //Tamanho do icone do whatsapp do dropdown telefone
+
+@menu-telefone-cor-icone-email:@menu-telefone-cor-texto;        //cor do icone do telefone do dropdown email
+@menu-telefone-tamanho-icone-email:18px;                        //Tamanho do icone do telefone do dropdown email
+
+
+//Menu Fixo ------------------------------------------------------------------------------------------------------------
+@menu-fixo-fundo:#FFF;
+@menu-fixo-borda:@cor3;
+@menu-fixo-cor-fonte:#444;
+@menu-fixo-padding-link:0 22px;
+@menu-fixo-tamanho:16px;
+@menu-fixo-linha:50px;
+@menu-fixo-cor-link-hover:@cor2;
+@menu-fixo-cor-fonte-hover:@cor1;
+
+
+// Botao menu responsivo -----------------------------------------------------------------------------------------------
+@largura-botao-menu:40px;
+@altura-botao-menu:25px;
+@altura-barra-menu:5px;                         // Tamanho de cada uma das 3 barras do menu
+@espacamento-botao-menu:15px;                   // Padding em volta do botão
+@mg-botao-menu:0 15px 0 0;                      // Margin ao redor do botao do menu
+
+@cor-botao-menu:@cor1;
+@cor-botao-menu-ativo:#fff;
+@fundo-botao:darken(@cor1,5%);
+@fundo-menu:darken(@cor1,5%);
+
+
+// Informação Lateral Responsivo ---------------------------------------------------------------------------------------
+@ico-info-lateral:@cor1;                        // Cor do icone do botão que abre o bloco de contato
+@ico-info-lateral-ativo:#fff;                 // Cor Ativa do icone do botão que abre o bloco de contato
+@ico-info-lateral-fundo-ativo:@cor1;            // Cor do fundo icone do botão que abre o bloco de contato está Ativo
+
+@info-lateral-fundo:@cor1;                      // Cor do fundo do bloco de contato do responsivo
+@texto-info-lateral: #fff;                    // Cor dos textos e links do bloco de contato do responsivo
+
+@tamanho-fonte-email-lateral:14px;              // Tamanho da fonte do email do bloco de contato do responsivo
+
+@tamanho-fonte-botao-contato:15px;              // Tamanho da fonte do Botão de Contato do bloco de contato do responsivo
+@fundo-botao-contato:@cor3;                     // Cor do fundo do Botão de Contato do bloco de contato do responsivo
+@texto-botao-contato: #fff;                   // Cor do texto do Botão de Contato do bloco de contato do responsivo
+
+// CONFIGURAÇÃO PADRÃO - FINAL =========================================================================================
+
+
+
+#headerBlock{
+    .pr;
+    .fw(500);
+    .center-flex;
+    .bdt(@cor1,3px);
+    .bg-color(@cor-fundo-topo);
+    z-index: 1001;
+}
+
+.topo{
+    .topo2;
+    .h(@logo-h);
+}
+
+.topo-interna{
+    .topo2;
+    .h(@logo-h);
+}
+
+.topo1(){
+    .bloco-1;
+    .pd(0 20px);
+}
+
+.topo2(){
+    .full-max;
+}
+
+.logo{
+    .fl;
+    .db;
+    .bg-size;
+    .size(@logo-w,@logo-h);
+    .bg('logo.png',center);
+}
+
+.topo-right{
+    .fr;
+    .aic;
+    .full-h;
+    .flex-between;
+}
+
+.bloco-telefone{
+    .fr;
+    .df;
+    .aic;
+    height: 100%;
+}
+
+.telefone{
+    .fr;
+    .pr;
+    .fs(@tamanho-fonte-telefone-topo);
+    .pdl(@tamanho-icone-telefone-topo+10px);
+    color:@cor-texto-telefone-topo;
+
+    a{
+        cursor:default;
+        color:@cor-texto-telefone-topo;
+    }
+
+    i{
+        .pa-tl(50%);
+        .fs(@tamanho-icone-telefone-topo);
+        .mgt(-@tamanho-icone-telefone-topo/2);
+        color:@cor-icone-telefone-topo;
+    }
+
+}
+
+.whatsapp{
+    .pr;
+    .fs(@tamanho-fonte-whatsapp-topo);
+    .pdl(@tamanho-icone-whatsapp-topo+10px);
+    color:@cor-texto-whatsapp-topo;
+
+    i{
+        .fl;
+        .pa-tl(50%);
+        .fs(@tamanho-icone-whatsapp-topo);
+        .mgt(-@tamanho-fonte-whatsapp-topo/2);
+        color:@cor-icone-whatsapp-topo;
+    }
+
+}
+
+.menu{
+    .fr;
+    .mgl(5px);
+}
+
+.p-bottom{
+    .fl;
+    .full-max;
+    .h(@linha-menu);
+    background:@cor1;
+
+    &:after{
+        .ab;
+        .pa-bl(0,0,-1);
+        .size(100%,@linha-menu);
+        background:@cor1;
+
+    }
+
+    .busca{
+        .dn;
+    }
+
+}
+
+.topo-area{
+
+    .acesso-topo{
+        margin-top: 25px;
+    }
+
+}
+
+.voltar-home{
+    .borda;
+    .fs(14px);
+    .ease-out;
+    .flex-meio;
+    .mgr(20px);
+    .pd(0 10px);
+    .linha(38px);
+    .bg-color(@cor1);
+    color:#fff;
+
+    i{
+        .fs(20px);
+        .mgr(10px);
+        color:#fff !important;
+    }
+
+    &:hover{
+        .bg-color(darken(@cor1,10));
+        color:#fff;
+    }
+
+}
+
+.telefone-menu{
+    .pr;
+    .telefone-menu2;
+
+    &:hover{
+        .abrir-fone{
+
+            & + .fone-dropdown{
+                .op;
+                visibility: visible;
+            }
+        }
+
+    }
+
+    @media only screen and (max-width:1023px){
+        .dn;
+    }
+
+}
+
+.telefone-menu1(){
+
+    .abrir-fone{
+
+        i{
+            .flex-meio;
+            cursor:pointer;
+            .ease-out;
+
+            .icon-phone4;
+            .size(@botao-telefone-tamanho);
+            .bg-color(@botao-telefone-cor-fundo);
+            .c(@botao-telefone-cor-icone);
+            .borda(@botao-telefone-radius);
+            .fs(@botao-telefone-tamanho-icone);
+            .mgl(@botao-telefone-margin);
+
+            &:hover{
+                .bg-color(@botao-telefone-cor-fundo-hover);
+            }
+
+            &.on{
+                .bg-color(@botao-telefone-cor-fundo-hover);
+            }
+
+        }
+
+    }
+
+}
+
+.telefone-menu2(){
+    .df;
+    .aic;
+    .borda;
+    .ease-out;
+    .pd(0 0 0 15px);
+    .c(@botao-telefone-cor-icone);
+    .bg-color(@botao-telefone-cor-fundo);
+    cursor:pointer;
+
+    &:hover{
+        .bg-color(@botao-telefone-cor-fundo-hover);
+    }
+
+    .abrir-fone{
+
+        i{
+            .ease-out;
+            .flex-meio;
+            .icon-phone;
+            .c(@botao-telefone-cor-icone);
+            .size(@botao-telefone-tamanho);
+            .fs(@botao-telefone-tamanho-icone);
+            cursor:pointer;
+
+            &.on{
+                .bg-color(@botao-telefone-cor-fundo-hover);
+            }
+        }
+
+    }
+}
+
+.fone-dropdown{
+    .vh;
+    .borda;
+    .op(0);
+    .ease-out;
+    .pa-tr(70px,-15px,1000);
+    .c(@menu-telefone-cor-texto);
+    .fs(@menu-telefone-font-size);
+    .bg-color(@menu-telefone-cor-fundo);
+    padding:20px;
+    min-width: @menu-telefone-tamanho;
+    filter:drop-shadow(0 0 4px rgba(0,0,0,.65));
+
+    &:after{
+        .ab;
+        .borda(3px);
+        .size(40px);
+        .bg-color(@menu-telefone-cor-fundo);
+        .rotate(45deg);
+        .pa-tr(-12px,18px,-1);
+    }
+
+    &:before{
+        .ab;
+        .size(100%,70px);
+        .pa-tl(-70px,0);
+    }
+
+
+
+    .telefone{
+        .bloco-1;
+        .fl;
+        .pdl(@menu-telefone-tamanho-icone-telefone+10px);
+        .mgb(10px);
+        i{
+            .fs(@menu-telefone-tamanho-icone-telefone);
+            color:@menu-telefone-cor-icone-telefone;
+            .mgt(-@menu-telefone-tamanho-icone-telefone/2);
+        }
+    }
+    .whatsapp{
+        .bloco-1;
+        .fl;
+        .pdl(@menu-telefone-tamanho-icone-whatsapp+10px);
+
+        i{
+            .fs(@menu-telefone-tamanho-icone-whatsapp);
+            color:@menu-telefone-cor-icone-whatsapp;
+            .mgt(-@menu-telefone-tamanho-icone-whatsapp/2);
+        }
+    }
+
+    &:hover{
+        .op;
+        .vv;
+    }
+
+    a{
+        .c(@menu-telefone-cor-texto);
+        cursor:default;
+    }
+
+    &.on{
+        .op;
+        .vv;
+    }
+
+
+}
+
+
+// Menu Principal --------------------------------------------------------------
+
+.menu {
+    margin:0;
+    transform:translate(0, 0px);
+
+    .full-max {
+        width: 87%;
+    }
+
+    @media only screen and (min-width:1024px) {
+        transform: translate(0) !important;
+    }
+
+}
+
+.pmenu{
+    .fr;
+
+    a{
+        .fl;
+        .db;
+        .pr;
+        .ofh;
+        .ease-out;
+        .linha(@linha-menu);
+
+        /*Personalizacao do menu*/
+        .fw(500);
+        color:@cor-fonte-menu;
+        padding:@padding-link-menu;
+        font-size:@tamanho-fonte-menu;
+
+        &:after {
+            .ab;
+            .ease-out;
+            .size(100%,4px);
+            .bg-color(@cor1);
+            .pa-bl(-4px, 0, 5);
+        }
+    }
+
+    li{
+        .fl;
+        .pr;
+        width: auto;
+
+        &:hover > .psubmenu{
+            .db;
+        }
+        &:hover > .psubmenu{
+            .db;
+            .op;
+            .vv;
+            .translatey(0px);
+        }
+
+        &:hover > a, &.act_path a {
+            background: transparent;
+            color:@cor-fonte-menu-hover;
+        }
+
+        &:hover {
+            a {
+                &:after {
+                    bottom:0;
+                }
+            }
+        }
+
+    }
+
+    .link_sub{
+        .icon-seta07-r;
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        &:before{
+            .c(@cor-fonte-menu);
+            .h(22px);
+            .db;
+            .pa-horiz(22px);
+            position: absolute;
+            bottom: 25px;
+            transform: rotate(90deg);
+            font-size: 22px;
+            .ease-out;
+        }
+
+        a{
+            .fonte;
+        }
+
+        &:hover {
+            &:before {
+                .c(@cor-fonte-menu-hover);
+            }
+        }
+
+    }
+
+    .psubmenu{
+        .op(0);
+        .vh;
+        .pa-tl(103px,0px,999);
+        .box;
+        background:@cor-fundo-submenu;
+        padding:@padding-submenu;
+        width:@largura-submenu;
+        .borda;
+        .sombra2(2px 2px 10px fade(#000,65));
+        .translatey(15px);
+        .linear(0.2s);
+
+        li{
+            .full;
+            margin:0;
+        }
+
+        a{
+            .box;
+            .full;
+            .linha(@linha-submenu);
+            font-size:@tamanho-fonte-submenu!important;
+            color:@cor-fonte-submenu !important;
+            padding:@padding-link-submenu;
+            .borda;
+
+            &:after {
+                .dn;
+            }
+
+            @media only screen and (max-width:1023px) {
+                .borda(0);
+            }
+
+            &:hover{
+                background:@cor-hover-submenu;
+                color:@cor-fonte-submenu-hover;
+            }
+
+        }
+
+
+        &:after{
+            .ab;
+            .borda(3px);
+            .size(40px);
+            .bg-color(@cor-fundo-submenu);
+            .rotate(45deg);
+            .pa-tl(-10px,45px,-1);
+        }
+
+    }
+
+}
+
+
+// Menu Fixo -------------------------------------------------------------------
+
+.menu-fixo{
+    .center-flex;
+    .linear;
+    top:-@logo-fixo-h + 5px;
+    left:0;
+    .bg-color(@menu-fixo-fundo);
+
+    .menu{
+        .dn;
+        .op(0);
+        .full-max;
+        .fn;
+        .bg-color(@menu-fixo-fundo);
+        border-top:0;
+
+    }
+
+    .menu-interna{
+        .dn;
+        .op(0);
+        .full-max;
+        .fn;
+    }
+
+    .logo{
+        .size(@logo-fixo-w,@logo-fixo-h);
+        filter:none;
+    }
+
+    .pmenu {
+        .mgr(15px);
+        a{
+            .c(@menu-fixo-cor-fonte);
+            .linha(@menu-fixo-linha);
+            .fs(@menu-fixo-tamanho);
+            .pd(@menu-fixo-padding-link);
+
+            &:after {
+                .dn;
+            }
+
+        }
+
+        /*        .link_sub:before{
+        .c(@cor1);
+        }*/
+
+        li{
+            /*
+            &:hover > a, &.act_path a{
+                //.c(@menu-fixo-cor-fonte-hover);
+                //.bg-color(@menu-fixo-cor-link-hover);
+            }
+            */
+
+            &:hover:before{ color:@cor-fonte-menu-hover;}
+
+        }
+
+        .link_sub {
+
+            &:before {
+                .c(@menu-fixo-cor-fonte);
+                bottom:-8px;
+            }
+
+        }
+
+        .psubmenu{
+            top:58px;
+            left:1px;
+
+            a{
+                padding:@padding-link-submenu;
+            }
+
+        }
+
+    }
+
+    .topo-right {
+        &:before {
+            .dn;
+        }
+    }
+
+    .telefone-menu {
+        .mgl(15px);
+        .bdl(#CCC);
+    }
+
+}
+
+.scroll-to-fixed-fixed{
+    .bdt(@menu-fixo-borda, 3px);
+    .bdb(#B5DBE1);
+    .sombra(2px 0px 10px #555);
+
+    .menu{
+        .db;
+        .op;
+    }
+
+    .menu-interna{
+        .db;
+        .op;
+    }
+
+}
+
+.on.mascara{
+    .size(100%,100vh);
+    .pf;
+    .ease-out;
+    z-index: 1;
+    background:rgba(0,0,0,0.5);
+}
+
+
+// Menu responsivo -------------------------------------------------------------
+
+@media only screen and (max-width:1024px){
+    .menu-fixo{
+        .menu{
+            .bloco-1;
+            padding: 0 15px;
+        }
+    }
+}
+
+@media only screen and (max-width:1023px){
+
+    .botao-menu {
+        .botao-menu2;
+    }
+
+    .menu{
+        .pf;
+        .size(260px,100vh);
+        .box;
+        .ease-out;
+        left:0;
+        z-index:1500;
+        margin:0;
+        background:@fundo-menu;
+        top:73px;
+        overflow: scroll;
+        .transform(translate(-100%,0));
+        .pdb(100px);
+        border-top:0;
+    }
+
+    #headerBlock.on .menu{ left:0}
+
+    .pmenu{
+
+        li{
+            .full;
+            border-bottom:1px solid fade(@cor-fonte-menu-responsivo,30%);
+
+            &:hover > a{
+                &:extend( .pmenu a);
+            }
+
+            &.act_path a{
+                &:extend( .pmenu a);
+            }
+
+            &:before{
+                .dn !important;
+            }
+        }
+
+        a{
+            .bloco-1;
+            .linha(52px);
+            padding:0 20px;
+            color:@cor-fonte-menu-responsivo;
+            font-size: 15px;
+            .borda(0);
+
+        }
+
+        .psubmenu{
+            .translatey(0);
+
+            &:after{
+                .dn;
+            }
+
+            &:before{
+                .dn;
+            }
+
+            .bloco-1;
+            .db;
+            .pr;
+            .fl;
+            top:auto;
+            left:auto;
+            padding:10px 0 35px 20px;
+            background:none;
+            li{ border: none;}
+            .op;
+            .vv;
+            a, a:hover{
+                .linha(40px) !important;
+                padding:0 15px !important;
+                color:@cor-fonte-menu-responsivo !important;
+                font-size:13px !important;
+                border-left:1px solid fade(@cor-fonte-menu-responsivo,30%);
+                background:none;
+            }
+        }
+    }
+
+    .menu-fixo{.dn !important;}
+
+    //slide menu escurecer----  Para escurecer o fundo quando o menu estir ativado tire o !importante do Display:none
+    .ssm-overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0,0,0,0.2);
+        display: none !important;
+        z-index: 1;
+    }
+}
+
+
+// Reset do botao --------------------------------------------------------------
+.clear-button(){
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+    background:none;
+
+}
+
+
+    // MENU 1 -----
+    .botao-menu1(){
+
+        .menu-button(){
+            .size(30px, 5px);
+            .borda(10px);
+            .db;
+            .linear(all linear 0.3s);
+            background: @cor-botao-menu;
+        }
+
+        .db;
+        .pr;
+        .fl;
+        .size(70px);
+        margin: 0 15px 0 0;
+        padding:0;
+        .clear-button;
+
+        span{
+            .menu-button;
+            .pa-tl(50%,20px);
+            margin-top: -2.5px;
+
+            &:before{
+                .menu-button;
+                .pa-tl(10px,0);
+                content: '';
+            }
+
+            &:after{
+                .menu-button;
+                .pa-bl(10px,0);
+                content: '';
+            }
+        }
+
+        &.on{
+
+            background-color: @fundo-botao;
+
+            span{
+
+                &:before{
+                    .transform( rotate(45deg));
+                    top:0px;
+                    background:@cor-botao-menu-ativo;
+                }
+                &:after{
+                    .transform( rotate(-45deg));
+                    bottom:0px;
+                    background:@cor-botao-menu-ativo;
+                }
+
+                background: transparent;
+
+            }
+        }
+    }
+
+
+    // MENU 2
+    .botao-menu2 {
+
+        .menu-button(){
+            .db;
+            .pa;
+            height:4px;
+            background: @cor-botao-menu;
+        }
+
+        .db;
+        .pr;
+        .ofh;
+        .fl;
+        .size(70px);
+        .clear-button;
+        padding: 0;
+        margin: 0 15px 0 0;
+
+        span {
+            .menu-button;
+
+            .transition(background 0s 0.3s);
+            top: 50%;
+            left: 18px;
+            right: 18px;
+            margin-top: -2px;
+
+            &:before{
+                content: "";
+                .menu-button;
+                .full;
+                .transition-delay(0.3s, 0s);
+                .transition-duration(0.3s, 0.3s);
+                .transition-property(top, transform);
+                left: 0;
+                top: -10px;
+            }
+
+            &:after{
+                content: "";
+                .full;
+                .menu-button;
+                .transition-delay(0.3s, 0s);
+                .transition-duration(0.3s, 0.3s);
+                .transition-property(bottom, transform);
+                left: 0;
+                bottom: -10px;
+            }
+
+        }
+
+        &.on{
+            background-color: @fundo-botao;
+
+            span{
+                background: none;
+
+                &:before{
+                    .rotate(45deg);
+                    .transition-delay(0s, 0.3s);
+                    top:0;
+                    background-color:@cor-botao-menu-ativo;
+                }
+
+                &:after{
+                    .rotate(-45deg);
+                    .transition-delay(0s, 0.3s);
+                    bottom: 0;
+                    background-color:@cor-botao-menu-ativo;
+                }
+
+            }
+
+        }
+    }
+
+    .botao-menu3(){
+        .df;
+        .fl;
+        .mg(@mg-botao-menu);
+        align-items: center;
+        padding:@espacamento-botao-menu;
+
+        .menu-button(){
+            .size(100%, @altura-barra-menu);
+            .borda(10px);
+            .db;
+            .linear(all linear 0.3s);
+            background: @cor-botao-menu;
+        }
+
+        ul{
+            .df;
+            .sb;
+            .size(@largura-botao-menu,@altura-botao-menu);
+            flex-flow: nowrap column;
+        }
+
+        li{
+            .menu-button;
+        }
+
+        &.on{
+            background-color: @fundo-botao;
+
+            li{
+                &:nth-of-type(1){
+                    .transform( rotate(45deg));
+                    background:@cor-botao-menu-ativo;
+                }
+
+                &:nth-of-type(2){
+                    background: transparent;
+                }
+
+                &:nth-of-type(3){
+                    .transform( rotate(-45deg));
+                    background:@cor-botao-menu-ativo;
+                }
+
+            }
+
+        }
+
+    }
+
+    .info-lateral{
+        .dn;
+    }
+
+    .ico-fone-responsivo{
+        .dn;
+    }
+
+    @media only screen and (max-width:1023px) {
+        .ico-fone-responsivo{
+            .db;
+            .fr;
+            .borda;
+            .ease-out;
+            padding: 10px;
+            font-size: 30px;
+            margin:10px 10px 0 0;
+            color: @ico-info-lateral;
+
+            &.on{
+                color:@ico-info-lateral-ativo;
+                background:@ico-info-lateral-fundo-ativo;
+            }
+        }
+
+        .info-lateral{
+            .db;
+            .ac;
+            .box;
+            .ease-out;
+            .pa-tr(90px, -110%, 1001);
+            width:90%;
+            padding:20px;
+
+            /*personalização do link para formulario*/
+            .borda;
+            .sombra(0 0 4px rgba(0,0,0,.5));
+            border:1px solid #fff;
+            background:@info-lateral-fundo;
+
+
+            &.on{
+                right:5%;
+            }
+
+            a{
+                color:#FFF;
+            }
+
+            .whatsapp{
+                .pdl(0);
+                .mgt(6px);
+                color:#fff;
+
+                &:before{
+                    content:'WhatsApp';
+                    .db;
+                    .fonte;
+                    .tit1(11px, fade(@texto-info-lateral,50%));
+                }
+
+            }
+
+            .redes{
+                .fn;
+                .ma;
+                .dt;
+                .box;
+                padding:25px 10px;
+
+            span{
+                .fl;
+                .fonte;
+                .bloco-1;
+                .tit1(11px, fade(@texto-info-lateral,50%));
+                padding-bottom: 20px;
+            }
+
+            a{
+                .fn;
+                .dib;
+            }
+
+            i {
+                .c(#FFF);
+                .mg(0 5px);
+                .bd(@cor3,2px);
+                .bg-color(@cor3);
+            }
+        }
+
+
+        .telefone-lateral{
+            .fl;
+            .full;
+            .fonte;
+            font-size: 20px;
+            padding:5px 0 15px;
+            border-bottom:1px solid darken(@info-lateral-fundo,5%);
+        }
+
+        .email-lateral{
+            .fl;
+            .full;
+            padding:12px 0;
+            font-size: @tamanho-fonte-email-lateral;
+            border-bottom:1px solid darken(@info-lateral-fundo,5%);
+        }
+
+        .formulario-contato{
+            .fl;
+            .db;
+            .full;
+            .borda;
+            .fonte;
+            .linha(35px);
+            color:@texto-botao-contato;
+            background:@fundo-botao-contato;
+            font-size:@tamanho-fonte-botao-contato;
+        }
+
+    }
+
+}
+
+
+// Acesso ao menu --------------------------------------------------------------
+.acesso-topo{
+    .fr;
+    .pr;
+    .df;
+    .aic;
+    .borda;
+    .h(@linha-menu);
+    z-index:99;
+}

@@ -1,0 +1,53 @@
+<!--IMAGES_HEADER_START//-->
+[JS]js/jquery.bxslider.js[/JS]
+[JS]
+<script>
+    $(document).ready(function () {
+        $('.slider-banner').bxSlider({
+            mode: "fade",
+            controls: true,
+            pager: true,
+            responsive: true,
+            nextText: "",
+            prevText: "",
+            pause: {TEMPO}000
+        });
+    });
+</script>
+[/JS]
+<div class="banner">
+
+    <ul class="slider-banner">
+        <!--IMAGES_HEADER_END//-->
+
+        <!--IMAGES_ENTRY_START//-->
+        <li>
+            <div class="img-banner" style="background:url({THUMB_ABS}) center no-repeat; background-size:cover;"></div>
+            <div class="legenda-banner">
+
+                <div class="slogan">
+                    [CAPTION]<span class="titulo-banner">{CAPTION}</span>[/CAPTION]
+                    [INFOTEXT]<span class="subtitulo-banner">{INFOTEXT}</span>[/INFOTEXT]
+                    [URL]
+                    <span class="barra-link">
+                        <a href="{URL}" class="link">{BOTAO}</a>
+                    </span>
+                    [/URL]
+                </div>
+            </div>
+
+        </li>
+        <!--IMAGES_ENTRY_END//-->
+
+        <!--IMAGES_ENTRY_SPACER_START//-->
+
+        <!--IMAGES_ENTRY_SPACER_END//-->
+
+        <!--IMAGES_ROW_SPACER_START//-->
+
+        <!--IMAGES_ROW_SPACER_END//-->
+
+        <!--IMAGES_FOOTER_START//-->
+    </ul>
+</div>
+<!--IMAGES_FOOTER_END//-->

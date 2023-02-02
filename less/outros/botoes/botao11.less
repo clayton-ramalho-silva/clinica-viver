@@ -1,0 +1,53 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.botao11(
+@fundo:@cor1,
+@hover:@cor2
+){
+    .pr;
+    .c(@fundo);
+    box-shadow: inset 0 0 0 4px @fundo;
+    transition: color 0.25s 0.1s;
+    .radius(0);
+
+    &:after,&:before{
+        .ab;
+        .pa-br;
+        border: 0 solid transparent;
+        .box;
+        pointer-events: none;
+        .size(0);
+
+        -webkit-transition: border-color 0s, width 0.25s, height 0.25s;
+        transition: border-color 0s, width 0.25s, height 0.25s;
+    }
+
+    &:before{
+        border-bottom-width: 4px;
+        border-left-width: 4px;  
+        -webkit-transition-delay: 0s, 0s, 0.25s;
+        transition-delay: 0s, 0s, 0.25s;
+    }
+
+    &:after{
+        border-top-width: 4px;
+        border-right-width: 4px;
+        -webkit-transition-delay: 0s, 0.25s, 0s;
+        transition-delay: 0s, 0.25s, 0s;
+    }
+
+    &:hover{
+        color: @hover;
+
+        &:after,&:before{
+            border-color: @hover;
+            .size(100%);
+        }
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+
+}

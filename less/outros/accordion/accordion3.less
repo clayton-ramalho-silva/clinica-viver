@@ -1,0 +1,50 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+
+
+//Tabs
+
+.accordion3(){
+    .accordion{
+        .sombra(0 0 10px @p20);
+        .bloco-1;
+        .mgb(@espacom);
+        .radius(if((@accordion[radius] > 25px), 25px, @accordion[radius]));
+
+        &:last-of-type{
+            .mgb(0);
+        }
+    }
+    .accordionButton{
+        .pd(@espaco);
+        .radius(if((@accordion[radius] > 25px), 25px, @accordion[radius]));
+
+        i{
+            .dn;
+        }
+
+        &:hover{
+            .fundo(@accordion[fundo]);
+            .c(@accordion[@hover][titulo]);
+        }
+
+        &.on{
+            .fundo(@accordion[fundo]);
+            .c(@accordion[@hover][titulo]);
+        }
+
+        @media only screen and (max-width:1023px){
+            .pd(@espacom);
+        }
+    }
+
+    .accordionContent{
+        .pd(@espaco);
+
+        @media only screen and (max-width:1023px){
+            .pd(@espacom);
+        }
+    } 
+} 

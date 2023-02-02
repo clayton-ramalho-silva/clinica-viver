@@ -1,0 +1,46 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-9(
+){ 
+    .df;
+    .wrap;
+    .al;
+    max-width: 90%;
+
+    h2{ 
+        .pr;
+        .pdb(15px);
+
+        &:before{
+            .ab;
+            .size(20px,5px);
+            .radius(50px);
+            .fundo(@subtitulo[borda]);
+            .pa-br(0,50px);
+        }
+
+        &:after{
+            .ab;
+            .size(70px,5px);
+            .radius(50px);
+            .fundo(@subtitulo[borda]);
+            .pa-br(0,-30px);
+        }
+    }    
+
+    h3{
+        .full;
+        .mgt(5px);
+        .mgb(5px);
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+
+}

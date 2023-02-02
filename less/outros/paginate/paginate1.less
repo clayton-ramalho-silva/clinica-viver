@@ -1,0 +1,55 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+
+
+.paginate1(){
+
+    .fs(18px);
+
+    //padrao
+    i, .link-page a, .link-page span{
+        .circle(30px);
+        .c(@paginate[cor]);
+        .bd(@paginate[borda]);
+        .mgl(3.5px);
+        .mgr(3.5px);
+        user-select:none;
+    }
+
+    //inativo
+    i{
+        .op(0.3);
+    }
+
+    //hover next/prev
+    a{
+        &:hover{
+            i{
+                .sombra(0 0 0 3px fade(@paginate[@hover][borda],80));
+            }
+        }
+
+        i{
+            .op;
+        }
+    }
+
+    .link-page{
+        //hover numeros
+        a{
+            &:hover{
+                .sombra(0 0 0 3px fade(@paginate[@hover][borda],80));
+            }
+        }
+
+        //ativo
+
+        span{
+            .fundo(@paginate[@ativo][fundo]);
+            .c(@paginate[@ativo][cor]);
+        }
+    }
+}
+

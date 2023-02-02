@@ -1,0 +1,314 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+.esconder(@a) when (@a=off){.dn !important;}
+
+.rodape8(){
+    .df;
+    .sc;
+    .wrap; 
+
+
+    .rodape{
+        .df;
+        .wrap;
+        .sb;
+        .items-rodape(@items-rodape);
+        .items-rodape(@a) when (@a=3){
+
+            .rod-info-completo,.sobre-rod, .facebook-rod,.formulario-rod, .horario-atendimento,.lista-rodape{
+                .w(31%);
+            }
+
+        }
+
+        .items-rodape(@a) when (@a=4){
+
+            .rod-info-completo,.sobre-rod, .facebook-rod,.formulario-rod, .horario-atendimento,.lista-rodape{
+                .w(23%);
+            }
+
+        }
+    }
+
+    .menu-rod{
+        .fb(100%);
+        .full;
+        .flex-meio;
+    }
+
+    .rod-info-completo{
+        .mw(400px);
+        .fl;
+        .pdt(@espaco * 2);
+        .pdb(@espaco * 2);
+        i{
+            .esconder(@icones-rodape);
+            .mgr(@espacom);
+        }
+
+
+        .endereco-rodape{
+            .mgt(@espaco);
+            p{
+                .df;
+                .aic;
+            }
+        }
+
+        .tels-rod{
+            div{
+                &:first-of-type{
+                    .fs(25px);
+                    .fw(700);
+                    .mgt(@espaco);
+                    .df;
+                    .aic;
+
+                    a{
+                        .df;
+                        .aic;
+
+                        &:after{
+                            .ab;
+                            .size(2px,25px);
+                            .fundo(@cor1);
+                            .mgl(10px);
+                        }
+
+                        &:last-of-type{
+                            &:after{
+                                .dn;
+                            }
+                        }
+                    }
+
+                    i{
+                        .fs(25px);
+                        .mgr(10px);
+                    }
+                }
+            }
+        }
+
+        .telefone-rodape{
+            a{
+                .mgr(10px);
+            }
+        }
+
+        .whatsapp-rodape{
+            .df;
+            .aic;
+            a{
+                .mgr(10px);
+            }
+        }
+
+        .email-rodape{
+            .df;
+            .aic;
+            .mgt(@espaco);
+        }
+
+
+
+        .redes-rodape{
+            .mgt(@espaco);
+            .db;
+            .fl;
+            i{
+                .df !important;
+                .mgr(0);
+            }
+        }
+
+        .newsletter-rodape{
+            .full;
+            .fl;
+            .mgt(@espaco);
+
+            section{
+                .pdl(0);
+                .pdr(0);
+            }
+
+            form{
+                .df;
+            }
+
+            .campos1;
+
+            [type=text]{
+                .radius(@radius-padrao-botoes 0 0 @radius-padrao-botoes);
+            }
+
+            [type=submit]{
+                .botao1;
+                .radius(0 @radius-padrao-botoes @radius-padrao-botoes 0);
+            }
+        }
+    }
+
+    .sobre-rod{
+
+        .pd(@espaco * 2 @espacom);
+
+        .redes-rodape{
+            .mgt(@espaco);
+            .db;
+
+            h2{
+                .full;
+            }
+
+            i{
+                .df !important;
+                .mgr(0);
+            }
+        }
+
+    }
+
+    .facebook-rod{
+        .pdt(@espaco);
+        .pdb(@espaco);
+        .ar;
+    }
+
+    .formulario-rod{
+        .pdt(@espaco * 2);
+        .pdb(@espaco * 2);
+
+        section{
+            .pdl(0);
+            .pdr(0);
+        }
+        .campos1;
+
+        form{
+            .full;
+        }
+
+        p{
+            .pdb(10px);
+            &:last-of-type{
+                .pdb(0px);
+            }
+        }
+    }
+
+    .horario-atendimento{
+        .pdt(@espaco * 2);
+        .pdb(@espaco * 2);
+    }
+
+    .lista-rodape{
+        .pdt(@espaco * 2);
+        .pdb(@espaco * 2);
+        section{
+            .pdl(0);
+            .pdr(0);
+        }
+    }
+
+
+
+    .rodape-horiz{ 
+        .fb(100%);
+        .full;
+        .flex-meio;
+        .pd(@espaco * 2 @espacom);
+
+        align-items: flex-start;
+        i{
+            .fs(25px);
+            .mgb(10px);
+        }        
+
+        .endereco-rodape{
+            .full;
+            .mw(300px);
+            .ac;
+            .pdl(10px);
+            .pdr(10px);
+
+            p{
+                .flex-meio;
+                .column;
+            }
+        }
+
+        .tels-rod{
+            .full;
+            .mw(300px);
+            .df;
+            .sc;
+            align-items: flex-start;
+        }
+
+        .telefone-rodape{
+            .mw(150px);
+            .full;
+            .flex-meio;
+            .column;
+            .pdl(10px);
+            .pdr(10px);
+        }
+
+        .whatsapp-rodape{
+            .mw(150px);
+            .full;
+            .flex-meio;
+            .column;
+            .pdl(10px);
+            .pdr(10px);
+        }
+
+        .email-rodape{
+            .full;
+            .mw(300px);
+            .flex-meio;
+            .column;
+            .pdl(10px);
+            .pdr(10px);
+        }
+    }
+
+    .copyright{
+/*        .fundo(@fundo-copyright);*/
+        .center-flex;
+        .pdt(@espacom);
+        .pdb(@espacom);
+
+        .full-max{
+            .box;
+            .ac;
+        }
+    }
+
+    @media only screen and(max-width:1023px){
+        .pdt(0);
+        .pdb(0);
+
+        h4{
+            .fs(30px);
+        }
+
+        iframe{
+            .h(400px);
+        }
+
+        .rodape{
+            .full;
+            .pdt(35px);
+            .pdb(35px);
+            .pdr(15px);
+            .pdl(15px);
+        }
+
+        .mapa-rodape{
+            .full;
+        }
+    }
+}  

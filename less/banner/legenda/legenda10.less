@@ -1,0 +1,198 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner10(){
+    @media only screen and (min-width:1024px){
+
+        .df;
+        align-items: flex-end;
+        justify-content:flex-end;
+
+
+        .slogan{
+            .pd(50px);
+            .mw(50%);
+            .w(50%);
+            .box;
+        }
+
+        .titulo-banner, .subtitulo-banner{
+            position: relative;
+
+            &:before{
+                .ab;
+                width: 0%;
+                height: 100%;
+                background: @cor2;
+                position: absolute;
+                top:0;
+                z-index: 2;
+
+            }
+
+            &:after{
+                .ab;
+                .pa-tl(0,0,1);
+                width: 100%;
+                height: 100%;
+                .fundo(#fff);
+                .op;
+
+            }
+        }
+
+        .titulo-banner{
+            &:before{
+                animation: mainBlock 1s cubic-bezier(.74, .06, .4, .92) forwards;
+            }
+
+            &:after{
+                animation: mainFadeIn 1s forwards;
+                animation-delay: 0.8s;
+            }
+        } 
+
+        .subtitulo-banner{
+            &:before{
+                animation: mainBlock 1s cubic-bezier(.74, .06, .4, .92) forwards;
+                animation-delay: 0.4s;
+            }
+
+            &:after{
+                animation: mainFadeIn 1s forwards;
+                animation-delay: 1s;
+            }
+
+        }
+
+
+        &:after{
+            .ab;
+            .pa-br(0,0,-1);
+            .size(50%,100vh);
+            .fundo(#fff);
+        }
+
+
+
+
+    }
+
+    @media only screen and (max-width:1023px){
+        justify-content: flex-end;
+        .aic;
+        .ac;
+        
+        .slogan{
+            .fundo(#fff);
+            .pd(50px @espacom);
+            .bloco-1;
+        }
+
+        .link{
+            .bt-extra-pequeno !important;
+        }
+
+        .titulo-banner, .subtitulo-banner{
+            position: relative;
+
+            &:before{
+                .ab;
+                width: 0%;
+                height: 100%;
+                background: @cor2;
+                position: absolute;
+                top:0;
+                z-index: 2;
+
+            }
+
+            &:after{
+                .ab; 
+                .pa-tl(0,0,1);
+                width: 100%;
+                height: 100%;
+                .fundo(#fff);
+                .op;
+
+            }
+        }
+
+        .titulo-banner{
+            &:before{
+                animation: mainBlock 1s cubic-bezier(.74, .06, .4, .92) forwards;
+            }
+
+            &:after{
+                animation: mainFadeIn 1s forwards;
+                animation-delay: 0.8s;
+            }
+        } 
+
+        .subtitulo-banner{
+            &:before{
+                animation: mainBlock 1s cubic-bezier(.74, .06, .4, .92) forwards;
+                animation-delay: 0.4s;
+            }
+
+            &:after{
+                animation: mainFadeIn 1s forwards;
+                animation-delay: 1s;
+            }
+
+        }
+
+    }
+
+    @keyframes mainBlock {
+        0% {
+            width: 0%;
+            left: 0;
+
+        }
+        50% {
+            width: 100%;
+            left: 0;
+
+        }
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
+
+    @keyframes secBlock {
+        0% {
+            width: 0%;
+            left: 0;
+
+        }
+        50% {
+            width: 100%;
+            left: 0;
+
+        }
+        100% {
+            width: 0;
+            left: 100%;
+        }
+    }
+
+    @keyframes mainFadeIn {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    @keyframes secFadeIn {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0.5;
+        }
+    }
+}

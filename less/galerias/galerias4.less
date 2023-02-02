@@ -1,0 +1,117 @@
+//@import "../reset"; 
+//@import "../helpers"; 
+
+.galeria4(
+@item:@galeria[item],
+@gap:@galeria[gap],
+@gap:@galeria[fundo]
+
+){
+    ul{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    li{
+        .radius(if((@radius-padrao-botoes > 25px), 25px, @radius-padrao-botoes));
+        .ofh;
+        
+        a{
+            .fl;
+            .pr;
+
+            &:before, &:after{
+                .ab;
+                .pa;
+                .op(0);
+                transform: scale(0);
+            }
+
+            &:before{
+                transition: all .5s ease;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                .fundo(@fundo);
+                z-index: 1;
+                .radius(if((@radius-padrao-botoes > 25px), 25px, @radius-padrao-botoes));
+            }
+
+            &:after{
+                transition: all .6s ease .2s;
+                top: 8px;
+                left: 8px;
+                right: 8px;
+                bottom: 8px;
+                border: 1px solid #aaa;
+                .fundo(@fundo);
+                z-index: 2;
+                .radius(if((@radius-padrao-botoes > 25px), 25px, @radius-padrao-botoes));
+            }
+
+            img{
+                transition: all .6s ease .2s;
+                filter: grayscale(0%);
+                .fl;
+            }
+
+            b{
+                transition: all .6s ease .3s;
+                .pa-tl(0,0,3);
+                .c(#fff);
+                .size(100%);
+                .pd(20px);
+                .box;
+                .flex-meio;
+                .fs(11px);
+                .op(0);
+                .fw(400);
+            }
+
+            i{
+                transition: all .6s ease .3s;
+                .op(0);
+                .pa-meio(20px);
+                z-index: 5;
+                .fs(20px);
+                .c(#fff);
+            }
+
+            &:hover{
+                &:before{
+                    opacity: .5;
+                    transform: scale(1);
+                }
+
+                &:after{
+                    opacity: .35;
+                    transform: scale(1);
+                }
+
+                img{
+                    filter: grayscale(100%);
+                }
+
+                b{
+                    .op;
+                }
+
+                i{
+                    .op;
+                    &:hover{
+                        .scale(1.3);
+                    }
+                }
+
+            }
+        }
+    }
+
+}
+

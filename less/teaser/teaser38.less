@@ -1,0 +1,144 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser38(
+@item:3,
+@cor-titulo:#fff,
+@tamanho-titulo:18px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:13px,
+@fundo:@cor1,
+@fundo-imagem:@cor2,
+@gap:25px,
+@radius:@radius-padrao-botoes
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+        counter-reset: section;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(500px);
+        } 
+    } 
+
+    figure{
+        .fl;
+        .fundo(darken(@fundo-imagem,10));
+    }
+
+    h4{
+        .c(@cor-titulo);
+        .fs(@tamanho-titulo);
+        .al;
+        .pd(25px);
+        .pr;
+
+        &:before{
+            .pa-tl(-60px,25px,1);
+            .db;
+            counter-increment: section;
+            content: "0" counter(section);
+            .fs(40px);
+            .lh(1);
+            .c(#fff);
+        }
+
+    }
+
+    h5{
+        .dn;
+    }
+
+    article{
+        .pr;
+        .ac;
+        .full;
+        .radius(if((@radius > 25px), 25px, @radius));
+        .ofh;
+        .fundo(@fundo);
+
+
+        &:hover{
+            img{
+                filter:grayscale(100%);
+                .op(.5);
+            }
+
+            p, span{
+
+                .pdb(25px);
+                max-height: 500px;
+            }
+
+            .bloco-link{
+                max-height: 500px;
+                .pdb(25px);
+            }
+        }
+
+
+        @media only screen and (max-width:1023px){
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+    }
+
+    .bloco-link{
+        .pd(0 25px);
+        .fl;
+        .ease;
+        max-height: 0px;
+        .h(100%);
+        .box;
+    }
+
+    .link{
+        .fl;
+        .bt-pequeno;
+        .botao4(#fff,@cor1);
+    }
+
+    img{
+        filter: grayscale(0);
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .pr;
+        z-index: 1;
+        .fl;
+
+    } 
+    .servico-info{
+        .fl;
+        .full;
+        .fundo(darken(@fundo,10));
+        .pa-bl(0,0,1);
+
+
+
+
+        p, span{
+            .ease;
+            .al;
+            max-height: 0px;
+            .pd(0 25px);
+
+            /*text-overflow: ellipsis;*/ 
+            .ofh;
+            .h(100%);
+            /*white-space: nowrap;*/ 
+            .full;
+            .box;
+            .c(fade(@cor-texto,70));
+
+        }
+    }
+}

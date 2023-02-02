@@ -1,0 +1,133 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser35(
+
+@cor-titulo:@cor1,
+@cor-texto:@cor-fonte-site,
+@tamanho-titulo:50px,
+@tamanho-texto:@tamanho-fonte-site,
+@cor-borda:@cor-titulo,
+@largura:250px
+)
+{ 
+    .divider{
+        .dn;
+    }
+
+    section{
+        .df;
+        @media only screen and (max-width:1023px){
+            .column;
+        }
+    }
+
+
+    .subtitulo{
+        .bloco-1;
+        .df;
+        .column;
+        .sc;
+        @media only screen and (min-width:1024px){
+            .pdr(@espaco * 2);
+        }
+    }
+
+
+    h2,h3{
+        &:after, &:before{
+            .dn;
+        }
+
+        .al;
+
+        @media only screen and (max-width:1023px){
+            .ac;
+        }
+    }
+
+    h4{
+        .fw(700);
+        .fs(@tamanho-titulo);
+        .c(@cor-titulo);
+
+        .fl;
+        min-width: @largura;
+
+        .ac;
+
+        @media only screen and (max-width:1023px){
+            .fs(35px);
+            min-width:180px;
+        }
+    }
+
+    .grid{
+        .df;
+        .column;
+        .bloco-1;
+        @media only screen and (min-width:1024px){
+            .pdl(@espaco * 2);
+            .bdl(@cor-borda);
+        }
+
+        @media only screen and (max-width:1023px){
+            .mgt(@espaco);
+            .pdt(@espaco);
+            .bdt(@cor-borda);
+
+        }
+
+
+
+    } 
+
+    figure{
+        .dn;
+    }
+
+    .servico-info{
+        .flex-meio;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    article{
+        .c(@cor-texto);
+        .fs(@tamanho-texto);
+        .pdt(@espaco);
+        .pdb(@espaco);
+    }
+
+    /*    .clear{
+            justify-content: flex-start;
+        }*/
+
+    .bloco-link{
+        .dn;
+    }
+
+    .link{
+
+        .bt-extra-pequeno;
+
+    }
+
+
+
+    .link{
+        .botao4(@cor-texto);
+    }
+
+
+
+}
+
+
+
+
+
+
+
+
+

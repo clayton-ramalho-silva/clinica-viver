@@ -1,0 +1,48 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+@import "redes1";
+@import "redes2";
+@import "redes3";
+
+.redes{
+    .df;
+
+    .tipo-redes-topo(@tipo-redes-sociais);
+    .tipo-redes-topo(@a) when (@a=1){
+        .redes1;
+    }
+    .tipo-redes-topo(@a) when (@a=2){
+        .redes2;
+    }
+    .tipo-redes-topo(@a) when (@a=3){
+        .redes3;
+    }
+
+    a{
+        .mgl(2.5px);
+        .mgr(2.5px);
+    } 
+
+    i{
+
+        .flex-meio;
+        .ease-out;
+        .radius(@redes-sociais[radius]);
+        .size(@redes-sociais[@topo][tamanho] + 5px);
+        .fs(@redes-sociais[@topo][tamanho]);
+    }
+
+}
+
+.topo{
+    .redes-topo{
+        .esconder(@topo-redes);
+    }
+}
+
+.btr{
+    .redes-topo{
+        .esconder(@barra-topo-redes);
+    }
+}

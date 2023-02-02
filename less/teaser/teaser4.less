@@ -1,0 +1,127 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser4(
+@item:3, 
+@hover:#000,
+@cor-titulo:#fff,
+@tamanho-titulo:20px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:15px,
+@gap:25px,
+@pb:off,
+@radius:@radius-padrao-botoes
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(600px);
+        }
+    }
+
+    article{
+        .pr;
+        .ofh;
+        .box;
+        -webkit-user-select: none;
+        .radius(if((@radius > 25px), 25px, @radius));
+
+        &:hover{
+            .servico-info{
+                .translatey(0);
+                .op;
+
+                h4,p,.bloco-link,span{
+                    .op;
+                    transform: translate3d(0, 0, 0);
+                }
+            }
+
+            img{
+                .scale(1.2);
+
+                .grayscale(@pb);
+                .grayscale(@a) when (@a=on){
+                    .pb;
+                }
+            }
+
+
+
+        }
+
+        @media only screen and (max-width:1023px){
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+    }
+
+    img{ 
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .fl;
+    }
+
+
+    .servico-info{
+        .size(100%);
+        .column;
+        .flex-meio;
+        flex-wrap:nowrap;
+        .fundo(fade(@hover,70));
+        .pa-tl;
+        .translatey(30%);
+        .op(0);
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .box;
+        .pd(20px);
+        .fs(@tamanho-texto);
+        .c(@cor-texto);
+        .ac;
+
+        p, span{
+            .op(0);
+            transform: translate3d(0,20%, 0);
+            transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) .3s;
+        }
+    }
+
+    h4 {
+        .mgb(@espacom);
+        .c(@cor-titulo);
+        .fs(@tamanho-titulo);
+        .tu;
+        .op(0);
+        letter-spacing: 2px;
+        transform: translate3d(0%, 20%, 0);
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) .2s;
+
+    }
+
+
+    h5 {
+        .dn;
+    }
+
+    .bloco-link{
+        .op(0);
+        .mgt(@espaco);
+        transform: translate3d(0,20%, 0);
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1) .4s;
+    }
+
+    .link{
+        .bt-extra-pequeno;
+        .botao1;
+    }
+}

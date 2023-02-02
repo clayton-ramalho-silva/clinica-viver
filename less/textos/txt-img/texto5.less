@@ -1,0 +1,98 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+.texto5(
+@titulo:@texto[titulo];
+@subtitulo:@texto[subtitulo];
+@borda:@texto[borda];
+@radius:@texto[radius];
+@botao:@texto[botao];
+){
+    .bloco(2);
+    .pdl(@espaco);
+    .pdr(@espaco);
+    .box;
+
+    section{
+        .box;
+        .pd(@espacom * 2);
+        .sombra(0 0 10px @p15);
+        .radius(@radius);
+        .df;
+
+        gap:50px;
+
+        @media only screen and (max-width:1023px){
+            .wrap;
+            .column;
+        }
+    }
+
+    .texto{
+        .df;
+        .column;
+    }
+
+    figure{
+        @media only screen and (max-width:1023px){
+            .full;
+            .flex-meio;
+        }
+
+    }
+
+    img{
+        .radius(15px);
+
+        @media only screen and (min-width:1024px){
+            .mw(none);
+        }
+    }
+
+
+    h2{
+        .c(@titulo) !important;
+        .fs(40px);
+        .al;
+        .fw(400);
+
+        @media only screen and (max-width:1023px){
+            .fs(30px) !important;
+        }
+    }
+
+    h3{
+        .c(@subtitulo) !important;
+        .fs(25px);
+        .al;
+
+        @media only screen and (max-width:1023px){
+            .fs(18px) !important;
+        }
+    }
+
+    ul{
+        .pdl(15px);
+    }
+
+    li{
+        list-style: disc;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+    }
+
+    .link{
+        .bt-pequeno;
+        .botao1(@fundo:@borda,@cor-texto:@botao);
+    }
+
+    @media only screen and (max-width:1023px){
+        .pdl(10px);
+        .pdr(10px);
+    }
+}
+

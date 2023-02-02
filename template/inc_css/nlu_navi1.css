@@ -1,0 +1,214 @@
+/* CSS Document */
+/* ====================================================================== 
+   >= V1.30   CSS for an vertical menu 
+   <div class="nlu_navi1">{ NAV_LIST_UL:F,0,,act_path,active }</div> 
+   Level 0 - 3; 
+   26.03.07 flip-flop (KH) 
+    
+========================================================================= */ 
+    
+.nlu_navi1 {margin:0; padding:0; border:0; text-decoration:none; display:block;} 
+.nlu_navi1 em {font-style: normal;} 
+.nlu_navi1 ul {margin:0 5px 0 0px; padding:0; border:0; list-style-type: none;} 
+.nlu_navi1 ul li {position: relative;}
+
+/* ==== Styles for Menu Items =================================== */ 
+
+/* ==== LEVEL X ================================================= */ 
+
+/* ====  simple link <a> // einfacher Link <a> ==== */ 
+.nlu_navi1 ul li a, .nlu_navi1 ul li a:link, .nlu_navi1 ul li a:visited, .nlu_navi1 ul li a:active {display:block; text-decoration:none; text-transform:none; color:#FFFFFF; font-weight:bold; padding-top:2px; padding-bottom:2px; border-bottom:0px solid #ccc; \width:160px; widt\h:160px; padding-left:20px; background-image:url(../../images/menu_off.gif); background-repeat:no-repeat; background-position:left;} 
+
+/* ====  Aktiv, wenn ein Sublevel vorhanden ist // active point if there is a sub_level ==== */ 
+.nlu_navi1 ul li.sub_ul_true a, .nlu_navi1 ul li.sub_ul_true a:link, .nlu_navi1 ul li.sub_ul_true a:visited, .nlu_navi1 ul li.sub_ul_true a:active {color:#FFFFFF; font-weight:bold; padding-left:20px;} 
+
+/* ====  Aktiver Pfad - Linkverfolgung im Baum // active path in tree (link tracing) ==== */ 
+.nlu_navi1 ul li.act_path a, .nlu_navi1 ul li.act_path a:link, .nlu_navi1 ul li.act_path a:visited, .nlu_navi1 ul li.act_path a:active {color:#FFFFFF; font-weight:bold; padding-left:20px;} 
+
+/* ====  active link <a> // aktiver Link <a> ==== */ 
+.nlu_navi1 ul li.active a, .nlu_navi1 ul li.active a:link, .nlu_navi1 ul li.active a:visited, .nlu_navi1 ul li.active a:active {font-weight:bold; background-image:url(../../images/menu_on.gif); background-repeat:no-repeat; background-position:left; padding-left:20px;} 
+
+/* ====  hover: Maus über Link <a> // hover link <a> ==== */ 
+.nlu_navi1 ul li a:hover {color:#FFFFFF; padding-left:20px; padding-top:2px; padding-bottom:2px;} 
+.nlu_navi1 ul li.sub_no a:hover {color:#ffffff; padding-left:20px; padding-top:2px; padding-bottom:2px;} 
+.nlu_navi1 ul li.sub_ul a:hover {}
+ 
+/* ====  hover: Wenn Sublevel vorhanden <a> // hover: "if there is a sub_level" <a> ==== */ 
+.nlu_navi1 ul li.sub_ul_true a:hover {} 
+
+/* ====  hover: Der aktive Link <a> // hover: "Only for the active link" <a> ==== */ 
+.nlu_navi1 ul li.active a:hover {} 
+
+/* ==== LEVEL X+1 =============================================== */ 
+
+.nlu_navi1 ul ul li.sub_no a, 
+.nlu_navi1 ul ul li.sub_no a:link, 
+.nlu_navi1 ul ul li.sub_no a:visited, 
+.nlu_navi1 ul ul li.sub_no a:active, 
+.nlu_navi1 ul ul li.sub_ul a, 
+.nlu_navi1 ul ul li.sub_ul a:link, 
+.nlu_navi1 ul ul li.sub_ul a:visited, 
+.nlu_navi1 ul ul li.sub_ul a:active { 
+   display: block; 
+   text-decoration: none; 
+   text-transform: none; 
+   font-weight: bold; 
+   color: #FFFFFF; 
+   	padding-top: 2px;
+	padding-bottom: 2px;
+   border-bottom: 0px solid #ccc; /* IE6 Bug */ 
+   \width:130px;  /* IE5x Opera <= 5 */ 
+   widt\h: 130px;  /* = (Width of Menu Items) - (padding-right + left) */ 
+} 
+
+/* state for the active point if there is a sub_level */ 
+.nlu_navi1 ul ul li.sub_ul_true a, 
+.nlu_navi1 ul ul li.sub_ul_true a:link, 
+.nlu_navi1 ul ul li.sub_ul_true a:visited, 
+.nlu_navi1 ul ul li.sub_ul_true a:active { 
+   color: #FFFFFF; 
+   font-weight: bold;
+   padding-left: 20px; 
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+/* state for the active path (link tracing) */ 
+.nlu_navi1 ul ul li.act_path a, 
+.nlu_navi1 ul ul li.act_path a:link, 
+.nlu_navi1 ul ul li.act_path a:visited, 
+.nlu_navi1 ul ul li.act_path a:active { 
+   color: #FFFFFF; 
+   font-weight: bold;
+   padding-left: 20px; 
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+
+/* state for the active link */ 
+.nlu_navi1 ul ul li.active a, 
+.nlu_navi1 ul ul li.active a:link, 
+.nlu_navi1 ul ul li.active a:visited, 
+.nlu_navi1 ul ul li.active a:active { 
+   color: #FFFFFF; 
+   font-weight: bold; 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+
+.nlu_navi1 ul ul li a:hover { 
+   color: #FFFFFF; 
+text-decoration: underline;
+} 
+.nlu_navi1 ul ul li.sub_no a:hover { 
+   color: #FFFFFF; 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+.nlu_navi1 ul ul li.sub_ul a:hover { 
+} 
+/* Only for "if there is a sub_level" */ 
+.nlu_navi1 ul ul li.sub_ul_true a:hover { 
+} 
+
+/* Only for the active link */ 
+.nlu_navi1 ul ul li.active a:hover { 
+} 
+
+    
+/* ==== LEVEL X+2 =============================================== */ 
+
+.nlu_navi1 ul ul ul li.sub_no a, 
+.nlu_navi1 ul ul ul li.sub_no a:link, 
+.nlu_navi1 ul ul ul li.sub_no a:visited, 
+.nlu_navi1 ul ul ul li.sub_no a:active, 
+.nlu_navi1 ul ul ul li.sub_ul a, 
+.nlu_navi1 ul ul ul li.sub_ul a:link, 
+.nlu_navi1 ul ul ul li.sub_ul a:visited, 
+.nlu_navi1 ul ul ul li.sub_ul a:active  { 
+   display: block; 
+   text-decoration: none; 
+   text-transform: none; 
+   font-weight: normal; 
+   color: #FFFFFF; 
+   border-bottom: 1px solid #ccc; /* IE6 Bug */ 
+   \width: 130px;  /* IE5x Opera <= 5 */ 
+   widt\h: 130px;  /* = (Width of Menu Items) - (padding-right + left) */ 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+/* state for the active point if there is a sub_level */ 
+.nlu_navi1 ul ul ul li.sub_ul_true a, 
+.nlu_navi1 ul ul ul li.sub_ul_true a:link, 
+.nlu_navi1 ul ul ul li.sub_ul_true a:visited, 
+.nlu_navi1 ul ul ul li.sub_ul_true a:active { 
+   color: #FFFFFF; 
+   font-weight: normal; 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+/* state for the active path (link tracing) */ 
+.nlu_navi1 ul ul ul li.act_path a, 
+.nlu_navi1 ul ul ul li.act_path a:link, 
+.nlu_navi1 ul ul ul li.act_path a:visited, 
+.nlu_navi1 ul ul ul li.act_path a:active { 
+   color: #FFFFFF; 
+   font-weight: bold; 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+
+/* state for the active link */ 
+.nlu_navi1 ul ul ul li.active a, 
+.nlu_navi1 ul ul ul li.active a:link, 
+.nlu_navi1 ul ul ul li.active a:visited, 
+.nlu_navi1 ul ul ul li.active a:active { 
+   color: #FFFFFF; 
+   font-weight: bold; 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+
+
+.nlu_navi1 ul ul ul li a:hover { 
+   color: #FFFFFF;
+   padding-left: 20px; 
+   	padding-top: 2px;
+	padding-bottom: 2px;
+text-decoration: underline; 
+} 
+.nlu_navi1 ul ul ul li.sub_no a:hover { 
+   color: #FFFFFF; 
+   padding-left: 20px;
+   	padding-top: 2px;
+	padding-bottom: 2px;
+} 
+.nlu_navi1 ul ul ul li.sub_ul a:hover { 
+} 
+/* Only for "if there is a sub_level" */ 
+.nlu_navi1 ul ul ul li.sub_ul_true a:hover {  
+} 
+
+/* Only for the active link */ 
+.nlu_navi1 ul ul ul li.active a:hover { 
+} 
+/*==== END LEVEL X ============================================= */ 
+
+/* Holly Hack. IE Requirement \*/ 
+* html .nlu_navi1 ul li { float: left; height: 21px; } 
+* html .nlu_navi1 ul li a { height: 21px; } 
+
+/* ==== End  nlu_navi1 ========================================= */ 
+
+

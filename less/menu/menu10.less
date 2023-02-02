@@ -1,0 +1,78 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu10(){
+    .topo-right .bloco-telefone, .topo-right .redes, .topo-right .busca{
+        .dn !important; 
+    }
+
+    li{
+        &:hover > a{
+            .c(@menu[@link][hover]); 
+        }
+    }
+
+    .ativo{
+        a{
+            .c(@menu[@link][ativo]);
+        }
+    }
+
+    #toggle.button_container {
+        @media only screen and (min-width:1024px){
+
+            
+            .df !important;
+            .pa-tr(50%,30px,1);
+            .translatey(-35px/2);
+
+            i{
+                .c(@menu[@botao][cor]);
+                .fs(25px);
+                transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            }
+       
+        }
+    }
+
+    @media only screen and (min-width:1024px){
+        .topo-right{
+            .menu{
+                transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+                .pdr(0);
+                .op(0);
+                .vh;
+            }
+        }
+    }
+
+    .menu-toggle{
+        .db;
+    }
+    
+    .topo{
+        .pr;
+    }
+
+    .travar{
+        @media only screen and (min-width:1024px){
+
+            overflow: auto !important;
+            .topo-right{
+                .menu{
+                    .op;
+                    .pdr(60px);
+                    .vv;
+                }
+            }
+            
+            .button_container {
+                i{
+                    .rotate(180deg);
+                }
+            }
+        }
+
+    }
+}

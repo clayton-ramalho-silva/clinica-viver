@@ -1,0 +1,86 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.newsletter2(){
+    .ac;
+
+    .campos2(
+    @cor:@newsletter[@campos][texto],
+        @borda:@newsletter[@campos][borda],
+        @placeholder:@newsletter[@campos][texto]
+        );
+
+    section{
+        .flex-meio;
+    }
+
+    h2{
+        @media only screen and (min-width:1024px){
+            .pdr(30px);
+            .ar;
+        }
+
+        @media only screen and (max-width:1023px){
+            .mgb(15px);
+        }
+    }
+
+    h3{
+        .dn;
+    }
+
+    #newsletter{
+        .full;
+        .pr;
+        @media only screen and (min-width:1024px){
+            .fb(50%);
+        }
+
+        @media only screen and (max-width:1023px){
+            .flex-meio;
+            .column;
+        }
+    }
+
+    form{
+        .full;
+        .mw(600px);
+        .df;
+
+        @media only screen and (max-width:1023px){
+            .column;
+            .flex-meio;
+        }
+    }
+
+    [type=submit]{
+        .botao1(@fundo:@newsletter[@submit][fundo],@hover:@newsletter[@submit][hover]);
+        @media only screen and (min-width:1024px){
+            .bt-medio;
+            .mgl(@espacom);
+        }
+
+        @media only screen and (max-width:1023px){
+            .mg(@espacom auto 0);
+            .bt-pequeno;
+            .mw(280px);
+        }
+    }
+
+    .texto-erro{
+        @media only screen and (min-width:1024px){
+            .pa-tl;
+            .translatey(-100%);
+        }
+        .fs(@newsletter[@erro][tamanho]);
+        .c(@newsletter[@erro][cor]);
+        .al;
+    }
+
+    .obrigado{
+        .al;
+        @media only screen and (max-width:1023px){
+            .ac;
+        }
+    }
+}  

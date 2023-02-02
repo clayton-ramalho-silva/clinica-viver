@@ -1,0 +1,149 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+.rodape2(){
+    .slogan-rod{.dn;}
+
+    .rodape{
+        .pdt(@espaco);
+        .pdb(@espaco);
+        .column;
+        .df;
+        .aic;
+        .ac;
+
+        @media only screen and(max-width:1023px){
+            .pdt(35px);
+            .pdb(35px);
+        }
+    }
+
+    .menu-rod{
+        .full;
+        .df;
+        .sc;
+        .aic;
+        .mgt(@espaco);
+        .mgb(@espaco);
+        .pr;
+
+        &:before{
+            .pa-tl(50%);
+            .ab;
+            .size(100%,1px);
+            .fundo(@rodape[@menu][cor]);
+        }
+    }
+
+    .pmenu{
+        .fundo(@rodape[fundo]);
+        .df;
+        z-index: 1;
+        .pdr(@espacom);
+        .pdl(@espacom);
+
+        a{
+            .c(@rodape[@menu][cor]);
+            .fs(@rodape[@menu][tamanho]);
+        }
+    }
+
+    .rod-info{
+        i{.dn;}
+    }
+
+    .endereco-rodape{
+        .pd(5px 0);
+
+        .endereco-2{
+            .pdt(5px);
+        }
+    }
+
+    .telefone-rodape{
+        &:before{
+            content:'Telefone';
+        }
+    }
+    .whatsapp-rodape{
+        &:before{
+            content:'Whatsapp';
+        }
+    }
+
+    .telefone-rodape, .whatsapp-rodape{
+        .flex-meio;
+        .pd(5px 0);
+        .lh(1.4);
+
+        a{
+            .pd(0 10px);
+            .bdr(@rodape[@fontes][cor]);
+
+            &:last-of-type{
+                border: none;
+            }
+        }
+
+        &:before{
+            .full;
+            .ac;
+            .fs(11px);
+            .fw(700);
+            .c(@rodape[@fontes][cor]);
+            .pdb(5px);
+        }
+    }
+
+    .email-rodape{
+        .flex-meio;
+        .column;
+        .lh(1.4);
+
+        .pd(5px 0);
+
+        &:before{
+            content:'E-mail';
+            .full;
+            .ac;
+            .fs(11px);
+            .fw(700);
+            .c(@rodape[@fontes][cor]);
+            .pdb(5px);
+        }
+    }
+
+    .redes-rodape{
+        .mgt(@espaco);
+        .mgb(@espacom);
+        .sc;
+        .wrap;
+
+        @media only screen and(max-width:1023px){
+            .mgb(0);
+        }
+
+        &:before{
+            .full;
+            .ac;
+            .fs(11px);
+            .fw(700);
+            .c(@rodape[@fontes][cor]);
+            .pdb(5px);
+            .lh(1);
+        }
+    }
+
+    @media only screen and(max-width:1023px){
+        .pdt(0px);
+        .pdb(0px);
+    }
+
+    .copyright{
+        .full;
+        .center-flex;
+        .ac;
+        .pdt(10px);
+        .pdb(10px);
+    }
+}

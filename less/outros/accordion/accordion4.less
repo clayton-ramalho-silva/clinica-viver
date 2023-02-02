@@ -1,0 +1,76 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+
+
+//Tabs
+
+.accordion4(){
+    .accordion{
+        .pr;
+
+        .mgb(@espacom);
+    }
+
+    .accordionButton{
+        .pd(@espacom);
+
+
+        &:before{
+            .ab;
+            .pa-tl;
+            .bd(@accordion[borda]);
+            .size(100%);
+            .box;
+            .ease;
+            .radius(if((@accordion[radius] > 25px), 25px, @accordion[radius]));
+        }
+
+        i{
+            .fs(@accordion[@icone][tamanho]);
+            .c(@accordion[@icone][cor]);
+            .mgr(10px);
+            .ease-out;
+            font-weight: 900;
+            &:before{
+                content: "\f105";
+            }
+        }
+
+        &:hover{
+
+
+            &:before{
+                .bd(@accordion[borda],5px);
+
+                @media only screen and (max-width:1023px){
+                    .bd(@accordion[borda],3px);
+                }
+            }
+        }
+
+        &.on{
+            &:before{
+                .bd(@accordion[borda],5px);
+
+                @media only screen and (max-width:1023px){
+                    .bd(@accordion[borda],3px);
+                }
+            }
+        }
+
+        @media only screen and (max-width:1023px){
+            .pd(10px);
+        }
+    }
+
+    .accordionContent{
+        .pd(@espaco);
+
+        @media only screen and (max-width:1023px){
+            .pd(@espacom);
+        }
+    }
+
+}  

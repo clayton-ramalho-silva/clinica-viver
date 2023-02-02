@@ -1,0 +1,22 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu6(){
+    .pmenu{
+        a{
+            .bd(transparent);
+            .box;
+        }
+        li{
+            &:hover > a{
+                .bd(@menu[@link][hover]);
+                .c(@menu[@link][hover]);
+            }
+        }
+    }
+    .ativo{
+        a{
+            .c(@menu[@link][ativo]);
+        }
+    }
+}

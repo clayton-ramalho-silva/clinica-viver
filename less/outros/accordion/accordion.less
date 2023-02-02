@@ -1,0 +1,54 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+@import "accordion1";
+@import "accordion2";
+@import "accordion3";
+@import "accordion4";
+@import "accordion5";
+
+.bloco-tabs{
+    .bloco(0);
+} 
+    
+.accordion{
+    .bloco-1;
+    i{
+        font-family: 'Font Awesome 5 Free';
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+        display: inline-block;
+        font-style: normal;
+        font-variant: normal;
+        text-rendering: auto;
+        line-height: 1;
+    }
+
+    &:last-of-type{
+        .mgb(0);
+    }
+}
+
+.accordionButton{
+    .bloco-1;
+    .df;
+    .aic;
+    .fs(@accordion[@titulo][tamanho]);
+    .c(@accordion[@titulo][cor]);
+    user-select:none;
+    .ease-out;
+
+    @media only screen and (max-width:1023px){
+        .fs(18px);
+    }
+}
+
+.accordionContent{
+    .c(@accordion[@texto][cor]);
+    .fs(@accordion[@texto][tamanho]);
+
+    @media only screen and (max-width:1023px){
+        .fs(13px);
+    }
+}

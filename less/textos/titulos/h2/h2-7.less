@@ -1,0 +1,34 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-7(
+){
+    .df;
+    .column;
+
+    h3{ 
+        .mgt(5px);
+        .mgb(5px);
+        .fundo(@subtitulo[fundo]);
+        .pd(5px 15px);
+        .radius(@subtitulo[radius]);
+    } 
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+
+    .direcao-sub(@subtitulo[direcao]);
+    .direcao-sub(@a) when (@a=left){
+        align-items: flex-start;
+    }
+
+    .direcao-sub(@a) when (@a=center){
+        .ac;
+        .flex-meio;
+    }
+}

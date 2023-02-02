@@ -1,0 +1,29 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+//botoes 
+ 
+.botao1(
+@fundo:@cor1,
+@cor-texto:#fff,
+@hover:darken(@fundo,10),
+@hover-texto:@cor-texto
+)
+{
+    .bg-color(@fundo);
+    .c(@cor-texto);
+    .ease-out;
+    .dib;
+    .ac;
+
+    &:hover{
+        .bg-color(@hover);
+        .c(@hover-texto);
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+
+}

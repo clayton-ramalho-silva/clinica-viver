@@ -1,0 +1,155 @@
+//@import "../conf-site";
+
+
+//https://www.templatemonster.com/demo/61392.html exemplo
+
+// Reset do botao
+.clear-button(){
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    box-shadow: none;
+    border-radius: none;
+    border: none;
+    cursor: pointer;
+
+    background:none;}
+
+//menu1
+
+.botao-menu1(){
+
+    .menu-button(){
+        .size(30px, 5px);
+        .borda(10px);
+        .db;
+        .linear(all linear 0.3s);
+        background: @cor-botao-menu;
+    } 
+ 
+    .db;
+    .pr;
+    .fl;
+    .size(70px);
+    margin: 0 15px 0 0;
+    padding:0;
+    .clear-button;
+
+    span{
+        .menu-button;
+        .pa-tl(50%,20px);
+        margin-top: -2.5px;
+        
+        &:before{
+            .menu-button;
+            .pa-tl(10px,0);
+            content: '';
+        }
+
+        &:after{
+            .menu-button;
+            .pa-bl(10px,0);
+            content: '';
+        }
+    } 
+
+    &.on{
+        
+        background-color: @fundo-botao;
+
+        span{
+              
+            &:before{
+                .transform( rotate(45deg));
+                top:0px;
+                background:@cor-botao-menu-ativo;
+            } 
+            &:after{
+                .transform( rotate(-45deg));
+                bottom:0px;
+                background:@cor-botao-menu-ativo;
+            }
+
+            background: transparent;
+           
+        }
+    }
+}
+
+//MENU 2
+
+.botao-menu2 {
+
+    .menu-button(){
+        background: @cor-botao-menu;
+        .db;
+        .pa;
+        height:4px;
+    } 
+
+    .db;
+    .pr;
+    .ofh;
+    .fl;
+    .size(70px);
+    margin: 0 15px 0 0;
+    padding: 0;
+    .clear-button;
+
+    span {
+        .menu-button;
+
+        top: 50%;
+        left: 18px;
+        right: 18px;
+        margin-top: -2px;
+        .transition(background 0s 0.3s);
+
+        &:before{
+            content: "";
+            .menu-button;
+            .full;
+            top: -10px;
+            left: 0;
+            .transition-duration(0.3s, 0.3s);
+            .transition-delay(0.3s, 0s);
+            .transition-property(top, transform);
+
+        }
+        &:after{
+            content: "";
+            .menu-button;
+            .full;
+            bottom: -10px;
+            left: 0;
+            .transition-duration(0.3s, 0.3s);
+            .transition-delay(0.3s, 0s); 
+            .transition-property(bottom, transform);
+        }
+    }
+
+    &.on{
+        background-color: @fundo-botao;
+
+        span{ 
+            background: none;
+
+            &:before{
+                top:0;
+                .rotate(45deg);
+                .transition-delay(0s, 0.3s);
+                background-color:@cor-botao-menu-ativo;
+            }
+
+            &:after{
+                bottom: 0;
+                .rotate(-45deg);
+                .transition-delay(0s, 0.3s); 
+                background-color:@cor-botao-menu-ativo;
+            }
+
+        } 
+
+    }
+}

@@ -1,0 +1,54 @@
+/* Reset */
+body, span, p, form, img, a{margin:0; padding:0; border:none; outline:none}.fl{float:left}.fr{float:right}.pr{position:relative}.cb{clear:both}
+
+h3{font-size:26px; color:#658A06; padding:0 0 3px 0; border-bottom:2px solid #557526; font-weight:normal; line-height:normal; font-family:Arial, Helvetica, sans-serif}
+
+body{font-family:verdana}
+.corpo{width:100%; margin:0 auto; z-index:10; -moz-transition:all 300ms; -webkit-transition:all 300ms; transition:all 300ms;}
+.content-total{width:940px; margin:0 auto}
+.accordion{width:880px; background:url(../images/backend_r3_c4.jpg) #FFF repeat-x; padding:17px 30px 0}
+.accordion h1{margin:0 0 15px 0; font-size:20px; font-weight:normal}
+.button{width:880px; background:#A5CD69; font-size:13px; outline:none; color:#fff; border-bottom:1px solid #fff}
+.button a, .button a:hover{text-decoration:none; color:#000}
+.button b{font-family:fonte; color:#144376; font-size:23px; width:578px; display:inline-block; padding:36px 0 12px 0}
+.button span{color:#535353; font-size:12px; width:578px; float:left; padding:0 0 0 22px}
+.button-estrutura{width:880px; background:#557526; font-size:13px; outline:none; color:#fff; border-bottom:1px solid #fff}
+.button-estrutura a, .button-estrutura a:hover{text-decoration:none; color:#FFFFFF}
+.content{width:855px; padding:10px 15px 5px 10px; background:#EBEBEB; font-size:11px}
+.estrutura{background:#79A637; line-height:29px; padding:0 10px; border-left:1px solid #719933}	
+.artigo{padding:6px 8px 5px; width:550px}
+.link-pagina{width:13px; height:13px; margin:1px 8px 0 0; background:url(../images/ico-seo-link.png) no-repeat}
+.caminho-site{position:absolute;right:0;bottom:5px;color:#FFFFFF}
+.caminho-site:hover{color:#FFFFFF}
+.mensagem{margin:9px 0 0 20px; background:#CCC; line-height:21px; padding:0 8px; border-radius:6px}
+.salvando{background:#cccccc; color:#333333}
+.salvo{background:#98BF3C; color:#fff;}
+hr{border-bottom:1px dotted #CCC; border-left:0; border-right:0; border-top:0; height:1px; margin:7px 0; width:180px}
+
+/* Menu Lateral */
+.menu-lateral{background:url(../images/bg-menu-seo.png) repeat-x #F8F8F8; padding:15px 13px 13px; border:1px solid #D6D6D6; border-top:0; width:180px; z-index:100}
+.menu-lateral select{width:180px}
+.menu-lateral span{width:100%; float:left; color:#fff; border-top:1px dotted #ccc; padding:7px 0 14px; margin:14px 0 11px; font-size:11px; color:#426200; font-weight:bold; border-bottom:1px dotted #ccc}
+.menu-lateral strong{font-size:11px; color:#426200; font-weight:bold; float:left; padding:0 0 5px 0; width:100%}
+.bt-sair{width:53px; line-height:22px; background:url(../images/ico-seo-sair.png) no-repeat 16px 7px #D93600; color:#fff; font-size:12px; border-radius:3px; padding:0 0 0 30px}
+.bt-sair:hover{background:url(../images/ico-seo-sair.png) no-repeat 16px 7px #F43E00; color:#fff; text-decoration:none}
+.bt-voltar{width:53px; line-height:22px; background:url(../images/ico-seo-voltar.png) no-repeat 14px 6px #6A9402; color:#fff; font-size:12px; border-radius:3px; margin:0 10px 0 0; padding:0 0 0 26px}
+.bt-voltar:hover{background:url(../images/ico-seo-voltar.png) no-repeat 14px 6px #7AAE02; color:#fff; text-decoration:none}
+#atualizar{margin:15px 0 0 0}
+
+/* Formulários */
+form{float:left; margin:0 0 26px 0}
+td{font-size:13px}
+input[type=text]{width:720px; margin:2px 0 2px 5px; padding:5px; font-family:verdana; border-radius:4px; border:1px solid  #ccc; font-size:12px}
+textarea{width:720px; margin:2px 0 2px 5px; height:50px; padding:5px; font-family:verdana; border-radius:4px; border:1px solid #ccc; font-size:12px}
+select{width:240px; overflow:hidden; margin:6px 0 0 0}
+input[type=submit]{padding:5px 13px 4px 13px; background:#6A9402; color:#FFF; -webkit-border-radius:4px; -moz-border-radius:4px; border-radius:4px; border:solid 1px #628A02; -webkit-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px #CCCCCC; -moz-box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px #CCCCCC; box-shadow:inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 1px #CCCCCC; -webkit-transition-duration:0.5s; -moz-transition-duration:0.5s; transition-duration:0.5s; -webkit-user-select:none; -moz-user-select:none; -ms-user-select:none; user-select:none; cursor:pointer; font-size:12px ;margin:5px 0 5px 4px; float:left}
+input[type=submit]:hover {background:#7AAE02; border:solid 1px #026702; text-decoration:none;}
+input[type=submit]:active {-webkit-box-shadow:inset 0 1px 4px #333333; -moz-box-shadow:inset 0 1px 4px #333333; box-shadow:inset 0 1px 4px #333333; background:#7AAE02; border:solid 1px #026702; -webkit-transition-duration:0.3s; -moz-transition-duration:0.3s; transition-duration:0.3s;}
+
+/* Menu */
+nav#slide-menu {position:fixed; top:0; left:-208px; bottom:0; display:block; float:left; height:100%; -moz-transition:all 300ms; -webkit-transition:all 300ms; transition:all 300ms;}
+body.menu-active nav#slide-menu {left:0px;}
+body.menu-active nav#slide-menu ul {left:0px; opacity:1;}
+.menu-trigger {position:fixed; top:10px; left:10px; width:32px; height:32px; background:url(../images/ico-config.gif) no-repeat 4px 4px #dfe5eb; cursor:pointer; border-radius:5px; -moz-transition:all 300ms; -webkit-transition:all 300ms; transition:all 300ms;}
+body.menu-active div.corpo .menu-trigger {left:218px;}

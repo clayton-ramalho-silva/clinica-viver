@@ -1,0 +1,92 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.contato1(){
+
+    .bloco-formulario{
+        .mw(@site-size/2+15px);
+        .w(50%);
+        .box;
+        .pdr(@espaco * 2);
+        .pdl(@espacom);
+        .mgt(@espaco * 2);
+        @media only screen and (max-width:1023px){
+            .full;
+            .pdr(@espacom);
+            .mg-auto;
+        }
+
+
+    }
+
+    .info-contato{
+        .bdl(@formulario[@contato][borda]);
+        .pdl(@espaco * 2);
+        .pdr(@espacom);
+        .mw(@site-size/2+15px);
+        .w(50%);
+        .box;
+        .df;
+        .column;
+        .mgt(@espaco * 2);
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .pdl(@espacom);
+            .mg(50px auto 0);
+            .pdt(@espaco);
+            border:none;
+            .bdt(@formulario[@contato][borda]);
+
+        }
+
+        h2{
+            .c(@formulario[@contato][@titulo][cor]);
+            .fs(@formulario[@contato][@titulo][tamanho]);
+            .mgb(15px);
+            .fw(700);
+            letter-spacing: 2px;
+            .mgb(@espaco);
+            .al;
+        }
+
+        p{
+            .pr;
+            .mgb(25px);
+
+            i{
+                .pdt(20px);
+                .box;
+            }
+
+            a{
+                .pdr(@espaco);
+            }
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+
+        b{
+            .tu;
+            letter-spacing: 2px;
+            .fs(12px);
+            .full;
+            .db;
+            .c(@formulario[@contato][@titulo][cor]);
+            .lh(20px);
+        }
+
+        .redes-contato{
+            .full;
+            .pdt(25px);
+            .bdt(@formulario[@contato][borda]);
+
+            b{
+                .pdb(5px);
+            }
+
+        }
+    }
+}

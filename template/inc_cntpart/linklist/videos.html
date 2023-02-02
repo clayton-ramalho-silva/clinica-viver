@@ -1,0 +1,54 @@
+<!--LINKLIST_START//-->
+[JS]js/jquery.colorbox.js[/JS]
+[JS]
+<script>
+    $(document).ready(function () {
+        $(".modal").colorbox({iframe: true, innerWidth: 800, innerHeight: 600});
+    });
+</script>
+[/JS]
+<div class="bloco-videos">
+    <section>
+        [TITLE]<div class="subtitulo">[/TITLE]
+            [TITLE]<h2>{TITLE}</h2>[/TITLE]
+            [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+            [TITLE]</div>[/TITLE]
+        [TITLE]<div class="divider"></div>[/TITLE]
+        [LINKLIST]
+        <div class="grid">
+            {LINKLIST}
+        </div>
+        [/LINKLIST]
+    </section>
+</div>
+<!--LINKLIST_END//-->
+
+<!--LINKLIST_ENTRY_START//-->
+[LINK]
+<article class="link-video">
+    <a href="https://www.youtube.com/embed/{LINK}?rel=0&amp;wmode=transparent" class="modal cboxElement">
+        <figure>
+            <img src="https://img.youtube.com/vi/{LINK}/mqdefault.jpg" width="395" height="270" alt="" loading="lazy" class="lazyload"/>
+        </figure>
+        <div class="hover">
+            <h4>{LINKNAME}</h4>
+            <div class="bt-modal"><i class="fab fa-youtube"></i>Assistir Video</div>
+        </div>
+    </a>
+
+    <a href="https://www.youtube.com/embed/{LINK}?rel=0&amp;wmode=transparent" class="video-resp" target="_blank">
+        <figure>
+            <img src="https://img.youtube.com/vi/{LINK}/mqdefault.jpg" width="395" height="270" alt="" loading="lazy" class="lazyload"/>
+        </figure>
+        <div class="hover">
+            <h4>{LINKNAME}</h4>
+        </div>
+    </a>
+
+</article>
+
+[/LINK]
+<!--LINKLIST_ENTRY_END//-->
+
+<!--LINKLIST_SPACE_START//-->
+<!--LINKLIST_SPACE_END//-->

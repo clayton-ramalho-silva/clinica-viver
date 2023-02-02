@@ -1,0 +1,587 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v20/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v20/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+body,
+span,
+p,
+form,
+img,
+a,
+input,
+select,
+textarea,
+html,
+figure,
+header,
+footer,
+article,
+section,
+iframe,
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  outline: none;
+}
+figure {
+  display: inline;
+}
+ul,
+ol,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+input::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+  font-weight: normal;
+  font-family: 'Roboto';
+  word-wrap: break-word;
+  word-break: break-word;
+}
+[type=text],
+[type=password],
+[type=submit],
+textarea {
+  -webkit-appearance: none;
+  appearance: none;
+  -moz-appearance: none;
+}
+.spaceAfterCP,
+.spaceBeforeCP {
+  width: 100%;
+  float: left;
+}
+.al {
+  text-align: left;
+}
+.ac {
+  text-align: center;
+}
+.ar {
+  text-align: right;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.fn {
+  float: none;
+}
+.pr {
+  position: relative;
+}
+.pa {
+  position: absolute;
+}
+.pf {
+  position: fixed;
+}
+.db {
+  display: block;
+}
+.dt {
+  display: table;
+}
+.travar {
+  overflow: hidden;
+}
+.center {
+  width: 1200px;
+  margin: 0 auto 0;
+}
+.center-flex {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+.first {
+  padding-left: 0;
+  margin-left: 0;
+}
+.last {
+  padding-right: 0 !important;
+  margin-right: 0 !important;
+}
+.full {
+  width: 100%;
+}
+.full-max {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.divider {
+  width: 100%;
+  clear: both;
+}
+@media only screen and (min-width: 1024px) {
+  .divider {
+    margin-top: 35px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .divider {
+    margin-top: 20px;
+  }
+}
+.cb {
+  clear: both;
+}
+.cr {
+  clear: right;
+}
+.cl {
+  clear: left;
+}
+/*BLOCOS PADRAO*/
+.bloco-1 {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.bloco-2 {
+  width: 50%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.bloco-3 {
+  width: 33.3%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.bloco-4 {
+  width: 25%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.bloco-5 {
+  width: 20%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+.clear {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.i-xlarge i {
+  font-size: 100px;
+}
+.i-large i {
+  font-size: 75px;
+}
+.i-medium i {
+  font-size: 50;
+}
+.i-small i {
+  font-size: 25px;
+}
+.i-xsmall i {
+  font-size: 15px;
+}
+#footerBlock {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  width: 100%;
+  flex-flow: row wrap;
+  background-color: #fff;
+  font-size: 15px;
+  color: #d80000;
+  position: relative;
+  line-height: 1.2;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#footerBlock section {
+  width: 100%;
+  max-width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+@media only screen and (max-width: 1023px) {
+  #footerBlock {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}
+#footerBlock .logo-rod {
+  display: none;
+}
+#footerBlock h4 {
+  font-weight: 300;
+  font-size: 35px;
+  color: #d80000;
+  text-transform: uppercase;
+}
+#footerBlock h4:after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background-color: rgba(216, 0, 0, 0.5);
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+#footerBlock h5 {
+  color: rgba(216, 0, 0, 0.7);
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 50px;
+}
+#footerBlock .mapa-rodape {
+  width: 50%;
+}
+#footerBlock iframe {
+  height: 100%;
+}
+#footerBlock .rodape {
+  width: 50%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#footerBlock .rod-info {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  max-width: 600px;
+  padding-bottom: 15px;
+}
+#footerBlock .rod-info div:nth-of-type(2) {
+  margin-top: 10px;
+}
+#footerBlock .telefone-rodape {
+  padding-left: 30px;
+}
+#footerBlock .telefone-rodape a {
+  margin-right: 10px;
+}
+#footerBlock .telefone-rodape i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  margin-top: -10px;
+}
+#footerBlock .whatsapp-rodape {
+  padding-left: 30px;
+}
+#footerBlock .whatsapp-rodape a {
+  margin-right: 10px;
+}
+#footerBlock .whatsapp-rodape i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  margin-top: -10px;
+}
+#footerBlock .email-rodape {
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+#footerBlock .email-rodape i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  margin-top: -10px;
+}
+#footerBlock .endereco-rodape {
+  padding-left: 30px;
+  margin-bottom: 15px;
+}
+#footerBlock .endereco-rodape i {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: 0;
+  margin-top: -10px;
+}
+#footerBlock .redes-rodape {
+  margin-top: 25px;
+}
+#footerBlock .menu-rod {
+  width: 100%;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  max-width: 600px;
+  border-top-color: #d80000;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-bottom-color: #d80000;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  margin-bottom: 25px;
+}
+#footerBlock .pmenu a {
+  color: #d80000;
+  font-size: 15px;
+}
+#footerBlock .slogan-rod {
+  margin-bottom: 25px;
+}
+#footerBlock .slogan-rod h2 {
+  text-align: left;
+}
+#footerBlock .slogan-rod h3 {
+  text-align: left;
+}
+#footerBlock .copyright {
+  background-color: #d80000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+#footerBlock .copyright .full-max {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-align: center;
+}
+@media only screen and (max-width: 1023px) {
+  #footerBlock {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  #footerBlock h4 {
+    font-size: 30px;
+  }
+  #footerBlock iframe {
+    height: 400px;
+  }
+  #footerBlock .rodape {
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  #footerBlock .mapa-rodape {
+    width: 100%;
+  }
+}
+.logo-rod {
+  width: 150px;
+  height: 90px;
+  background-image: url("../images/logo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+.rodape a {
+  color: #d80000;
+}
+.rodape a:hover {
+  color: #d80000;
+}
+.mapa-rodape {
+  width: 100%;
+}
+.mapa-rodape iframe {
+  width: 100%;
+  float: left;
+}
+@media only screen and (max-width: 1023px) {
+  .mapa-rodape iframe {
+    height: 250px;
+  }
+}
+.redes-rodape {
+  display: flex;
+}
+.redes-rodape a {
+  margin: 0 2.5px;
+}
+.redes-rodape i {
+  font-size: 20px;
+}
+.telefone-rodape {
+  font-size: 15px;
+  color: #d80000;
+  position: relative;
+}
+.telefone-rodape a {
+  color: #d80000;
+  cursor: default;
+}
+.telefone-rodape i {
+  font-size: 20px;
+  color: #d80000;
+}
+.whatsapp-rodape {
+  font-size: 15px;
+  color: #d80000;
+  position: relative;
+}
+.whatsapp-rodape a {
+  cursor: default;
+  color: #d80000;
+}
+.whatsapp-rodape i {
+  font-size: 20px;
+  color: #d80000;
+}
+.email-rodape {
+  position: relative;
+  font-size: 15px;
+  color: #d80000;
+}
+.email-rodape a {
+  cursor: default;
+  color: #d80000;
+}
+.email-rodape i {
+  font-size: 20px;
+  color: #d80000;
+}
+.endereco-rodape {
+  font-size: 15px;
+  color: #d80000;
+  position: relative;
+}
+.endereco-rodape a {
+  cursor: default;
+  color: #d80000;
+}
+.endereco-rodape i {
+  font-size: 20px;
+  color: #d80000;
+}
+.copyright {
+  color: #fff;
+  font-size: 13px;
+  background-color: #d80000;
+}
+.copyright a {
+  color: #fff;
+}
+.whatsapp-fixo {
+  background-color: #34af23;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+  -ms-border-radius: 100px;
+  cursor: pointer;
+  transition: 0.25s all ease;
+  -moz-transition: 0.25s all ease;
+  -webkit-transition: 0.25s all ease;
+  -ms-transition: 0.25s all ease;
+}
+@media only screen and (min-width: 1024px) {
+  .whatsapp-fixo {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 100;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .whatsapp-fixo {
+    width: 50px;
+    height: 50px;
+  }
+  .whatsapp-fixo i {
+    font-size: 30px;
+  }
+}
+@media only screen and (max-width: 1023px) {
+  .whatsapp-fixo {
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 15px;
+    left: 15px;
+    z-index: 100;
+  }
+  .whatsapp-fixo i {
+    font-size: 20px;
+  }
+}
+.whatsapp-fixo a {
+  display: none;
+}
+.whatsapp-fixo a:first-of-type {
+  display: block;
+  font-size: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+.whatsapp-fixo:hover {
+  transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+}
+@media only screen and (max-width: 1023px) {
+  .menu-rod {
+    display: none !important;
+  }
+}

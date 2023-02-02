@@ -1,0 +1,157 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+.rodape3(){
+    .slogan-rod{
+        .dn
+    }
+
+    .rodape{
+        .pdt(@espaco * 2);
+        .pdb(@espaco * 2);
+        .pr;
+
+        @media only screen and(max-width:1023px){
+            .pdt(@espacom * 2);
+            .pdb(@espacom * 2);
+            .column;
+            .aic;
+            flex-wrap: nowrap;
+        }
+    }
+
+    .rod-info{
+        .full;
+        .df;
+        .column;
+
+        i{
+            .mgr(10px);
+        }
+    }
+
+    .menu-rod{
+        .bdt(@rodape[@borda][cor]);
+        .bdb(@rodape[@borda][cor]);
+        .full;
+        .mgb(@espaco);
+        .fl;
+    }
+
+    .logo-rod{
+        .pa-tr(50%,15px);
+        .mgt(-@logo[@rodape][altura]/2);
+
+        @media only screen and(max-width:1023px){
+            .dn;
+        }
+    }
+
+    .telefone-rodape,.whatsapp-rodape,.email-rodape{
+        .df;
+        .aic;
+        .wrap;
+        .lh(1.4);
+
+        @media only screen and(min-width:1024px){
+            .fl;
+        }
+
+        a{
+            .pdr(@espacom);
+            .mgr(@espacom);
+            .bdr(@rodape[@fontes][cor]);
+
+            &:last-of-type{
+                border: none;
+                .pdr(0);
+                .mgr(0);
+            }
+        }
+    }
+
+    .telefone-rodape{
+        @media only screen and(max-width:1023px){
+            .mgb(@espacom);
+            .pdl(@telefone[@rodape][@icone][tamanho] + 10px);
+
+            i{
+                .mgl(-@telefone[@rodape][@icone][tamanho] - 10px);
+            }
+        }
+    } 
+
+    .whatsapp-rodape{
+        @media only screen and(min-width:1024px){
+            .mgl(@espaco * 2);
+        }
+
+        @media only screen and(max-width:1023px){
+            .mgb(@espacom);
+            .pdl(@whatsapp[@rodape][@icone][tamanho] + 10px);
+
+            i{
+                .mgl(-@whatsapp[@rodape][@icone][tamanho] - 10px);
+            }
+        }
+    }
+
+    .tels-rod{
+        .mgb(@espacom);
+    }
+
+    .email-rodape{
+        order:4;
+        .mgb(@espacom);
+
+        @media only screen and(max-width:1023px){
+            .mgb(@espacom);
+            .pdl(@email[@rodape][@icone][tamanho] + 10px);
+
+            i{
+                .mgl(-@email[@rodape][@icone][tamanho] - 10px);
+            }
+        }
+    }
+
+    .endereco-rodape{
+        order:5;
+        .lh(1.4);
+
+        @media only screen and(max-width:1023px){
+            p{
+                .mgb(@espacom);
+                .pdl(@whatsapp[@rodape][@icone][tamanho] + 10px);
+            }
+
+            i{
+                .mgl(-@whatsapp[@rodape][@icone][tamanho] - 10px);
+            }
+        }
+    }
+
+    .redes-rodape{
+        order:6;
+        .fb(100%);
+        .mgt(@espaco);
+    }
+
+    .telefone-rodape, .redes-rodape, .email-rodape, .whatsapp-rodape{
+        &:before{
+            .dn;
+        }
+    }
+
+    @media only screen and(max-width:1023px){
+        .pdt(0px);
+        .pdb(0px);
+    }
+
+    .copyright{
+        .full;
+        .center-flex;
+        .ac;
+        .pdt(10px);
+        .pdb(10px);
+    }
+}

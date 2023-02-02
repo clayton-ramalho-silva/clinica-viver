@@ -1,0 +1,60 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu8(){
+    .pmenu{
+        li{
+            .mgl(5px);
+            .mgr(5px);
+
+            &:hover > a{
+                .c(@menu[@link][hover]);
+                &:before{
+                    .w(100%);
+                }
+            }
+        }
+        a{
+            .pr;
+            .h(auto);
+            .lh(1.5);
+            .pdl(5px);
+            .pdr(5px);
+            .ease-out;
+            z-index: 2;
+            &:before{
+                .ab;
+                .fundo(@menu[@link][fundo]);
+                .w(0%);
+                .h(100%);
+                .pa-tl(0,0,-1);
+                .ease-out;
+            }
+        }
+        .ativo{ 
+            a{
+                .c(@menu[@link][ativo]);
+            }
+        }
+    }
+
+    .psubmenu{
+        .translatey(-7px);
+        a{
+            &:before{
+                .dn;
+            }
+        }
+        li{
+            .mgl(0);
+            .mgr(0);
+        }
+
+        .tipo-submenu(@tipo-submenu);
+
+        .tipo-submenu(@a) when (@a=3){
+            .translatey(0px);
+        }
+    }
+
+}

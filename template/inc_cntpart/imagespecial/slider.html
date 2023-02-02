@@ -1,0 +1,70 @@
+<!--IMAGES_HEADER_START//-->
+
+[JS]
+<script>
+    $(document).ready(function () {
+        $('.baid{ID} ul').bxSlider({
+            mode: "horizontal",
+            controls: true,
+            pager: false,
+            responsive: true,
+            nextText: "",
+            prevText: "",
+            pause: 10000,
+            auto: false,
+            minSlides: 1,
+            maxSlides: 1,
+            slideWidth: 400,
+            infiniteLoop: false
+        });
+    });
+</script>
+[/JS]
+
+
+<div class="slider baid{ID}">
+
+    <section>
+        [TITLE]<h2>{TITLE}</h2>[/TITLE]
+        [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+        [TITLE]<div class="divider"></div>[/TITLE]
+        [TEXT]
+        <div class="txt">
+            {TEXT}
+        </div>
+        [/TEXT]
+
+        <ul>
+            <!--IMAGES_HEADER_END//-->
+
+            <!--IMAGES_ENTRY_START//-->
+
+
+            <li>
+                <article>
+                    <figure>{IMAGE}</figure>
+                    <div class="servico-info">
+
+                        [CAPTION]<h4>{CAPTION}</h4>[/CAPTION]
+                        [INFOTEXT]{INFOTEXT}[/INFOTEXT]
+                        [URL]<a href="{URL}" class="link">+ Saiba Mais</a>[/URL]
+                    </div>
+                </article>
+            </li>
+
+            <!--IMAGES_ENTRY_END//-->
+
+            <!--IMAGES_ENTRY_SPACER_START//-->
+
+            <!--IMAGES_ENTRY_SPACER_END//-->
+
+            <!--IMAGES_ROW_SPACER_START//-->
+
+            <!--IMAGES_ROW_SPACER_END//-->
+
+            <!--IMAGES_FOOTER_START//-->
+
+        </ul>
+    </section>
+</div>
+<!--IMAGES_FOOTER_END//-->

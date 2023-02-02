@@ -1,0 +1,52 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner7(){
+    @media only screen and (min-width:1024px){
+
+        .df;
+        .sc;
+
+        .slogan{
+            .size(60%,auto);
+            .fundo(@banner[@titulo][fundo]);
+            .sombra(15px 15px 0 5px @p20);
+            .box;
+            .pd(50px 50px 50px 25px);
+        }
+
+        &:before{
+            .ab;
+            .pa-tl(0,0,-1);
+            .fundo(@banner[@titulo][fundo]);
+            .size(35%,100%);
+
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .sc;
+        .aic;
+        .ac;
+        .slogan{
+            .fundo(fade(@banner[@titulo][fundo],80));
+            .pd(@espaco);
+            .box;
+            .translatey(50px);
+            animation: legenda 0.5s 0.5s ease-out forwards;
+            .op(0);
+        }
+
+        .barra-link{
+            .dn;
+        }
+    } 
+
+    @keyframes legenda{
+        to{.translatey(0); .op;}
+    }
+    @keyframes legendab{
+        to{.translatex(0); .op;}
+    }
+
+}

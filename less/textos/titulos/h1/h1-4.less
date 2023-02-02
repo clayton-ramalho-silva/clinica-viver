@@ -1,0 +1,67 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h1-4(){
+
+    .titulo{
+        .h(@banner[@interna][altura]);
+        .flex-meio;
+        .ac;
+        .column;
+        justify-content: flex-end;
+        .box;
+        .pdb(60px);
+
+        @media only screen and (max-width:1023px){
+            .h(@banner[@interna][responsivo]);
+        }
+
+    }
+
+    h1{
+        .ac;
+        order:1;
+        /*.mgt(-@titulo[@h1][altura] - 20px);*/
+        /*.linha(@titulo[@h1][altura]);*/
+    }
+
+    h5{
+        order:0;
+        .pdb(5px);
+        .ac;
+        .c(@titulo[@h1][cor]);
+    }
+
+    .breadcrumb{
+        .pa-tl(@banner[@interna][altura]-45px);
+        .ac;
+        .c(@titulo[@h1][cor]);
+
+        a{
+            .c(@titulo[@h1][cor]);
+        }
+
+    }
+
+    .banner-interna{
+        .pa-tl(0,0,-1);
+
+    }
+
+    .banner-interna(@banner-interna);
+    .banner-interna(@a) when (@a=off){
+        h1{
+            .fundo(@titulo[@h1][fundo]);
+        }
+    }
+
+    .direcao-titulo(@titulo[@h1][direcao]);
+    .direcao-titulo(@a) when (@a=left){
+        h1,h5,.breadcrumb{
+            .al;
+        }
+    }
+
+
+}

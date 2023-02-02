@@ -1,0 +1,38 @@
+<!--TABS_START//-->
+
+[JS]js/jquery.accordion.js[/JS]
+
+
+
+
+[TABS_ENTRIES]
+<div class="bloco-tabs" id="tab{ID}">
+<section>
+    [TITLE]<div class="subtitulo">[/TITLE]
+         [TITLE]<h2>{TITLE}</h2>[/TITLE]
+         [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+    [TITLE]</div>[/TITLE]
+         [TITLE]<div class="divider"></div>[/TITLE]
+
+{TABS_ENTRIES}
+
+</section>
+</div>
+[/TABS_ENTRIES]
+
+
+
+
+<!--TABS_END//-->
+
+<!--TABS_ENTRY_START//-->
+<div class="accordion">
+    <div class="accordionButton"><i></i>{TABTITLE}</div>
+    [TABCONTENT]
+        <div class="accordionContent">
+            [TABHEADLINE]<h3>{TABHEADLINE}</h3>[/TABHEADLINE]
+            [TABTEXT]{TABTEXT}[/TABTEXT]
+       </div>
+    [/TABCONTENT]
+</div>
+<!--TABS_ENTRY_END//-->

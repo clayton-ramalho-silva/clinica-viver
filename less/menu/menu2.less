@@ -1,0 +1,26 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu2(){
+    li{
+        &:hover > a{
+            .c(@menu[@link][hover]); 
+            .fundo(@menu[@link][fundo]);
+        }
+    }
+
+    .ativo{
+        a{
+            .c(@menu[@link][ativo]);
+        }
+    }
+    .psubmenu{
+        .mgt(-6px);
+    }
+
+    .tipo-submenu(@tipo-submenu);
+    .tipo-submenu(@a) when (@a=3){
+            .mgt(0px);
+    }
+     
+}

@@ -1,0 +1,1124 @@
+// main: estilos.less
+
+
+//Configura��es Gerais do Site
+
+@site-size:1200px;
+
+@cor1: #55748b; //Cor principal do site
+@cor2: #1a9561; //Cor secund�ria do site
+
+@cor3:#F2858E;
+@cor4:#666;
+
+@fonte-padrao:Tahoma, Arial, Helvetica, sans-serif;
+@tamanho-fonte-site:16px;
+@cor-fonte-site:#333;
+@linha-site:2em; //Entrelinha padrao do site
+
+@espaco:25px; //espa�amento padrao
+@espacom:15px; //espa�amento menor
+@espaco-conteudo:25px; //espa�amento menor
+
+@radius-padrao-botoes:5px;
+
+@divider: 35px;
+@divider-resp:20px;
+
+//Font-face
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700'); //Link da Fonte do google
+@nome-fonte:'Roboto'; 
+
+
+
+//ESTRUTURA DO SITE
+
+//topo
+@tipo-topo:2;                //(11 items)
+@tipo-menu:1;                //(12 items)  *** Ao usar o menu 9,12 colocar 0 no tipo de menu responsivo
+@tipo-submenu:1;             //(4 items)
+@tipo-menu-responsivo:1;     //(2 items)
+@tipo-botao-responsivo:1;     //(2 items)
+
+@tipo-redes-sociais:1;       //(3 items)
+
+
+//banner
+@tipo-legenda:1;           //(9 items)
+@tipo-seta:3;              //(4 items)
+@tipo-pager:1;             //(4 items)
+
+//corpo  
+@tipo-h1:1;           //(9 items)
+@tipo-h2:1;           //(9 items)
+@modo-quem-somos:1;   //(3 items)
+@tipo-newsletter:1;   //(2 items)
+//@tipo-redes:1;
+
+//noticias
+@tipo-lista-noticias:4;     //(4 items)
+@tipo-noticias-completa:1;     //(1 items)
+
+//rodap�
+@tipo-rodape:6;     //(9 items) rodape 8 incompleto
+
+//@tipo-redes-rodape:@tipo-redes-topo;
+
+//contato
+@tipo-campos:1;         //(3 items)
+@tipo-contato:1;        //(2 items)
+
+//outros
+@tipo-paginate:1;        //(1 items)
+@tipo-galeria:3;         //(6 items)
+
+//efeitos
+@tipo-efeito:3;         //(1 items)
+
+//##############################################################################################################
+//##############################################################################################################
+//##############################################################################################################
+//##############################################################################################################
+//##############################################################################################################
+
+
+
+
+//CONFIGURA��ES DO SITE
+
+//Barra Topo
+@btl:off;                       //Lado esquerdo da barra topo
+@btr:on;                        //Lado esquerdo da barra topo
+@barra-topo-endereco:off;        //Barra do topo Endere�o
+@barra-topo-telefone:on;        //Barra do topo Telefone
+@barra-topo-whatsapp:on;        //Barra do topo Whatsapp
+@barra-topo-email:off;           //Barra do topo Email
+@barra-topo-redes:on;           //Barra do topo Redes
+@barra-topo-busca:off;           //Barra do topo Busca
+@barra-topo-restrita:off;       //Barra do topo �rea Restrita
+@barra-topo-menu-fixo:on;
+//@idiomas:on;                 //barra de Idiomas
+
+//Topo
+@topo-full:off;                                 //100% da largura do topo
+@topo-redes:off;                                 //topo Redes
+@topo-telefone:on;                              //topo telefone
+@topo-busca:off;                                 //topo Busca
+@barra-topo:off;                                 //Barra do topo
+@redes-topo-cores-originais:on;                //ativa as cores originais dos icones das rede 
+@icones-topo:on;                                //ativa os icones de telefone do topo 
+
+
+//Logos 
+@logo-branco-topo:off;              //Logo Principal Branco
+@logo-branco-topo-fixo:off;         //Logo Fixo Branco
+@logo-branco-topo-interna:off;      //Logo Interna Branco
+@logo-branco-rodape:off;            //Logo Rodape Branco
+
+//Logos alternativos
+@logo-topo-fixo:off;
+@logo-rodape:off;
+@logo-responsivo:off;
+
+//Submenu
+@sombra-submenu:off;
+
+//Banners 
+@banner-full:off;                              //Largura Total da Legenda;   
+@banner-fixo:off;                               //imagem fixa do banner
+@banner-page:off;                               //Ativa o pager do banner
+@banner-setas:on;                              //Avita as setas do Banner
+
+@banner-interna:on;                            //Avita o Banner Interna
+
+//Slogan do Banner
+@fundo-titulo-slogan:off;                       //cor de fundo do titulo do slogan
+@fundo-subtitulo-slogan:off;                    //cor de fundo do subtitulo do slogan
+
+@sombra-legenda-banner:off;                     //Sombra dos texto do slogan
+@banner-legenda-blur:off;
+
+//interna
+@breadcrumb-interna:on;                         //Ativa o BreadCrumb nas p�ginas Internas
+@navegacao-noticia:on;                          //Ativa a Navega��o das Noticias Interna
+
+//Rodape
+@mapa-rodape:off;
+@menu-rodape:off;
+@borda-topo-rodape:off;
+@segundo-endereco:off;
+@slogan-rodape:off;
+@redes-rodape-cores-originais:on;                //ativa as cores originais dos icones das rede 
+
+@titulos-rodape:on;
+@icones-rodape:off;
+
+//@items-rodape:4;
+
+@facebook-rodape:off;
+@formulario-rodape:off;
+@newsletter-rodape:off;
+
+
+@whatsapp-fixo:on;
+@whatsapp-fixo-posicao:left; //left/ right Posi��o do Bot�o do Whatsapp
+
+@voltar-topo:on;
+@voltar-topo-posicao:right;   //left/ right Posi��o do Bot�o do Voltar ao topo
+
+//P�gina de Contato
+@contatos-form-mapa:off;             // Mostra o Mapa na P�gina de Contato
+@mapa-ultimo:off;
+
+//responsivo
+@busca-responsivo:off;
+@contato-responsivo:on;
+@restrito-responsivo:off;
+
+
+
+//###########################################################################################################################################
+//###########################################################################################################################################
+//###########################################################################################################################################
+//###########################################################################################################################################
+//###########################################################################################################################################
+
+
+
+//Logo ----------------------------------------------------------------------------------------------------
+
+@logo:{
+    largura:240px;                  //largura logo
+    altura:130px;                   //altura logo
+
+
+    @interna:{
+        largura:@logo[largura];              //largura logo responsivo
+        altura:@logo[altura];                //altura logo responsivo
+    }
+
+    @responsivo:{
+        largura:180px;              //largura logo responsivo
+        altura:80px;                //altura logo responsivo
+    }
+
+    @fixo:{
+        largura:140px;          //largura logo topo fixo
+        altura:70px;            //altura logo topo fixo
+    }
+
+    @rodape:{
+        largura:210px;          //largura logo topo fixo
+        altura:90px;            //altura logo topo fixo
+    }
+}
+
+
+//Topo ----------------------------------------------------------------------------------------------------------
+
+@topo:{
+    fundo:#fff;                         
+    radius:@radius-padrao-botoes;
+    borda:transparent;
+
+    @fontes:{
+        tamanho:15px;
+        cor:@cor1;
+        link:@cor1;
+        hover:@cor1;
+    }
+
+    @barra-topo:{
+        fundo:#f3f3f3;                  //Cor do fundo da barra topo
+        altura:50px;                    //altura da barra topo
+
+        @icones:{
+            tamanho:17px;
+            cor:@cor1;
+        }
+
+        @fontes:{
+            tamanho:15px;
+            cor:@cor1;
+            link:@cor1;
+            hover:@cor1;
+
+        }
+
+        @menu-fixo:{
+            altura:35px;
+        }
+    }
+
+    @interna:{
+        margem:150px;
+    }
+
+    @responsivo:{
+        fundo:#fff;
+    }
+
+
+}
+
+
+//Barra de Idiomas
+/*@cor-texto-idiomas:@cor-texto-barra-topo;
+@cor-link-idiomas:@cor-texto-idiomas;
+
+@cor-fundo-idiomas:@cor2;
+@cor-hover-link-idiomas:darken(@cor-fundo-idiomas,10);*/
+
+
+
+
+//MENU ----------------------------------------------------------------------------------------------------------------------------
+@menu:{
+    espacamento:0;           //valor de letter spacing
+    fundo:#f2f2f2;
+    margem: 2.5px;
+    maiuscula: none;
+    font-weight:regular;
+
+    @link:{
+        tamanho:15px;
+        cor:@cor1;
+        hover:@cor2;
+        fundo:@cor1;
+        ativo:@cor3;
+        padding: 8px;
+        altura:50px;
+        radius: @radius-padrao-botoes;
+    }
+
+    @responsivo:{
+        fundo:@cor1;
+
+        @link:{
+            tamanho:16px;
+            cor:#fff;
+        }
+
+        @icone:{
+            tamanho:15px;
+            cor:#fff;
+        }
+
+        @fonte:{
+            tamanho:14px;
+            cor:#fff;
+        }
+    }
+
+    @botao:{
+        icone:@cor3;
+        cor:@cor1;
+        fundo:fade(@cor2,20);
+        hover:@cor2;
+        icone-hover:#fff;
+        ativo:#fff;
+    }
+
+    @contato:{
+        fundo:darken(@cor1,10);
+        texto:#fff;
+
+        telefone:18px;
+        email:13px;
+        endereco:13px;
+
+        @botao:{
+            cor:#fff;
+            fundo:@cor1;
+            ativo:@cor1;
+            fundo-ativo:#fff;
+        }
+    }
+
+    @fixo:{
+        fundo:#fff;
+        borda:@cor1;
+        fonte:14px;
+        cor:@cor1;
+        hover:@cor2;
+        ativo:@cor3;
+        fundo-link:@cor1;
+    }
+}
+
+@submenu:{
+    direcao:left;
+    fundo:@cor1;
+    radius: @radius-padrao-botoes;
+    padding:10px;
+    largura:200px;
+    espacamento:0;
+    font-weight:400;
+    maiuscula: none;
+
+    @link:{
+        tamanho:13px;
+        cor:#fff;
+        hover:#fff;
+        fundo:darken(@cor1,10);
+        padding:10px;
+        altura:40px;
+        radius: @radius-padrao-botoes;
+    }
+
+    @responsivo:{
+        @link:{
+            tamanho:14px;
+            cor:#fff;
+        }
+    }
+}
+
+
+//Idiomas
+@cor-links-idiomas-responsivo: #fff;            // Cor dos links do submenu Responsivo
+@fonte-links-idiomas-responsivo: 15px;
+
+@cor-hover-menu-idiomas:darken(@cor1,15);
+
+//BANNER --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+@banner:{
+    altura:100vh;                 //Altura do Banner Principal 
+    fundo:#fff;                   //Cor de Fundo do Banner 
+    topo:150px;                   //Valor da margen negativa para ajustar o banner quando tiver altura de 100vh
+
+
+
+    @filtro:{
+        tipo:off;                //opcoes: escurecer, clarear | Ativa os efeitos para melhorar a visualizac�o
+        opacidade:.65;           //valor da opacidade do filtro
+    }
+
+    @legenda:{
+        largura:600px;          //largura maxima do Slogan antes de quebrar a linha
+        direcao:left;           //opcoes: left, center, right Dire��o dos Textos do Banner
+        alinhamento:center;     //opcoes: center, bottom Dire��o vertical dos Textos do Banner
+        fundo:fade(#000,50);    //Fundo da Legenda
+    }
+
+    @responsivo:{
+        altura:65vw;                        //Altura do Banner Principal Responsivo
+        topo:@logo[@responsivo][altura];    //Valor da margen negativa para ajustar o banner quando tiver altura de 100vh
+        
+        @titulo:{
+            tamanho:5vw;    //Tamanho da fonte do Titulo Responsivo
+        }
+
+        @subtitulo:{
+            tamanho:4vw;    //Tamanho da fonte do SubTitulo Responsivo
+        }
+    }
+
+    @titulo:{
+        tamanho:30px;       //Tamanho da fonte do Titulo 
+        cor:@cor1;           //Cor da fonte do Titulo 
+        espacamento:0px;    //espacamento do titulo
+        font-weight: 700;   // Valor do Font-weight do Titulo
+        maiuscula:off;     //Uppercase do titulo
+        fundo:@cor2;        //Cor do Fundo do Titulo
+        destaque:@cor1;     //Cor da Fonte quando usar Strong
+    }
+
+    @subtitulo:{
+        tamanho:20px;       //Tamanho da fonte do SubTitulo 
+        cor:@cor4;           //Cor da fonte do SubTitulo 
+        espacamento:0px;    //espacamento do Subtitulo
+        font-weight: 400;   // Valor do Font-weight do SubTitulo
+        maiuscula:off;     //Uppercase do Subtitulo
+        fundo:@cor1;        //Cor do Fundo do SubTitulo
+          destaque:@cor1;   //Cor da Fonte quando usar Strong
+    } 
+
+    @seta:{
+        cor:#fff;           //cor da icone e das bordas dos botoes
+        fundo:@cor1;        //cor de fundo dos botoes somente para a classe .seta2
+        radius:@radius-padrao-botoes;
+
+        @icone:{
+            fonte:35px;     // tamanho dos icones
+            tamanho:45px;   //tamanho do bloco
+            borda:2px;      // espessura da borda
+        }
+    }
+
+    @pager:{
+        posicao:50px;                //Distancia  do pager em relacao a base do banner;   
+        direcao:right;               //Direcao do pager
+        tamanho:20px;               //Tamanho da fonte dos numeros do pager (quando houver)
+
+        cor:@cor1;                  //Cor do Fundo dos itens do pager do Banner
+        hover:darken(@cor1,10%);    //Cor do hover dos itens do pager do Banner
+        ativo:#fff;                 //Cor do estado Ativo dos itens do pager do Banner
+        borda:#fff;                 //Cor da borda dos itens do pager do Banner
+        radius:@radius-padrao-botoes    //Valor do Border Radius
+    }
+
+    @interna:{
+        altura:250px;               //Altura Banner Interna  
+        responsivo:25vh;            //Altura Banner Interna Responsivo
+        @filtro:{
+            tipo:off;          //opcoes: escurecer, clarear | Ativa os efeitos para melhorar a visualizac�o
+            opacidade:.65;           //valor da opacidade do filtro
+        }
+    }
+}
+
+
+//SLIDER (Quando Houver)---------------------------
+
+@cor-pager-slider:@cor1;
+@cor-seta-slider:@cor1;
+
+
+
+//Titulos ------------------------------------------------------------------------
+
+@titulo:{
+    @h1:{
+        tamanho:40px;
+        cor:@cor1;
+        fundo:#f2f2f2;
+        altura:100px;
+        direcao:off;   //opcoes: left, center, Dire��o dos Textos do titulo subtitulo e breadcrumb
+    }
+
+    @h2:{
+        tamanho:35px;
+        cor:@cor2;
+    }
+
+    @h3:{
+        tamanho:18px;
+        cor:@cor1;
+    }
+
+    @h4:{
+        tamanho:20px;
+        cor:@cor2;
+    }
+
+    @h5:{
+        tamanho:18px;
+        cor:@cor1;
+    }
+
+    @responsivo:{
+        @h1:{
+            tamanho:28px;
+        }
+
+        @h2:{
+            tamanho:25px;
+        }
+
+        @h3:{
+            tamanho:15px;
+        }
+    }
+}
+
+@subtitulo:{
+    direcao:center;
+    borda:@cor1;
+    inverter:off;
+    radius:5px;
+    fundo:@cor2;
+
+    @h2:{
+        uppercase:off;     //Text Uppercase
+        font-weight:700;    //Font Weight
+    }
+
+    @h3:{
+        uppercase:off;     //Text Uppercase
+        font-weight:400;    //Font Weight
+    }
+
+}
+
+
+@breadcrumb:{
+    tamanho:11px;
+    link:@titulo[@h1][cor];
+    cor:@titulo[@h1][cor];
+    hover:@titulo[@h1][cor];
+    ativo:@titulo[@h1][cor];
+    fundo:#e2e2e2;
+}
+
+
+//Quem Somos --------------------------------------------------------------------------------------------------------------------
+
+@quem-somos:{
+    fundo:#f2f2f2;
+    direcao:left;
+    borda:@cor1;
+    texto:#333;
+    radius:15px;
+    espaco: 3;
+
+    @titulo:{
+        cor:@cor1;
+        tamanho:30px;
+    }
+
+    @subtitulo:{
+        cor:@cor2;
+        tamanho:18px;
+    }
+
+    @botao:{
+        texto:#fff;
+        fundo:@cor1;
+    }
+}
+
+//Noticias ------------------------------------------------------------------------------
+
+@data-noticia:off;
+
+@noticias:{
+    colunas:3;
+    gap:25px;
+
+    titulo:@cor1;
+    radius:@radius-padrao-botoes;
+
+    @borda:{
+        cor:#ccc;
+        hover:@cor1;
+    }
+
+    @fundo:{
+        cor:#fff;
+        hover:@cor1;
+    }
+
+    @botao:{
+        fundo:@cor1;
+        texto:#fff;
+    }
+
+    @texto:{
+        cor:#333;
+        hover:#fff;
+    }
+
+}
+
+//botao subir ao topo---------------------------------------------------------------------------------------------
+
+@subir-topo:{
+    tamanho:20px;
+    fundo:darken(@cor1,20);
+    hover:darken(@cor1,5);
+    radius: @radius-padrao-botoes;
+    cor:#fff;
+}
+
+
+//Newsletter ------------------------------------------------------------------------------------------------------
+
+@newsletter:{
+    fundo:darken(@cor1,10);
+
+    @titulo:{
+        tamanho:25px;
+        cor:#fff;
+    }
+
+    @subtitulo:{
+        tamanho:18px;
+        cor:fade(#fff,70);
+    }
+
+    @campos:{
+        borda:#fff;
+        fundo:#fff;
+        texto:#fff;
+    }
+
+    @submit:{
+        fundo:@cor1;
+        texto:#fff;
+        hover:@cor2;
+    }
+
+    @erro:{
+        cor:#fff;
+        tamanho:11px;
+    }
+
+    @obrigado:{
+        cor:#fff;
+        tamanho:18px;
+    }
+}
+
+
+//TEXTOS------------------------------------------------------------------------------------------------------------------------------
+
+//textos sem fundo-----------------
+@texto:{
+    titulo:@cor1;
+    subtitulo:@cor2;
+
+    borda:@cor1;
+    radius:10px;
+
+    botao:#fff;
+}
+
+//textos com fundo-----------------
+@texto2:{
+    fundo:@cor1;
+    texto:#fff;
+
+    titulo:#fff;
+    subtitulo:fade(#fff,50);
+
+    radius:10px;
+}
+
+//RODAPE --------------------------------------------------------------------------------------------------------------------------
+
+@rodape:{
+    fundo:#fff;
+    radius: @radius-padrao-botoes;
+
+    @fontes:{
+        cor:@cor1;
+        link:@cor1;
+        tamanho:15px;
+    }
+
+    @borda:{
+        cor:@cor1;
+        tamanho:5px;
+    }
+
+    @icones:{
+        //tamanho:17px;
+        //cor:@cor1;
+        fundo:#f2f2f2;
+    }
+
+    @menu:{
+        cor:@cor1;
+        hover:darken(@cor1,10);
+        tamanho:14px;
+    }
+
+    @copy:{
+        fundo:@cor1;
+        cor:#fff;
+        tamanho:12px;
+    }
+
+    @titulo:{
+        cor:@cor1;
+        tamanho:25px;
+    }
+    @subtitulo:{
+        cor:fade(@cor1,70);
+        tamanho:15px;
+    }
+}
+
+
+//PAGINA DE CONTATO --------------------------------------------------------------------------------------
+
+
+
+//Formularios ---------------------------------------------------------------------------------------------------------------------
+@formulario:{
+    obrigatorio:#d80000;
+    erro:#d80000;
+
+    @campos:{
+        fundo:#fff;
+        borda:#e2e2e2;
+        radius: @radius-padrao-botoes;
+        fonte:16px;
+        cor:#333;
+        altura:50px;
+        textarea:115px;
+        placeholder:#666;
+    }
+
+    @check:{
+        cor:@cor1;
+    }
+
+    @enviar:{
+        direcao:left;
+    }
+
+    @contato:{
+        tamanho:@tamanho-fonte-site;
+        cor:@cor-fonte-site;
+        borda:#ccc;
+        fundo:#f2f2f2;
+
+        /*        @icone:{
+                    tamanho:25px;
+                    cor:@cor1;
+                }*/
+
+        @titulo:{
+            tamanho:18px;
+            cor:@cor1;
+        }
+    }
+}
+
+
+// TABS -----------------------------------------------------------------------------------------------------------
+@accordion:{
+    fundo:darken(@cor1,20);
+    borda:@cor1;
+    radius:@radius-padrao-botoes;
+    @icone:{
+        cor:@cor1;
+        tamanho:20px;
+    }
+
+    @titulo:{
+        cor:@cor1;
+        tamanho:20px;
+    }
+
+    @hover:{
+        icone:@cor2;
+        titulo:@cor2;
+        @fundo:@cor2;
+    }
+
+    @ativo:{
+        icone:@cor2;
+        titulo:@cor2;
+        @fundo:@cor2;
+    }
+
+    @texto:{
+        tamanho:15px;
+        cor:@cor-fonte-site;
+    }
+}
+
+//Downloads -----------------------------------------------------------------------------------
+
+@downloads:{
+    borda:#ccc;
+    radius:@radius-padrao-botoes;
+    hover:@cor1;
+
+    @texto:{
+        tamanho:18px;
+        cor:@cor-fonte-site;
+    }
+
+    @icone:{
+        cor:#fff;
+        tamanho:20px;
+        fundo:@cor1;
+    }
+
+}
+
+//Cores Modal
+@geral-modal: @site-size; //tamanho do modal
+@bg-fundo-modal: fade(#000,60%); // fundo transparente
+@txt-color-modal: @cor1; //cor dos textos
+@bf-cnt-modal: #fff; //background conteudo
+@bg-close-modal: transparent; //background botao close
+@color-close-modal: #000; // cor botao close
+@borda-close-modal:1px solid #000; //borda botao close
+@cor-hover-modal:#2b2e38; // hover cor botao close
+@bg-hover-modal: transparent; //hover fundo botao close
+
+
+
+//Cores Galeria PgwSlide
+@cor-pgw-slideshow:@cor1;
+@cor-lista-pgw-slideshow:#f3f3f3; //cor da barra com todas as fotos
+@espaco-lista-pgw-slideshow:8px; //espa�amento das imagens da lista de fotos
+@cor-legenda-lista-pgw-slideshow:fade(#000,50%);
+@texto-legenda-lista-pgw-slideshow:#fff;
+
+
+//TElEFONES E WHATSAPP -------------------------------------------------------------------------------------
+
+
+@telefone:{
+    @topo:{
+        tamanho:14px;
+        cor:@menu[@link][cor];
+
+        @icone:{
+            tamanho:18px;
+            cor:@menu[@link][cor];
+        }
+    }
+
+    @rodape:{
+        cor:@rodape[@fontes][link];
+        tamanho:14px;
+
+        @icone:{
+            tamanho:18px;
+            cor:@rodape[@fontes][link];
+        }
+    }
+
+    @contato:{
+        tamanho:@tamanho-fonte-site;
+        cor:@cor-fonte-site;
+
+        @icone:{
+            tamanho:18px;
+            cor:@cor1;
+        }
+    }
+}
+
+@whatsapp:{
+    @topo:{
+        tamanho:14px;
+        cor:@menu[@link][cor];
+
+        @icone:{
+            tamanho:20px;
+            cor:@menu[@link][cor];
+        }
+    }
+
+    @rodape:{
+        cor:@rodape[@fontes][link];;
+        tamanho:14px;
+
+        @icone:{
+            tamanho:18px;
+            cor:@rodape[@fontes][link];
+        }
+    }
+
+    @contato:{
+        tamanho:@tamanho-fonte-site;
+        cor:@cor-fonte-site;
+
+        @icone:{
+            tamanho:20px;
+            cor:@cor1;
+        }
+    }
+} 
+
+@email:{
+    @topo:{
+        tamanho:14px;
+        cor:@menu[@link][cor];
+
+        @icone:{
+            tamanho:18px;
+            cor:@menu[@link][cor];
+        }
+    }
+
+    @rodape:{
+        cor:@rodape[@fontes][link];
+        tamanho:14px;
+
+        @icone:{
+            tamanho:18px;
+            cor:@rodape[@fontes][link];
+        }
+    }
+
+    @contato:{
+        tamanho:@tamanho-fonte-site;
+        cor:@cor-fonte-site;
+
+        @icone:{
+            tamanho:18px;
+            cor:@cor1;
+        }
+    }
+} 
+
+@endereco:{
+    @topo:{
+        tamanho:14px;
+        cor:@menu[@link][cor];
+
+        @icone:{
+            tamanho:18px;
+            cor:@menu[@link][cor];
+        }
+    }
+
+    @rodape:{
+        cor:@rodape[@fontes][link];
+        tamanho:14px;
+
+        @icone:{
+            tamanho:18px;
+            cor:@rodape[@fontes][link];
+        }
+    }
+
+    @contato:{
+        tamanho:@tamanho-fonte-site;
+        cor:@cor-fonte-site;
+
+        @icone:{
+            tamanho:18px;
+            cor:@cor1;
+        }
+    }
+}
+
+
+//Telefone e Whatsapp - Responsivo
+//@responsivo-tamanho-telefone:18px;         //tamanho do texto do telefone e Whatsapp do responsivo
+
+
+//EMAILS -------------------------------------------------------------------------------------------
+
+//Responsivo
+//@responsivo-tamanho-email:13px;            //tamanho do texto do email do responsivo
+//@responsivo-tamanho-endereco:13px;         //tamanho do texto do endereco do responsivo
+
+//ENDERE�O -------------------------------------------------------------------------------------
+
+//REDES SOCIAIS ------------------------------------------------------------------------------------------
+
+@redes-sociais:{
+    radius:@radius-padrao-botoes;
+
+    @topo:{
+        tamanho:15px;
+        cor:@cor1;
+        fundo:@cor1;
+        hover:#fff;
+    }
+    @rodape:{
+        tamanho:15px;
+        cor:@cor1;
+        fundo:@cor1;
+        hover:#fff;
+    }
+
+    @contato:{
+        tamanho:15px;
+
+    }
+    //cores originais
+    whatsapp:#25d366;
+    facebook:#3b5999;
+    twitter:#00aecd;
+    google:#dd4b39;
+    instagram:#e4405f;
+    linkedin:#007bb6;
+    youtube:#bb0000;
+    pinterest:#cb2027;
+    blogger:#f57d00;
+    rss:#f26522;
+    skype:#00aff0;
+}
+
+
+
+//rodape redes tamanho
+//@tamanho-icones-redes-rodape:20px;                                        //tamanho dos icones das redes sociais do rodape
+
+
+
+//BUSCA ------------------------------------------------------------------------------------------------
+
+@busca:{
+    @principal:{
+        fundo:#000;
+        texto:#fff;
+        icone:#fff;
+    }
+
+    @topo:{
+
+        @icone:{
+            tamanho:20px;
+            cor:@cor1;
+        }
+    }
+
+    @barra-topo:{
+        fundo:#fff;                     //Cor do Fundo da busca da barra do topo
+        largura:150px;                  //largura do campo da busca de barra do topo
+        radius:@radius-padrao-botoes;   //Border radius do campo de busca
+        padding: 5px 10px;
+        borda:#fff;
+
+        @fonte:{
+            tamanho:13px;               //Tamanho da fonte da busca da barra do topo
+            cor:@cor1;                  //Cor da fonte da busca da barra do topo
+        }
+
+        @icone:{
+            tamanho:18px;
+            cor:@cor1;
+        }
+    }
+}
+
+//Paginate -----------------------------------------------------------------------
+
+@paginate:{
+    fundo:@cor1;
+    cor:@cor1;
+    borda:@cor1;
+
+    @ativo:{
+        fundo:@cor1;
+        cor:#fff;
+        borda:@cor1;
+    }
+    @inativo:{
+        fundo:@cor1;
+        cor:#fff;
+        borda:@cor1;
+    }
+
+    @hover:{
+        fundo:@cor1;
+        cor:#fff;
+        borda:@cor1;
+    }
+}
+
+//Galerias -----------------------------------------------------------------------
+
+@galeria:{
+    item:5;          //quantidade de imagens por linha]
+    gap:25px;        //espacamento entre as imagens
+    hover:@cor1;
+    icone:#fff;
+    fundo:#000;
+}
+
+//Cookies ------------------------------------------------------------------------
+
+@cookies:{
+    fundo:#fff;
+    borda:@cor1;
+
+    @texto:{
+        tamanho:13px;
+        cor:#333;
+    }
+}

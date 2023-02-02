@@ -1,0 +1,118 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser23(
+@item:3,
+@cor-titulo:#fff,
+@hover:@cor1,
+@tamanho-titulo:25px,
+@gap:0,
+@radius:0
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+
+    article{
+        .pr;
+        .ofh;
+        .box;
+        -webkit-user-select: none;
+        .fundo(#000);
+        .radius(@radius);
+
+        &:hover{
+            .servico-info{
+                .translatey(0);
+            }
+
+            img{
+                .fl;
+                .op(0.6);
+            }
+
+            h4{
+                .c(@hover);
+            }
+
+            .link{
+                .translatey(0);
+                .op(1);
+            }
+        }
+
+        @media only screen and (max-width:1023px){
+          
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+    }
+
+    img{
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .fl;
+        .op(0.8);
+
+    }
+
+    .servico-info{
+        .w(100%);
+        .flex-meio;
+        .ac;
+        .box;
+        .pd(@espaco);
+        .pa-bl;
+        .ease-out;
+        .translatey(50px);
+
+
+
+        @media only screen and(max-width:600px){
+            h4{
+                .fs(@tamanho-titulo - 5px);
+                .pdb(0);
+            }
+        }
+
+        p, span{
+            .dn;
+        }
+    }
+
+    h4{
+        .full;
+        .fs(@tamanho-titulo);
+        .mgb(25px);
+        .c(@cor-titulo);
+        .tu;
+        .fw(700);
+        transition: all .6s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    }
+
+    h5{
+        .dn;
+    }
+
+    .link{
+        .botao1;
+        .bt-extra-pequeno;
+        .translatey(20px);
+        .op(0);
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    }
+}

@@ -1,0 +1,51 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo9(){
+    .bg-color(@topo[fundo]);
+
+    .topo{
+        .full-max;
+        .df;
+    }
+
+    .topo-right{
+        .full;
+    }
+
+    .menu{
+        .full;
+        .pdl(@espacom * 2);
+    }
+
+    .pmenu{
+        .bdl(@topo[borda]);
+        .pdl(@espacom);
+
+        .fl;
+    }
+
+    .bloco-telefone{
+        .dn;
+    }
+
+    .menu-fixo{
+        
+        .menu{
+            justify-content: flex-start;
+        }
+        
+        nav{
+            .bdl(@topo[borda]);
+            .pdl(@espacom);
+            .mgl(@espacom * 2);
+            .fl;
+        }
+    }
+
+    /*    @media only screen and (max-width:1023px){
+            .fundo(@topo[@responsivo][fundo]);
+        }*/
+}
+

@@ -1,0 +1,80 @@
+.redes3(
+@cores:@redes-topo-cores-originais;
+@coresr:@redes-rodape-cores-originais;
+){
+    i{
+        .pd(2px);
+
+        &:hover{
+            .scale(1.1);
+        } 
+    }
+
+    &.redes-topo{
+        .cores-redes(@cores);
+        .cores-redes(@a) when (@a=off){
+            i{
+                .c(@redes-sociais[@topo][hover]) !important;
+                .fundo(@redes-sociais[@topo][cor]) !important;
+            }
+        }
+    }
+
+    &.redes-rodape{
+        .cores-redes(@coresr);
+        .cores-redes(@a) when (@a=off){
+            i{
+                .c(@redes-sociais[@rodape][hover]) !important;
+                .fundo(@redes-sociais[@rodape][cor]) !important;
+            }
+        }
+    }
+
+    i.fa-facebook-f{
+        .fundo(@redes-sociais[facebook]) ;
+        .c(#fff);
+    }
+
+    i.fa-google{
+        .fundo(@redes-sociais[google]);
+        .c(#fff);
+    }
+
+    i.fa-instagram{
+        .fundo(@redes-sociais[instagram]);
+        .c(#fff);
+    }
+
+    i.fa-twitter{
+        .fundo(@redes-sociais[twitter]);
+        .c(#fff);
+    }
+
+    i.fa-linkedin-in{
+        .fundo(@redes-sociais[linkedin]);
+        .c(#fff);
+    }
+    i.fa-youtube{
+        .fundo(@redes-sociais[youtube]);
+        .c(#fff);
+    }
+    i.fa-pinterest{
+        .fundo(@redes-sociais[pinterest]);
+        .c(#fff);
+    }
+
+    i.fa-blogger{
+        .fundo(@redes-sociais[blogger]);
+        .c(#fff);
+    }
+    i.fa-rss{
+        .fundo(@redes-sociais[rss]);
+        .c(#fff);
+    }
+
+    i.fa-skype{
+        .fundo(@redes-sociais[skype]);
+        .c(#fff);
+    }
+
+}

@@ -1,0 +1,153 @@
+@media only screen and (min-width:1024px){
+
+
+    /*    .bloco-images,
+        .bloco-teaser,
+        .bloco-videos,
+        .logos,
+        .bloco-texto-imagem,
+        .bloco-formulario{
+            h2,h3,article,.txt,.link-geral{
+                .efeito;
+            }
+        } 
+      
+        .quem-somos{
+            h2,h3,figure,.texto,.bloco-link{
+                .efeito;
+            }
+        }
+    
+        .img-fundo{
+            h2,h3,span,.bloco-link{
+                .efeito;
+            }
+        }
+    
+        .noticias{
+            h2,h3,article,.clear{
+                .efeito;
+            }
+        }
+    
+        .newsletter{
+            h2,h3,form{
+                .efeito;
+            }
+        }*/
+}
+
+
+.efeito{
+
+    .tipo-topo(@tipo-efeito);
+    .tipo-topo(@a) when (@a=1){
+        .efeito1;
+    }
+
+    .tipo-topo(@a) when (@a=2){
+        .efeito2;
+    }
+
+    .tipo-topo(@a) when (@a=3){
+        .efeito3;
+    }
+
+}
+
+.efeito1(){
+
+    .op(0);
+    .ease-out;
+    transition-delay: 0.3s;
+
+    &.inView{
+        .op !important;
+    }
+
+}
+
+
+.efeito2(){
+
+    .op(0);
+    .translatey(50px);
+    .ease(1s);
+    transition-delay: 0.3s;
+
+    &.inView{
+        .op !important;
+        .translatey(0);
+    }
+
+}
+
+.efeito3(){
+
+    .fx(){
+        .op(0);
+        .scale(.8);
+        .ease(0.5s);
+    }
+
+    .inView{
+        .op !important;
+        .scale(1)  !important;
+    }
+
+    &.quem-somos{
+        h2,h3,figure,.texto,.bloco-link{
+            .fx;
+        }
+    }
+
+
+    &.bloco-texto-imagem{
+        h2,h3,.texto,.img-texto-imagem,.clear{
+            .fx;
+        }
+    }
+
+    &.bloco-images{
+        h2,h3,article,.txt,.link-geral{
+            .fx;
+        }
+    }
+
+    &.txt-bloco{
+        h2,h3,article,.txt,.link-geral{
+            .fx;
+        }
+    }
+
+    &.bloco-videos{
+        h2,h3,article,.txt,.link-geral{
+            .fx;
+        }
+    }
+
+    &.noticias{
+        h2,h3,article,.clear{
+            .fx;
+        }
+    }
+
+    &.img-fundo{
+        h2,h3,span,.bloco-link{
+            .fx;
+        }
+    }
+
+    &.newsletter{
+        h2,h3,form{
+            .fx;
+        }
+
+    }
+
+    &.logos{
+        h2,h3,li{
+            .fx;
+        }
+    }
+}

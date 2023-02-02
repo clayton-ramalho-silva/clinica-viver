@@ -1,0 +1,74 @@
+<!--SEARCH_HEADER_START//-->
+<div class="bloco-pesquisa">
+<section>
+  [TITLE]<div class="subtitulo">[/TITLE]
+                [TITLE]<h2>{TITLE}</h2>[/TITLE]
+                [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+                [TITLE]</div>[/TITLE]
+            [TITLE]<div class="divider"></div>[/TITLE]
+
+[FORM]
+    <div class="pesquisa-interna">
+        <form action="{SEARCH_ACTION}" method="post">
+            <p>
+                [SEARCH_INPUT_LABEL]<label>{SEARCH_INPUT_LABEL}</label>[/SEARCH_INPUT_LABEL]
+                <input type="text" name="{SEARCH_INPUT}" placeholder="Digite o que Procura" value="{SEARCH_VALUE}" />
+                <input type="submit" value="Buscar"/>
+            </p>
+        </form>
+    </div>
+[/FORM]
+
+[TEXT]<h3>{TEXT}</h3>[/TEXT]
+
+[RESULTS]
+<div class="resultado-busca">
+    <h4>Resultados da Busca</h4>
+
+    [PAGINATE_TOP]{PAGINATE_TOP}[/PAGINATE_TOP]
+
+    <div class="lista-resultado-busca">
+        {RESULTS}
+[/RESULTS]
+<!--SEARCH_HEADER_END//-->
+
+
+<!--SEARCH_ITEM_START//-->
+            <a href="{LINK}"{LINK_TARGET}> 
+	<article class="search-item-ranking-{RANKING}">
+                [IMAGE]<figure><img src="img/cmsimage.php/100x100x1/{IMAGE_HASH}.{IMAGE_EXT}" alt="{IMAGE_NAME}, ID:{IMAGE_ID}" class="search-item-image" /></figure>[/IMAGE]
+		<div class="search-item-details">
+		    [TITLE]<h4>{TITLE}</h4>[/TITLE]
+		    [SUBTITLE]<h5>{SUBTITLE}</h5>[/SUBTITLE]
+                    [TEXT]<span>{TEXT}</span>[/TEXT]
+		</div>
+	</article>
+           </a>
+<!--SEARCH_ITEM_END//-->
+
+
+<!--SEARCH_ITEM_SPACER_START//-->
+	<!-- space between search results -->
+<!--SEARCH_ITEM_SPACER_END//-->
+
+
+<!--SEARCH_FOOTER_START//-->
+[RESULTS]
+	</div>
+        [PAGINATE_BOTTOM]{PAGINATE_BOTTOM}[/PAGINATE_BOTTOM]
+    </div>
+[/RESULTS]
+
+
+</section>
+</div>
+<!--SEARCH_FOOTER_END//-->
+
+<!--SEARCH_PAGINATE_START//-->
+    <div class="paginacao">
+	<div class="bt-anterior">{PREV:<i class="fas fa-angle-left"></i>}</div>
+        <div class="link-page">{NAVI:123}</div>
+	<div class="bt-proximo">{NEXT:<i class="fas fa-angle-right"></i>}</div>
+    </div>
+<!--SEARCH_PAGINATE_END//-->
+

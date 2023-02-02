@@ -1,0 +1,143 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser7(
+@item:3,
+@cor-titulo:@cor1,
+@tamanho-titulo:20px,
+@cor-texto:@cor-fonte-site,
+@tamanho-texto:13px,
+@cor-borda:@cor-texto,
+@cor-icone:@cor-titulo,
+@espaco:15px
+
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        counter-reset: section;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+
+    article{
+        .ac;
+        .box;
+        .mgb(30px);
+
+        &:before{
+            .db;
+            counter-increment: section;
+            content: "0" counter(section);
+            .fs(60px);
+            .lh(1);
+            .c(@cor-borda);
+        }
+
+        &:hover{
+            .bloco-link{
+                .op;
+                .translatey(0px);
+            }
+
+            h4{
+                &:before{
+                    .scale(1.4);
+                    .sombra(0 0 0 0px transparent);
+                }
+            }
+        }
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .mw(100%);
+            .df;
+            .mgb(45px);
+            .column;
+
+            figure{
+                .mgr(@espaco);
+            }
+
+            .link{
+                .op;
+            }
+        }
+
+    }
+
+    h4{
+        .fs(@tamanho-titulo);
+        .c(@cor-titulo);
+        .fw(700);
+        .fl;
+        .bloco-1;
+        .mgt(@espaco * 2);
+        .mgb(@espacom);
+        .pdl(15px);
+        .pdr(15px);
+        .tu; 
+        .bdt(fade(@cor-borda,30));
+        .pr;
+        .flex-meio;
+        .column;
+        &:before{
+            .ab;
+            .fundo(@cor-icone);
+            .sombra(0 0 0 5px lighten(@cor-icone,25));
+            .radius;
+            .mgt(-10px);
+            .size(20px);
+            .mgb(@espaco);
+            transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        }
+    }
+
+    h5{
+        .dn;
+    }
+
+    figure{
+        .dn;
+    }
+
+    .servico-info{
+        .df;
+        .column;
+        .full;
+        .aic;
+        .fs(@tamanho-texto);
+        .c(@cor-texto);
+
+        p, span{
+            .pdl(@espacom);
+            .pdr(@espacom);
+        }
+    }
+
+    .bloco-link{
+        .df;
+        .pdt(@espacom);
+
+        @media only screen and (min-width:1024px){
+            .op(0);
+            .translatey(-10px);
+            transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+    }
+
+    .link{
+        .botao4(@modo:5);
+        .bt-extra-pequeno;
+
+    } 
+}

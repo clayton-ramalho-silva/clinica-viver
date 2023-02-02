@@ -1,0 +1,133 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser14(
+@item:2,
+@cor-titulo:#fff,
+@tamanho-titulo:25px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:15px,
+@fundo:#000,
+@gap:25px,
+@radius:@radius-padrao-botoes
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+
+    h4{
+        .fw(700);
+        .tu;
+        .fs(@tamanho-titulo);
+        .c(@cor-titulo);
+
+        &:after{
+            .op(0);
+            .ab;
+            .size(100%,3px);
+            .fundo(@cor-titulo);
+            .mgt(10px);
+            .mgb(10px);
+            .fl;
+            .translatex(-102%);
+            transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        }
+    }
+
+    h5{
+        .dn
+    }
+
+    section{
+        .df;
+        .wrap;
+    } 
+
+    figure{
+        .ofh;
+        .size(100%);
+    }
+
+    img{
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .fl;
+    }
+
+    .servico-info{
+        .pa-tl(25px,25px);
+        right:25px;
+        bottom:25px;
+        .al;
+        .box;
+        .c(@cor-texto);
+        .fs(@tamanho-texto);
+        .ofh;
+
+        span, p{
+            .op(0);
+            .full;
+            .db;
+            .translatex(102%);
+            transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        }
+    }
+
+    article{
+        .pr;
+        .ofh;
+        .fundo(@fundo);
+        .radius(if((@radius > 25px), 25px, @radius));
+
+
+        &:hover{
+            h4{
+                &:after{
+                    .translatex(0);
+                    .op;
+                }
+            }
+
+            h5{
+                .translatex(0);
+            }
+
+
+            span, p{
+                .op;
+                .translatex(0);
+            }
+
+            img{
+                .scale(1.1);
+                .op(0.6);
+            }
+        }
+
+        a{
+            .fs(0);
+            .pa-tl;
+            .size(100%);
+        }
+
+        @media only screen and (max-width:1023px){
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+
+    }
+}

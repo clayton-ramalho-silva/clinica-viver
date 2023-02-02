@@ -1,0 +1,46 @@
+
+[JS]
+<script>
+    /*separar as classes por virgula*/
+    $variavel =
+            '.bloco-images article, .bloco-images h2, .bloco-images h3, .bloco-images .txt,\n\
+             .bloco-teaser article, .bloco-teaser h2, .bloco-teaser h3, .bloco-teaser .txt,\n\
+             .quem-somos figure, .quem-somos .texto, .quem-somos h2, .quem-somos h3,.quem-somos .subtitulo,\n\
+             .noticias article, .noticias h2, .noticias h3, .noticias .mais-noticias,\n\
+             .bloco-videos article, .bloco-videos h2, .bloco-videos h3,\n\
+             .img-fundo span, .img-fundo h2, .img-fundo h3, .img-fundo a,\n\
+             .logos h2, .logos h3, .logos li,\n\
+             .bloco-texto-imagem h3, .texto-esquerda, .texto-direita, .imagem-esquerda, .imagem-direita,\n\
+             .bloco-formulario form p, .bloco-formulario h3\n\
+';
+    $variavelb =
+            '\
+                .bloco-images article, .bloco-images h2, .bloco-images h3, .bloco-images .txt,.bloco-images .link-geral,\n\
+                .txt-bloco article, .txt-bloco h2, .txt-bloco  h3, .txt-bloco .txt,.txt-bloco .link-geral,\n\
+                .quem-somos figure, .quem-somos .texto, .quem-somos h2, .quem-somos h3,.quem-somos .bloco-link,\n\
+                .img-fundo span, .img-fundo h2, .img-fundo h3, .img-fundo .bloco-link,\n\
+                .noticias article, .noticias h2, .noticias h3, .noticias .clear,\n\
+                .newsletter h2, .newsletter h3, .newsletter form,\n\
+                .logos h2, .logos h3, .logos li,\n\
+                .bloco-videos article, .bloco-videos h2, .bloco-videos h3,\n\
+                .bloco-teaser,.bloco-texto-imagem   \n\
+  ';
+    let elementsArray = document.querySelectorAll($variavelb);
+    console.log(elementsArray);
+    window.addEventListener('scroll', fadeIn);
+    function fadeIn() {
+    for (var i = 0; i < elementsArray.length; i++) {
+    var elem = elementsArray[i]
+            var distInView = elem.getBoundingClientRect().top - window.innerHeight + 40;
+    if (distInView < 0) {
+    elem.classList.add("inView");
+    } else {
+    elem.classList.remove("inView");
+    }
+    }
+    }
+    fadeIn();
+
+
+</script>
+[/JS]

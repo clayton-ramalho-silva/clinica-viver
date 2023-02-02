@@ -1,0 +1,38 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-3(
+){
+    .df;
+    .column;
+     
+    h2{ 
+        .bdb(@subtitulo[borda]);
+        .pdb(@espacom);
+    }    
+
+    h3{
+        .mgt(@espacom);
+        .mgb(5px);
+
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+
+    .direcao-sub(@subtitulo[direcao]);
+
+    .direcao-sub(@a) when (@a=left){
+        align-items: flex-start;
+    }
+   
+    .direcao-sub(@a) when (@a=center){
+        .flex-meio;
+    }
+
+}

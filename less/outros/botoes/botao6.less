@@ -1,0 +1,34 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+
+.botao6(
+@fundo:@cor1
+)
+{
+    .pr;
+    letter-spacing: 4px;
+    .box;
+    .c(@fundo);
+    background: none;
+
+    &:after{
+        .ab;
+        .pa-tl;
+        .size(100%);
+        .box;
+        .bd(@fundo,3px);
+        .ease-out;
+    }
+
+    &:hover{
+        &:after{
+            .bd(@fundo,6px);
+        }
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+} 

@@ -1,0 +1,67 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+
+
+.noticias-lista-7(){
+
+    article{
+        .ease-out;
+        .c(@noticias[@texto][cor]);
+        .flex-between;
+        .aic;        
+
+        h4{
+            .fs(20px);
+            .fw(300);
+            .fl;
+            .mgb(15px);
+        }
+
+        h5{
+            .dn;
+        }
+
+        figure{
+            .w(30%);
+        }
+
+        img{
+            .radius(if((@noticias[radius] > 25px), 25px, @noticias[radius]));
+            .fl;
+        }
+
+        .servico-info{
+            .df;
+            .column;
+            .fs(14px);
+            .pr;
+            .w(65%;)
+
+        }
+
+        .bloco-link{
+            .mgt(15px);
+        }
+        .link{
+            .botao4(@modo:7);
+        }
+
+        .data{
+            .pa-br;
+            .c(#fff);
+            .fundo(@cor1);
+            .fs(12px);
+            .radius(if((@noticias[radius] > 25px), 25px, @noticias[radius]));
+            .pd(2px 5px);
+
+            i{
+                .mgr(5px);
+                .mgt(2px);
+            }
+        }
+    }
+
+
+}

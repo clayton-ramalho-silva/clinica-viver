@@ -1,0 +1,130 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo6(){
+    @media only screen and (min-width:1024px){
+
+        .bg-color(@topo[fundo]);
+
+        .topo{
+            .full-max;
+
+            .df;
+            .aic;
+            .sc;
+            .column;
+        }
+
+        .pmenu{
+            .fl;
+            .mgt(5px); 
+            .mgb(5px);
+        }
+
+        .psubmenu{
+            a{
+                min-height: @submenu[@link][altura];
+            }
+        }
+
+        .topo-right{
+            .pr;
+            .h(auto);
+            .redes-topo{
+                .dn;
+            }
+
+            .menu{
+                .pdr(0); 
+                .pdl(0);
+            }
+
+            .busca{
+                .dn;
+            }
+        }
+
+        .bloco-telefone{
+            .dn;
+        }
+
+        .tipo-menu(@tipo-menu);  
+
+        .tipo-menu(@a) when (@a=3){
+            .pmenu{
+                .mgb(0px);
+
+                a{
+                    .linha(@menu[@link][altura]);
+                }
+
+                .psubmenu{
+                    top:@menu[@link][altura];
+                }
+            }
+        }
+
+        .tipo-menu(@a) when (@a=4){
+            .pmenu{
+                .mgb(0px);
+
+                a{
+                    .linha(@menu[@link][altura]);
+                    max-height: @menu[@link][altura];
+                }
+
+                .psubmenu{
+                    top:@menu[@link][altura];
+                }
+            }
+        }
+
+        .tipo-menu(@a) when (@a=5){
+            .pmenu{
+                .mgt(0px);
+                .mgb(0px);
+
+                a{
+                    .linha(@menu[@link][altura]);
+                    max-height: @menu[@link][altura];
+                }
+
+                .psubmenu{
+                    top:@menu[@link][altura];
+                }
+            }
+        }
+
+        .tipo-menu(@a) when (@a=6){
+            .pmenu{
+                .mgt(5px);
+                .mgb(5px);
+            }
+        }
+
+        .tipo-menu(@a) when (@a=7){
+
+            .pmenu{
+                a{
+                    .lh(initial);
+                    height: auto;
+                    min-height: 1px;
+                }
+            }
+        }
+    }
+
+
+    @media only screen and (max-width:1023px){
+        .topo{
+            .full-max;
+        }
+    }
+
+
+}
+
+
+
+

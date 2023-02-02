@@ -1,0 +1,102 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+.img-fundo2(
+@altura:50vh,
+@direcao:left,
+@fundo:@cor1,
+@bg:movel,
+
+@cor-texto:#fff,
+@cor-titulo:#fff,
+@cor-subtitulo:@cor2
+)
+{
+    .bg-size(contain) !important;
+    .pr;
+    min-height: @altura;
+    .aic;
+    .box;
+
+    &:after{
+        .ab;
+        .size(50%,100%);
+        .fundo(@fundo);
+    }
+
+    section{
+        .dg;
+        .grid-columns(2);
+        gap:50px;
+    }
+
+    h2{
+        .c(@cor-titulo);
+    }
+
+    h3{
+        .c(@cor-subtitulo);
+    }
+
+    .texto{
+        .pr;
+        z-index:1;
+        .c(@cor-texto);
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+    }
+
+    .link{
+        .bt-pequeno;
+    }
+
+    .img-fundo-direcao(@direcao);    
+    .img-fundo-direcao(@a) when (@a=left){
+        background-position: right !important;
+
+        &:after{
+            .pa-tl;
+        }
+    }
+    .img-fundo-direcao(@a) when (@a=right){
+        background-position: left !important;
+        .texto{
+            grid-column-start: 2;
+        }
+
+        &:after{
+            .pa-tr;
+        }
+    }
+
+    @media only screen and (min-width:1024px){
+
+        .img-fundo-fixo(@bg);
+        .img-fundo-fixo(@a) when (@a=fixo){
+            background-attachment: fixed;
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+
+        .bg-size(cover) !important;
+
+        &:after{
+            .w(100%);
+            .fundo(fade(@fundo,80));
+        }
+
+
+        section{
+            min-height: 1px;
+            .df;
+        }
+
+        .texto{
+            .full;
+        }
+    }
+}

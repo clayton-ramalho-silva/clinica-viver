@@ -1,0 +1,110 @@
+
+#colorbox, #cboxOverlay, #cboxWrapper{
+    .pa-tl(0,0,9999);
+    .ofh;
+}
+
+#cboxOverlay{
+    .pf;
+    .size(100%);
+    .fundo(@p60);
+}
+
+#cboxMiddleLeft, #cboxBottomLeft{
+    clear:left;
+}
+
+#cboxContent{
+    .pr;
+}
+
+#cboxLoadedContent{
+    overflow:auto; 
+    -webkit-overflow-scrolling:touch;
+}
+
+#cboxLoadingOverlay, #cboxLoadingGraphic{
+    .pa-tl;
+    .full;
+}
+
+#cboxPrevious, #cboxNext, #cboxClose, #cboxSlideshow{
+    cursor:pointer;
+}
+
+.cboxPhoto{
+    .fl;
+    .mg(auto);
+    border:0;
+    .db;
+}
+
+.cboxIframe{
+    .size(100%);
+    .db;
+    border:0;
+}
+
+#colorbox, #cboxContent, #cboxLoadedContent{
+    box-sizing:content-box; 
+    -moz-box-sizing:content-box; 
+    -webkit-box-sizing:content-box;
+}
+
+/*--personalizacao do popup--*/
+#colorbox{
+    outline:0; 
+    .sombra(0 0 0 20px @p60);
+}
+#cboxContent{
+    .fundo(#fff);
+    .ofh;
+
+}
+#cboxError{
+    .pd(50px);
+    .bd(#ccc);
+
+}
+
+#cboxTitle{
+    .pa-bl(4px,0);
+    .ac;
+    .full;
+    .c(#949494);
+}
+
+#cboxCurrent{
+    .pa-bl(4px,58px);
+    .c(#949494);
+}
+
+#cboxSlideshow{
+    .pa-br(4px,30px);
+    .c(#0092ef);
+}
+
+#cboxPrevious{
+    .dn;
+}
+
+#cboxNext{
+    .dn;
+}
+
+
+#cboxClose{
+    .pa-br(15px,15px);
+    .fundo(#fff);
+    .circle(30px);
+    .fs(25px);
+    .ease-out;
+    .sombra(0 0 0 0 fade(#000,80));
+    &:hover{
+        .sombra(0 0 0 5px fade(#000,80));
+    }
+}
+
+/*-- FIM DA CONFIGURACAO DO MODAL POPUP --*/
+
+/*---------------------------------------------------------------------------------------------------------------*/

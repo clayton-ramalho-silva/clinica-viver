@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- generator="FeedCreator 1.7.2 enhanced" -->
+<rss version="2.0">
+    <channel>
+        <title>Daily RSS feed</title>
+        <description>This is the default RSS feeds of my site</description>
+        <link>http://www.mysite.tld/</link>
+        <lastBuildDate>Wed, 27 Aug 2014 13:05:48 +0100</lastBuildDate>
+        <generator>FeedCreator 1.7.2 enhanced</generator>
+        <managingEditor>editor@mysite.tld (Feed Editor)</managingEditor>
+        <item>
+            <title>New</title>
+            <link>http://www.spcriacaodesites.com.br/gestores/02/index.php?aid=7</link>
+            <description></description>
+            <author>feed@mysite.tld</author>
+            <pubDate>Wed, 27 Aug 2014 15:32:12 +0100</pubDate>
+            <guid></guid>
+        </item>
+    </channel>
+</rss>

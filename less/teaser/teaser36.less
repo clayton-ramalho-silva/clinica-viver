@@ -1,0 +1,129 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+//TEASER 3 ---------------------------------------------------------------------------------------------------------------------------------
+
+.teaser36(
+@item:4,
+@cor-titulo:@cor1,
+@tamanho-titulo:18px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:14px,
+@gap:50px,
+@radius:@radius-padrao-botoes,
+@cor-borda:@cor2,
+@img:on,
+@tamanho-imagem:50px,
+@cor-botao:#fff,
+@fundo-botao:@cor1,
+@fundo: #fff
+
+
+)
+{
+
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+        counter-reset: section;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+
+
+    h4{
+        .pa-tl;
+        .fs(@tamanho-titulo);
+        letter-spacing: 2px;
+        .tu;
+        .fw(700);
+        .c(@cor-titulo);
+        .h(@tamanho-imagem);
+        .pdl(@tamanho-imagem + @espaco);
+        .flex-meio;
+    }
+
+    article{
+        .box;
+        .pr;
+
+
+/*        @media only screen and (max-width:600px){
+            .mgb(@gap);
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }*/
+
+        figure{
+            .size(@tamanho-imagem);
+            .fl;
+
+            .img(@img);
+            .img(@a) when (@a=off){
+                .dn !important;
+            }
+        }
+
+        p,span,h5{
+            .pd(@espaco);
+            .pdb(@espaco * 2);
+            .radius(if((@radius > 25px), 25px, @radius));
+            .bd(@cor-borda);
+            .db;
+        }
+
+        &:after{
+            .db;
+            counter-increment: section;
+            content: "0" counter(section) ".";
+            .fs(60px);
+            .lh(1);
+            .c(@cor-borda);
+            .fw(700);
+            .fl;
+            .pdl(@espaco);
+            .mgt(-20px);
+        }
+    }
+
+    .servico-info{
+        .full;
+        .fl;
+        .c(@cor-texto);
+        .fs(@tamanho-texto);
+        .pdt(@espacom);
+    }
+
+
+    .link{
+        .fs(0);
+        .fas; 
+        .pa-br(10px,10px);  
+        .circle(25px);
+        .ease-out;
+        .c(@fundo-botao);
+
+        &:before{
+            content:'\f061';
+            .fs(18px);
+        }
+
+        &:hover{
+            .c(@cor-botao);
+            .fundo(@fundo-botao);
+        }
+
+    }
+
+
+}

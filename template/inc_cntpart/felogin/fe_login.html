@@ -1,0 +1,147 @@
+<!-- NOTICE: Convert file to charset of site -->
+
+<!--LOGIN_SETTINGS_START//-->
+; this is formatted like WIN.INI
+; please: do not use comments for value lines
+; Cookie expire set to 90 days
+date_format		= "%m/%d/%y"
+set_locale		= "en"
+cookie_expire	= 7776000
+<!--LOGIN_SETTINGS_END//-->
+
+<!--LOGIN_FORM_START//-->
+<div class="feLoginForm" style="background:#FFF; padding:10px 29px 5px 14px;">
+<h3>&Aacute;rea Restrita</h3><br />
+&Aacute;rea para usu&aacute;rios cadastrados.<br />
+<br />
+
+    <form action="{FORM_TARGET}" method="post" name="feLoginForm" id="feLoginForm">
+<table width="192" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td colspan="2">	[ERROR]
+
+	<span style="color:#900; font-size:12px;">E-mail ou Senha inv&aacute;lidas</span><br /><br />
+
+
+
+
+	[/ERROR][ERROR_ELSE]
+	
+
+	[/ERROR_ELSE]<span style="color:#640406; font-size:11px; padding:0 0 10px 0;">Entre com seu login e senha</span>
+<br />
+</td>
+    </tr>
+  <tr>
+    <td>Usu&aacute;rio:</td>
+    <td><input type="text" name="feLogin" id="feLogin" value="{LOGIN}" /></td>
+  </tr>
+  <tr>
+    <td>Senha:</td>
+    <td><input type="password" name="fePassword" id="fePassword" value="{PASSWORD}" /></td>
+  </tr>
+  <tr>
+    <td></td>
+    <td><input type="submit" value="Entrar" name="feSubmit" id="feSubmit" /></td>
+    </tr>
+  <tr>
+    <td colspan="2" align="right" style=" font-size:11px;"><a href="{REMINDER_FORM}" style="color:#ccc; margin:10px 5px 0 0;">Esqueci minha Senha</a></td>
+    </tr>
+</table>
+	</form>
+	
+</div> 
+<!--LOGIN_FORM_END//-->
+
+<!--LOGIN_IS_START//-->
+<div class="feLoggedIn" style=" background:#fff; width:407px;padding:15px 29px 15px 14px; float:left;">
+
+	Voc&ecirc; entrou como <strong>{LOGIN}</strong>.
+<div align="center" style="padding:10px 0 0 0; ">
+	<form action="{FORM_TARGET}" method="post" name="feLoginForm" id="feLoginForm">
+		
+			<input type="submit" value="Sair" name="feLogout" id="feLogout" />
+		
+	</form>
+</div></div>
+<!--LOGIN_IS_END//-->
+
+<!--PROFILE_REGISTER_START//-->
+	
+
+<!--PROFILE_REGISTER_END//-->
+
+<!--PROFILE_MANAGE_START//-->
+	
+
+
+<!--PROFILE_MANAGE_END//-->
+
+<!--REMINDER_FORM_START//-->
+<form action="{FORM_TARGET}" method="post" name="feLoginForm" id="feLoginForm">
+	<table width="400" border="0" cellspacing="0" cellpadding="4">
+  <tr>
+    <td colspan="2">[ERROR]
+
+	<span style="color:#900; font-size:11px">E-mail inv&aacute;lido</span><br />
+
+
+
+	[/ERROR][ERROR_ELSE]
+	
+
+	[/ERROR_ELSE]<span style="color:#90000; font-size:11px; padding:0 0 10px 0;">Entre com seu Nome de Usu&aacute;rio cadastrado</span>
+<br /></td>
+    </tr>
+  <tr> 
+    <td width="54">Usu&aacute;rio</td>
+    <td width="330"><input type="text" name="feReminder" id="feReminder" value="{REMINDER}" /></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" value="Enviar" name="feSubmit" id="feSubmit" /></td>
+  </tr>
+    <tr>
+    <td colspan="2" style=" font-size:11px;"><a href="{LOGIN_URL}" style="color:#666; margin:0 5px 0 0;"><br />
+<strong>[Acessar]</strong></a></td>
+    </tr>
+</table>
+	</form>
+
+
+<!--REMINDER_FORM_END//-->
+
+<!--REMINDER_SUCCESS_START//-->
+			<br />
+<p><strong>Confirma&ccedil;&atilde;o enviada com sucesso.</strong> <br />Verifique seu E-mail.</p><br />
+    <p><a href="{LOGIN_URL}">Login</a></p>
+<!--REMINDER_SUCCESS_END//-->
+
+
+<!--REMINDER_EMAIL_START//-->
+[SUBJECT]
+	Theodora Guerin - Lembrete de Senha 
+[/SUBJECT]
+
+[LOGIN_EMAIL]
+Solicitacao de Senha para area restrita do site Theodora Guerin.
+
+Nome de Usuario: {LOGIN}[/LOGIN_EMAIL]
+
+Para acessar a area restrita clique no link abaixo
+{LOGIN_URL}
+
+[PASSWORD_EMAIL]
+
+Solicitacao de Senha para area restrita do site Theodora Guerin.
+
+Senha: {PASSWORD}
+
+Para acessar a area restrita clique no link abaixo
+{LOGIN_URL}
+
+
+
+[/PASSWORD_EMAIL]
+
+<!--REMINDER_EMAIL_END//-->

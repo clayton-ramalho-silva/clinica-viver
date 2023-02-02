@@ -1,0 +1,372 @@
+// out: ../css/estilos.css, sourcemap: true, compress: true
+
+@import "conf-site";
+@import "reset";
+@import "helpers";  
+ 
+@import "icons/fontawesome"; 
+@import "icons/fa-solid";
+@import "icons/fa-brands";
+@import "icons/fa-regular"; 
+  
+@import "topo/topo";            
+@import "menu/menu";  
+@import "banner/banner";  
+ 
+@import "textos/titulos/titulos";  
+
+@import "textos/texto";    
+@import "teaser/teaser";   
+@import "redes/redes"; 
+
+@import "formulario/formulario";   
+ 
+@import "outros/outros";   
+@import "galerias/galerias";
+
+@import "noticias/noticias";   
+
+@import "rodape/rodape";    
+
+@import "efeitos/efeitos";    
+
+/*Estrutura do Site*/                      
+       
+body{                                                                                                                                                                                              
+    .fonte;         
+    .fs(@tamanho-fonte-site);
+    .lh(@linha-site);
+    .c(@cor-fonte-site); 
+}                                                       
+  
+img{            
+    .img-full;      
+}                    
+ 
+//Track Bar ----------------------------------------------------------------
+
+/* width */
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    .fundo(#333);
+}
+::-webkit-scrollbar-thumb {
+    background: lighten(@cor1,15); 
+}
+::-webkit-scrollbar-thumb:hover {
+    background: @cor2; 
+}
+ 
+
+.esconder(@a) when (@a=off){.dn !important;}
+
+//TITULOS      
+
+
+.big{
+    .fs(22px);
+    .c(@cor1);
+}
+
+.small{
+    .fs(18px);
+    .c(@cor2);
+} 
+
+.tt{ 
+    .fs(16px);
+    .c(darken(@cor1,10%));
+}  
+
+.code{
+    .fs(14px);
+    .c(darken(@cor2,10%));
+}     
+
+
+
+//LINKS    
+a{  
+    .c(@cor1); 
+    text-decoration:none;
+    &:hover{
+        &:extend(a);
+    } 
+}     
+
+.link,.link-geral{
+    .radius(@radius-padrao-botoes);
+
+}     
+
+//BANNER ------------------------------------------------------------------------
+
+.banner{            
+    .link{    
+        .bt-extra-pequeno;
+        .botao1; 
+    }
+}                                      
+
+//CORPO ------------------------------------------------------------------------  
+
+#mainBlock{    
+    .zindex; 
+}             
+                                                       
+
+.baid3{               
+    .bloco(5);
+    
+    .teaser3; 
+    //.bloco-full;
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}                                                    
+
+
+.baid24{               
+    .bloco(5);
+    
+    .teaser8; 
+    //.bloco-full;
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}      
+
+.baid25{               
+    .bloco(5);
+    
+    .teaser8; 
+    //.bloco-full;
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}     
+
+.baid26{               
+    .bloco(5);
+    
+    .teaser8; 
+    //.bloco-full;
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}     
+
+.baid4{    
+    .bloco(5);  
+    .teaser1;  
+
+    //.escurecer;    
+
+    /*    .link{
+            .botao1; 
+        }*/
+}      
+
+.baid80{               
+    .bloco(5);
+    
+    .teaser3; 
+    //.bloco-full;
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}     
+
+.baid81{               
+    .bloco(5);
+    
+    .teaser3; 
+    //.bloco-full;
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}  
+
+
+.baid83{               
+    .bloco(4);
+    
+    .teaser3; 
+    //.bloco-full;
+   
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}  
+
+.baid87{               
+    .bloco(4);
+    
+    .teaser27; 
+    //.bloco-full;
+   
+
+
+    .link-geral{       
+        .bt-pequeno;
+        .botao1; 
+    } 
+}  
+
+
+
+
+.ifaid11{  
+    .img-fundo1;
+    a{       
+        .bt-pequeno;
+        .botao3(#fff); 
+    }    
+
+}                                                 
+
+.bloco-videos{
+    .bloco(5);
+    /*.videos1;*/
+}                    
+
+.video-auto{
+    .video-auto2;
+}
+
+/*.formaid20{
+    .bloco(5);
+    .formulario3;
+    .bg('banner-1.jpg'); 
+} */ 
+
+//NOTICIAS ------------------------------------------------------------
+.noticias{  
+    .bloco(3);   
+
+
+    .link-geral{
+        .bt-pequeno;
+        .botao1;
+    }         
+}                                    
+
+
+/*.slider{
+    .slide1;
+}                  */
+
+//INTERNAS -----------------------------------------------------------------------
+.interna{
+    .center-flex;
+    .pdb(@espaco * 2);
+    .pr;
+
+    .banner-interna(@banner-interna);
+    .banner-interna(@a) when (@a=off){
+
+        @media only screen and (max-width:1023px){
+            .mgt(80px);
+        }
+    }    
+
+    article{
+        .op;
+    }
+
+    .bloco-texto-imagem, .bloco-tabs{
+        .pdt(@espaco-conteudo) !important;
+        .pdb(@espaco-conteudo) !important;
+        .lista;
+    }
+
+    .bloco-images{
+        .teaser2(3,center);
+    } 
+
+    .bloco-videos{
+        .pdt(@espaco-conteudo);
+        .pdb(@espaco-conteudo);
+    }
+
+    /*    .bloco-videos{
+            .bloco(2) !important;
+    
+            .grid{
+                gap:25px;
+            }
+        }*/
+}
+
+ 
+//downloads
+
+.bloco-downloads{
+    .downloads1;
+}
+
+
+//Accordion
+
+.bloco-tabs{
+    .accordion1;
+}
+
+//videos
+
+
+
+
+//Listagem de paginas
+
+.p3{
+    .teaser1;
+}
+
+//CONTATO -----------------------------------------------------------------------
+.bloco-formulario{
+    [type=submit]{
+        .botao1;
+    } 
+}                      
+
+// Efeitos 
+
+@media only screen and (min-width:1024px){
+    .quem-somos,
+    .baid3,
+    .ifaid11,
+    .newsletter,
+    .bloco-videos,
+    .noticias{
+        .efeito;
+    }
+}  
+
+@import "adcao.less";
+
+
+   

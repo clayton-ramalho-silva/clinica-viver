@@ -1,0 +1,35 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-1(
+){
+    .df;
+    .wrap;
+    .direcao-sub(@subtitulo[direcao]);
+    .direcao-sub(@a) when (@a=left){
+        .al;
+    }
+
+    .direcao-sub(@a) when (@a=center){
+        .ac;
+    }
+
+    h2{ 
+        .full;
+    }    
+    h3{
+        letter-spacing: 4px;
+        .full;
+        .mgt(5px);
+        .mgb(5px);
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+
+}

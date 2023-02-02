@@ -1,0 +1,120 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo4(){
+    .pa-tl(0,0,100) !important;
+
+    @media only screen and (min-width:1024px){
+
+        .topo{
+            .mgt(15px);
+            .full-max;
+            .df;
+            .sb;
+            .aic;
+
+            .topo-right{
+                .radius(@topo[radius]);
+                .pdl(@menu[@link][padding]);
+                .pdr(@menu[@link][padding]);
+                .fundo(@topo[fundo]);
+                .h(@menu[@link][altura] + 10px);
+            }
+
+            nav{
+                .pdl(0);
+                .pdr(0);
+
+                .tipo-menu(@tipo-menu);
+                .tipo-menu(@a) when (@a=1){
+                    .pdt(@menu[@link][padding]);
+                    .pdb(@menu[@link][padding]);
+                }
+
+                .tipo-menu(@a) when (@a=3){
+                    .pdl(20px);
+                    .pdr(20px);
+
+                    .pmenu a{
+                        .linha(@menu[@link][altura] + 10px);
+                    }
+
+                    .psubmenu{
+                        top:@menu[@link][altura];
+                    }
+                }
+
+                .tipo-menu(@a) when (@a=4){
+                    .linha(@menu[@link][altura] + 10px);
+
+                    .pmenu a{
+                        .linha(@menu[@link][altura] + 10px);
+
+                    }
+
+                    .psubmenu{
+                        top:@menu[@link][altura] + 10px;
+                    }
+                }
+
+                .tipo-menu(@a) when (@a=5){
+                    .pdt(@menu[@link][padding]);
+                    .pdb(@menu[@link][padding]);
+
+                    .pmenu a{
+                        .linha(@menu[@link][altura] + 10px);
+
+                    }
+
+                    .psubmenu{
+                        top:@menu[@link][altura] + 10px;
+                    }
+
+                }
+
+                .tipo-menu(@a) when (@a=6){
+                    .pdt(@menu[@link][padding]);
+                    .pdb(@menu[@link][padding]);
+
+                    a{
+                        border-bottom: none !important;
+                    }
+                }
+
+                .tipo-menu(@a) when (@a=7){
+                    .zindex;
+                    .pdt(25px);
+                    .pdb(25px);
+                }
+            }
+
+            .pmenu{
+                li{
+                    &:first-of-type{
+                        .mgl(0);
+                    }
+
+                    &:last-of-type{
+                        .mgr(0);
+                    }
+                }
+
+            }
+
+            .redes-topo{
+                .dn;
+            }
+
+            .bloco-telefone{
+                .dn;
+            }
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .topo{
+            .full-max;
+        }
+    }
+}

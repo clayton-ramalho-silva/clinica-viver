@@ -1,0 +1,53 @@
+<div class="noticia-completa">
+
+    <div class="navegacao-noticia">
+        <div class="bt-anterior">{XBROWSE:PREV:<i class="fas fa-angle-left"></i> Anterior:0}</div>
+        <div class="link-page">{XBROWSE:UP:Ver Tudo}</div>
+        <div class="bt-proximo">{XBROWSE:NEXT:Próxima <i class="fas fa-angle-right"></i>:0}</div>
+    </div>
+
+
+    <section>
+        [TITLE]<h2>{TITLE}</h2>[/TITLE]
+        [SUB]<h3>{SUB}</h3>[/SUB]
+        <div class="divider"></div>
+        [IMAGE]<figure class="imagem-noticia">{IMAGE}</figure>[/IMAGE]
+        {SUMMARY}
+    </section>
+</div>
+
+[PHP]
+$url =  "http://{$_SERVER['HTTP_HOST']}{$_SERVER['REQUEST_URI']}";
+[/PHP]
+
+
+[JS]
+<script>
+    $().ready(function () {
+
+        var title = $('h2').html();
+
+        $('.compartilhar-whatsapp').attr('href', 'https://api.whatsapp.com/send?text=Leia agora ' + title + ' - ' + window.location.href);
+
+    });
+</script>
+[/JS]
+
+
+<div class="redes-botoes">
+    <section>
+        <div class="fb-share-button" data-href="[PHP]echo $url;[/PHP]" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fteste.com.br%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Compartilhar</a></div>
+
+        <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="true">Tweet</a>
+
+        <a id="whatsapp-share-btt" class="compartilhar-whatsapp" href="#" target="_black"><i class="fab fa-whatsapp"></i> <span>Compartilhar</span>
+        </a>
+    </section>
+</div>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+
+
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v5.0"></script>

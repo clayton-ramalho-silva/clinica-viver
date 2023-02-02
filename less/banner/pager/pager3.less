@@ -1,0 +1,72 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+
+.pager3(){
+    .bx-pager{
+        .direcao-pager(@banner[@pager][direcao]);
+
+        .direcao-pager(@a) when (@a=left){
+            .pa-tl(0,@espaco,900);
+
+            a{
+                &:after{
+                    order:-1;
+                    .mgr(@espacom);
+                }
+            }
+        }
+        .direcao-pager(@a) when (@a=right){
+            .pa-tr(0,@espaco,900);
+
+            a{
+                &:after{
+                    .mgl(@espacom);
+                }
+            }
+        }
+
+        .h(100%);
+        .flex-meio;
+        .column;
+        .pdt(@banner[topo]);
+        .box;
+
+        a{  
+            .full;
+            .fs(@banner[@pager][tamanho]);
+            .c(transparent);
+            .fw(900);
+            .flex-meio;
+            .h(@banner[@pager][tamanho] + 5px);
+
+            &:after{
+                .ab;
+                .size(25px,5px);
+                .fundo(@banner[@pager][cor]);
+                .mgt(auto);
+                .mgb(auto);
+                .ease-out;
+            }
+
+            &:before{
+                content: '0';
+            }
+
+            &:hover{
+                .c(@banner[@pager][hover]);
+                &:after{
+                    .fundo(@banner[@pager][hover]);
+                }
+
+            }        
+        }
+
+        .active{
+            .c(@banner[@pager][ativo]);
+            &:after{
+                .fundo(@banner[@pager][ativo]);
+            }
+        }
+    } 
+}

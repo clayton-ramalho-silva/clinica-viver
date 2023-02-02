@@ -1,0 +1,44 @@
+<form id="e{ID}">
+
+    <div class="button button-estrutura">
+
+        <span>
+            <a href="{LINK}phpwcms.php?do=admin&p=6&struct=0&cat={ID}" target="_blank" title="Editar a estrutura {NOME}">{NOME}</a>
+        </span>
+
+    </div>
+
+    <div class="content">
+
+        <input type="hidden" value="{ID}" id="cat-id" name="cat-id">
+
+            <p class="check_artigo">
+                <input type="text" value="{NOME}" id="catnome-{ID}" name="cat-nome" placeholder="Estrutura" class="floatlabel">
+            </p>
+
+            <p class="check_titulo">
+                <input type="text" value="{TITULO}" id="cattitulo-{ID}" name="cat-titulo" placeholder="Título do SEO" class="floatlabel">
+            </p>
+
+            <p class="check_descricao">
+                <span class="floatlabel-wrapper" style="position:relative; display: flex">
+                    <label for="50" class="label-floatlabel" style="position: absolute; top: 2px; left: 8px; display: block; opacity: 1; font-size: 11px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s linear 0s;">Informações</label>
+                    <textarea id="cat-info-{ID}" name="cat-info">{INFORMACOES}</textarea>
+                </span>
+            </p>
+
+            <p class="check_palavras">
+                <span class="floatlabel-wrapper" style="position:relative; display: flex">
+                    <label for="50" class="label-floatlabel" style="position: absolute; top: 2px; left: 8px; display: block; opacity: 1; font-size: 11px; font-weight: normal; color: rgb(153, 153, 153); transition: all 0.1s linear 0s;">Palavras-chave</label>
+                    <textarea id="cat-palavra-chave-{ID}" name="cat-palavra-chave">{PALAVRAS}</textarea>
+                </span>
+            </p>
+
+            <p class="box-submit">
+                <input type="submit" name="submit" value="Atualizar" id="submit" />
+                <span class="mensagem"></span>
+            </p>
+
+    </div>
+
+</form>

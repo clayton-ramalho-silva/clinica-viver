@@ -1,0 +1,60 @@
+<!--TEASER_HEAD_START//-->
+
+[JS]js/jquery.colorbox.js[/JS]
+[JS]
+<script>
+    $(document).ready(function () {
+        $(".link-equipe").colorbox({inline: true, width: "50%"});
+    });
+</script>
+[/JS]
+
+<div class="bloco-teaser-modal">
+    <section>
+          [TITLE]<div class="subtitulo">[/TITLE]
+            [TITLE]<h2>{TITLE}</h2>[/TITLE]
+            [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+            [TITLE]</div>[/TITLE]
+        [TITLE]<div class="divider"></div>[/TITLE]
+
+        <div class="grid">
+
+            [TEASER]
+            <!--TEASER_HEAD_END//-->
+
+            <!--TEASER_ENTRY_START//-->
+
+            <article>
+                <figure>{IMAGE}</figure> 
+                <div class="servico-info">
+                    [TITLE]<h4>{TITLE}</h4>[/TITLE]
+                    [SUBTITLE]<h5>{SUBTITLE}</h5>[/SUBTITLE]
+                    [ARTICLELINK]<div class="bloco-link"> <a href="#inline_content-{ID}" class="link link-equipe">+ Saiba Mais</a></div>[/ARTICLELINK]
+
+                    <div style="display:none">
+                        [SUMMARY]<div id="inline_content-{ID}"><span class="modal-equipe">{SUMMARY}</span></div>[/SUMMARY]
+                    </div>
+                </div>
+            </article>
+
+            <!--TEASER_ENTRY_END//-->
+
+            <!--TEASER_ENTRY_SPACER_START//-->
+            <!-- next teaser please -->
+            <!--TEASER_ENTRY_SPACER_END//-->
+
+            <!--TEASER_ROW_SPACER_START//-->
+
+            <!--TEASER_ROW_SPACER_END//-->
+
+            <!--TEASER_FOOTER_START//-->
+            [/TEASER]
+            <!--        <div class="clear">
+                        <a class="mais-servicos" href="index.php?id=6">Outros Serviços</a>
+                    </div>
+                </section>-->
+        </div>
+</div>
+<!--TEASER_FOOTER_END//-->
+
+<!--TEASER_COLUMN_OVERWRITE_START//--><!--TEASER_COLUMN_OVERWRITE_END//-->

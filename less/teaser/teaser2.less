@@ -1,0 +1,188 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser2(
+@item:3,
+@direcao:left,
+@cor-titulo:@cor1,
+@tamanho-titulo:20px,
+@cor-texto:@cor-fonte-site,
+@tamanho-texto:15px,
+@gap:25px,
+@radius:@radius-padrao-botoes,
+@modo:1,
+@img:on
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+ 
+    article{
+        .full;
+
+        @media only screen and (max-width:600px){
+            .mgb(@gap);
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+
+
+        figure{
+            .img(@img);
+            .img(@a) when (@a=off){
+                .dn !important;
+            }
+
+        }
+
+        .direcao(@direcao);
+
+        .direcao(@a) when (@a=left){
+            figure{
+                .full;
+                .fl;
+            }
+
+            img{
+                .fl;
+            }
+        }
+
+        .direcao(@a) when (@a=center){
+            article{
+                .ac;
+            }
+
+            figure{
+                .flex-meio;
+                .full;
+                .fl;
+            }
+
+            .servico-info{
+                .ac;
+                .aic;
+            }
+        }
+
+        img{
+            .radius(if((@radius > 25px), 25px, @radius));
+        }
+    }    
+
+    h4{
+        .fs(@tamanho-titulo);
+        .c(@cor-titulo);
+        .fw(700);
+        .fl;
+        .full;
+        letter-spacing: 2px;
+        .tu;
+    }
+
+    h5{
+        .dn;
+    }
+
+    .servico-info{
+        .fl;
+        .full;
+        .mgt(20px);
+        .c(@cor-texto);
+        .fs(@tamanho-texto);
+
+        p, span{
+            .fl;
+            .full;
+            .pdt(@espacom);
+        }
+    }
+
+    .link{
+        .botao1;
+        .bt-extra-pequeno;
+        .mgt(@espacom);
+    }
+
+
+
+    //variacoes----------------------------
+
+    .n-columns(@item);
+    .n-columns(@a) when (@a < 2){
+        @media only screen and (min-width:601px){
+
+            article{
+                .df;
+                .al;
+
+                figure{
+                    .db;
+                    .mw(350px);
+                }
+            }
+
+
+            .servico-info{
+                .pdl(@espaco);
+                .al !important;
+                .mgt(0);
+            }
+        }
+    }
+
+
+    @media only screen and (max-width:600px){
+
+        figure{
+            .flex-meio;
+        }
+
+        article{
+            .mgb(@gap);
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+    }
+
+    .modo(@modo);
+    .modo(@a) when (@a=2){
+        @media only screen and (min-width:601px){
+
+            article{
+                .df;
+                //.al;
+            }
+
+            figure{
+                .mw(350px);
+            }
+
+            .servico-info{
+                .pdl(@espaco);
+                .al !important;
+                .mgt(0);
+            }
+        }
+    }
+}

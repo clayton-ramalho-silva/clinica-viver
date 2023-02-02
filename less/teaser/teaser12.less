@@ -1,0 +1,128 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser12(
+
+@item:2,
+@fundo:#fff,
+@cor-titulo:@cor1,
+@tamanho-titulo:20px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:13px,
+@cor-borda:@cor-titulo,
+@gap:25px,
+@tamanho-imagem:50px,
+@img:on,
+@fundo-bloco:#fff,
+@radius:@radius-padrao-botoes
+)
+{ 
+
+    .fundo(@fundo);
+    justify-content:flex-end;
+    background-size: cover;
+    background-position: left center !important;
+    .pdt(0);
+    .pdb(0);
+    .df;
+
+    h4{
+        .fw(700);
+        .c(@cor-titulo);
+        .bdt(@cor-borda);
+        .mgt(@espacom);
+        .pdt(@espacom);
+        .pdb(@espacom);
+    }
+
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            grid-template-columns: repeat(2,1fr);
+        }
+
+        @media only screen and (max-width:600px){
+            .df;
+            .wrap;
+            .sc;
+        }
+    } 
+
+    img{
+        .w(@tamanho-imagem);
+    }
+
+    section{
+        .w(50%);
+        .fundo(@fundo);
+        .pd(@espaco * 3);
+        .box;
+    }
+
+    article{
+        .bd(@cor-borda);
+        .radius(if((@radius > 25px), 25px, @radius));
+        .box;
+        .c(@cor-texto);
+        .pd(20px);
+        .fs(@tamanho-texto);
+        .pr;
+        .ease-out;
+        .fundo(@fundo-bloco);
+        &:hover{
+            .scale(1.05) !important;
+        }
+        @media only screen and (max-width:600px){
+            .full;
+        }
+    }
+
+    .link{
+        .pa-tl;
+        .size(100%);
+        .fs(0);
+        .fundo(transparent) !important;
+    }
+
+    .clear{
+        justify-content: flex-start;
+    }
+
+    .link-geral{
+        .botao4(@cor-texto);
+        .bt-pequeno;
+        .fl;
+    }
+
+    @media only screen and (max-width:1023px){
+        background-position: center bottom !important;
+        .pdb(50vw);
+        .bg-size(contain);
+
+        section{
+            .w(100%);
+            .pd(@espaco*2 @espacom);
+        }
+    }
+
+    .img(@img);
+    .img(@a) when (@a=off){
+        figure{
+            .dn !important;
+        }
+
+        h4{
+            .mgt(0);
+            .pdt(0);
+            border:none; 
+            .bdb(@cor-borda);
+            .mgb(@espacom);
+
+        }
+    }
+
+
+}

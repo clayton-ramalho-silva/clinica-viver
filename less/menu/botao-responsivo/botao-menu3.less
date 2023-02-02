@@ -1,0 +1,24 @@
+//@import "../conf-site";
+
+
+.botao-menu3(){
+
+    .size(35px);
+    cursor: pointer;
+    .flex-meio;
+    .pf-tr(25px,15px,1);
+    .radius(@radius-padrao-botoes);
+    .box;
+    .fundo(@menu[@botao][fundo]);
+    .ease;
+
+    i{
+        .c(@menu[@botao][icone]);
+    }
+
+    &:hover{
+        .fundo(@menu[@botao][hover]);
+
+    }
+
+}

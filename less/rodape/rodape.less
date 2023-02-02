@@ -1,0 +1,319 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+@import 'rodape1';
+@import 'rodape2';
+@import 'rodape3';
+@import 'rodape4';
+@import 'rodape5';
+@import 'rodape6';
+@import 'rodape7'; 
+@import 'rodape8'; 
+@import 'rodape9'; 
+
+.esconder(@a) when (@a=off){.dn !important;}
+
+#footerBlock{
+    .bloco(0,0,@rodape[fundo]);
+    .fs(@rodape[@fontes][tamanho]);
+    .c(@rodape[@fontes][cor]);
+    .pr;   
+
+    //Tipo de rodape----------------------------
+    .tipo-rodape(@tipo-rodape);
+
+    .tipo-rodape(@a) when (@a=1){
+        .rodape1;
+    }
+    .tipo-rodape(@a) when (@a=2){
+        .rodape2;
+    }
+    .tipo-rodape(@a) when (@a=3){
+        .rodape3;
+    }
+    .tipo-rodape(@a) when (@a=4){
+        .rodape4;
+    }
+    .tipo-rodape(@a) when (@a=5){
+        .rodape5;
+    }
+    .tipo-rodape(@a) when (@a=6){
+        .rodape6;
+    }
+    .tipo-rodape(@a) when (@a=7){
+        .rodape7;
+    }
+    .tipo-rodape(@a) when (@a=8){
+        .rodape8;
+    }
+    .tipo-rodape(@a) when (@a=9){
+        .rodape9;
+    }
+
+    .menu-rod{
+        .esconder(@menu-rodape);
+    }
+
+    .borda-topo-rodape(@borda-topo-rodape);
+    .borda-topo-rodape(@a) when (@a=on){
+        .bdt(@rodape[@borda][cor],@rodape[@borda][tamanho]);
+    }
+
+    @media only screen and (max-width:1023px){
+        .pdt(0);
+        .pdb(0);
+    }
+}   
+
+.logo-rod{
+    .size(@logo[@rodape][largura],@logo[@rodape][altura]);
+    .bg('logo.png',center);
+    .bg-size;
+
+    .logo-branco(@logo-branco-rodape);
+    .logo-branco(@a) when (@a=on){.invert;}
+}
+
+.logo-rodape(@logo-rodape);
+.logo-rodape(@a) when (@a=on){
+
+    .logo-rod{
+        .bg('logo-rod.png',center);
+    }
+}
+
+.rodape{
+    .pdt(@espaco);
+    .pdb(@espaco);
+
+    a{ 
+        .c(@rodape[@fontes][link]);
+        &:hover{
+            .c(@rodape[@fontes][link]);
+        }
+    }
+
+    .pmenu{
+        a{
+            .fs(@rodape[@menu][tamanho]);
+            .c(@rodape[@menu][cor]);
+
+            &:hover{
+                .c(@rodape[@menu][hover]);
+            }
+        }
+    }
+
+    h4{
+        .fs(@rodape[@titulo][tamanho]);
+        .c(@rodape[@titulo][cor]);
+    }
+
+    h5{
+        .fs(@rodape[@subtitulo][tamanho]);
+        .c(@rodape[@subtitulo][cor]);
+    }
+}
+
+.slogan-rod{
+    .esconder(@slogan-rodape);
+}
+
+.facebook-rod{
+    .esconder(@facebook-rodape);
+}
+
+.formulario-rod{
+    .esconder(@formulario-rodape);
+}
+
+.newsletter-rodape{
+    .esconder(@newsletter-rodape);
+}
+
+.mapa-rodape{
+    .esconder(@mapa-rodape);
+    .full;
+
+    .mapa-ultimo(@mapa-ultimo);
+    .mapa-ultimo(@a) when (@a=on){
+        order:100;
+    }
+
+
+    iframe{
+        .full;
+        .fl;
+
+        @media only screen and(max-width:1023px){
+            .h(250px);
+        }
+    }
+}
+
+.titulos-rodape(@titulos-rodape);
+.titulos-rodape(@a) when (@a=off){
+    &:before{
+        .dn;
+    }
+}
+
+
+.redes-rodape{
+    .df;
+
+    a{
+        .mg(0 2.5px);
+    }
+
+    i{
+        .fs(@redes-sociais[@rodape][tamanho]);
+    }
+
+    &:before{
+        content:'Siga-nos';
+    }
+}
+
+.telefone-rodape{
+    .pr;
+    a{
+        .fs(@telefone[@rodape][tamanho]);
+        .c(@telefone[@rodape][cor]) !important;
+        cursor:default;
+    }
+
+    i{
+        .fs(@telefone[@rodape][@icone][tamanho]);
+        .c(@telefone[@rodape][@icone][cor]);
+    }
+
+    &:before{
+        content:'Telefone';
+    }
+}
+
+.whatsapp-rodape{
+    .pr;
+
+    a{
+        cursor:default;
+        .fs(@whatsapp[@rodape][tamanho]);
+        .c(@whatsapp[@rodape][cor]) !important;
+    }
+
+    i{
+        .fs(@whatsapp[@rodape][@icone][tamanho]);
+        .c(@whatsapp[@rodape][@icone][cor]);
+    }
+
+    &:before{
+        content:'Whatsapp';
+    }
+}  
+
+.email-rodape{
+    .pr;
+
+    a{
+        cursor:default;
+        .fs(@email[@rodape][tamanho]);
+        .c(@email[@rodape][cor]) !important;
+    }
+
+    i{
+        .fs(@email[@rodape][@icone][tamanho]);
+        .c(@email[@rodape][@icone][cor]);
+    }
+
+    &:before{
+        content:'E-mail';
+    }
+} 
+
+.endereco-rodape{
+    .pr;
+
+    p{
+        cursor:default;
+        .fs(@endereco[@rodape][tamanho]);
+        .c(@endereco[@rodape][cor]) !important;
+    }
+
+    i{
+        .fs(@endereco[@rodape][@icone][tamanho]);
+        .c(@endereco[@rodape][@icone][cor]);
+    }
+
+    .endereco-2{
+        .esconder(@segundo-endereco);
+    }
+
+}
+
+.copyright{
+    .c(@rodape[@copy][cor]);
+    .fs(@rodape[@copy][tamanho]);
+    .fundo(@rodape[@copy][fundo]);
+    a{
+        .c(@rodape[@copy][cor]);
+    }
+}
+
+.whatsapp-fixo{
+    .esconder(@whatsapp-fixo);
+
+    .whatsapp-fixo-posicao(@whatsapp-fixo-posicao);
+    .whatsapp-fixo-posicao(@a) when (@a=right){
+        @media only screen and (min-width:1024px){
+            .pf-br(30px,30px,100);
+        }
+    }
+    .whatsapp-fixo-posicao(@a) when (@a=left){
+        @media only screen and (min-width:1024px){
+            .pf-bl(30px,30px,100);
+        }
+    }
+
+    @media only screen and (min-width:1024px){
+        .size(50px);
+
+        i{
+            .fs(30px);
+        }
+    }
+    @media only screen and (max-width:1023px){
+        .size(40px);
+        .pf-bl(15px,15px,100);
+        i{
+            .fs(20px);
+        }
+    }
+    .fundo(#34af23);
+    .c(#fff);
+    .flex-meio;
+    .radius;
+    cursor:pointer;
+    .ease;
+
+    a{
+        .dn;
+
+        &:first-of-type{
+            .db;
+            .fs(0);
+            .pa-tl;
+            .size(100%);
+        }
+    }
+
+    &:hover{
+        .scale(1.1);
+    }
+}
+
+@media only screen and(max-width:1023px){
+    .menu-rod{
+        .dn !important;
+    }
+}

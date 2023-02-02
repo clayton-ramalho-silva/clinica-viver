@@ -1,0 +1,43 @@
+<!--IMAGETEXT_SETTINGS_START//-->
+; this is formatted like WIN.INI
+; please: do not use comments for value lines
+class_top_left		= imgtxt-top-left
+class_top_center	= imgtxt-top-center
+class_top_right		= imgtxt-top-right
+class_bottom_left	= imgtxt-bottom-left
+class_bottom_center	= imgtxt-bottom-center
+class_bottom_right	= imgtxt-bottom-right
+class_float_left	= imgtxt-left
+class_float_right	= imgtxt-right
+class_column_left	= imgtxt-column-left
+class_column_right	= imgtxt-column-right
+; width				= 300
+; height			= 200
+; zoom				= 1
+; crop				= 1
+; lightbox			= 1
+; nocaption			= 0
+<!--IMAGETEXT_SETTINGS_END//-->
+
+
+<div class="quem-somos" id="quem-somos">
+    <section>
+        <figure>
+            {IMAGE}
+        </figure>
+        <div class="texto">
+            [TITLE]<div class="subtitulo">[/TITLE]
+            [TITLE]<h2>{TITLE}</h2>[/TITLE]
+            [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+            [TITLE]</div>[/TITLE]
+            [TITLE]<div class="divider"></div>[/TITLE]
+            {TEXT}
+
+            [LINK]                
+            <div class="bloco-link">
+                <a href="{LINK}" class="link">{BOTAO}</a>
+            </div>
+            [/LINK]
+        </div>
+    </section>
+</div>

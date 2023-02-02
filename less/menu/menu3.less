@@ -1,0 +1,41 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.menu3(){
+    .pmenu{
+        a{
+            .radius(0);
+            .linha(@logo[altura]);
+        }
+    }
+    li{
+        &:hover > a{
+            .c(@menu[@link][hover]); 
+            .fundo(@menu[@link][fundo]);
+        }
+    }
+    .ativo{
+        a{
+            .c(@menu[@link][hover]); 
+            .fundo(@menu[@link][fundo]);
+        }
+    }
+
+    .psubmenu{
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+
+        a{
+            background: none;
+        }
+        
+        .tipo-submenu(@tipo-submenu);
+
+        .tipo-submenu(@a) when (@a=3){
+
+            .radius(if((@submenu[radius] > 25px), 25px, @submenu[radius])) !important;
+        }
+    }
+}
+

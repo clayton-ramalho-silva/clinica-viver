@@ -1,0 +1,33 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.seta2(){
+    .bx-prev, .bx-next{
+        .pa;
+        top:50%;
+        z-index: 1000;
+        .fs(@banner[@seta][@icone][fonte]);
+         .size(@banner[@seta][@icone][tamanho]);
+        .flex-meio;
+        .c(@banner[@seta][cor]);
+        .fundo(@banner[@seta][fundo]);
+        .mgt(-@banner[@seta][@icone][tamanho]/2);
+        .op(0.7);
+        .ease-out;
+        &:hover{
+            .op;
+        }
+    }
+    
+   .bx-prev{
+        left: 0;
+        .radius(0 @banner[@seta][radius] @banner[@seta][radius] 0);
+
+    }
+
+    .bx-next{
+        right: 0;
+        .radius(@banner[@seta][radius] 0 0 @banner[@seta][radius]);
+
+    }
+}

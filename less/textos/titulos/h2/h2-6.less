@@ -1,0 +1,38 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-6(
+){
+    .df;
+    .column;
+    &:before{
+        .ab;
+        .size(50px,10px);
+        .fundo(@subtitulo[borda]);
+        .mgb(10px);
+        .radius(@subtitulo[radius]);
+    }
+
+    h3{ 
+        .mgt(5px);
+        .mgb(5px);
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+
+    .direcao-sub(@subtitulo[direcao]);
+    .direcao-sub(@a) when (@a=left){
+        align-items: flex-start;
+    }
+
+    .direcao-sub(@a) when (@a=center){
+        .ac;
+        .flex-meio;
+    }
+}

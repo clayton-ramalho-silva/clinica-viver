@@ -1,0 +1,105 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo11(){
+    @media only screen and (min-width:1024px){
+        .pa-tl(0,0,1) !important;
+
+        .menu{
+            .mgl(@espaco * 2);
+            .bdl(@topo[borda]);
+            .tipo-menu(@tipo-menu);
+        }
+
+        .topo-right{
+            .h(auto);
+        }
+
+        .menu-fixo{
+            .menu{
+                .pd(0);
+                border:none !important;
+            }
+        }
+
+        .topo{
+
+            .size(@site-size,@banner[altura]);
+            /*.size(100%,@banner[altura]);*/
+
+            .flex-meio;
+            justify-content: flex-start;
+            .box;
+            .pd(0 @espaco);
+            &:before{
+                .ab;
+                .pa-tl(50%,0,-1);
+                .size(100%,@logo[altura]);
+                .mgt(-@logo[altura]/2);
+                background-image: linear-gradient(90deg,@topo[fundo] 40%, fade(@topo[fundo],10));
+            }
+
+
+            &.topo-interna{
+
+                &:before{
+                    .dn;
+                }
+
+                .mgt(15px);
+                .db;
+                .full-max;
+                .h(auto);
+                .pdl(@espacom);
+                .pdr(@espacom);
+                /*.w(~'calc(100% - 30px)');*/
+                .box;
+                .pdt(0);
+                .pdb(0);
+                background-image: linear-gradient(90deg,@topo[fundo] 60%, fade(@topo[fundo],20));
+
+                .barra-topo(@barra-topo);
+                .barra-topo(@a) when (@a=on){
+                    .mgt(@topo[@barra-topo][altura] + 15px);
+                }
+
+                .menu{
+                    .sc;
+                }
+
+                .topo-right{
+                    .fl;
+                    .size(auto,100%);
+                }
+            }
+
+            .redes-topo,.bloco-telefone,.busca{
+                .dn;
+            }
+        }
+
+        .barra-topo{
+            .pa-tl(0,0,10);
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .pa-tl(0,0,1) !important;
+
+        .topo{
+            .size(100%,@banner[@responsivo][altura]);
+            .flex-meio;
+            .fundo(fade(@topo[fundo],60));
+
+            &.topo-interna{
+                .h(@logo[@responsivo][altura]);
+                .fundo(@topo[@responsivo][fundo]);
+                .logo{
+                    .h(@logo[@responsivo][altura]);
+                    .bg-size(contain);
+                }
+            }
+        }
+    }
+}

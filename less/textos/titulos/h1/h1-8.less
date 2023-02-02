@@ -1,0 +1,54 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h1-8(){
+
+    h1{
+        .linha(@titulo[@h1][altura]);
+
+        span{
+            .flex-meio;
+            &:before{
+                .ab;
+                .size(25px,2px);
+                .fundo(@titulo[@h1][cor]);
+                .mgr(25px);
+            }
+            &:after{
+                .ab;
+                .size(25px,2px);
+                .fundo(@titulo[@h1][cor]);
+                .mgl(25px);
+            }
+        }
+
+        @media only screen and (max-width:1023px){
+            .h(auto);
+            .lh(1.2);
+            .pdt(15px);
+            .pdb(15px);
+            .bdt(fade((@titulo[@h1][cor]),10));
+
+            span{
+                &:before{
+                    .size(10px,2px);
+                    .mgr(5px);
+                }
+                &:after{
+                    .size(10px,2px);
+                    .mgl(5px);
+                }
+            }
+        }
+    }
+
+    h5{
+        .ac;
+    }
+
+    .breadcrumb{
+        .fundo(@breadcrumb[fundo]);
+        .linha(50px);
+    }
+}

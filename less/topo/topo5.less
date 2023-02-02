@@ -1,0 +1,140 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo5(){
+    @media only screen and (min-width:1024px){
+        .pa-tl(0,0,1) !important;
+
+        .menu{
+            .bdt(@menu[@link][cor]);
+            .bdb(@menu[@link][cor]);
+            .pd(5px 0);
+
+            .tipo-menu(@tipo-menu);
+
+            .tipo-menu(@a) when (@a=3){
+                .pd(0);
+
+                .pmenu a{
+                    .linha(@menu[@link][altura]);
+                }
+
+                .psubmenu{
+                    top:@menu[@link][altura];
+                }
+            }
+
+            .tipo-menu(@a) when (@a=4){
+                .pd(0);
+
+                .pmenu a{
+                    .linha(@menu[@link][altura]);
+                }
+
+                .psubmenu{
+                    top:@menu[@link][altura];
+                }
+            }
+
+            .tipo-menu(@a) when (@a=5){
+                 .pd(0);
+
+                .pmenu a{
+                    .linha(@menu[@link][altura]);
+                }
+
+                .psubmenu{
+                    top:@menu[@link][altura];
+                }
+            }
+
+            .tipo-menu(@a) when (@a=7){
+                a{
+                    border-bottom: none !important;
+                }
+            }
+
+            .tipo-menu(@a) when (@a=7){
+                .zindex;
+                .pdt(15px);
+                .pdb(15px);
+            }
+        }
+
+        .topo-right{
+            .pa-tl;
+            .mgt(@espaco * 3);
+            .size(100%,auto);
+            .sc;
+        }
+
+        .menu-fixo{
+            .menu{
+                .pd(0);
+                border:none !important;
+            }
+        }
+
+        .topo{
+            .pr;
+            .size(100%,@banner[altura]);
+            .flex-meio;
+            .fundo(fade(@topo[fundo],50));
+
+            &.topo-interna{
+                .mgt(15px);
+                .db;
+                .full-max;
+                .h(auto);
+                .pdl(@espacom);
+                .pdr(@espacom);
+                .w(~'calc(100% - 30px)');
+                .box;
+
+                .barra-topo(@barra-topo);
+                .barra-topo(@a) when (@a=on){
+                    .mgt(@topo[@barra-topo][altura] + 15px);
+                }
+
+                .menu{
+                    .sc;
+                    border:none !important;
+                }
+
+                .topo-right{
+                    .clear-pa;
+                    .size(auto,100%);
+                    .mgt(0);
+                }
+            }
+
+            .redes-topo,.bloco-telefone,.busca{
+                .dn;
+            }
+        }
+
+        .barra-topo{
+            .pa-tl(0,0,10);
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .pa-tl(0,0,1) !important;
+
+        .topo{
+            .size(100%,@banner[@responsivo][altura]);
+            .flex-meio;
+            .fundo(fade(@topo[fundo],60));
+
+            &.topo-interna{
+                .h(@logo[@responsivo][altura]);
+                .fundo(@topo[@responsivo][fundo]);
+                .logo{
+                    .h(@logo[@responsivo][altura]);
+                    .bg-size(contain);
+                }
+            }
+        }
+    }
+}

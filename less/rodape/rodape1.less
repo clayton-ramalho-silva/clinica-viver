@@ -1,0 +1,165 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+.rodape1(){
+    .menu-rod{
+        order: -1;
+        .full;
+        .df;
+        .sc;
+        .aic;
+        .mgb(@espaco * 2);
+        .pr;
+
+        &:before{
+            .pa-tl(50%);
+            .ab;
+            .size(100%,1px);
+            .fundo(@rodape[@menu][cor]);
+        }
+    }
+
+    .pmenu{
+        .fundo(@rodape[fundo]);
+        .df;
+        z-index: 1;
+        .pdr(@espacom);
+        .pdl(@espacom);
+
+    }
+    .rodape{
+        .pdt(@espaco * 2);
+        .pdb(@espaco * 2);
+        .df;
+        .aic;
+        .column;
+
+        @media only screen and(max-width:1023px){
+            .pdt(35px);
+            .pdb(70px);
+
+        }
+
+    }
+
+    h4{
+        .fw(700);
+        .tu;
+        .mgb(10px);
+        .ac;
+    }   
+    h5{
+        .fw(300);
+        .mgb(25px);
+        .ac;
+    }
+
+    .logo-rod{.dn;}
+
+    .rod-info{
+        .full;
+        .df;
+        .aic;
+        .column;
+
+        i{.dn;}
+    }
+
+    .endereco-rodape{
+        .bdt(@rodape[@borda][cor]);
+        .full;
+        .mw(500px);
+        .pr;
+        .mgt(25px);
+        .pdt(25px);
+        .pdb(25px);
+        .ac;
+        .lh(1.4);
+        i{
+            .pa-horiz(70px);
+            .flex-meio;
+            .fs(30px);
+            .bg-color(@rodape[fundo]);
+            top:-15px;
+
+        }
+
+        .endereco-2{
+            .mgt(10px);
+
+            i{.dn;}
+        }
+    }
+
+
+
+    .telefone-rodape, .whatsapp-rodape{
+        .flex-meio;
+        .pd(5px 0);
+        .lh(1.4);
+
+        a{
+            .pd(0 10px);
+            .bdr(@rodape[@fontes][cor]);
+
+            &:last-of-type{
+                border: none;
+            }
+        }
+
+        &:before{
+            .full;
+            .ac;
+            .fs(11px);
+            .fw(700);
+            .c(@rodape[@fontes][cor]);
+            .pdb(5px);
+        }
+    }
+
+    .email-rodape{
+        .flex-meio;
+        .column;
+        .lh(1.4);
+
+        .pd(5px 0);
+
+        &:before{
+            .full;
+            .ac;
+            .fs(11px);
+            .fw(700);
+            .c(@rodape[@fontes][cor]);
+            .pdb(5px);
+        }
+    }
+
+    .redes-rodape{
+        .sc;
+        .mgt(@espaco);
+        .mgb(@espacom);
+        .wrap;
+        &:before{
+            .full;
+            .ac;
+            .fs(11px);
+            .fw(700);
+            .c(@rodape[@fontes][cor]);
+            .pdb(5px);
+            .lh(1);
+        }
+
+        @media only screen and(max-width:1023px){
+            .mgb(0);
+        }
+    }
+
+    .copyright{
+        .pa-bl;
+        .pdt(10px);
+        .pdb(10px);
+        .center-flex;
+        .ac;
+    }
+}
+

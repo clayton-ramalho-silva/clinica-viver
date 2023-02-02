@@ -1,0 +1,48 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.botao14(
+@cor-texto:@cor1,
+@hover-texto:#fff,
+@fundo:@cor-texto,
+@icone:@hover-texto
+)
+{
+    .ease;
+    letter-spacing: 0.25em;
+    .tu;
+    .c(@cor-texto);
+    .bd(fade(@cor-texto,50));
+    padding: 10px 20px !important;
+    .df;
+    
+
+    &:after{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        content:'\f061';
+        .mgl(10px);
+        .fundo(@cor-texto);
+        .bd(@cor-texto);
+        .c(@icone);
+        .radius(@radius-padrao-botoes);
+        .flex-meio;
+        .size(30px);
+        letter-spacing: 0;
+        
+        .lh(1);
+    }
+
+    &:hover{
+        .c(@hover-texto);
+        .fundo(@fundo);
+        .bd(@cor-texto);
+        &:after{
+            .bd(@icone);
+        }
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+}

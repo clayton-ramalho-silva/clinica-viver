@@ -1,0 +1,184 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+@import "h1/h1-1";
+@import "h1/h1-2";
+@import "h1/h1-3";
+@import "h1/h1-4";
+@import "h1/h1-5";
+@import "h1/h1-6";
+@import "h1/h1-7";
+@import "h1/h1-8";
+@import "h1/h1-9";
+
+@import "h2/h2-1";
+@import "h2/h2-2";
+@import "h2/h2-3";
+@import "h2/h2-4";
+@import "h2/h2-5";
+@import "h2/h2-6";
+@import "h2/h2-7";
+@import "h2/h2-8";
+@import "h2/h2-9";
+
+
+.esconder(@a) when (@a=off){.dn !important;}
+
+//Tipo de Topo----------------------------
+.tipo-h1(@tipo-h1);
+.tipo-h1(@a) when (@a=1){
+    .h1-1;
+}
+.tipo-h1(@a) when (@a=2){
+    .h1-2;
+}
+.tipo-h1(@a) when (@a=3){
+    .h1-3;
+}
+.tipo-h1(@a) when (@a=4){
+    .h1-4;
+}
+.tipo-h1(@a) when (@a=5){
+    .h1-5;
+}
+.tipo-h1(@a) when (@a=6){
+    .h1-6;
+}
+.tipo-h1(@a) when (@a=7){
+    .h1-7;
+}
+.tipo-h1(@a) when (@a=8){
+    .h1-8;
+}
+.tipo-h1(@a) when (@a=9){
+    .h1-9;
+}
+
+
+.titulo{
+    .full;
+} 
+
+h1{
+    .fs(@titulo[@h1][tamanho]);
+    .c(@titulo[@h1][cor]);
+
+    .center-flex;
+ 
+    span{
+        .full-max;
+    }
+
+    @media only screen and (max-width:1023px){
+        .fs(@titulo[@responsivo][@h1][tamanho]);
+    }
+}
+
+.subtitulo{
+    .tipo-h2(@tipo-h2);
+    .tipo-h2(@a) when (@a=1){
+        .h2-1;
+    }
+
+    .tipo-h2(@a) when (@a=2){
+        .h2-2;
+    }
+     
+    .tipo-h2(@a) when (@a=3){
+        .h2-3;
+    }
+    
+    .tipo-h2(@a) when (@a=4){
+        .h2-4;
+    }
+    
+    .tipo-h2(@a) when (@a=5){
+        .h2-5;
+    }
+
+    .tipo-h2(@a) when (@a=6){
+        .h2-6;
+    }
+
+    .tipo-h2(@a) when (@a=7){
+        .h2-7;
+    }
+
+    .tipo-h2(@a) when (@a=8){
+        .h2-8;
+    }
+  
+    .tipo-h2(@a) when (@a=9){
+        .h2-9;
+    }
+
+    h2{
+        .uppercase(@subtitulo[@h2][uppercase]);
+        .uppercase(@a) when (@a=on){
+            .tu;
+        }
+
+        .fw(@subtitulo[@h2][font-weight]);
+
+        @media only screen and (max-width:1023px){
+            .fs(@titulo[@responsivo][@h2][tamanho]);
+        }
+    }
+
+} 
+
+.breadcrumb{
+    .linha(40px);
+    .center-flex;
+    .c(@breadcrumb[cor]);
+    .fs(@breadcrumb[tamanho]);
+
+    a{
+        .ease; 
+        .c(@breadcrumb[cor]);
+
+        &.ativo{
+            .c(@breadcrumb[ativo]);
+        }
+
+        &:hover{
+            .c(@breadcrumb[hover]);
+        }
+    }
+
+    .wrap-breadcrumb{
+        .full-max;
+    }
+
+    .esconder(@breadcrumb-interna);
+
+    @media only screen and (max-width:1023px){
+        .dn;
+    }
+} 
+
+h2{
+    .fs(@titulo[@h2][tamanho]);
+    .c(@titulo[@h2][cor]); 
+}
+
+h3{
+    .fs(@titulo[@h3][tamanho]);
+    .c(@titulo[@h3][cor]); 
+}
+
+h4{
+    .fs(@titulo[@h4][tamanho]);
+    .c(@titulo[@h4][cor]); 
+}
+
+h5{
+    .fs(@titulo[@h5][tamanho]);
+    .c(@titulo[@h5][cor]); 
+    .center-flex;
+
+    span{
+        .full-max;
+    }
+}

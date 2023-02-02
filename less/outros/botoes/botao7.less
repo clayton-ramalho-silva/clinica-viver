@@ -1,0 +1,47 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.botao7(
+@cor-texto:@cor-fonte-site,
+@hover-texto:@cor-texto,
+@fundo:@cor1
+)
+{
+    .pr;
+    .ease;
+    .pd(19px 22px) !important;
+    .fw(700);
+    letter-spacing: 0.25em;
+    .tu;
+    .c(@cor-texto);
+    .fs(16px) !important;
+    .lh(18px) !important;
+
+
+    &:before{
+        .ab;
+        .pa-tl(0,0,-1);
+        .size(56px);
+        .radius(28px);
+        .fundo(fade(@fundo,30));
+        .ease;
+    } 
+
+    &:after{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        content:'\f061';
+        .mgl(10px);
+    }
+
+    &:hover{
+        .c(@hover-texto);
+        &:before{
+            width: 100%;
+            .fundo(fade(@fundo,50));
+        }
+    }
+    &:active{
+        transform: scale(0.96);
+    }
+}

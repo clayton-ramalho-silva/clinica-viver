@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+body, span, p, form, img, a, input, select, textarea, html, figure, header, footer, article, section, iframe, button{margin:0; padding:0; border:none; outline:none}
+
+body {
+    font-family: 'Roboto';
+    font-size: 15px;
+    line-height: 1.4;
+    color: #333;
+
+    width: 100%;
+    height: 100vh;
+    float: left;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    background-image: url(images/fundo-login.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.bloco-login {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.bloco-login .logo {
+    background-color: transparent;
+    background-image: url(images/logo-login.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    background-size: 100%;
+    padding: 0;
+    border: none;
+}
+
+.bloco-login p {
+    width: 100%;
+    float: left;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.bloco-login i {
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.2);
+}
+
+.bloco-login ::-webkit-input-placeholder {
+    color: #fff;
+}
+.bloco-login ::-moz-placeholder {
+    color: #fff;
+}
+.bloco-login :-ms-input-placeholder {
+    color: #fff;
+}
+.bloco-login input:-moz-placeholder {
+    color: #fff;
+}
+
+[type=text], [type=password]{
+    width: 100%;
+    box-sizing: border-box;
+    float: left;
+    border-radius: 5px;
+    font-family: 'Roboto';
+    height: 50px;
+    padding: 5px 5px 5px 50px;
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+    -ms-border-radius: 100px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 1px;
+
+}
+
+[type=submit] {
+    width: 100%;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-radius: 100px;
+    height: 50px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #cd2a66;
+    transition: 0.3s all ease-out;
+    -moz-transition: 0.3s all ease-out;
+    -webkit-transition: 0.3s all ease-out;
+    -ms-transition: 0.3s all ease-out;
+}
+
+[type=submit]:hover {
+    background-color: #ff3881;
+}
+
+/*input{border-radius:5px; background-color:#EEE; border:1px solid #DDDDDD; font-size:15px; padding:7px; font-weight:bolder; outline:none; font-family:Arial, Geneva; width:100%; height:40px; margin-bottom:15px; box-sizing:border-box;}
+
+input[type=submit]{ margin:0; line-height:27px; outline:none; height:40px; display:block; color:#fff; font-weight:bolder; background:#000;}*/
+
+/*p, div, form, h1, h2, h3, h4, h5, h6, hr {	margin: 0;	padding: 0;}*/
+
+
+.error {
+    width: 100%;
+    background:#CC3300;
+    color: #fff; 
+    font-size:12px; 
+    font-weight:bold; 
+    text-align:center; 
+    line-height:30px;
+    border-radius:50px;
+    margin-bottom: 10px;
+}
+
+.error.alerta{
+    background: #d48003;
+}
+
+/*#loginFormArea{ background:#fff url(../../img/backend/login.png) no-repeat center 40px; width:400px; min-height:300px; position:fixed; top:50%; left:50%; margin:-150px 0 0 -200px;
+box-sizing:border-box; padding:140px 30px 30px; border-radius:5px; }*/
+
+/*#loginFormArea{background:#fff; width:400px; position:fixed; top:50%; left:50%; margin:-150px 0 0 -200px;
+               box-sizing:border-box; padding:30px; border-radius:5px; }*/

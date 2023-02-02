@@ -1,0 +1,57 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu5(){
+    .pmenu{
+        a{
+            .ofh;
+            .linha(@logo[altura]);
+            .radius(0);
+
+            &:before{
+                .ab;
+                .full;
+                .mgb(-5px);
+                .h(5px);
+                .ease-out;
+                .cb;
+                .rotatey(-90deg);
+                .fundo(@menu[@link][hover]);
+                transform-origin: top left;
+            }
+        }
+    }
+
+    li{ 
+        &:hover{
+            &>a{
+                .c(@menu[@link][hover]); 
+                &:before{
+                    .fundo(@menu[@link][hover]);
+                    .rotatey(0);
+                }
+            }
+        }
+    }
+
+    .psubmenu{
+        li{ 
+            a{
+                &:before{
+                    .dn;
+                }
+            }
+        }
+    } 
+
+    .ativo{
+        a{
+            .c(@menu[@link][ativo]);
+            &:before{
+                .rotatey(0);
+                .fundo(@menu[@link][ativo]);
+            }
+        }
+    }
+
+}

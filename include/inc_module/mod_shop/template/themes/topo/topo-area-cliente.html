@@ -1,0 +1,28 @@
+<div class="topo-interna topo-restrito">
+
+    <a class="logo" href="/"></a>
+
+    <div class="topo-right">
+        <a class="voltar-home"  href="/"><i class="icon-home1"></i>Voltar para o site</a>
+        <div class="acesso-topo">
+            <span class="area-cliente">
+                <i class="icon-user"></i>
+                {SHOW_CONTENT:CP,17}
+            </span>
+            {CART_SMALL}
+        </div>
+    </div>
+
+</div>
+
+[JS]
+<script>
+$().ready(function(){
+
+    $('span.area-cliente').click(function(){
+        $(this).toggleClass('on');
+    });
+
+});
+</script>
+[/JS]

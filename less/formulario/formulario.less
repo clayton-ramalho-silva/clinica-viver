@@ -1,0 +1,422 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+
+@import "campos/campo1";
+@import "campos/campo2";
+@import "campos/campo3";
+@import "campos/campo4";
+@import "campos/campo5";
+
+@import "contato/contato1";
+@import "contato/contato2";
+
+@import "home/formulario1";
+@import "home/formulario2";
+@import "home/formulario3";
+@import "home/formulario4";
+
+@import "newsletter/newsletter";
+
+
+.esconder(@a) when (@a=off){.dn;} 
+
+.bloco-formulario{
+    p{
+        .pr;
+        .full;
+        .mgb(@espacom);
+        .fl;
+        .lh(1.4);
+        &:last-of-type{
+            .w(100%);
+            .mgb(0px);
+        }
+    }
+} 
+
+
+.contato{ 
+    .divider{.dn;}
+
+
+    //Tipo de Campos ----------------------------
+        .tipo-campos(@tipo-campos);
+        .tipo-campos(@a) when (@a=1){
+            .campos1;
+        }
+        .tipo-campos(@a) when (@a=2){
+            .campos2;
+        }
+        .tipo-campos(@a) when (@a=3){
+            .campos3;
+        }
+        .tipo-campos(@a) when (@a=4){
+            .campos4;
+        }
+
+ 
+    //Tipo de Info Contato ----------------------------
+    .tipo-contato(@tipo-contato);
+    .tipo-contato(@a) when (@a=1){
+        .contato1;
+    }
+    .tipo-contato(@a) when (@a=2){
+        .contato2;
+    }
+
+
+}
+
+.info-contato{
+
+    .telefone-contato{
+        .pr;
+        .pdl(@telefone[@contato][@icone][tamanho]+7px);
+
+        a{
+            cursor:default;
+            .c(@telefone[@contato][cor]);
+            .fs(@telefone[@contato][tamanho]);
+        }
+
+        i{ 
+            .pa-tl;
+            .flex-meio;
+            .h(100%);
+
+            .c(@telefone[@contato][@icone][cor]);
+            .fs(@telefone[@contato][@icone][tamanho]);
+        } 
+    }
+
+    .whatsapp-contato{
+        .pr;
+        .pdl(@telefone[@contato][@icone][tamanho]+7px);
+
+        i{
+            .pa-tl;
+            .flex-meio;
+            .h(100%);
+
+            .c(@whatsapp[@contato][@icone][cor]);
+            .fs(@whatsapp[@contato][@icone][tamanho]);
+        }
+
+        a{
+            cursor:default;
+            .c(@whatsapp[@contato][cor]);
+            .fs(@whatsapp[@contato][tamanho]);
+        }
+    }
+
+    .email-contato{
+        .pr;
+        .pdl(@email[@contato][@icone][tamanho]+7px);
+
+        i{
+            .pa-tl;
+            .flex-meio;
+            .h(100%);
+
+            .c(@email[@contato][@icone][cor]);
+            .fs(@email[@contato][@icone][tamanho]);
+        }
+
+        a{
+            cursor:default;
+            .c(@formulario[@contato][cor]);
+            .fs(@formulario[@contato][tamanho]);
+        }
+    }
+
+    .endereco-contato{
+        .pr;
+        .pdl(@endereco[@contato][@icone][tamanho]+7px);
+        .lh(1.4);
+        i{
+            .pa-tl;
+            .flex-meio;
+            .h(100%);
+
+            .c(@endereco[@contato][@icone][cor]);
+            .fs(@endereco[@contato][@icone][tamanho]);
+        }
+
+        a{
+            cursor:default;
+            .c(@formulario[@contato][cor]);
+            .fs(@formulario[@contato][tamanho]);
+        }
+    }
+}
+
+
+//INICIO DAS CONFIGURACOES DOS CAMPOS    
+
+.input(){
+    .full;
+    .box;
+    .fonte;
+    .fs(@formulario[@campos][fonte]);
+}
+
+
+[type=text],[type=email],[type=password],select,textarea,[type=file],[type=date]{
+    .input;
+    .h(@formulario[@campos][altura]);
+
+}
+
+.c-box(){
+    [type=checkbox], [type=radio]{
+        visibility: hidden;
+        .dn;
+    }
+    label{
+        .fs(@formulario[@campos][fonte]);
+        .c(@formulario[@campos][cor]);
+        &:before{
+            .ab;
+            .size(19px);
+            .fl;
+            .mgr(10px);
+            cursor:pointer;
+            .box;
+        } 
+
+        &:after{
+            content: '';
+            .op(0);
+            .ease-out;
+            .pa-tl(4px,4px);
+            .size(11px);
+            .bg-color(@formulario[@check][cor]);
+            cursor:pointer;
+        }
+    }   
+
+    [type="checkbox"]:checked + label:after {
+        .op;
+    }
+
+    [type="radio"]:checked + label:after {
+        .op;
+    }
+}
+
+select{
+    option{
+        .c(#333);
+    }
+}
+
+textarea{
+    resize: none;
+    .h(@formulario[@campos][textarea]);
+
+}
+
+.form-checkbox, .form-radio{
+    .full;
+    .c-box;
+
+    span{
+        .bloco-1;
+        .fl;
+        .pr;
+        .mgt(@espacom);
+        .pdr(@espacom * 2);
+        .lh(1.3);
+
+        &:last-of-type{
+            .pdr(0);
+        }
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .pdr(0);
+        }
+    }
+}
+
+.form-radio{
+    label{
+        &:before{
+            .radius(50px);
+        }
+
+        &:after{
+            .radius(50px);
+        }
+    }
+}
+
+[type=submit]{
+    cursor:pointer;
+    .direcao-bt-enviar(@formulario[@enviar][direcao]);
+    .bt-pequeno;
+    .radius(@formulario[@campos][radius]);
+}
+
+label.error{
+    .pa-tr(15px,15px);
+    .size(20px);
+    .borda(50px);
+    .ac;
+    .fundo(@formulario[erro]);
+    .c(#fff);
+
+    &:after{
+        .ac;
+        .db;
+        .size(20px,20px);
+        line-height: 20px;
+        font-family: serif;
+        content:'!';
+        .fs(18px);
+        .fw(700);
+    }
+}
+
+
+
+
+.g-recaptcha{
+    .mgb(@espacom);
+}
+
+.direcao-bt-enviar(@a) when (@a=left){
+    .fl;
+}
+
+.direcao-bt-enviar(@a) when (@a=right){
+    .fr;
+}
+
+.direcao-bt-enviar(@a) when (@a=center){
+    .mgl(auto);
+    .mgr(auto);
+    .df !important;
+}
+
+.redes-contato{
+    .mgt(25px);
+    .fl;
+    .df;    
+    .wrap;
+    .pr;
+
+    i{
+        .pd(2px);
+        .c(#fff) !important;
+        &:hover{
+            .scale(1.1);
+        }
+    }
+
+    i.fa-facebook-f{
+        .fundo(@redes-sociais[facebook]) ;
+    }
+
+    i.fa-google{
+        .fundo(@redes-sociais[google]);
+    }
+
+    i.fa-instagram{
+        .fundo(@redes-sociais[instagram]);
+    }
+
+    i.fa-twitter{
+        .fundo(@redes-sociais[twitter]);
+    }
+
+    i.fa-linkedin-in{
+        .fundo(@redes-sociais[linkedin]);
+    }
+    i.fa-youtube{
+        .fundo(@redes-sociais[youtube]);
+    }
+    i.fa-pinterest{
+        .fundo(@redes-sociais[pinterest]);
+    }
+
+    i.fa-blogger{
+        .fundo(@redes-sociais[blogger]);
+    }
+    i.fa-rss{
+        .fundo(@redes-sociais[rss]);
+    }
+
+    i.fa-skype{
+        .fundo(@redes-sociais[skype]);
+    }
+
+}
+
+.mapa{
+    .full;
+    .fl;
+    .pr;
+    .esconder(@contatos-form-mapa);
+    .mgt(@espaco * 2);
+    iframe{
+        .full;
+        .fl;
+    }
+}
+
+/*Obrigado*/
+.obrigado{
+    .bloco-1;
+    .fl;
+
+    big{
+        .fonte;
+        .bloco-1;
+        .db;
+        color:@cor1;
+        font-size:22px;
+        padding-bottom: 10px;
+    }
+
+    b{
+        .bloco-1;
+        .db;
+        .fl;
+        padding-bottom: 5px;
+    }
+
+    a{
+        .fonte;
+        .borda;
+        .db;
+        .ease-out;
+        padding:5px 10px;
+        background:@cor1;
+        color:#fff;
+        margin-top: 30px;
+        font-size:12px;
+        &:hover{ background:darken(@cor1,10%)}
+    }
+}
+
+@media only screen and (max-width:1023px){
+    .contato{
+        .pdt(0);
+    }
+}
+
+
+// NEWSLETTER ------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+

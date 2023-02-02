@@ -1,0 +1,36 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.pager4(){
+
+    .bx-controls{
+        .flex-meio;
+    }
+
+    .bx-pager{
+        .full-max;
+        .translatey(-@banner[@pager][posicao] - 50px);
+        z-index: 900;
+        justify-content: flex-start;
+        .mgt(-10px);
+        .box;
+        a{  
+            .size(40px,10px);
+            .mgr(10px);
+            .box;
+            text-indent:-99999px;
+            .bdb(@banner[@pager][cor],1px);
+            .op(0.5);
+
+            &:hover{
+                .bdb(@banner[@pager][hover],10px);
+                .op;
+            }        
+        }
+
+        .active{
+            .bdb(@banner[@pager][ativo],5px);
+            .op;
+        }
+    }
+}  

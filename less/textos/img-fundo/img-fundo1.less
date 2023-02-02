@@ -1,0 +1,103 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+
+.img-fundo1(
+@altura:50vh,
+@direcao:center,
+@largura:650px,
+@bg:movel,
+@filtro:on,
+
+@cor-texto:#fff,
+@cor-titulo:@cor1,
+@cor-subtitulo:@cor2
+)
+{
+    background-position:center !important;
+    min-height: @altura;
+    .box;
+
+    .filtro(@filtro);    
+    .filtro(@a) when (@a=on){
+        .escurecer;
+    }
+
+    h2{
+        .c(@cor-titulo);
+    }
+
+    h3{
+        .c(@cor-subtitulo);
+    }
+
+    section{
+        .df;
+        .aic;
+    }
+
+    .texto{
+        .df;
+        .column;
+        .mw(@largura);
+        .c(@cor-texto);
+    }
+
+    span{
+        .full;
+        .fl;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+    }
+
+    .link{
+        .bt-pequeno;
+    }
+
+    .img-fundo-direcao(@direcao);    
+    .img-fundo-direcao(@a) when (@a=left){
+        section{
+            justify-content: flex-start;
+        }
+    }
+
+    .img-fundo-direcao(@a) when (@a=center){
+        section{
+            .ac;
+            .sc;
+        }
+
+        .bloco-link{
+            .flex-meio;
+        }
+    }
+
+    .img-fundo-direcao(@a) when (@a=right){
+        section{
+            justify-content: flex-end;
+        }
+    }
+
+    @media only screen and (min-width:1024px){
+
+        .img-fundo-fixo(@bg);
+        .img-fundo-fixo(@a) when (@a=fixo){
+            background-attachment: fixed;
+        }
+    }
+    @media only screen and (max-width:1023px){
+
+        section{
+            min-height: 1px;
+        }
+
+        .texto{
+            .full;
+        }
+
+    }
+}

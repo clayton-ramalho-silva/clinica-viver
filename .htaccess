@@ -1,0 +1,188 @@
+
+
+
+# <IfModule mod_rewrite.c>
+# RewriteEngine On
+# DirectoryIndex index.htm index.html index.php
+# RewriteBase /
+
+# RewriteRule ^(include|img|template|picture|filearchive|content|robots\.txt|favicon\.ico)($|/) - [L]
+# RewriteRule ^index\.php$ - [L]
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteCond %{REQUEST_FILENAME} !-d
+
+# RewriteRule ^([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.html$ chaves/index.php?id=$1,$2,$3,$4,$5,$6&%{QUERY_STRING}
+# RewriteRule ^(.+)\.html$ chaves/index.php?$1&%{QUERY_STRING}
+
+# </IfModule>
+
+# <ifModule mod_expires.c>
+#   ExpiresActive On
+#   ExpiresDefault "access plus 7 days"
+#   ExpiresByType text/html "access plus 7 days"
+#   ExpiresByType image/gif "access plus 7 days"
+#   ExpiresByType image/jpeg "access plus 7 days"
+#   ExpiresByType image/png "access plus 7 days"
+#   ExpiresByType text/css "access plus 7 days"
+#   ExpiresByType text/javascript "access plus 7 days"
+#   ExpiresByType application/x-javascript "access plus 7 days"
+# </ifModule>
+
+# <IfModule mod_deflate.c>
+#   <FilesMatch "\.(js|css|jpg|png|gif|ico|php|html|htm)$">
+#         SetOutputFilter DEFLATE
+#   </FilesMatch>
+#   AddOutputFilterByType DEFLATE text/css text/javascript application/x-javascript text/html text/plain text/xml image/x-icon
+# </IfModule>
+
+
+# Header set Connection keep-alive
+# FileETag None
+# AddDefaultCharset iso-8859-1
+
+# AddHandler cgi-script .cgi
+# Options -ExecCGI
+
+
+#Habilita o SSL na Uolhost
+
+#RewriteCond %{HTTP:X-Forwarded-Proto} !https
+#RewriteCond %{HTTPS} off
+#RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+
+# PHP: These settings are recommend - check phpinfo() before try these
+#	register_globals ON
+#	php_flag magic_quotes_gpc Off
+# 	php_flag magic_quotes_runtime Off
+#	php_flag register_globals Off
+
+#Sometimes necessary to add special types
+#	AddType application/x-javascript .js
+#	AddType text/css .css
+#	AddType video/ogg .ogv
+#	AddType video/ogg .ogg
+#	AddType video/mp4 .mp4
+#	AddType video/x-m4v .m4v
+#	AddType video/webm .webm
+#	AddType image/svg+xml .svg
+#	AddType application/font-woff .woff
+#	AddType application/vnd.ms-fontobject .eot
+#	AddType application/x-font-ttf .ttf
+#	AddType application/x-font-opentype .otf
+
+# Options:
+#	Options +FollowSymlinks
+#	AcceptPathInfo On
+
+# All 404 error should link to phpwcms then
+# it is easy to define internal routing/redirection
+#	ErrorDocument 404 /index.php?r404
+# Installed in Subfolder www.example.com/subfolder/
+#	ErrorDocument 404 /subfolder/index.php?r404
+
+# Rewrite:
+<IfModule mod_rewrite.c>
+
+	RewriteEngine On
+
+DirectoryIndex index.htm index.html index.php
+
+# Use RewriteBase - always start in Document Root
+# If installed in subfolder see the ReWrite Rule section
+	RewriteBase /
+
+
+# Ignore
+	RewriteRule ^(include|img|template|picture|filearchive|content|robots\.txt|favicon\.ico)($|/) - [L]
+	RewriteRule ^index\.php$ - [L]
+
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteCond %{REQUEST_FILENAME} !-d
+
+# Installed in Document Root www.example.com/ (PARA FAZER TESTES COMENTE APENAS A PRIMEIRA LINHA)===(PARA USAR URL AMIGÁVEL COM O CHAT COMENTE AS 2 LINHAS ABAIXO E DESCOMENTE A 3°)
+#	RewriteRule ^([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.html$ /index.php?id=$1,$2,$3,$4,$5,$6&%{QUERY_STRING}
+#	RewriteRule ^(.+)\.html$ /index.php?$1&%{QUERY_STRING}
+#	RewriteRule ^(.+)\.html$ index.php?$1
+
+
+# DESCOMENTAR LINHAS ABAIXO QUANDO INSTALADO EM SUB-PASTA E ALTERE O NOME_DA_PASTA
+	RewriteRule ^([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)\.html$ /index.php?id=$1,$2,$3,$4,$5,$6&%{QUERY_STRING}
+ 	RewriteRule ^(.+)\.html$ /index.php?$1&%{QUERY_STRING}
+
+
+</IfModule>
+#Sometimes neccessary to add those
+#
+#AddType application/x-javascript .js
+#AddType text/css .css
+
+#CONFIGURAÇÕES PARA CACHE DO NAVEGADOR
+
+#Definir Expires para os tipos de arquivos
+<ifModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault "access plus 7 days"
+  ExpiresByType text/html "access plus 7 days"
+  ExpiresByType image/gif "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 7 days"
+  ExpiresByType image/png "access plus 7 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType text/javascript "access plus 7 days"
+  ExpiresByType application/x-javascript "access plus 7 days"
+</ifModule>
+
+#Definir Expires para os tipos de arquivos
+#<FilesMatch"\.(html|xml|css|js|gif|png|jpg|jpges)$">
+#Header set Cache-Control "max-age=604800"
+#</FilesMatche>
+
+
+
+
+
+# Ativar compressão GZIP
+<IfModule mod_deflate.c>
+  <FilesMatch "\.(js|css|jpg|png|gif|ico|php|html|htm)$">
+        SetOutputFilter DEFLATE
+  </FilesMatch>
+  AddOutputFilterByType DEFLATE text/css text/javascript application/x-javascript text/html text/plain text/xml image/x-icon
+</IfModule>
+
+
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ico|gif|jpg|jpeg|png)$">
+          Header set Cache-Control "max-age=31536000"
+    </FilesMatch>
+    <FilesMatch "\.(css|js|html|php)$">
+          Header set Cache-Control "max-age=31536000"
+    </FilesMatch>
+</IfModule>
+
+
+Header set Connection keep-alive
+
+FileETag None
+AddDefaultCharset iso-8859-1
+
+
+#Configurações de Proteção
+#AddHandler cgi-script .cgi
+Options -ExecCGI
+
+#Configuração de Velocidade de Download
+# <IfModule mod_bandwidth.c>
+#	BandwidthModule On
+# 	ForceBandWidthModule On
+# 	Bandwidth all 1024000
+# 	MinBandwidth all 50000
+# 	LargeFileLimit * 500 50000
+# </IfModule>
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the âea-php70â package as the default âPHPâ programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

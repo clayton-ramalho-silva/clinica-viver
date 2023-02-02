@@ -1,0 +1,957 @@
+<!--CONFIG_START//-->
+cat_all = "Principais Produtos"
+cat_list_products = Off
+
+; sort list by fieldnames, check DB
+; sort by Name - "shopprod_name1 ASC"
+; sort by Viewed - "shopprod_track_view DESC"
+cat_list_sort_by = "shopprod_name1 ASC"
+cat_subcat_spacer = "_>_"
+
+; shop_css = "include/inc_module/mod_shop/template/css/shop.css"
+shop_wrap = "<div class="shop">|</div>"
+
+sigla_moeda = ""
+unidade_peso = "kg"
+
+price_decimals = 2
+vat_decimals = 0
+weight_decimals = 2
+dec_point = ","
+thousands_sep = "."
+
+
+; WEBCIS - NOVAS CONFIGURAùùES
+; Elemento HTML em volta do preco e do texto de sem preùo
+ele_preco = "b"
+; Classe para o elemento do texto sem preùo (deixe em branco se nùo precisa da classe)
+classe_preco = "sem-preco"
+; Elemento HTML em volta do texto de preùo para usuùrios deslogados
+ele_preco_logado = "b"
+; Classe para o elemento do texto para usuùrios deslogados (deixe em branco se nùo precisa da classe)
+classe_preco_logado = "preco-deslogado"
+; Elemento HTML em volta do texto no lugar do botùo de compra
+ele_botao_escondido = " a href='finalizar-pedido.html?cad=1' "
+; Classe para o texto que aparecerù no lugar do botùo de compra (deixe em branco se nùo precisa da classe)
+classe_botao_escondido = "texto-botao"
+; Classe do cùdigo do produto quando o botùo de compras estiver escondido (deixe em branco se nùo precisa da classe)
+classe_botao_codigo = "escondido"
+; Nome do primeiro campo de select (tamanhos)
+tit_select_1 = "Tamanho"
+; Nome do segundo campo de select (coress)
+tit_select_2 = "Cor"
+; Nome do terceiro campo de select (outros)
+tit_select_3 = "Outro"
+
+ 
+image_list_width = 200
+image_list_height = 200
+image_list_crop = 1
+image_detail_width = 640
+image_detail_height = 640
+image_detail_crop = 0
+image_detail_more_width = 106
+image_detail_more_height = 79
+image_detail_more_crop = 1
+image_detail_more_lightbox = 1
+image_detail_more_start = 2
+image_zoom_width = 600
+image_zoom_height = 600
+image_list_lightbox = FALSE
+image_detail_lightbox = TRUE
+
+files_direct_download = 0
+files_template = shop.tmpl
+
+on_request_trigger = -999
+
+mail_customer_subject = "[#{ORDER}] Softwares Digitais"
+mail_neworder_subject = "[#{ORDER}] Novo Pedido"
+
+label_payby_paypal = "Pag Seguro"
+label_payby_ccard = "Cartùo de Crùdito"
+label_payby_prepay = "Boleto Bancùrio"
+label_payby_pod = "Transferùncia Online"
+label_payby_onbill = "Depùsito Bancùrio"
+
+; Add custom fields, only for step 1
+; (where customer fill in address information)
+; The label information is just optional
+; and only used to set default error messages
+; format: shop_field_1 = STRING_REQ_Label
+shop_field_1 = STRING_REQ_Label
+shop_field_2 = STRING_My custom field
+shop_field_3 = STRING_My custom field
+
+; possible:
+; ---------
+; RANDOM or
+; sprintf() formatted http://php.net/sprintf
+; sample: %05s -> 00001
+order_number_style = EN%05s
+<!--CONFIG_END//-->
+
+<!--LIST_HEADER_START//-->
+[JS]
+<script>
+    $().ready(function () {
+
+        $('.icon-mais').on('click', function () {
+            var oldVal = $(this).parent().find("input").val();
+            var newVal = parseFloat(oldVal) + 1;
+            $(this).parent().find("input").val(newVal);
+            $('#form-cart').submit();
+        });
+
+        $('.icon-menos').on('click', function () {
+            var oldVal = $(this).parent().find("input").val();
+            var newVal = (oldVal > 1) ? parseFloat(oldVal) - 1 : oldVal;
+            $(this).parent().find("input").val(newVal);
+            $('#form-cart').submit();
+        });
+
+    });
+</script>
+[/JS]
+
+[JS]
+<script>
+$().ready(function () {
+
+
+  $(".shop").find("section").find("article").each(function(){
+
+    var valorup = parseFloat($(this).find(".preco").html().replace(/\./, '').replace(/\,/, '.'));
+
+    var solucao = $(this).find(".valor small b");
+
+    var divisao = parseInt("10");
+
+    var result = valorup / divisao;
+
+    console.log(valorup, divisao, result);
+    // alert(result);
+
+
+    var num = result.toFixed(2);
+    var final = num.replace('.', ',');
+    // $(result).replace('.',',');
+
+
+    $(solucao).text("R$ " + final);
+
+  });
+
+});
+
+
+</script>
+[/JS]
+
+
+
+
+
+<section>
+
+    [TIT_HOME]<h2>{TIT_HOME}</h2>[/TIT_HOME]
+    [TIT_INTERNA]<h1>{TIT_INTERNA}</h1>[/TIT_INTERNA]
+    <!--LIST_HEADER_END//-->
+
+
+    <!--LIST_ENTRY_START//-->
+    <article class="item-produto">
+
+        <a href="{PRODUCT_DETAIL_LINK}">
+            <figure>
+                {IMAGE}
+                <div class="comprar-produto">
+                    <form id="form-add" action="{ACTION_ADD}" method="post">
+                        [CART_ADD][BOTAO]Comprar[/BOTAO][/CART_ADD]
+                    </form>
+                </div>
+                <span class="ver-produto"><i class="fas fa-eye"></i></span>
+            </figure>
+        </a>
+
+        <div class="info-produto-home">
+            <h4>{PRODUCT_TITLE}</h4>
+            <span class="valor">R$ {PRODUCT_GROSS_PRICE} <br><small>em atÈ 10x de <b></b></small></span>
+            <!--<div class="cod-prod">Cod. {ORDER_NUM}</div>-->
+            <a href="{PRODUCT_DETAIL_LINK}" class="detalhe-produto"></a>
+        </div>
+
+
+
+
+    </article>
+    <!--LIST_ENTRY_END//-->
+
+
+    <!--LIST_NONE_START//-->
+    <p>Nenhum produto cadastrado</p>
+    <!--LIST_NONE_END//-->
+
+
+    <!--LIST_SPACE_START//-->
+    <!--LIST_SPACE_END//-->
+
+
+    <!--LIST_FOOTER_START//-->
+</section>
+<!--LIST_FOOTER_END//-->
+
+
+<!--DETAIL_START//-->
+[JS]Scripts/jquery.validate.js[/JS]
+[JS]Scripts/tabs-lateral.js[/JS]
+[JS]<script>
+    $.abasSimples = function () {
+        var abas = 'p#abas';
+        var conteudos = 'ul#conteudos';
+        $(conteudos + '> li').hide();
+        $(conteudos + '> li:first-child').show();
+        $(abas + ' a').click(function () {
+            $(abas + ' a').removeClass('selected');
+            $(this).addClass('selected');
+            $(conteudos + '> li').hide();
+            $(conteudos + ' ' + $(this).attr('href')).show();
+            return false;
+        });
+    };
+
+    $(document).ready(function () {
+        $.abasSimples();
+
+        $(".precos form").validate({
+            rules: {
+                shop_prod_size: "required",
+                shop_prod_color: "required",
+                shop_prod_amount: "required"
+            },
+            messages: {
+                shop_prod_size: "",
+                shop_prod_color: "",
+                shop_prod_amount: ""
+            }
+        });
+
+    });
+</script>
+[/JS]
+
+
+[JS]
+<script>
+$().ready(function () {
+
+
+  $(".shop").find(".detalhes-produtos").find(".caracteristicas").each(function(){
+
+    var valorup = parseFloat($(this).find(".preco").html().replace(/\./, '').replace(/\,/, '.'));
+
+    var solucao = $(this).find(".valor small b");
+
+    var divisao = parseInt("10");
+
+    var result = valorup / divisao;
+
+    console.log(valorup, divisao, result);
+    // alert(result);
+
+
+    var num = result.toFixed(2);
+    var final = num.replace('.', ',');
+    // $(result).replace('.',',');
+
+
+    $(solucao).text("R$ " + final);
+
+  });
+
+});
+
+
+</script>
+[/JS]
+
+[JS]
+<script>
+    $(function () {
+
+        $('.fa-plus').on('click', function () {
+            var oldVal = $(this).parent().find("input").val();
+            var newVal = parseFloat(oldVal) + 1;
+            $(this).parent().find("input").val(newVal);
+            $('#form-cart').submit();
+        });
+
+        $('.fa-minus').on('click', function () {
+            var oldVal = $(this).parent().find("input").val();
+            var newVal = parseFloat(oldVal) - 1;
+            $(this).parent().find("input").val(newVal);
+            $('#form-cart').submit();
+        });
+
+
+    });
+</script>
+[/JS]
+
+
+
+<h1>{CATEGORY}</h1>
+<div class="detalhes-produtos">
+    <div class="image-detalhes">
+        <figure>
+            {IMAGE}
+        </figure>
+    </div>
+    <div class="caracteristicas">
+        <h3>{PRODUCT_TITLE}</h3>
+        <span class="codigo">{ORDER_NUM}</span>
+        <div class="valor">R$ {PRODUCT_GROSS_PRICE} <br><small style="font-size: 24px;">em atÈ 10x de <b></b></small></div>
+        <form id="form-add" action="{ACTION_ADD}" method="post">
+            [CART_ADD][BOTAO]Comprar[/BOTAO][/CART_ADD]
+        </form>
+    </div>
+</div>
+<div class="descricao">
+    <p id="abas">
+       	<a href="#aba0" class="selected primeiro">DescriÁ„o do Produto</a>
+        <a href="#aba1">CaracterÌsticas</a>
+    </p>
+    <ul id="conteudos">
+        <li id="aba0"><div class="tabs-produto fl">{PRODUCT_SHORT}</div></li>
+        <li id="aba1"><div class="tabs-produto fl">{PRODUCT_LONG}</div></li>
+    </ul>
+</div>
+<!--DETAIL_END//-->
+
+
+<!--IMAGE_SPACE_START//-->
+<!--IMAGE_SPACE_END//-->
+
+
+<!--CART_SMALL_START//-->
+[JS]
+<script>
+    $().ready(function () {
+
+        $('form#form-add').on('submit', function (e) {
+
+            var id = $(this).find('input[name=shop_prod_id]').val();
+            qtd = $(this).find('input[name=shop_prod_amount]').val();
+            cor = $(this).find('input[name=shop_prod_color]').val();
+            tam = $(this).find('input[name=shop_prod_size]').val();
+            oth = $(this).find('input[name=shop_prod_other]').val();
+
+            $.post("include/inc_module/mod_shop/ajax.php", {
+                prodId: id, prodQtd: qtd, prodSize: cor, prodColor: tam, prodOther: oth
+            }, function (result) {
+
+                $('.fechar-pedido span').html(result.qtd);
+                $('.item-resumo').html(result.dados);
+                $('.total-carrinho').removeClass('cart-hidden');
+                $('.total-carrinho b').html(result.total);
+
+                $('.add-produto').addClass('on');
+                setTimeout(function () {
+                    $('.add-produto').removeClass('on');
+                }, 4000)
+
+            }, 'json');
+
+            e.preventDefault ? e.preventDefault() : e.returnValue = false;
+
+        });
+
+    });
+</script>
+[/JS]
+
+
+
+
+
+    <a href="{CART_LINK}" class="fechar-pedido">
+        <i class="fas fa-shopping-bag"></i>
+        [COUNT]<span>{COUNT}</span>[/COUNT]
+        [COUNT_ELSE]<span>0</span>[/COUNT_ELSE]
+    </a>
+
+    <div class="fechar-pedido-menu">
+
+        <div class="cart-produtos">
+            <ul class="item-resumo">
+                {CART_ITENS}
+            </ul>
+            <div class="total-carrinho{CART_CLASS}">
+                <span> Total: <b>R$ {TOTAL_GROSS}</b></span>
+                <a class="continuar-comprando" href="{CART_LINK}">Fechar Pedido</a>
+            </div>
+        </div>
+    </div>
+    <div class="add-produto"><i class="fas fa-cart-plus"></i>Produto adicionado ao carrinho</div>
+
+<!--CART_SMALL_END//-->
+
+
+<!--CART_SMALL_ENTRY_START//-->
+<li class="lista-item">
+    <figure>
+        {IMAGE}
+    </figure>
+    <div class="item-info">
+        <h4>{PRODUCT_TITLE}</h4>
+        <b>{ORDER_NUM}</b>
+        <div class="item-qtd">Un.: {COUNT}</div>
+        <div class="item-preco">R$ {PRODUCT_GROSS_PRICE}</div>
+    </div>
+</li>
+<!--CART_SMALL_ENTRY_END//-->
+
+
+<!--CART_SMALL_NONE_START//-->
+<div class="carrinho-vazio">
+    <h3>Seu carrinho est· vazio</h3>
+</div>
+<!--CART_SMALL_NONE_END//-->
+
+
+<!--CART_HEADER_START//-->
+[JS]
+<script>
+    $(function () {
+
+        $('.fa-plus').on('click', function () {
+            var oldVal = $(this).parent().find("input").val();
+            var newVal = parseFloat(oldVal) + 1;
+            $(this).parent().find("input").val(newVal);
+            $('#form-cart').submit();
+        });
+
+        $('.fa-minus').on('click', function () {
+            var oldVal = $(this).parent().find("input").val();
+            var newVal = parseFloat(oldVal) - 1;
+            $(this).parent().find("input").val(newVal);
+            $('#form-cart').submit();
+        });
+
+        $(".resumo-produtos").find('.item-resumo').each(function () {
+
+            var lixo = $(this).find('.botao-remover');
+            var input = $(this).find('input[type=text]');
+            var atualizar = $(this).find('.cesta');
+
+            $(lixo).click(function () {
+                $(input).val('0');
+                $('#form-cart').submit();
+            })
+
+            $(input).on('input', function () {
+                if ($(atualizar).css("opacity") == 0) {
+                    $(atualizar).fadeTo(100, 1)
+                }
+            });
+
+        });
+
+    });
+</script>
+[/JS]
+<h1>Meu Carrinho</h1>
+<div class="finalizar-produtos">
+
+    <div class="resumo-produtos">
+
+        <ul class="topo-resumo">
+            <li class="lista-item">Produto</li>
+            <li class="lista-quantidade">Qtd.</li>
+            <li class="lista-preco">PreÁo</li>
+        </ul>
+
+        <!--CART_HEADER_END//-->
+
+
+        <!--CART_ENTRY_START//-->
+        <ul class="item-resumo">
+            <li class="lista-item">
+                <figure>
+                    {IMAGE}
+                </figure>
+                <span>
+                    <h4>{PRODUCT_TITLE}</h4>
+                    <b>{ORDER_NUM}</b>
+                </span>
+            </li>
+
+            <li class="lista-quantidade">
+                <div class="campo-qtd">{COUNT}</div>
+                <a class="botao-remover" href="javascript:void(0)">Remover</a>
+            </li>
+
+            <li class="lista-preco">
+                R$ {PRODUCT_GROSS_PRICE}
+            </li>
+        </ul>
+        <!--CART_ENTRY_END//-->
+
+
+        <!--CART_SPACE_START//-->
+        <!--CART_SPACE_END//-->
+
+
+        <!--CART_FOOTER_START//-->
+        <a href="produtos.html" class="continuar-comprando">Continuar Comprando</a>
+    </div>
+    <div class="resumo-pedido">
+        <!--
+        <div class="item-final">
+            <h3>Cupom de Desconto</h3>
+
+        </div>
+        -->
+
+        <div class="item-final">
+            <h3>Resumo do Pedido</h3>
+            <div class="valor-total"><span>Valor Total:</span> <span>R$ {TOTAL_GROSS}</span></div>
+            [CHECKOUT]Continuar[/CHECKOUT]
+        </div>
+    </div>
+</div>
+<!--CART_FOOTER_END//-->
+
+
+<!--CART_NONE_START//-->
+<h1>Meu Carrinho</h1>
+
+<div class="carrinho-vazio">
+    <h3>Seu carrinho est· vazio</h3>
+
+    Voltar para &nbsp;<a href="/"> p·gina inicial </a> &nbsp;ou&nbsp; <a href="produtos.html"> escolha outros produtos</a>.
+</div>
+<!--CART_NONE_END//-->
+
+
+<!--ORDER_LOGIN_START//-->
+<h1>IdentificaÁ„o</h1>
+<div class="login-shop bloco-form">
+
+    <span class="erro erro-login"> {ERROR} </span>
+
+    <form action="{ACTION}" method="post" name="feLoginForm" id="feLoginForm" class="formulario">
+        <p>
+
+            <input type="text" name="user_login" id="user_login" value="" placeholder="E-mail" />
+        </p>
+        <p>
+
+            <input type="password" name="user_senha" id="user_senha" value="" placeholder="Senha" />
+            <a href="{LEMBRAR-SENHA}">Esqueci minha Senha</a>
+
+            <input type="submit" value="Continuar" name="login_submit" id="login_submit" class="continuar-logar" />
+        </p>
+
+    </form>
+
+    <form action="{ACTION}" method="post" class="cadastre-agora">
+        <span>N„o tem cadastro?</span> <input  type="submit" name="shop_cart_login" value="Cadastre-se Agora">
+    </form>
+
+</div>
+<!--ORDER_LOGIN_END//-->
+
+
+<!--ORDER_INV_ADDRESS_START//-->
+
+{VALIDAR}
+
+[JS]include/inc_module/mod_shop/template/scripts/jquery.masked.js[/JS]
+[JS]Scripts/jquery.validate.js[/JS]
+[JS]include/inc_module/mod_shop/template/scripts/funcoes-cadastro.js[/JS]
+
+<h1>Cadastro</h1>
+
+<div class="formulario-shop bloco-form">
+
+    <div class="tipo-cadastro">
+        <div class="box-tipos-cadastro">
+            <h3>Escolha entre pessoa fÌsica e pessoa jurÌdica</h3>
+            <span class="check">
+                <label for="tipo-cadastro1">
+                    <input type="radio" id="tipo-cadastro1" name="tipo-cadastro" class="btn-cadastro" value="1" checked="checked">
+                    <span>Pessoa FÌsica</span>
+                </label>
+                <label for="tipo-cadastro2">
+                    <input type="radio" id="tipo-cadastro2" name="tipo-cadastro" class="btn-cadastro" value="2">
+                    <span>Pessoa JurÌdica</span>
+                </label>
+            </span>
+        </div>
+    </div>
+
+    <p class="login">
+        <b></b>
+        <input type="text" name="cad_login" id="cad_login" placeholder="Login (e-mail)" autocomplete="new-login" />
+    </p>
+
+    <p>
+        <input type="password" name="cad_senha" id="cad_senha" placeholder="Senha" autocomplete="new-password" />
+    </p>
+
+
+    <div class="campos-empresa">
+
+        <h3>InformaÁıes da Empresa</h3>
+
+        <p>
+            <input type="text" name="cad_nome_fantasia" id="cad_nome_fantasia" placeholder="Nome Fantasia" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_cnpj" id="cad_cnpj" placeholder="CNPJ" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_registro" id="cad_registro" placeholder="InscriÁ„o Estadual" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_razao" id="cad_razao" placeholder="Raz„o Social" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_responsavel" id="cad_responsavel" placeholder="Respons·vel / Contato" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_tel_empresa" id="cad_tel_empresa" placeholder="Telefone" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_cel_empresa" id="cad_cel_empresa" placeholder="Celular" disabled="disabled" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_site_empresa" id="cad_site_empresa" placeholder="Site da Empresa" disabled="disabled" />
+        </p>
+    </div>
+
+    <div class="campos-pessoais">
+
+        <h3>InformaÁıes Pessoais</h3>
+
+        <p>
+            <input type="text" name="cad_nome" id="cad_nome" placeholder="Nome Completo" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_cpf" id="cad_cpf" placeholder="CPF"/>
+        </p>
+
+        <p>
+            <input type="text" name="cad_rg" id="cad_rg" placeholder="RG" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_fone" id="cad_fone" placeholder="Telefone" />
+        </p>
+
+        <p>
+            <input type="text" name="cad_cel" id="cad_cel" placeholder="Celular"  />
+        </p>
+
+
+    </div>
+
+    <h3>EndereÁo de Entrega</h3>
+
+    <p class="campo-cep pr">
+        <input type="text" name="cad_cep" id="cad_cep" class="ignore" value="{VALOR_CEP}" placeholder="CEP" />
+    </p>
+
+    <p>
+        <input type="text" name="cad_endereco_ent" id="cad_endereco_ent" placeholder="EndereÁo" />
+    </p>
+
+    <p>
+        <input type="text" name="cad_cidade_ent" id="cad_cidade_ent" placeholder="Cidade" />
+    </p>
+
+    <p>
+        <input type="text" name="cad_bairro_ent" id="cad_bairro_ent" placeholder="Bairro"/>
+    </p>
+
+    <p>
+        <input type="text" name="cad_num_ent" id="cad_num_ent" placeholder="N˙mero"/>
+    </p>
+
+    <p>
+        <input type="text" name="cad_comp_ent" id="cad_comp_ent" placeholder="Complemento" />
+    </p>
+
+    <p>
+        <select name="cad_uf_ent" id="cad_uf_ent">
+            <option value="AC">AC</option>
+            <option value="AL">AL</option>
+            <option value="AM">AM</option>
+            <option value="AP">AP</option>
+            <option value="BA">BA</option>
+            <option value="CE">CE</option>
+            <option value="DF">DF</option>
+            <option value="ES">ES</option>
+            <option value="GO">GO</option>
+            <option value="MA">MA</option>
+            <option value="MG">MG</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="PA">PA</option>
+            <option value="PB">PB</option>
+            <option value="PE">PE</option>
+            <option value="PI">PI</option>
+            <option value="PR">PR</option>
+            <option value="RJ">RJ</option>
+            <option value="RN">RN</option>
+            <option value="RO">RO</option>
+            <option value="RR">RR</option>
+            <option value="RS">RS</option>
+            <option value="SC">SC</option>
+            <option value="SE">SE</option>
+            <option value="SP" selected="selected">SP</option>
+            <option value="TO">TO</option>
+        </select>
+
+        <input name="shop_order_step1" type="submit" value="Continuar" class="bt-continuar" />
+    </p>
+
+</div>
+<!--ORDER_INV_ADDRESS_END//-->
+
+
+<!--MSG_APROVACAO_START//-->
+<h3>Cadastro realizado</h3>
+
+<div class="obrigado">
+    Seu cadastro foi enviado para aprovaÁ„oo. Assim que ele for aprovado, vocÍ receber· um e-mail informando a liberaÁ„o.
+</div>
+<!--MSG_APROVACAO_END//-->
+
+
+<!--ORDER_TERMS_START//-->
+[JS]Scripts/remodal.js[/JS]
+[JS]Scripts/jquery.mCustomScrollbar.concat.min.js[/JS]
+
+<h1>Confira e finalize seu pedido</h1>
+
+<div class="finalizar-produtos">
+
+    <div class="resumo-produtos-final">
+
+        <article>
+
+            <form action="{LINK_DADOS}" method="post" id="form-alterar-dados">
+                <b>EndereÁo de entrega</b>
+                <input type="submit" class="shop_edit_address db" name="alterar-dados" id="alterar-dados" value="Alterar" />
+            </form>
+
+            <p>[NOME]{NOME}[/NOME][FANTASIA]{FANTASIA}[/FANTASIA]</p>
+            [LOGIN]<p>{LOGIN}</p>[/LOGIN]
+            <p>[ENDERECO]{ENDERECO}[/ENDERECO]</p>
+            <p>[BAIRRO]{BAIRRO}[/BAIRRO][CIDADE] - {CIDADE}[UF] - {UF}[/UF]<br>[/CIDADE]</p>
+            <p> [CEP]CEP: {CEP}[/CEP]</p>
+
+        </article>
+
+        <article>
+            {ITEMS}
+        </article>
+
+    </div>
+
+    <div class="resumo-pedido">
+
+        <div class="item-final">
+            <h3>Resumo do Pedido</h3>
+            <div class="valor-total"><span>Valor Total:</span> <span>R$ {TOTAL_GROSS}</span></div>
+
+            <form id="form_termos" action="{CART_LINK}" method="post">
+                <input class="cart-checkout-button" name="shop_order_submit" type="submit" value="Finalizar Pedido" />
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+<!--ORDER_TERMS_END//-->
+
+
+<!--ORDER_TERMS_ITEM_START//-->
+<div class="item-produto-resumo">
+    <figure>{IMAGE}</figure>
+    <span>
+        <p>{PRODUCT_TITLE}</p>
+
+        <p class="codigo-item-produto-resumo">(CÛd.{ORDER_NUM})</p>
+        <p>Quantidade: {COUNT}</p>
+        [PRECO_PRODUTO]
+        <p class="preco-item-produto-resumo">
+            R$ {PRODUCT_GROSS_PRICE}
+        </p>
+        [/PRECO_PRODUTO]
+        <p>
+            [TAMANHO]Tamanho: {TAMANHO} |[/TAMANHO]
+            [COR]Cor: {COR} |[/COR]
+            [OUTRO]Outro: {OUTRO}[/OUTRO]
+        </p>
+    </span>
+</div>
+<!--ORDER_TERMS_ITEM_END//-->
+
+
+<!--ORDER_TERMS_ITEMSPACE_START//-->
+<!--ORDER_TERMS_ITEMSPACE_END//-->
+
+
+<!--MAIL_HEADER_START//-->
+<table border="0" cellpadding="5" cellspacing="0" style="font-size:12px" width="700">
+    <tbody>
+        <tr bgcolor="#E2E2E2" style="border:1px solid #DBDBDB">
+            <td style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif" width="510"><font face="Verdana, Geneva, sans-serif"><strong>Produto</strong></font></td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif" width="100"><font face="Verdana, Geneva, sans-serif"><strong>C&oacute;digo</strong></font></td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif" width="90"><font face="Verdana, Geneva, sans-serif"><strong>Quantidade</strong></font></td>
+            [PRECO_PRODUTO]
+            <td align="center" style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif" width="90"><font face="Verdana, Geneva, sans-serif"><strong>Valor</strong></font></td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif" width="90"><font face="Verdana, Geneva, sans-serif"><strong>Total</strong></font></td>
+            [/PRECO_PRODUTO]
+        </tr>
+        <tr>
+            <td colspan="4">
+                <!--MAIL_HEADER_END//-->
+
+
+                <!--MAIL_ITEM_START//-->
+        <tr>
+            <td align="left" style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{PRODUCT_TITLE}[TAMANHO]<br/><b>Tamanho: {TAMANHO}</b>[/TAMANHO][COR]<br/><b>Cor: {COR}</b>[/COR][OUTRO]<br/><b>Outro: {OUTRO}</b>[/OUTRO]</font>&nbsp;</td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{ORDER_NUM}</font>&nbsp;</td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{COUNT}</font>&nbsp;</td>
+            [PRECO_PRODUTO]
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{PRODUCT_GROSS_PRICE}</font>&nbsp;</td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{PRODUCT_SUBTOTAL}</font>&nbsp;</td>
+            [/PRECO_PRODUTO]
+        </tr>
+        <!--MAIL_ITEM_END//-->
+
+
+        <!--MAIL_ADMIN_ITEM_START//-->
+        <tr>
+            <td align="left" style="border:1px solid #dddddd; border-top:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{PRODUCT_TITLE}[TAMANHO]<br/><b>Tamanho: {TAMANHO}</b>[/TAMANHO][COR]<br/><b>Cor: {COR}</b>[/COR][OUTRO]<br/><b>Outro: {OUTRO}</b>[/OUTRO]</font>&nbsp;</td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{ORDER_NUM}</font>&nbsp;</td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{COUNT}</font>&nbsp;</td>
+            [PRECO_PRODUTO]
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{PRODUCT_GROSS_PRICE}</font>&nbsp;</td>
+            <td align="center" style="border:1px solid #dddddd; border-top:0; border-left:0; font-family:Verdana, Geneva, sans-serif"><font face="Verdana, Geneva, sans-serif">{PRODUCT_SUBTOTAL}</font>&nbsp;</td>
+            [/PRECO_PRODUTO]
+        </tr>
+        <!--MAIL_ADMIN_ITEM_END//-->
+
+
+        <!--MAIL_FOOTER_START//-->
+        </td>
+        </tr>
+    </tbody>
+</table>
+<!--MAIL_FOOTER_END//-->
+
+
+<!--MAIL_CUSTOMER_START//-->
+<!--MAIL_CUSTOMER_END//-->
+
+
+<!--MAIL_NEWORDER_START//-->
+<!--MAIL_NEWORDER_END//-->
+
+
+<!--ORDER_DONE_START//-->
+<style>
+.aviso-wrapper{z-index: 100000}
+.opcoes-obrigado{width: 100%; padding-top:30px; display:flex; justify-content: space-around;}
+.opcoes-obrigado a{color: #fff; padding:4px 12px; background:#213c57}
+.opcoes-obrigado a.pagseguro{background: #199ad4}
+.msg-pagseguro-resposivo{display: none; width:100%; float:left; background:#ad2727; padding:10px; box-sizing:border-box; color:#fff; margin:10px 0; font-size:14px; text-align:center;}
+
+@media only screen and (max-width: 768px) {
+	.msg-pagseguro-resposivo{display: block;}
+}
+</style>
+[IF_PAGSEGURO]
+[JS]{SCRIPT_PAG}[/JS]
+[JS]
+<script>
+    $().ready(function (e) {
+
+        $('a.pagseguro').on('click', function () {
+
+            $('body').append('<div class="aviso-wrapper"><div class="aviso-pagseguro"><b>Atenùùo</b> Para que o pagamento seja reconhecido pelo sistema, clique no botùo de fechar a janela do Pagseguro.</div></div>');
+            $(document).find('.aviso-wrapper').fadeTo(150, 1);
+
+            var code = '{CODIGO_PAG}';
+            PagSeguroLightbox({code: code}, {
+
+                success: function (transactionCode) {
+                    $.post("include/inc_module/mod_shop/ajax.php", {updateOrder: '{ORDER}', updateCode: transactionCode}, function (data) {
+                        alert('Informaùùes do pedido atualizadas com sucesso.');
+						$(document).find('.aviso-wrapper').fadeTo(150, 0);
+                    });
+                },
+                abort: function () {
+                    $(document).find('.aviso-wrapper').fadeTo(150, 0);
+                    alert("Pagamento cancelado.");
+                }
+
+            });
+
+        });
+
+    });
+</script>
+[/JS]
+[/IF_PAGSEGURO]
+
+<h1>Pedido enviado</h1>
+
+<div class="sucesso">
+
+    <h2>Obrigado pela sua solicitaÁ„o</h2>
+
+    <p><b>Pedido n: {ORDER}</b></p>
+
+    VocÍ receber· a confirmaÁ„o no e-mail: <strong> {email}</strong>.
+
+    [IF_PAGSEGURO]
+    <div class="msg-pagseguro-resposivo"><strong>AtenÁ„o!</strong><br />Para que as informaÁıes de pagamento do Pagseguro seja vinculadas ao pedido, clique no bot„o <b>Voltar para a loja</b> apÛs o pagamento.</div>
+    [/IF_PAGSEGURO]
+
+    <div class="opcoes-obrigado">
+    	[IF_PAGSEGURO]
+        <a class="finalizar pagseguro" href="javascript:void(0)">Realizar pagamento</a>
+        [/IF_PAGSEGURO]
+        <a href="index.php?aid=7">Meus pedidos</a>
+    </div>
+
+</div>
+<!--ORDER_DONE_END//-->
+
+
+<!--ORDER_NOT_DONE_START//-->
+<div class="sucesso fl">
+
+    <h3>Pedido n&atilde;o enviado</h3>
+    <p>Lamentamos, mas devido a problemas t&eacute;cnicos o seu pedido n&atilde;o foi enviado ou n„o pode ser armazenado.</p>
+    <p>Por favor tente novamente ou entre em contato conosco para verificar os problemas ocorridos</p>
+    <p>O n&uacute;mero potencial do seu produto seria: <strong>{ORDER}</strong>.</p>
+    <p>Se voc&ecirc; preferir <a href="mailto:atendimento@cambiostore.com?subject={SUBJECT}&amp;body={MSG}">clique aqui</a> para enviar sua mensagem para nossa administra&ccedil;&atilde;o.</p>
+
+</div>
+<!--ORDER_NOT_DONE_END//-->

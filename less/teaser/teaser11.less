@@ -1,0 +1,114 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser11(
+@hover:#fff,
+@cor-titulo:@cor1,
+@tamanho-titulo:25px,
+@cor-texto:@cor-fonte-site,
+@tamanho-texto:14px,
+@tamanho-imagem:70px,
+@fundo-resp:fade(@cor1,20),
+@img:on,
+@radius:@radius-padrao-botoes
+) 
+{
+    h2,h3{
+        .fb(100%);
+        .ac;
+    }
+
+    .txt{
+        .ac;
+    }
+
+    h4{
+        .fs(@tamanho-titulo);
+        .c(@cor-titulo);
+        .mgb(5px);
+        .fw(700);
+        letter-spacing: 2px;
+    }
+
+    .grid{
+        .sb;
+        .df;
+        .wrap;
+    } 
+    @media only screen and(max-width:1023px){
+        background-image: none !important;
+    }
+
+    article{
+        .w(50%);
+        .mw(380px);
+        .df;
+        .aic;
+        .fs(@tamanho-texto);
+        .pr;
+        .mgb(@espaco);
+        .ease-out;
+        .radius(if((@radius > 25px), 25px, @radius));
+        .c(@cor-texto);
+        .pd(15px);
+
+        @media only screen and(min-width:1024px){
+
+            &:nth-of-type(even){
+                figure{
+                    .pdr(@espaco);
+                }
+            }
+
+            &:nth-of-type(odd){
+                .ar;
+
+                figure{
+                    order:1;
+                    .pdl(@espaco);
+                }
+            }
+        }
+        @media only screen and(max-width:1023px){
+            .w(100%);
+            .mgl(auto);
+            .mgr(auto);
+
+            figure{
+                .pdr(@espaco);
+            }
+        }
+
+        &:hover{
+            .fundo(fade(#fff,80));
+            .sombra(0 0 15px @p70);
+        }
+    }
+
+    figure{
+        .img(@img);
+        .img(@a) when (@a=off){
+            .dn !important;
+        }
+    }
+
+    img{
+        .mw(@tamanho-imagem);
+        .fl;
+    }
+
+    .link{
+        .pa-tl;
+        .size(100%);
+        .fs(0);
+        .fundo(transparent) !important;
+    }
+
+    .servico-info{
+        .full;
+    }
+
+    @media only screen and(max-width:1023px){
+        background: @fundo-resp;
+    }
+}

@@ -1,0 +1,184 @@
+//@import "../conf-site";
+//@import '../helpers';
+
+.rodape6(){
+    .slogan-rod{
+        .dn;
+    }
+
+    .menu-rod{
+        order: -1;
+        .full;
+        .df;
+        .sc;
+        .aic;
+        .mgt(@espaco);
+        .mgb(@espaco);
+        .pr;
+
+        &:before{
+            .pa-tl(50%);
+            .ab;
+            .size(100%,1px);
+            .fundo(@rodape[@menu][cor]);
+        }
+    }
+
+    .pmenu{
+        .fundo(@rodape[fundo]);
+        .df;
+        z-index: 1;
+        .pdr(@espacom);
+        .pdl(@espacom);
+
+        a{
+            .c(@rodape[@menu][cor]);
+            .fs(@rodape[@menu][tamanho]);
+        }
+    }
+
+    .rodape{
+        .df;
+        .aic;
+        .column;
+        .pdt(@espaco);
+        .pdb(@espaco);
+    }
+
+    .telefone-rodape, .email-rodape, .whatsapp-rodape,.endereco-rodape{
+        .df;
+        .column;
+        .aic;
+    }
+
+    .rod-info{
+        /*        .full;
+                .df;
+                .sc;
+                order:1;
+        */
+
+        .lh(1.5);
+        .mgt(@espaco);
+        .df;
+        .grid-columns(3);
+        gap:50px;
+
+        i{
+            /*.fs(25px);*/
+            .mgb(@espacom);
+        }
+
+        /*        div{
+                    .pdl(@espacom);
+                    .pdr(@espacom);
+                    .ac;
+                    .df;
+                    .column;
+                    min-width: 250px;
+                    @media only screen and(min-width:1024px){
+                        .fb(32%);
+                    }
+        
+                    &:nth-of-type(1){
+                        order:1;
+                    }
+                    &:nth-of-type(2){
+                        order:2;
+                    }
+                    &:nth-of-type(3){
+                        order:0;
+                    }
+                }*/
+    }
+
+    .tels-rod{
+        //.w(50%);
+        .dg;
+        gap:50px;
+        .grid-columns(2);
+        order:0;
+    }
+
+    .email-rodape{
+        //.w(25%);
+        order:2;
+        br{
+            .dn;
+        }
+    }
+
+    .endereco-rodape{
+        order:1;
+        .ac;
+        .mw(300px);
+        p{
+            .flex-meio;
+            .column;
+            .mgb(25px);
+        }
+
+        .endereco-2{
+
+            i{.dn;}
+        }
+    }
+
+
+    .logo-rod{
+        order:2;
+        .mgt(@espaco);
+        .mgb(@espaco);
+    }
+
+    .redes-rodape{
+        order:3;
+    }
+
+    .copyright{
+        .ac;
+        .pdt(10px);
+        .pdb(10px);
+        .full;
+        .center-flex;
+    }
+
+    @media only screen and(max-width:1023px){
+        .pdt(0);
+        .pdb(0);
+
+        .rodape{
+            .pdt(35px);
+        }
+
+        .rod-info{
+            .column;
+            gap:0;
+            div{
+                .pdr(0);
+                .pdl(0);
+            }
+
+            .endereco-rodape{
+                order:0;
+            }
+            .tels-rod{
+                gap:20px;
+                .pdb(@espaco);
+            }
+
+        }
+        .copyright{
+            .center-flex;
+            .ac;
+            .pdt(5px);
+            .pdb(5px);
+        }
+    }
+
+    .telefone-rodape, .redes-rodape, .email-rodape, .whatsapp-rodape{
+        &:before{
+            .dn;
+        }
+    }
+} 

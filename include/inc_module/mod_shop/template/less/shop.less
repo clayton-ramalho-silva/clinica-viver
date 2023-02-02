@@ -1,0 +1,2766 @@
+// main: ../../../../../less/tema-site.less
+
+// CONFIGURAÇÕES GERAIS ========================================================
+
+@padrao:Tahoma, sans-serif;      // Fonte padrao do site para melhor leitura dos itens do shop
+
+// Títulos (h1) ----------------------------------------------------------------
+@titulo-height: 95px ~'!important';
+@titulo-font-size: 35px ~'!important';
+@titulo-cor: #ffffff ~'!important';
+@titulo-margin-bottom: 35px ~'!important';
+
+// Responsivo
+@titulo-resonsivo-height: auto ~'!important';
+@titulo-responsivo-font-size: 22px ~'!important';
+@titulo-responsivo-cor: #ffffff ~'!important';
+@titulo-responsivo-margin-bottom: 35px ~'!important';
+
+// After
+@titulo-after: 'on';               // Determina se o o título terá um after. Sim: on | Não: off
+@titulo-after-fundo: #313131;
+
+
+// Categorias ------------------------------------------------------------------
+@categoria-fundo:#eee;
+
+// Titulo
+@categoria-titulo-font-size:25px;
+@categoria-titulo-fundo:@cor1;
+@categoria-titulo-font-color:#fff;
+@categoria-titulo-radius:5px 5px 0 0; // Somente Categorias-1
+@categoria-titulo-altura:55px;
+@categoria-titulo-font-weight:400;
+@categoria-titulo-cores-barra:#fff; //somente Categorias-2
+@categoria-menu-padding:25px;
+
+// Link Categorias
+@categoria-cor-link:#535353;
+@categoria-fonte-size:16px;
+@categoria-link-height:50px;
+@categoria-link-hover:@cor1;
+
+// Sub Categorias
+@subcategoria-fundo:darken(@categoria-fundo,10);
+@subcategoria-tamanho:230px;
+@subcategoria-left:270px;
+
+// Link Sub Categorias
+@subcategoria-cor-link:#535353;
+@subcategoria-fonte-size:14px;
+@subcategoria-link-height:30px;
+
+
+// Busca -----------------------------------------------------------------------
+@busca-fundo:#111111;
+@busca-cor-texto:@cor2;
+@busca-cor-borda:#C3CBBF;
+@busca-tamanho-fonte:15px;
+
+
+// Produtos --------------------------------------------------------------------
+@lista-produtos-size:262px;
+@lista-produtos-radius:5px;
+@lista-produtos-cor-borda:#EEEEEE;
+@lista-produtos-cor-bordas-internas:#EBE9E9;
+@lista-produtos-cor-fundo:#FFF;
+
+// Titulo do produto
+@lista-produtos-titulo-cor:#666;
+@lista-produtos-titulo-fonte:15px;
+
+// Texto do valor
+@lista-produtos-valor-cor:#515151;
+@lista-produtos-valor-fonte:22px;
+
+@lista-produtos-quantidade-cor:#AAA;
+@lista-produtos-quantidade-fonte:22px;
+
+@lista-produtos-codigo-cor:#000;
+@lista-produtos-codigo-fonte:13px;
+
+@lista-produtos-comprar-fonte:15px;
+@lista-produtos-comprar-fonte-cor:@cor1;
+@lista-produtos-comprar-fundo:#fff;
+@lista-produtos-comprar-borda-cor:@cor1;
+
+// Detalhes do produto
+@detalhes-produtos-valor-fonte:30px;
+@detalhes-produtos-quantidade-cor:#555;
+@detalhes-produtos-quantidade-fonte:22px;
+
+@detalhes-produtos-comprar-fonte:20px;
+@detalhes-produtos-comprar-fonte-cor:#fff;
+@detalhes-produtos-comprar-fundo:@cor1;
+
+// Botoes de Quantidade
+@quantidade-tamanho-icone: 22px;
+@quantidade-cor-icone: @cor1;
+@quantidade-cor-icone-hover: darken(@cor1,15);
+
+
+// Tabela de finalizar pedido --------------------------------------------------
+@bg-topotabela:#f2f2f2;        // Cor do topo
+@color-topotabela:#000;        // Cor do texto do topo
+
+
+// Login -----------------------------------------------------------------------
+@cor-tit-login:@cor2;            // Cor do título LOGIN e CADASTRE-SE
+@cor-borda-login:#eee;         // Cor borda dos blocos
+@cor-botao-cadastro:#59B200;   // Cor do botao login
+
+
+// Cadastro --------------------------------------------------------------------
+@corh3-formulariocadastro:@cor1; // Cor do título do formulário de cadastro
+@back-geral:#002c53;           // Background da escolha entre pessoa fisica e juridica
+@back-checked:@cor1;             // Background checked
+
+
+// Área do cliente (TABELA DE PEDIDOS) -----------------------------------------
+@fundo-titulo:#aaa;            // Fundo do topo da tabela
+@cor-fundo-dentro:#5F5555;     // Cor de dentro das tabelas
+@corbotao-reenviar:#A9181E;    // Cor do botão
+
+
+// Comprado --------------------------------------------------------------------
+@cor-comprado:@cor1; // cor da mensagem "ADICIONADO À LISTA"
+
+
+// FIM CONFIGURAÇÕES GERAIS ====================================================
+
+
+
+// MIXINS EXCLUSIVOS DO SHOPPING ===============================================
+
+.after-titulo(@modo,@altura,@fundo) when (@modo = 'on') {
+    content: '';
+    .full;
+    .h(@altura);
+    .pa-tr(0,0,-1);
+    .bg-color(@fundo);
+}
+
+.bg-shop(@a, @b:0 0, @c:no-repeat){
+    background-image: url("../../include/inc_module/mod_shop/template/images/@{a}");
+    background-repeat: @c;
+    background-position: @b;
+}
+
+// FIM MIXINS EXCLUSIVOS DO SHOPPING ===========================================
+
+
+
+// CONFIGURAÇÕES PERSONALIZADAS DO SHOPPING ====================================
+
+// Site sem quantidade (descomente a linha abaixo) -----
+//.quantidade{.dn !important;}
+
+// Configuração do padding da mainBlock no resposivo
+@media only screen and (max-width:1023px){
+
+    #mainBlock{
+        .db;
+        .pdt(@mainblock-padding);
+    }
+
+    .interna{
+        .mgt(-45px);
+    }
+
+}
+
+
+.cnt-right h1{
+    .c(@titulo-cor);
+    .linha(@titulo-height);
+    .fs(@titulo-font-size);
+    .mgb(@titulo-margin-bottom);
+
+    &:after{
+        .after-titulo(@titulo-after,@titulo-height,@titulo-after-fundo);
+    }
+
+    @media only screen and (max-width:1023px){
+        .full;
+        .lh(1.4);
+        .mgl(-15px);
+        .pd(10px 15px);
+        .h(@titulo-resonsivo-height);
+        .bg-color(@titulo-after-fundo);
+        .fs(@titulo-responsivo-font-size);
+
+        &:after{
+            .dn;
+        }
+
+    }
+
+}
+
+.home{
+    .pr;
+}
+
+.cnt-shop{
+
+    h2{
+        .mgb(15px);
+    }
+
+}
+
+.content{
+    .full-max;
+    .df;
+
+    @media only screen and (max-width:1023px){
+        .db;
+    }
+}
+
+.left{
+    .fl;
+    .pr;
+    .full;
+    .mw(285px);
+    .mg(40px 65px 0 0px);
+
+    @media only screen and (max-width:1023px){
+        .mg(0);
+    }
+}
+
+.cnt-right{
+    .full;
+}
+
+// BUSCA -----------------------------------------------------------------------
+.busca{
+    .busca2;
+}
+
+.busca1(){
+    .pa-tr(23px,22px);
+    width: 320px;
+    .placeholder(@busca-cor-texto);
+
+    i{
+        .pa-br(9px,10px,999);
+        color:@busca-cor-texto;
+        font-size:27px;
+        .bdl(@busca-cor-texto);
+        .pdl(11px);
+
+    }
+
+    input{
+        .fs(15px);
+        height:48px;
+        border:none;
+        background:@busca-fundo;
+        color:@busca-cor-texto;
+    }
+
+    input[type=submit]{
+        .fonte;
+        .pa-br(0,0,9999);
+        .size(48px);
+        font-size:22px;
+        background:transparent;
+        padding:0;
+    }
+
+}
+
+.busca2(){
+    width: 335px;
+    .placeholder(@busca-cor-texto);
+    .pdl(50px);
+    .bdb(@busca-cor-borda);
+    .mgr(25px);
+
+    .pr;
+    .fl;
+    i{
+        .pa-bl(9px,0px,999);
+        color:@busca-cor-texto;
+        font-size:24px;
+        .bdr(@busca-cor-borda);
+        .pdr(22px);
+        .ease-out;
+
+    }
+
+    input{
+        .fs(@busca-tamanho-fonte);
+        height:44px;
+        border:none;
+        background:none;
+        color:@busca-cor-texto;
+        padding: 10px 15px 15px;
+
+    }
+
+    input[type=submit]{
+        .fonte;
+        .pa-bl(0,0,9999);
+        .size(38px,44px);
+        font-size:0px;
+        background:transparent;
+        padding:0;
+    }
+
+}
+
+.resultado-busca{
+    .full;
+
+    .ver-detalhes{
+        .ac;
+        .fr;
+        .borda;
+        .ease-out;
+        .lh(27px);
+        .mgt(15px);
+        .size(100%,27px);
+        .bd(@lista-produtos-comprar-borda-cor);
+        font-size:@lista-produtos-comprar-fonte;
+        color:@lista-produtos-comprar-fonte-cor;
+        background: @lista-produtos-comprar-fundo;
+
+        &:hover{
+            .bg-color(darken(@cor1,10));
+            color:#fff;
+        }
+
+    }
+
+}
+
+.padrao(){
+    .ease-out;
+    .txt(@cart-small-cor-texto,@cart-small-tamanho-texto);
+    background:@cart-small-fundo;
+
+    a{
+        .ease-out;
+        color:@cart-small-cor-texto;
+    }
+
+    i{
+        .fl;
+        .ease-out;
+        .txt(@cart-small-cor-icone,@cart-small-tamanho-icone);
+    }
+
+    &:hover{
+        color:@cart-small-cor-texto;
+        background:lighten(@cart-small-fundo,10%);
+    }
+
+}
+
+// FIM CONFIGURAÇÕES PERSONALIZADAS DO SHOPPING ================================
+
+
+
+// CATEGORIAS  -----------------------------------------------------------------
+.categorias{
+    .categorias-2;
+    .bloco-1;
+    .fl;
+
+    li{
+
+        &.active > a{
+            color:@categoria-link-hover;
+        }
+
+    }
+
+    nav{
+        .fl;
+        .bloco-1;
+        .bg-color(@categoria-fundo);
+        .pd(@categoria-menu-padding);
+    }
+
+    h3{
+        .pr;
+        .mgb(0);
+        .c(@categoria-titulo-font-color);
+        .fs(@categoria-titulo-font-size);
+        .linha(@categoria-titulo-altura);
+        .bg-color(@categoria-titulo-fundo);
+        .fw(@categoria-titulo-font-weight);
+        z-index: 2;
+
+        i{
+            .dn;
+            .fs(20px);
+            .mgr(15px);
+            .c(@categoria-titulo-font-color);
+        }
+
+    }
+
+    @media only screen and (max-width:1023px){
+        .pf-tl(126px,0,100);
+        max-height:45px;
+
+        nav{
+            .op(0);
+            visibility: hidden;
+            .ease-out;
+            height:~'calc(100vh - 172px)';
+            border:none;
+            .borda(0);
+            .bdt(fade(#fff,20));
+            .bg-color(darken(@cor1,10));
+            overflow-y: scroll;
+            .pd(0 15px 15px);
+        }
+
+        h3{
+            .pd(0 15px);
+            .fs(20px);
+            .linha(45px);
+            .borda(0);
+            .df;
+            .aic;
+
+            i{
+                .db;
+            }
+
+            &:after{
+                .dn;
+            }
+
+            &:before{
+                .dn;
+            }
+
+        }
+
+        &.cat-on{
+            max-height:100%;
+
+            h3{
+                .bg-color(darken(@cor1,10));
+            }
+
+            nav{
+                .op;
+                visibility: visible;
+            }
+
+        }
+
+        li{
+            .pd(0);
+            .bdb(fade(#fff,20));
+        }
+
+        a{
+            .linha(50px);
+            color:#fff !important;
+        }
+
+        i{
+            .dn;
+        }
+
+        .shop-subcategories{
+
+            li{
+                border:none;
+            }
+
+            a{
+                .fs(13px);
+                .bdl(fade(#fff,20));
+                .pd(0 15px);
+                .linha(40px);
+            }
+
+        }
+
+    }
+
+}
+
+// Modelos de categorias
+.categorias-1(){
+
+    nav{
+        .mgb(40px);
+        .bdb(@cor1,5px);
+    }
+
+    h3{
+        .pdl(20px);
+        .borda(@categoria-titulo-radius);
+    }
+
+}
+
+.categorias-2(){
+    .sombra( 2px 2px 5px 0 rgba(0,0,0,0.3) );
+
+    h3{
+        .pdl(25px);
+
+        .barra(){
+            .ab;
+            .size(157px,5px);
+            .bg-color(@categoria-titulo-cores-barra);
+        }
+
+        &:before{
+            .barra;
+            .pa-tl;
+        }
+
+        &:after{
+            .barra;
+            .pa-br;
+        }
+
+    }
+
+}
+
+.shop-categories{
+    .shop-categories2;
+
+    li{
+        .bloco-1;
+        .pr;
+
+        &.active{
+            .shop-subcategories{
+                .db;
+            }
+        }
+    }
+
+    a{
+        .df;
+        .aic;
+        .bloco-1;
+        .fw(500);
+        .ease-out;
+        .c(@categoria-cor-link);
+        .fs(@categoria-fonte-size);
+        height:@categoria-link-height;
+    }
+
+    i{
+        .box;
+        .flex-meio;
+    }
+
+}
+
+// Subcategorias ----------
+.shop-subcategories{
+    .dn;
+    .shop-subcategories2;
+
+    li{
+
+        &:hover, &.active{
+
+            a{
+                color:@categoria-link-hover;
+            }
+
+        }
+
+    }
+
+    a{
+
+        &:hover{
+            color:@categoria-link-hover;
+        }
+
+    }
+
+}
+
+// Modelos de subcategorias
+.shop-categories1(){
+
+    li{
+        &:hover > ul{
+            .op;
+            visibility:visible;
+            left:240px;
+        }
+    }
+
+    i{
+        .icon-seta02-r;
+        .size(20px);
+        color:@cor1;
+        .bd(@cor2);
+        .borda(2px);
+        .mgr(10px);
+    }
+
+}
+
+.shop-categories2(){
+    li{
+
+        &:hover > ul{
+            .op;
+            visibility:visible;
+            left:240px;
+        }
+
+    }
+
+    a{
+        .tu;
+    }
+
+    i{
+
+        .size(4px,100%);
+        .mgr(10px);
+
+        &:before{
+            .ab;
+            .size(4px);
+            .bg-color(@categoria-cor-link);
+        }
+
+    }
+
+}
+
+.shop-subcategories1(){
+    .db !important;
+    .pa-tl(-20px, @subcategoria-left);
+    background:@subcategoria-fundo;
+    min-width:@subcategoria-tamanho;
+    .pd(0);
+    filter:drop-shadow(0 0 6px fade(#000,60));
+    .borda;
+    .pd(15px);
+    .op(0);
+    visibility:hidden;
+    .ease-out;
+
+    &:before{
+        .pa-tl(32px,-9px);
+        .ab;
+        .size(30px);
+        .borda;
+        .rotate(45deg);
+        .bg-color(@subcategoria-fundo);
+    }
+
+    a{
+        .fs(@subcategoria-fonte-size);
+        color:@subcategoria-cor-link;
+        .linha(@subcategoria-link-height);
+        .pd(0 10px);
+
+    }
+
+    @media only screen and (max-width:1023px){
+        .clear-pa !important;
+        .op;
+        visibility: visible;
+        filter: drop-shadow(0 0 0px rgba(0, 0, 0, 0));
+        background:none;
+        .borda(0);
+        .pdt(0);
+
+        li{
+            border:none;
+        }
+
+        &:before{
+            .dn;
+        }
+    }
+
+}
+
+.shop-subcategories2(){
+    .pd(15px 0 15px 10px);
+    .mgt(-15px);
+
+    @media only screen and (max-width:1023px){
+        .db !important;
+        .pd(0 0 15px);
+        .mgt(0);
+    }
+
+    li{
+        .pd(0 10px);
+        .bdl(@cor1);
+
+    }
+
+    a{
+        .fs(@subcategoria-fonte-size);
+        color:@subcategoria-cor-link;
+        .linha(@subcategoria-link-height);
+        .pd(0 10px);
+    }
+}
+
+//------------------------------------------------------------------------------
+
+.entrega{
+    img{.img-full;}
+}
+
+//botao para abrir subcategoria no shopping
+.bt-submenu{
+    .size(10%,100%);
+    .pa-tr;
+
+}
+
+// Quantidade
+
+i{
+    .c(@quantidade-cor-icone);
+    .fs(@quantidade-tamanho-icone);
+    .ease-out;
+    &:hover{
+        .c(@quantidade-cor-icone-hover);
+    }
+
+    &.button{
+        .size(57px,32px);
+        .linear;
+        .pa;
+        top:0;
+        cursor:pointer;
+        .flex-meio;
+
+        &.icon-menos1{
+            left:0;
+            .bdr(@lista-produtos-cor-borda);
+        }
+
+        &.icon-mais1{
+            right:0;
+            .bdl(@lista-produtos-cor-borda);
+        }
+
+        @media only screen and (max-width:480px){
+            .size(46px,32px);;
+        }
+
+    }
+}
+
+// Comprar produto -------------------------------------------------------------
+.comprado{
+    .pf;
+    .ac;
+    .borda(8px);
+    .size(320px,auto);
+    .txt(#fff,30px);
+    .sombra(0 0 0 10000000px rgba(0, 0, 0, 0));
+    .animation(shop linear 2s);
+
+    background:fade(@cor-comprado,90%);
+    top:-9999px;
+    right:50%;
+    border:4px solid #FFF;
+    z-index:1002;
+    padding:25px;
+    line-height:normal;
+    margin:-45px -160px 0 0;
+
+    @media only screen and (max-width:480px){
+        .w(77%);
+        .fs(20px);
+        .mgr(-47.5%);
+    }
+
+}
+
+@keyframes shop{
+    0%{top:-9999px; opacity:1; .sombra(0 0 0 10000000px rgba(0, 0, 0, 0.3));}
+    1%{top:50%; }
+    45%{top:50%; right:50%;opacity:1; .transform(scale(1));}
+    80%{  opacity:0;}
+    99%{.sombra(0 0 0 1000000px rgba(0, 0, 0, 0));}
+    100%{top:-150px; right:0; .transform(scale(0)); opacity:0;}
+}
+
+@-webkit-keyframes shop{
+    0%{top:-9999px; opacity:1; .sombra(0 0 0 10000000px rgba(0, 0, 0, 0.3));}
+    1%{top:50%; }
+    45%{top:50%; right:50%;opacity:1; .transform(scale(1));}
+    80%{opacity:0;}
+    99%{.sombra(0 0 0 1000000px rgba(0, 0, 0, 0));}
+    100%{top:-150px; right:0; .transform(scale(0));opacity:0;}
+}
+@-moz-keyframes shop{
+    0%{top:-9999px; opacity:1; .sombra(0 0 0 10000000px rgba(0, 0, 0, 0.3));}
+    1%{top:50%; }
+    45%{top:50%; right:50%;opacity:1; .transform(scale(1));}
+    80%{  opacity:0;}
+    99%{.sombra(0 0 0 1000000px rgba(0, 0, 0, 0));}
+    100%{top:-150px; right:0; .transform(scale(0));opacity:0;}
+}
+@-ms-keyframes shop{
+    0%{top:-9999px; opacity:1; .sombra(0 0 0 10000000px rgba(0, 0, 0, 0.3));}
+    1%{top:50%; }
+    45%{top:50%; right:50%;opacity:1; .transform(scale(1));}
+    80%{  opacity:0;}
+    99%{.sombra(0 0 0 1000000px rgba(0, 0, 0, 0));}
+    100%{top:-150px; right:0;.transform(scale(0));opacity:0;}}
+
+
+
+// LISTA DE PRODUTOS -----------------------------------------------------------
+
+//escondido --------
+.escondido{
+    padding-bottom: 20px;
+
+    .cod-prod{
+        .fl;
+        .ac;
+        .pr;
+        .full;
+
+        border-right:none;
+        padding: 8px 0;
+        bottom:0;
+        order:0;
+        left:0;
+    }
+
+    .texto-botao{
+        .txt(@cor1,17px);
+        .fonte;
+        .full;
+        .ac;
+        .fl;
+    }
+}
+
+// detalhes produtos -----------------------------------------------------------
+.detalhes{
+    .texto-botao{
+        .txt(@cor1,25px);
+        .borda(3px);
+        .fonte;
+        .box;
+        .full;
+        .fl;
+
+        line-height:1.2;
+        border:1px solid @cor1;
+        padding: 28px 28px 28px 96px;
+        background:   url('../../images/cadastre-se.png') 31px 32px no-repeat lighten(@cor1, 60%);
+    }
+}
+
+
+// CARRINHO VAZIO --------------------------------------------------------------
+.carrinho-vazio{
+    .fs(25px);
+    .df;
+    .aic;
+    color:#999;
+
+    b{
+        .fs(40px);
+        .fw(700);
+        .tu;
+        .fl;
+        .full;
+    }
+
+    &:before{
+        .ab;
+        .bg-shop('vazio.png',center);
+        .size(120px,130px);
+        .bg-size;
+        .mgr(35px);
+        .op(0.5);
+    }
+
+    @media only screen and (max-width:1023px){
+        .sc;
+        .ac;
+        .wrap;
+        flex-direction: column;
+        background-size:contain;
+    }
+
+    @media only screen and (max-width:768px){
+        .fs(18px);
+
+        b{
+            .fs(25px);
+        }
+    }
+
+    @media only screen and (max-width:480px){
+        .fs(15px);
+
+        b{
+            .fs(22px);
+        }
+    }
+
+}
+
+
+// Tabela de Finalizar pedido --------------------------------------------------
+.topo-tabela{
+    .bloco-1;
+    .fl;
+    background:@bg-topotabela;
+    color:@color-topotabela;
+    border-bottom:1px solid ;
+    .fs(14px);
+    .pd(10px);
+    .mg(15px 0 15px);
+    font-weight:bolder;
+    .df;
+
+    @media only screen and (max-width:1023px){
+        .dn;
+    }
+
+}
+
+.lista-produtos-final{
+    .bloco-1;
+    .fl;
+    .bdb(#eee);
+    .pdb(15px);
+    .mgb(15px);
+    .df;
+    .aic;
+    flex-wrap: wrap;
+    li{
+        .box;
+        .fl;
+        font-size:15px;
+
+
+        span{
+            .dt;
+            .cr;
+
+            font-size:10px;
+        }
+    }
+
+    .comprar-produto{
+        .mgt(0);
+    }
+    &:last-of-type{
+        border:none;
+    }
+
+    b{
+        .fs(10px);
+        .fw;
+    }
+
+    @media only screen and (max-width:1023px){
+        padding: 10px 10px 0;
+        margin:15px 0;
+        .full;
+        .box;
+        .borda(7px);
+        .bd(#ccc) !important;
+        .bg-color(#fff);
+
+        li{
+            .full;
+            .fl;
+            padding:7px 0;
+
+            a{
+                .full;
+                padding:0 0 15px;
+            }
+
+            &.lista-produto{
+                border-bottom:1px solid #999;
+                .pdb(15px);
+                .mgb(15px);
+            }
+
+            &.lista-valor{
+                .bloco-2;
+                b{
+                    .db;
+                }
+
+            }
+
+            &.lista-total{
+                .ac;
+                .bloco-2;
+
+                b{
+                    .db;
+                }
+
+            }
+
+            .comprar-produto{
+                .mw(350px);
+                .ma;
+                .fn;
+            }
+        }
+
+    }
+
+}
+
+.img-finalizar{
+    .fl;
+    .ac;
+    border:2px solid #EEE;
+    margin:0 10px 0 0;
+    background:#FFF;
+    padding:5px;
+    width:90px;
+
+    img{
+        max-width: 100%;
+        height:auto;
+    }
+
+    @media only screen and (max-width:480px){
+        .fl;
+        .bloco-1;
+        .mg(0 0 9px 0);
+        border: none;
+        border-bottom:1px solid #EEE;
+    }
+
+}
+
+.lista-produto{
+    .al;
+    .w(55%);
+
+    &.sp{
+        .w(74%);
+    }
+
+    a{
+        .c(#666);
+    }
+
+}
+
+.lista-valor{
+    .ac;
+    .w(10%);
+
+    b{
+        .dn;
+    }
+
+}
+
+.lista-total{
+    .ar;
+    .w(10%);
+
+    b{
+        .dn;
+    }
+
+}
+
+.lista-quantidade{
+    .ac;
+    .w(25%);
+
+    .comprar-produto{
+        .df;
+
+        .quantidade{
+            .bg-color(#fff);
+            .pd(5px);
+            border: none;
+            .mgb(0);
+            .pr;
+            .borda;
+            .bloco-1;
+
+            i{
+                top:5px;
+            }
+
+        }
+
+    }
+
+    [type=text]{
+        .linear;
+        .size(100%,32px);
+        .borda(0);
+        border:none;
+        font-size:@detalhes-produtos-quantidade-fonte;
+        color:@detalhes-produtos-quantidade-cor;
+        .pd(0);
+        .ac;
+    }
+
+}
+
+.input-itens{
+    .ma;
+    .w(70%);
+
+    .comprar-produto{
+        max-width:170px;
+
+        .quantidade{
+            margin:0;
+            border-bottom:0;
+            padding-bottom: 0;
+        }
+
+    }
+
+}
+
+//icones dos botoes deletar e atualizar do lado das quantidades
+.icone{
+    .df;
+
+    span{
+        .pr;
+        .fl;
+        .mgl(5px);
+        .borda;
+
+        &:hover{
+
+            i{
+                color:#FFF !important;
+                border:1px solid #fff;
+
+                &.icon-trash{
+                    background: #c00;
+                }
+
+                &.icon-atualizar{
+                    background: #090;
+                }
+
+            }
+
+        }
+
+    }
+
+    i{
+        .size(40px);
+        .borda(5px);
+        .bd(#666);
+        .ease-out;
+        .txt(#666,23px);
+        .flex-meio;
+    }
+
+    a{
+        .db;
+        .pa-tl;
+        .size(100%);
+    }
+
+    [type=submit]{
+        .pa-tl;
+        .size(100%) !important;
+        background: none !important;
+        border:none !important;
+    }
+
+}
+
+// Esconde o botão de atualizar para aparecer apenas depois de atualizar a quantidade no campo
+.icone {
+
+    &:hover{
+        .c(#fff);
+    }
+
+    .cesta{
+        .op(0);
+
+        &:hover{
+
+            .bg-color(#090);
+
+            i{
+                .bd(#090, 1px, solid);
+            }
+        }
+    }
+
+}
+
+.valor-total-final{
+    .fonte;
+    .txt(#545454,15px);
+    .bloco-1;
+    .fl;
+    .ar;
+    .bdt(#ccc,2px);
+    .mgt(10px);
+    .pdt(10px);
+
+    span{
+        .fs(23px);
+    }
+}
+
+.botoes-finalizar{
+    .pdt(40px);
+    .full;
+    .fl;
+
+    span, a{
+        .fr;
+        .flex-meio;
+        .size(250px,50px);
+        .borda;
+        .box;
+        .bd(#666);
+        .fonte-padrao;
+        color:#666;
+        .fs(18px);
+        .mgl(15px);
+        .pr;
+        .ease-out;
+
+        &:hover{
+            .bg-color(#d5d5d5);
+        }
+
+        &.finalizar{
+            .bg-color(#360);
+            color:#fff;
+
+            i{
+                color:#fff;
+                .rotatey(180deg);
+            }
+
+            &:hover{
+                .bg-color(darken(#360,10));
+            }
+        }
+
+        &.voltar{
+            width: 120px;
+        }
+    }
+
+    i{
+        .fs(25px);
+        .mgr(10px);
+        color:#666;
+    }
+
+    [type=submit]{
+        background:none !important;
+        .mg(0);
+        .pa-tl;
+        .size(100%);
+    }
+
+    @media only screen and (max-width:1023px){
+        .df;
+        .sb;
+        flex-wrap:wrap;
+
+        span, a{
+            flex-basis:49%;
+            margin:0 0 15px;
+            .fs(16px);
+            &.finalizar{
+                flex-basis:100%;
+                order:3;
+                .full;
+            }
+
+            &.voltar{
+                .full;
+                flex-basis:100%;
+            }
+        }
+
+        form{
+            .full;
+        }
+    }
+
+    @media only screen and (max-width:480px){
+
+        span, a{
+            .mgb(10px);
+            flex-basis: 100%;
+        }
+
+    }
+
+}
+
+// TELA DE LOGIN ---------------------------------------------------------------
+.bloco-login(){
+    .box;
+    border:1px solid @cor-borda-login;
+    background:#fff;
+    padding:30px;
+    height:320px;
+    width:48%;
+
+    h3{
+        color:@cor-tit-login;
+        font-size:30px;
+    }
+    span{
+        .fl;
+        .full;
+        line-height:35px;
+    }
+}
+
+
+// login ----
+.login-shop{
+    .fl;
+    .bloco-login;
+
+    .erro-login{
+        .fs(13px);
+        .lh(20px);
+        .pdb(10px);
+        .fw(bolder);
+        .c(#d80000);
+    }
+
+    h3{
+        .fs(30px);
+        .mgb(15px);
+    }
+
+    a{
+        .fr;
+        .db;
+        .fs(14px);
+        .mgt(10px);
+    }
+
+    input[type=password]{
+        .w(60%);
+    }
+
+    input[type=submit]{
+        .w(38%);
+        .fr !important;
+        border:none;
+        background: @cor2 !important;
+
+        &:hover{
+            background: darken(@cor2, 10%) !important;
+        }
+    }
+
+    @media only screen and (max-width:768px){
+        .full;
+        .h(auto);
+        .mgb(30px);
+    }
+
+    @media only screen and (max-width:480px){
+
+        input[type=password]{
+            .full;
+            .mgb(15px);
+        }
+
+        #feReminder{
+            .full;
+            .mg(15px 0);
+        }
+
+        input[type=submit]{
+            .full;
+        }
+
+    }
+
+}
+
+//esqueci minha senha ----
+.recuperar{
+    .full;
+
+    input[type=text]{
+        .w(60%);
+    }
+}
+
+
+.box-cadastro{
+    .fr;
+    .bloco-login;
+
+    h3{
+        .fs(30px);
+        .mgb(15px);
+    }
+
+    strong{
+        .fonte;
+        .fs(18px);
+    }
+
+    input[type=submit]{
+        .ma;
+        .fs(19px);
+        .size(70%, 50px);
+        background: @cor-botao-cadastro;
+
+        &:hover{
+            background: darken(@cor-botao-cadastro,10%) !important;
+        }
+
+    }
+
+    @media only screen and (max-width:768px){
+        .full;
+        .h(auto);
+    }
+
+    @media only screen and (max-width:480px){
+
+        input[type=submit]{
+            .fs(15px);
+        }
+
+    }
+
+}
+
+
+/*Cadastro de usuario*/
+.campo-cep{
+    .bloco-4;
+    .pr;
+}
+
+.bloco-autorizada{
+    .bloco-1;
+    .pr;
+    padding-right:80px !important;
+
+    b{
+        .db;
+        padding-bottom: 5px;
+    }
+}
+
+.add-autorizado{
+    .size(50px,50px);
+    .pa-tr(26px,15px);
+    .ac;
+    .borda;
+    background: @cor1;
+    color: #fff;
+    font-size: 30px;
+    line-height: 47px;
+    font-weight: bold;
+    &:hover{
+        color:#fff;
+        background: darken(@cor1,15%);
+    }
+}
+
+.campos-pessoas-autorizadas{
+    .full;
+    .fl;
+}
+
+/*Confirmar Dados*/
+
+.finalizar-dados{
+    h2{
+        font-size:25px;
+        margin-bottom:10px;
+        color:@cor2;
+    }
+
+    h4{
+        color:#666;;
+        font-size:20px;
+    }
+
+}
+
+
+.lista-confirmacao{
+    width:48%;
+    margin-top:20px;
+    .box;
+    .fl;
+    min-height:280px;
+    border:1px solid #ccc;
+    padding:20px;
+    background:#fff;
+    font-size:12px;
+
+    p{
+        .ar;
+        .bloco-1;
+        .fl;
+        padding:0 10px;
+        line-height:25px;
+        border-top:1px dotted #e3e3e3;
+        &:nth-child(2){
+            border:none;
+        }
+    }
+
+    b{
+        .fl;
+        .al;
+    }
+
+    h2{
+        .bloco-1;
+        .fl;
+        background:@cor1;
+        color:#fff;
+        font-size:17px;
+        padding:10px;
+        margin-bottom:10px;
+    }
+}
+
+.dados-confirmacao{
+    width:48%;
+    margin-top:20px;
+    min-height:280px;
+    .box;
+    .fr;
+    border:1px solid #ccc;
+    padding:20px;
+    background:#fff;
+
+    strong{ font-size:15px;}
+
+    h2{
+        .bloco-1;
+        .fl;
+        background:@cor1;
+        color:#fff;
+        font-size:17px;
+        padding:10px;
+        margin-bottom:10px;
+    }
+
+    a{
+        .fr;
+        color:@cor2;
+        margin-top:10px;
+    }
+}
+
+
+.valor-total{
+    .bloco-1;
+    .fl;
+    .ar;
+    border-top:2px solid #ccc;
+    margin-top:10px;
+    padding-top:10px;
+    color:#40CD28;
+    font-size:14px
+}
+
+.termos-condicoes{
+    .ofh;
+    .fl;
+    height:1px;
+    visibility:hidden;
+}
+
+.informacoes-adicionais{
+    .bloco-1;
+    .fl;
+    padding:20px;
+    margin-top:20px;
+    background:#fff;
+    font-size:12px;
+    line-height:1.6;
+    border:1px solid #ccc;
+
+    h2{
+        font-size:18px;
+        color:#333;
+    }
+}
+
+
+// CADASTRO De CLIENTE -----------------------------------------------------
+.formulario-shop{
+    .full;
+    .flex-between;
+
+    p{
+        .fl;
+        .box;
+        margin-bottom: 15px;
+    }
+
+    input{
+        .fonte-padrao;
+    }
+
+    h3{
+        .fl;
+        .bloco-1;
+        .txt(@corh3-formulariocadastro,25px);
+        margin:35px 0 15px;
+    }
+
+    h4{
+        .full;
+        .fl;
+        font-size:24px;
+        margin:20px 0 0 0;
+    }
+
+    .b1{ flex-basis: 100%;}
+    .b2{ flex-basis: 49%;}
+    .b3{ flex-basis: 32%;}
+    .b4{ flex-basis: 23.5%;}
+    .b5{ flex-basis: 19%;}
+
+    @media only screen and (max-width:1023px){
+        .b2,.b3,.b4,.b5{.fb(100%);}
+    }
+
+    strong{
+        .full;
+        .fl;
+
+        margin:0 10px 0 0;
+        line-height:30px;
+        font-size:13px
+    }
+
+    input[type=submit]{
+        .fn;
+        .ma(20px);
+        border:none;
+        background:@cor1;
+        color:#FFF;
+    }
+
+    input[name=cad_login],
+    input[name=cad_senha],
+    input[name=cad_nome],
+    input[name=cad_cpf],
+    input[name=cad_cel],
+    input[name=cad_cnpj],
+    input[name=cad_razao],
+    input[name=cad_cel_empresa],
+    input[name=cad_num_ent],
+    input[name=cad_bairro_ent],
+    input[name=cad_endereco_ent],
+    input[name=cad_cidade_ent]{border-left:5px solid #CC0000}
+
+}
+
+.campos-empresa, .campos-pessoais{
+    .full;
+    .flex-between;
+
+    .full{
+        .flex-between;
+
+    }
+}
+
+
+.bt-continuar{
+    .fl;
+}
+
+.continuar-cadastro{
+    margin:10px 19px 0 0 !important
+}
+
+.mensagem-cadastro {
+
+    h4{
+        font-size:26px;
+        padding:0 0 7px;
+    }
+
+    input[type=submit]{
+        .fn;
+        .ma(22px);
+        .fonte;
+
+        background-color:#AD1C22;
+        font-size:18px;
+        padding:0 30px;
+    }
+
+}
+
+.info-categoria{
+    .full;
+    .box;
+    padding:0 5px 14px 0;
+    font-size:13px;
+}
+
+.login{
+    .pr;
+    font{.pa-br(23px,30px,5);}
+}
+
+
+
+/* Botao de Selecao de Tipo de Cadastro */
+.campos-empresa{
+    .dn;
+}
+
+.tipo-cadastro{
+    .full;
+    .mgb(15px);
+    .pd(0 0 3px);
+
+    span{
+        .dib;
+        .borda;
+        .lh(1.5);
+        .pd(5px 5px 3px 5px);
+        .bg-color(#e2e2e2);
+
+        @media only screen and (max-width:480px){
+            .full;
+        }
+
+    }
+
+    input[type=radio]{
+        .dn;
+
+        & + label {
+            .ac;
+            .dib;
+            .box;
+            .fonte;
+            .ease-out;
+            .mg(-2px);
+            .mgb(0);
+            .pd(4px 16px);
+            .txt(#666,17px);
+            .linha(32px,24px);
+
+            cursor:pointer;
+
+            &:hover{
+                .op(1);
+            }
+
+            @media only screen and (max-width:480px){
+                .full;
+            }
+
+        }
+
+        &:checked + label {
+            .op(1);
+            .borda;
+            .c(#fff);
+            .bg-color(@back-checked);
+            .sombra(inset 0 2px 4px rgba(0,0,0,0.15));
+            outline:0;
+        }
+
+    }
+
+    &.fixo{
+        position:static !important;
+        left:0 !important;
+        right:auto !important;
+        top:0 !important
+    }
+
+}
+
+#form-cadastro-shop{
+
+    label.label-floatlabel {
+        top: 5px !important;
+        left: 15px !important;
+    }
+
+    input{
+
+        &.active-floatlabel{
+            .pdt(25px);
+        }
+
+    }
+
+}
+
+
+
+// AREA DO CLIENTE -------------------------------------------------------------
+.feLoggedIn.area-cliente{
+    margin-right:0;
+    padding-right:10px;
+    padding-top: 9px;
+
+    span{
+        .fonte;
+        .pa-tl(-4px,39px);
+        .txt(#000,10px);
+    }
+
+    .bt-minha-conta{
+        .fl;
+        margin: 7px 58px -4px 0px;
+        font-size:12px;
+    }
+
+    .bt-sair{
+        .fr;
+        .pr;
+        .size(20px);
+        .borda(50%);
+        background:#B20000;
+        margin:0px 0 0 10px;
+
+        input[type="submit"]{
+            .size(20px);
+            border:0;
+            background:transparent;
+            .pr;
+            z-index:999;
+        }
+
+        .x{
+            content:'';
+            .size(2px,10px);
+            .borda(2px);
+
+            background:#fff;
+        }
+
+        &:after{
+            .x;
+            .pa-tl(50%,50%);
+            margin:-5px 0 0 -1px;
+            .rotate(45deg);
+        }
+
+        &:before{
+            .x;
+            .pa-tr(50%,50%);
+            margin:-5px -1px 0 0;
+            .rotate(-45deg);
+        }
+
+    }
+
+}
+
+// CONFIRMAÇÃO DOS DADOS
+.conf-pedido{
+    .df;
+    .sb;
+    flex-wrap:wrap;
+
+    h3{
+        .fs(30px);
+    }
+
+    .lista-quantidade-final{
+        .al;
+        .w(29%);
+
+        b{
+            .dn;
+        }
+
+    }
+
+    .finalizar-dados{
+        .fl;
+        .full;
+        .mgt(15px);
+        .pdt(10px);
+        border-top:1px solid #eee;
+    }
+
+    article{
+        .box;
+        width:49%;
+        padding:15px;
+        .bd(#ccc);
+        .borda;
+        .bg-color(#fff);
+
+        h3{
+            color:@cor2;
+            margin-bottom: 5px;
+        }
+
+        strong{
+            font-weight:normal;
+            margin-bottom:10px;
+
+            .full;
+            .fl;
+
+            a{
+                .fs(13px);
+                .pd(4px 8px);
+                .mgl(10px);
+                .c(#fff);
+                .borda(4px);
+                .bg-color(@cor1);
+                border: none;
+                cursor:pointer;
+            }
+        }
+
+        .total{
+            .full;
+            .fl;
+            border-top:2px solid #EEEEEE;
+            margin-top: 25px;
+            padding-top:5px;
+            span{.fr}
+        }
+
+        input{
+            .fl;
+            .h(auto);
+            .w(auto);
+            .fs(15px);
+            .mgt(15px);
+            .c(@cor1);
+            .borda(6px);
+            .pd(7px 10px);
+            .bd(@cor1, 1px, solid);
+            background: none;
+            cursor:pointer;
+
+            &:hover{
+                color:darken(@cor1,20%);
+            }
+
+        }
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .mgb(25px);
+        }
+    }
+
+
+}
+
+
+// resumo do pedido -----------------------
+
+.botoes-continuar{
+    .full;
+    margin-top:15px;
+
+    input[type="submit"]{
+        .fr;
+        background:@cor1 !important;
+        margin-left: 15px;
+        font-family:@padrao;
+    }
+
+    .voltar {
+        .fr;
+        .borda;
+
+        padding:15px;
+        color:#fff;
+        background:lighten(#000,70%);
+    }
+
+    a.pagseguro{
+        .dt;
+        .fr;
+        .ac;
+        .ease-out;
+        .borda(5px);
+        .linha(50px);
+        width: 250px;
+        padding: 0;
+        color:#fff;
+        cursor:pointer;
+        font-size:18px;
+        border:none;
+        background:@cor1 !important;
+        margin-left: 15px;
+        .fonte;
+        align-items: flex-start;
+        &:hover{
+            background:darken(@bt-enviar,10%);
+        }
+    }
+
+}
+
+//modal //--------------------------------------------
+.produtos-shop{
+    max-width:950px !important;
+
+    h3{
+        .fl;
+        .txt(@cor1,27px);
+        margin-bottom: 0;
+    }
+
+    .valor-total{
+        color:#444;
+        font-size:18px;
+        font-weight:bold;
+    }
+
+}
+
+
+.confirmar-dados{
+    color:#000;
+    border-bottom:1px solid #eee;
+
+    li{
+        width:15%;
+        border-left:1px solid #eee;
+        .box;
+
+        &.fl{
+            width:55%;
+            .box;
+            border-left:none;
+            padding-right:15px;
+            .al;
+            .pr;
+
+            a{
+                .fl;
+                color:#444;
+                .al;
+            }
+
+            &.sp{
+                .w(85%);
+            }
+
+            @media only screen and (max-width:1023px){
+                .full;
+                .pdr(7px);
+            }
+
+        }
+
+        @media only screen and (max-width:1023px){
+            border: none;
+        }
+
+    }
+
+}
+
+.lista-confirmar-produtos{
+    .full;
+    .fl;
+    height:300px;
+}
+
+
+/*Mensagem de Pedido realizado com sucesso */
+.sucesso{
+    .full;
+    .box;
+
+    h2{
+        .mgb(20px);
+
+        @media only screen and (max-width:480px){
+            .mgb(0);
+            .fs(20px);
+        }
+    }
+
+    b{
+        font-size:40px;
+        .borda;
+        .db;
+        padding: 20px 30px;
+        color:#d80000;
+        border:2px solid #d80000;
+        .fl;
+        margin:10px 0 20px;
+        background:#fff;
+    }
+}
+
+
+
+// INTERNA CLIENTE -------------------------------------------
+.cliente-interna{
+    h1{
+        margin-bottom:45px;
+    }
+}
+
+.categorias-cliente{
+    .full;
+    margin: 0 0 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 8px;
+
+    li{
+        .fl;
+        .pr;
+        font-size:18px;
+        margin-right: 35px;
+
+
+        a{
+            .ease-out;
+            color:#444;
+
+            &:hover{color:@cor1;}
+        }
+
+        &:before{
+            content:'';
+            .size(6px);
+            .fl;
+
+            margin: 10px 9px 0 0;
+            background:#444;
+        }
+
+    }
+
+    form{
+        .fl;
+    }
+
+    input{
+        background:none !important;
+        border:none;
+        width:auto;
+        font-family:@padrao;
+        color:#444;
+
+        .al;
+        .fl;
+        .linha(auto,1.4) !important;
+
+        &:hover{
+            color:@cor1;
+        }
+    }
+
+}
+
+
+
+/* LOGIN*/
+
+.login-shop.single {
+    .ma;
+    .fn;
+    .box;
+    .dt;
+    .size(40%,270px);
+
+    border: 1px solid #E6E6E6;
+    background: #F8F8F8;
+    padding: 30px;
+
+
+    h3 {
+        font-size: 30px;
+        padding-bottom: 5px;
+    }
+
+    #feLogin{
+        margin-bottom:13px;
+    }
+
+}
+
+
+
+// HISTÓRICO DE PEDIDOS ---------------------------------------------------
+.historico-shop {
+    .full;
+    font-size: 13px;
+    .fonte-padrao;
+    .mgb(30px);
+}
+
+.lista-item-historico{
+    .bloco-1;
+    .bd(#ccc);
+    .pd(25px);
+    .borda;
+    .fl;
+    .bg-color(#fff);
+    .mgb(15px);
+    h3{
+        .fs(20px);
+        .fonte-padrao;
+        .mgb(5px);
+        .c(#000);
+        b{
+            color:#666;
+        }
+
+        &[title~=Cancelado]{
+            .c(#d80000);
+        }
+
+        &[title~=Aguardando]{
+            .c(#FF8000);
+        }
+
+        &[title~=Finalizado]{
+            .c(#1A6600);
+        }
+    }
+
+    span{
+        .fonte-padrao;
+        .fs(13px);
+        .c(#666);
+        .fw(300);
+        b{
+            .fs(15px);
+            .c(#000);
+
+            &:first-of-type{
+                .pdr(35px);
+            }
+        }
+    }
+
+    a{
+        .fr;
+        .size(130px,30px);
+        .bg-color(@cor1);
+        .borda;
+        color:#fff;
+        .flex-meio;
+        .ease-out;
+        &:hover{
+            .bg-color(darken(@cor1,10));
+        }
+    }
+}
+
+.lista-historico {
+    .box;
+    .full;
+    border-top: none;
+    color: #545454;
+
+    &.on{
+        background: @cor-fundo-dentro !important;
+
+        .col-historico {
+            border-right: none;
+            color: #fff;
+        }
+    }
+}
+
+.historicoButton {
+    cursor: pointer;
+    border-right: 0 !important;
+
+    img {
+        margin: 0 0 2px 12px;
+    }
+}
+
+.sem-pedidos{
+    .ac;
+    .full;
+    .fonte;
+    .fs(20px);
+    .pdt(40px);
+}
+
+.refazer-pedido{
+
+    .mgt(-30px);
+
+    a{
+        .ac;
+        .fl;
+        .borda();
+        .ease-out;
+        .lh(32px);
+        .fonte-padrao;
+        .txt(#fff,15px);
+        .linha(35px,35px);
+        width:170px;
+        outline:none;
+        cursor: pointer;
+        margin: 0 25px 0 0;
+        border: 1px solid #FFF;
+        background-color: @corbotao-reenviar;
+
+        &:hover{
+            background-color: darken(@corbotao-reenviar,10);
+        }
+
+    }
+
+
+
+    #shop_cart_add {
+        &:extend(.refazer-pedido a);
+        .db;
+        -webkit-appearance: none;
+        -webkit-border-radius: 4px;
+        background-color: #060;
+
+        &:hover{
+            background-color: darken(#060,10);
+        }
+
+    }
+
+}
+
+
+.titulos-historico {
+    .full;
+    background: @fundo-titulo;
+    color: #333;
+    border-bottom: 5px solid #666;
+
+    .col-tit{
+        font-family:@padrao;
+    }
+
+}
+
+.valor-pedido{
+    .ar;
+    .box;
+    .full;
+    .borda;
+    .txt(13px,#444);
+    height:auto !important;
+    background:#DDDDDD;
+    padding:8px 19px 5px;
+    font-weight:bold;
+    margin-top:13px;
+    border:1px solid #fff;
+    line-height:1.5;
+
+    b{
+        .txt(#AD1C22,20px);
+        padding:0 0 0 2px !important;
+    }
+
+    p{
+        .full;
+        padding:0;
+    }
+
+}
+
+
+.col-tit {
+    .fl;
+    .ac;
+    .box;
+    .fonte;
+    .linha(46px,50px);
+    font-size:12px;
+    font-weight:bold;
+    text-transform:uppercase;
+    border-right:1px solid #fff;
+}
+
+.col-historico {
+    .fl;
+    .ac;
+    .box;
+    .linear;
+    .linha(46px,50px);
+    border-right: 1px solid #E4E4E4;
+}
+
+.tit-produtos {
+    .bloco-1;
+    .txt(#000,13px);
+    .fw(700);
+    background: #C7C7C7;
+    border: 1px solid #fff;
+
+    .tit-lista {
+        .box;
+
+        padding:8px 10px 4px 12px;
+        border-right:1px solid #fff;
+    }
+
+    strong {font-weight:normal !important;}
+}
+
+.lista-itens {
+    .full;
+    .dt;
+    .box;
+
+    background:#fff;
+    border-left:1px solid #fff;
+    border-right:1px solid #fff;
+    padding:7px;
+    font-size:14px;
+
+    b{font-size:10px;}
+
+    & > div {
+        .fn;
+        .box;
+        .linha(20px,18px);
+
+        padding:10px 10px 9px;
+        display:table-cell;
+        vertical-align:middle;
+    }
+}
+
+.col1{
+    text-align:left !important;
+    padding:0 0 0 15px;
+}
+
+.col15{
+    width:15%;
+}
+
+.col20{
+    width:20%;
+}
+
+.col25{
+    width:25%;
+}
+
+.col30{
+    width:30%;
+}
+
+.col35{
+    width:35%;
+}
+
+.col40{
+    width:40%;
+}
+
+.col45{
+    width:45%;
+}
+
+.col50{
+    width:50%;
+}
+
+.col55{
+    width:55%;
+}
+
+.col60{
+    width:60%;
+}
+
+.col-centro{
+    text-align:center !important
+}
+
+.col-direita{
+    text-align:right !important
+}
+
+.sem-borda{
+    border:none !important;
+}
+
+.select-reenviar{
+    .pa-tl(5px,5px);
+    .bg-color(#CCC);
+    .pd(2px);
+
+    input[type=checkbox]{
+        .size(15px);
+        appearance: checkbox;
+        -webkit-appearance:checkbox;
+        -moz-appearance:checkbox;
+    }
+}
+
+.mensagem-alteracao {
+    .ac;
+    .fonte;
+    .box;
+    .borda;
+    .linha(31px,33px);
+    .txt(#fff,16px);
+
+    width: 97%;
+    padding: 0 10px;
+    margin: 11px 0 20px;
+}
+
+.sucesso-alteracao {
+    background: #9C6;
+}
+
+.erro-alteracao {
+    background: #CC3434;
+}
+
+.novo-pedido, .pedidos-finalizados{
+    .linha(24px);
+    .borda;
+    .linear;
+    .fl;
+    .ac;
+
+    background: #eee;
+    border: 1px solid #E6E6E6;
+    color: #868686;
+    padding:5px 10px;
+    margin:0 20px 15px 0;
+
+    &:hover{
+        background:#e6e6e6;
+        color: #868686;
+    }
+
+}
+
+.nenhum-pedido{
+    .full;
+    .fonte;
+    .ac;
+
+    font-size:20px;
+    padding-top:165px
+}
+
+.lista-informacoes-entrega{
+    .al;
+    font-weight:normal;
+}
+
+
+//select area do cliente --------
+.select-cliente{
+    width:30%;
+    margin: 27px 0 0 0;
+
+    select{
+        font-family:@padrao;
+    }
+
+}
+
+// formulario area do cliente ----------
+.formulario-shop.cadastro{
+    padding:0;
+
+    h3{
+        margin:25px 0px 0px;
+    }
+
+}
+
+//trocar senha --------
+.form-senha{
+    .fn;
+    .ma;
+    width:60%;
+
+    strong{
+        font-size:26px;
+        font-weight:normal;
+        margin-bottom: 20px;
+        color:@cor1;
+        .fonte;
+        .dn;
+    }
+
+    .bloco-1{
+        margin-bottom: 10px;
+    }
+
+    input[type=submit]{
+        width:100%;
+        margin-top:0;
+    }
+
+}
+
+.interna-cliente{
+    min-height: 710px;
+
+    .left{
+        h3{
+            .fs(20px);
+        }
+    }
+
+}
+
+.formulario-shop input.error{
+    border-color:#f00;
+}
+
+// APROVACAO DE USUARIOS -------------------------------------------------------
+.aprovacao-associado{
+    .ac;
+    .full;
+    .fonte;
+    .fs(16px);
+    .pd(170px 0 120px);
+
+    strong{
+        .lh(2);
+        .fs(21px);
+        .fw(normal);
+    }
+
+}
+a.gerenciar-associados{
+    .dt;
+    .fonte;
+    .h(37px);
+    .fs(15px);
+    .lh(38px);
+    .c(#fff);
+    .borda(4px);
+    .mg(0 auto);
+    .pd(0 19px);
+    .bg-color(#225778);
+}
+
+
+// PAGINACAO ===========================================================================================================
+
+.paginacao{
+    .cb;
+    .fr;
+    margin-top: 15px;
+
+    .padrao(){
+        .box;
+        .pr;
+        .size(40px);
+        .bd(#E9E9E9);
+        .flex-meio;
+        padding: 0 4px;
+        margin:4px 4px;
+        text-decoration:none;
+        font-size:17px;
+        .fl;
+
+        &:after{
+            content: '';
+            .size(100%);
+            .pa-tr(0,0,-1);
+            background: #fff;
+        }
+
+        &:before{
+            content: '';
+            .size(100%);
+            background: #E9E9E9;
+        }
+
+    }
+
+    a{
+        .padrao;
+        .ease-out;
+        .c(#333);
+        .transform(translate(-3px,-3px));
+
+        &:before{
+            .ease-out;
+            .pa-br(-3px,-3px,-3);
+        }
+
+        &:hover{
+            .c(#BBB);
+            .transform(translate(-2px,-2px));
+
+            &:before{
+                .pa-br(-2px,-2px,-3);
+            }
+
+        }
+
+    }
+
+    span{
+        .padrao;
+        .transform(translate(-2px,-2px));
+        cursor:default;
+        color:#BBB;
+
+        &:before{
+            .pa-br(-2px,-2px,-3);
+        }
+
+    }
+
+    .apn_prev, .apn_next{
+        .fs(21px);
+    }
+
+}
+
+// FIM PAGINACAO =======================================================================================================

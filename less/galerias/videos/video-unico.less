@@ -1,0 +1,25 @@
+.video-unico(
+@tamanho:650px,
+@padding:3
+){
+    .bloco(@padding);
+    
+    section{
+        .mw(@tamanho);
+    }
+}
+
+.video-wrap{
+    .pr;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+    iframe {
+        .bd(@cor1);
+        .pd(5px);
+        .pa-tl;
+        .size(100%);
+        .box;
+    }
+}

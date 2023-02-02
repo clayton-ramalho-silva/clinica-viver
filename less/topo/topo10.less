@@ -1,0 +1,140 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.topo10(){
+    @media only screen and (min-width:1024px){
+        .pa-tl(0,0,1) !important;
+
+        .menu{
+            .pdl(0);
+            .pdr(0);
+
+            .tipo-menu(@tipo-menu);
+            .tipo-menu(@a) when (@a=3){
+                .pd(5px 0);
+
+                .pmenu a{
+                    .linha(@menu[@link][altura]);
+                }
+            }
+
+            .tipo-menu(@a) when (@a=4){
+                .pmenu a{
+                    .linha(@menu[@link][altura]);
+                }
+            }
+
+            .tipo-menu(@a) when (@a=5){
+                .pmenu a{
+                    .linha(@menu[@link][altura]);
+                }
+            }
+
+            .tipo-menu(@a) when (@a=7){
+                a{
+                    border-bottom: none !important;
+                }
+            }
+
+            .tipo-menu(@a) when (@a=7){
+                .zindex;
+                .pdt(15px);
+                .pdb(15px);
+            }
+        }
+
+        .topo-right{
+            .h(auto);
+            .bdt(@topo[borda]);
+        }
+
+        .menu-fixo{
+            .menu{
+                .pd(0);
+                border:none !important;
+            }
+        }
+
+        .topo{
+            .pr;
+            .size(100%,@banner[altura]);
+            .flex-meio;
+            align-items: flex-start;
+            /*.fundo(fade(@topo[fundo],30));*/
+            //.degrade(fade(@topo[fundo],80),fade(@topo[fundo],30),90deg);
+            background-image: linear-gradient(90deg,fade(@topo[fundo],80) 40%, fade(@topo[fundo],0));
+
+            .column;
+            .box;
+            .pd(@espaco * 3);
+
+            .logo{
+                .mgb(@espaco);
+            }
+
+            &.topo-interna{
+                .mgt(15px);
+                .db;
+                .full-max;
+                .h(auto);
+                .pdl(@espacom);
+                .pdr(@espacom);
+                .w(~'calc(100% - 30px)');
+                .box;
+                .pdt(0);
+                .pdb(0);
+                .fundo(@topo[fundo]);
+                .radius(@topo[radius]);
+
+                .barra-topo(@barra-topo);
+                .barra-topo(@a) when (@a=on){
+                    .mgt(@topo[@barra-topo][altura] + 15px);
+                }
+
+                .menu{
+                    .sc;
+                    border:none !important;
+                }
+
+                .topo-right{
+                    .clear-pa;
+                    .size(auto,100%);
+                    .mgt(0);
+                    border: none;
+                }
+
+                .logo{
+                    .mgb(0);
+                }
+            }
+
+            .redes-topo,.bloco-telefone,.busca{
+                .dn;
+            }
+        }
+
+        .barra-topo{
+            .pa-tl(0,0,10);
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .pa-tl(0,0,1) !important;
+
+        .topo{
+            .size(100%,@banner[@responsivo][altura]);
+            .flex-meio;
+            .fundo(fade(@topo[fundo],60));
+
+            &.topo-interna{
+                .h(@logo[@responsivo][altura]);
+                .fundo(@topo[@responsivo][fundo]);
+                .logo{
+                    .h(@logo[@responsivo][altura]);
+                    .bg-size(contain);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,92 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+.texto2(
+@fundo:@texto2[fundo];
+@texto:@texto2[texto];
+
+@titulo:@texto2[titulo];
+@subtitulo:@texto2[subtitulo];
+
+@radius:@texto2[radius];
+){
+    .c(@texto);
+    .al;
+
+    @media only screen and (min-width:1024px){
+        .bloco(4,4,@fundo) !important;
+    }
+
+    @media only screen and (max-width:1023px){
+        .bloco(2,2,@fundo) !important;
+    }
+
+
+
+    h2{
+        .fs(45px);
+        .c(@texto2[titulo]) !important;
+        .al;
+        .fw(400);
+
+        @media only screen and (max-width:1023px){
+            .fs(35px) !important;
+        }
+    }
+
+    h3{
+        .fs(25px);
+        .c(@texto2[subtitulo]);
+        .al;
+
+        @media only screen and (max-width:1023px){
+            .fs(25px) !important;
+        }
+    }
+
+    section{
+        .df;
+        @media only screen and (max-width:1023px){
+            .wrap;
+        }
+    }
+
+    img{
+        .radius(@radius);
+        @media only screen and (min-width:1024px){
+            .mw(none);
+        }
+    }
+
+    figure{
+        @media only screen and (min-width:1024px){
+            .mgr(@espaco * 2);
+        }
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .flex-meio;
+            .mgb(@espaco);
+        }
+    }
+
+    ul{
+        .pdl(15px);
+    }
+
+    li{
+        list-style: disc;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+    }
+
+    .link{
+        .bt-pequeno;
+        .botao4(@modo:6,@fundo:@texto2[texto],@hover-texto:@texto2[fundo]);
+    }
+} 
+

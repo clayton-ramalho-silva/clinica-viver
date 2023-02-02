@@ -1,0 +1,43 @@
+.botao15(
+@cor-texto:@cor-fonte-site,
+@fundo:@cor1,
+)
+{
+    .c(@cor-texto);
+    background: none;
+    .ease-out;
+
+    .pdl(0);
+    .pdr(0);
+    .lh(1);
+    .pr;
+    .dib;
+    .ofh;
+    .radius(0);
+
+
+    &:before{
+        .ab;
+        .pa-bl;
+        .size(300%,2px);
+        transform: translateX(-66.6%);
+        background: linear-gradient(to left, @fundo 33.3%, transparent 33.3%, transparent 66.6%, @fundo 66.6%);
+        transition: transform 0.7s ease-in-out 0s;
+    }
+
+    &:after{
+        font-family: "Font Awesome 5 Free"; 
+        font-weight: 900;
+        content:'\f105';
+        .mgl(@espacom);
+        .c(@cor-texto);
+        .lh(1);
+    }
+
+    &:hover{
+        &:before{
+            transform: translateX(0%);
+        }
+    }
+   
+}

@@ -1,0 +1,34 @@
+//@import "../conf-site";
+
+
+
+.botao-menu4(){
+    &:before{
+        content:'Menu';
+        .fs(12px);
+        .mgr(10px);
+    }
+
+    .c(@menu[@botao][icone]);
+    .size(65px,35px);
+    cursor: pointer;
+    .flex-meio;
+    .pf-tr(25px,15px,1);
+    .ease;
+    /*.fundo(@menu[@botao][fundo]);*/ 
+    /*.bd(@menu[@botao][fundo],5px);*/
+    i{
+        .c(@menu[@botao][icone]);
+        .fs(25px);
+        .ease;
+    }
+
+    &:hover{
+        .c(@menu[@botao][hover]);
+    
+        i{
+            .c(@menu[@botao][hover]);
+        }
+    }
+
+}

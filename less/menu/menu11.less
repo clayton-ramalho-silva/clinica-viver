@@ -1,0 +1,30 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu11(){
+    li{
+
+        a{
+            .fundo(fade(@menu[@link][fundo],70));
+        }
+
+        &:hover > a{
+            .fundo(@menu[@link][fundo]);
+            .c(@menu[@link][hover]); 
+        }
+    }
+
+    .ativo{
+        a{
+            .fundo(fade(@menu[@link][ativo],90));
+
+        }
+    }
+
+    .psubmenu{
+        a{
+            background: none;
+
+        }
+    }
+}

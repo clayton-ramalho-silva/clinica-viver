@@ -1,0 +1,42 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-8(
+){
+    .flex-meio;
+    .column;
+    h2{ 
+        .full;
+        .df;
+        .sc;
+        .aic;
+        .ac;
+        &:after,&:before{
+            min-width: 10px;
+            min-height: 10px;
+            .fundo(@subtitulo[borda]);
+            .radius(50px);
+            .ab;
+        }
+        &:after{
+            .mgl(@espaco);
+        }
+
+        &:before{
+            .mgr(@espaco);
+        }
+    }    
+
+    h3{ 
+        .mgt(5px);
+        .ac;
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+}

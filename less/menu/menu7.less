@@ -1,0 +1,59 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu7(){
+    .pmenu{
+        a{
+            .bdb(@menu[@link][hover]);
+            .radius(0);
+            &:after{
+                .ab;
+                .size(100%,0px);
+                .fundo(@menu[@link][hover]);
+                .mgt(0px);
+                .ease-out;
+            }
+        }
+
+        li{
+            .mgl(0);
+            .mgr(0);
+            &:first-of-type{
+                a{
+                    .pdl(0);
+                }
+            }
+            &:last-of-type{
+                a{
+                    .pdr(0);
+                }
+            }
+            &:hover > a{
+                .c(@menu[@link][cor]);
+            }
+
+            &:hover > a:after{
+                .h(5px);
+                .mgt(-4px);
+            }
+        }
+    }
+    .psubmenu{
+        a{
+            border:none;
+            &:after{
+                .dn !important;
+            }
+        }
+    }
+    .ativo{
+        a{
+            .c(@menu[@link][ativo]);
+            &:after{
+                .h(5px);
+                .mgt(-4px);
+            }
+        }
+    }
+
+}

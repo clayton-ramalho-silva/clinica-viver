@@ -1,0 +1,495 @@
+// main: ../../../../../less/tema-site.less
+
+// RESPONSIVO DO SHOPPING ----------------------------------------------------------
+
+
+@media only screen and (max-width:1023px){
+    // Nesse media query mudei o esquema dos blocos, tirei o nth e as margins, dei 50% no bloco superior e centralizei o do centro
+    .entrega{.dn;}
+
+    //h2-interna
+    .interna.int-shop h2{.txt(#002c53,15px); margin-bottom: 0; .dn; .manter{.db;}}
+
+    .carrinho-vazio{background-size:contain;}
+
+    // ACESSO TOPO
+    .acesso-topo{
+        margin-top:0;
+        background:none;
+
+        .titulo-icons-shop(){
+            .borda(0);
+            span{.dn;}
+        }
+
+        .area-cliente{
+            border:none;
+            padding:3px;
+            background:none;
+            margin:2px 15px 1px 0;
+            width:46px;
+            .titulo-icons-shop;
+
+            &:after{content:"Sua Conta"; .txt(#fff,9px); .fl; .full; .ac; .fonte;}
+
+            i{.txt(@cor1,18px); .borda(50px); padding:3px; background:#fff; .ma(0,2px); .fn;}
+
+            .usuario-logado{
+                .full;
+
+                a{
+                    .pa-tl;
+                    .size(100%,120%);
+                    margin:0;
+                    text-indent: -9999px;
+                }
+            }
+
+            .bt-sair{
+                .pa-tr;
+                margin:0;
+            }
+
+        }
+
+        .cart-small{
+            .pr;
+            border:none;
+            padding:0;
+            background:none;
+            margin: 2px 0 4px;
+
+            .titulo-icons-shop;
+
+            a:after{content:"Carrinho";  .txt(#fff,9px); .fl; .full; .ac; .fonte;}
+
+            i{
+                .txt(#fff,25px);
+                .ma(5px);
+                .fn;
+            }
+
+            small{
+                .db;
+                .pa-tr(4px,-6px);
+                .fonte;
+                .borda(50px);
+                .txt(#002c53,10px) !important;
+                padding:0 4px;
+                background:@cor2;
+            }
+
+        }
+
+    }
+
+
+
+    //acesso na area do cliente
+    .topo-area .acesso-topo{
+        margin-top: 26px;
+        background: #002c53;
+        padding: 2px 13px 0px 0;
+    }
+
+
+
+
+    .busca{
+        .pa-bl(2px,0);
+        .box;
+        margin:0;
+        width: 100%;
+        padding:0 112px 0px 3px;
+
+        i{
+            bottom:11px;
+            right:123px;
+        }
+
+        input{
+            .borda(0);
+            height:43px ;
+            font-size: 16px;
+        }
+
+        input[type=submit]{
+            height:43px;
+            bottom:0;
+            right:112px;
+        }
+
+
+    }
+
+
+
+    //LISTA PRODUTOS
+    .home .categorias{margin-top: 30px !important;}
+    .categorias{
+        .pd(5px);
+        .fl;
+
+        margin-top: 0px !important;
+
+        li{
+            min-width:100%;
+
+            &:before{
+                margin-top:17px;
+            }
+        }
+
+        h3{
+            .db;
+
+        }
+
+        nav{
+            height:0;
+
+            .rotatex(90deg);
+            .origem(top left);
+            .ofh;
+            .ease-out;
+
+            &.on{height:auto; .rotatex(0);}
+        }
+
+
+    }
+
+
+
+
+    // FINALIZAR PEDIDO -------------------------------------------------------------------
+
+    .tabela-finalizar-produtos{.fl; .full;}
+
+    .lista-produtos-final{
+        background:#f2f2f2;
+        padding: 10px 10px 0;
+        margin:15px 0;
+
+        .full;
+        .box;
+        .borda(7px);
+
+        li{
+            .full;
+            .fl;
+
+            padding:7px 0;
+
+            a{.full; padding:0 0 15px;}
+
+            &.lista-produto{border-bottom:1px solid #666;}
+        }
+
+    }
+
+    .topo-tabela{.dn;}
+
+
+    .left.bloco-resumo{
+        .fl;
+        margin:0;
+    }
+
+
+    .lista-quantidade {
+        .quantidade{
+            width:auto;
+            .ma;
+            .fn;
+        }
+    }
+
+
+
+    .input-itens{
+        .full;
+
+
+    }
+
+    /*Finalizar pedido*/
+    .botoes-finalizar{
+        .full;
+
+        input[type=submit]{.full !important; padding:0 !important;}
+
+        .finalizar{
+            .full;
+            margin:10px 0;
+        }
+
+        .outros-botoes{
+            margin:0;
+            width:49%;
+            font-size:12px;
+            text-transform:uppercase;
+
+            .box;
+            .ac;
+            .dt;
+        }
+
+        .atualizar{
+            .outros-botoes;
+            .fr;
+
+        }
+
+        .continuar-comprando{
+            .outros-botoes;
+
+            .fl;
+            .ac;
+            .dt;
+
+            padding:0;
+            font-size:12px;
+            text-transform:uppercase;
+
+            span{
+                .size(100%,42px);
+                display:table-cell;
+                vertical-align:middle
+            }
+        }
+    }
+
+    // LOGIN ----------------
+    .login-shop input[type=submit]{width: 38% !important; padding:0 !important;}
+
+
+    // area cliente ---------------
+    .topo-area{
+        .logo{    .size(130px,72px) !important; margin: 16px 0 0 !important;}
+    }
+
+
+
+
+    .areacliente{
+
+        h1{margin-bottom: 0;}
+        h2{color:#000; margin-bottom: 0;}
+        .categorias{margin-top:-8px;}
+    }
+
+    .historico-shop{margin-top: 15px;}
+
+
+
+}
+
+
+
+@media only screen and (max-width:600px){
+
+
+
+    // LOGIN -----------------
+    .box-cadastro, .login-shop{.full; margin-bottom:10px; margin-top:0; padding:0 15px; border:none; height:auto;}
+
+    .login-shop{
+        border-bottom:1px solid #ccc;
+
+        h3{
+            font-size:27px;
+            padding:0;
+        }
+
+        span{
+            line-height: normal;
+            margin-bottom: 5px;
+            font-size: 12px;
+        }
+
+        p{
+            margin-bottom:2px;
+        }
+
+        a{
+            .full;
+            .ac;
+            margin:4px 0 5px;
+        }
+
+        &.single{
+            padding: 15px;
+        }
+
+    }
+
+    .box-cadastro{
+        h3{
+            font-size:27px;
+            padding:0;
+        }
+
+    }
+
+
+
+    //-- FORMULARIO CADASTRO
+    .formulario-shop {
+        p{
+            .full !important;
+
+            input, select{
+                .full!important;
+            }
+        }
+    }
+
+
+
+    //Blocos dos produtos resumo pedido
+    .bloco-resumo{
+        .full;
+        height:auto;
+        margin-bottom: 25px;
+    }
+
+
+    //detalhes produtos
+    .detalhe-imagens{
+        .full;
+        margin:0 0 20px;
+    }
+
+    .caracteristicas{
+        .full;
+
+        small{
+            margin-bottom: 10px;
+            padding-bottom: 20px;
+        }
+    }
+
+    .precos{
+        margin-top:0;
+
+        input[type=submit].list-add-button{width:45%;}
+    }
+
+
+    //resumo
+    .bloco-resumo{
+        font-size: 12px;
+        input{font-size:15px;}
+    }
+    .conf-pedido {
+        margin:0;
+        h3 {
+            font-size: 23px;
+        }
+    }
+
+
+
+    // area cliente --
+    //senha
+    .form-senha{.full;}
+
+    //pedidos
+    .historico-shop{overflow: auto;}
+    .tabela{width:130%; .fl;}
+
+
+    .login-shop.single{.full;}
+
+    .areacliente .form-senha{margin-top:20px;}
+
+
+    .carrinho-vazio {
+        height: 143px;
+    }
+
+}
+
+@media only screen and (max-width:481px){
+
+
+    // FINALIZAR PEDIDO -----------------
+    .img-finalizar {.fl; margin:0 9px 0 0;}
+
+    .lista-produtos-final li{
+        padding: 0 0 10px;
+        margin-bottom: 10px;
+
+        a{line-height: 16px; .db}
+    }
+
+    li.lista-quantidade{padding:0 !important; margin:0 !important;}
+
+    .botoes-finalizar {
+        .continuar-comprando,  .atualizar {.full; margin-bottom:10px;}
+    }
+
+    #abas a{
+        font-size:16px;
+    }
+
+    .botoes-continuar {
+        margin-top: 0;
+
+        input[type="submit"]{.fn; .ma(0,15px);}
+
+        .voltar{
+            .ma;
+            .fn;
+        }
+    }
+
+
+    //descrição
+    .descricao{
+        margin-top:0;
+    }
+
+
+
+    //comprado
+    .comprado{width:80%; margin-right:-47.5%;}
+
+
+    .lista-produtos{.full;}
+
+}
+
+@media only screen and (max-width:360px){
+
+    //detalhes
+    .detalhes{
+
+        .comprar-produto i{.dn;}
+
+        .quantidade{width:60%; .fn; .ma(10px,10px); &:after{.dn;}}
+
+    }
+
+    .precos input[type=submit].list-add-button{width: 85%; .ma; .fn}
+
+
+    //finalizar pedido
+    .lista-produtos-final {
+        margin-bottom:0;
+
+        li a{font-size:12px;}
+    }
+
+    .botoes-finalizar{padding:0;}
+
+
+    //cliente
+    .tabela {
+        width: 180%;
+    }
+
+    .botoes-continuar input[type="submit"]{width:190px;}
+
+}

@@ -1,0 +1,87 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.botao4(
+@fundo:@cor1,
+@hover:@fundo,
+@hover-texto:#fff,
+@modo:1
+)
+{
+    .bd(@fundo);
+    .c(@fundo);
+    .ease;
+    background: none;
+
+    &:hover{
+        .c(@hover-texto);
+        .bd(@hover);
+    }
+
+
+    .modo(@modo);
+    .modo(@a) when (@a=1){
+        //fade
+        &:hover{
+            .bg-color(@hover);
+        }
+    }
+
+    .modo(@a) when (@a=2){
+        //fill
+        &:hover {
+            box-shadow: inset 0 0 0 2em @hover;
+        }
+    }
+
+    .modo(@a) when (@a=3){
+        //pulse
+        &:hover {
+            .c(@fundo);
+            animation: pulse 0.5s;
+            box-shadow: 0 0 0 10px fade(@hover,0);
+        }
+    }
+
+    .modo(@a) when (@a=4){
+        //close
+        &:hover{
+            box-shadow: inset -5.5em 0 0 0 @hover, inset 5.5em 0 0 0 @hover;
+        }
+    }
+
+    .modo(@a) when (@a=5){
+        //rise
+        &:hover{
+            .c(@hover);
+            box-shadow: 0 0.5em 0.5em -0.4em @hover;
+            transform: translateY(-0.25em);
+        }
+    }
+
+    .modo(@a) when (@a=6){
+        //fill
+        &:hover{
+            box-shadow: inset 0 -3.25em 0 0 @hover;
+        }
+    }
+
+    .modo(@a) when (@a=7){
+        //slide
+        &:hover{
+            box-shadow: inset 10.5em 0 0 0 @hover;
+        }
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 @cor1;
+    }
+}

@@ -1,0 +1,34 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+@import "newsletter1";
+@import "newsletter2";
+
+.newsletter{
+    .tipo-newsletter(@tipo-newsletter);
+
+    .tipo-newsletter(@a) when (@a=1){
+        .newsletter1;
+    }
+    .tipo-newsletter(@a) when (@a=2){
+        .newsletter2;
+    }
+
+    .bloco(2,2,@newsletter[fundo]);
+
+    h2{
+        .c(@newsletter[@titulo][cor]);
+        .fs(@newsletter[@titulo][tamanho]);
+    }
+
+    h3{
+        .c(@newsletter[@subtitulo][cor]);
+        .fs(@newsletter[@subtitulo][tamanho]);
+    }
+
+    .obrigado{
+        .fs(@newsletter[@obrigado][tamanho]);
+        .c(@newsletter[@obrigado][cor]);
+    }
+
+}  

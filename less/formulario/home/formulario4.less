@@ -1,0 +1,86 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.formulario4(
+@modo:1,
+@cor:@cor1,
+@borda:#ccc,
+@fundo:#fff,
+@direcao:right,
+@obrigado:#fff
+){
+ 
+    .modo(@modo);
+    .modo(@a) when (@a=1){
+        .campos1(@fundo:@fundo,@borda:@fundo,@cor:@cor);
+    }
+    .modo(@a) when (@a=2){
+        .campos2(@cor:@cor);
+    }
+
+    .modo(@a) when (@a=3){
+        .campos3(@cor:@cor);
+    }
+
+    .modo(@a) when (@a=4){
+        .campos4(@fundo:@fundo,@cor:@cor);
+    }
+
+    .modo(@a) when (@a=5){
+        .campos5(@fundo:@fundo,@cor:@cor);
+    }
+
+    h2{
+        .w(100%);
+        .mw(500px);
+        .al;
+
+    }
+ 
+    h3{
+        .mw(500px);
+        .w(100%);
+        .al;        
+
+    }
+
+    section{
+        .df;
+        .column;
+        .direcao(@direcao);
+        .direcao(@a) when (@a=left){
+            align-items: flex-start;
+        }
+
+        .direcao(@a) when (@a=right){
+            align-items: flex-end;
+        }
+    }
+
+    form{
+        .mw(500px);
+    }
+
+    /*    p{
+            .flex-meio;
+        }*/
+
+    [type=submit]{ 
+        .radius(@formulario[@campos][radius]);
+        .bt-pequeno;
+    }
+
+    .obrigado{
+        .ac;
+        .c(@obrigado);
+
+        h4{
+            .c(@obrigado);
+            .mgb(25px);
+        }
+    }
+    
+    @media only screen and (max-width:1023px){
+        .clarear;
+    }
+} 

@@ -1,0 +1,386 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.menu9(){
+    .topo .menu, .menu-fixo, .topo-right{
+        .dn !important; 
+    }
+
+    #toggle.button_container {
+        .df !important;
+
+        @media only screen and (min-width:1024px){
+            .pf-tr(30px,30px,1);
+        }
+    }
+
+    .topo{
+        &.topo-interna{
+            .button_container {
+                @media only screen and (min-width:1024px){
+                    .pf-tr(30px,30px,1);
+                }
+            }
+        }
+    }
+
+    .menu-toggle{
+        .db;
+    }
+
+    .overlay{
+        .pf-tr(0,0,1);
+        .size(100%);
+        .flex-meio;
+        .column;
+        .mw(300px);
+        .op(0);
+        .vh;
+
+        &.open{
+            .op;
+            .vv !important;
+            .df;
+        }
+
+        .pmenu{
+            .pd(25px);
+            .bloco-1;
+
+            li{
+                .mgl(0);
+                .mgr(0);
+                .fl;
+            }
+
+            a{
+                .c(@menu[@responsivo][@link][cor]) !important; 
+                .h(auto);
+                .lh(1.4);
+                .pdl(0);
+                .pdr(0);
+
+
+                &:after{
+                    .ab;
+                    .ease;
+                    .size(0,1px);
+                    .fundo(@menu[@responsivo][@link][cor]);
+                }
+
+                &:hover{
+                    &:after{
+                        .size(100%,1px);
+                    }
+                }
+            }
+            li{
+                .db;
+                .pr;
+                .pdb(5px);
+                .full;
+                &:hover > .psubmenu{
+                    .mh(1500px);
+                    .pdb(10px);
+                    .mgt(5px);
+                }
+            }
+            i{
+                .mgl(10px);
+            }
+        }
+
+        .psubmenu{
+            .clear-pa;
+            .mh(0px);
+            .ofh;
+            .ease(0.8s);
+            //.h(100%);
+            .pd(0);
+            .pdl(25px);
+
+            li{
+                .lh(26px);
+                .pdt(5px);
+                .pdb(5px);
+            }
+
+            a{
+                .linha(26px) !important;
+                &:hover{
+                    background-color: transparent !important;
+                }
+            }
+
+            i{
+                .dn;
+            }
+        }
+    }
+
+    //botao de abrir contato     
+    #abrir-contato-responsivo{
+        .pf-br(10px,10px,7);
+        .circle(40px);
+        .fs(18px);
+        .ease-out;
+
+        @media only screen and (min-width:1024px){
+            .dn;
+        }
+    }
+
+    //caixa de contato
+    .contato-responsivo{
+        @media only screen and (min-width:1024px){
+            .dn;
+        }
+
+        .flex-meio;
+        .column;
+        .bloco-1;
+        .pd(25px);
+        .fl;
+        .pf-br(0,-100%,6);
+        .ease-out;
+        .h(100vh);
+        .mw(300px);
+
+        p{
+            .pr;
+            .mgb(10px);
+            min-height: 30px;
+            .bloco-1;
+            .fl;
+            .pdl(25px);
+            .df;
+            .column;
+            .sc;
+
+            i{
+                .pa-tl(8px);
+
+            }
+        }
+
+        &.open{
+            right:0;
+        }
+    }
+
+    //Busca
+    .busca-responsivo{
+        .pa-tl(0,0,1);
+        .pd(0px 25px 10px);
+        .bloco-1;
+        .mgt(@espaco * 3);
+
+        form{
+            .bloco-1;
+            .df;
+            .aic;
+            .radius(5px);
+            .pdl(10px);
+            .pdr(10px);
+        }
+
+        i{
+            .fs(20px);
+        }
+
+        input{
+            background: none;
+            .fs(13px);
+            .h(40px);
+        }
+    }
+
+    //Redes Sociais
+    .redes-responsivo{
+        .full;
+        .fl;
+        .df;
+        .wrap;
+        .mgt(@espaco);
+        .pdt(@espaco);
+
+        a{
+            .mgr(5px);
+            .circle(30px);
+            .fs(18px);
+        }
+    }
+
+    //Acesso Restrito
+    .acesso-restrito{
+        max-width: 300px;
+        .bloco-1;
+        .pf-br(10px,0);
+        .c(#fff);
+        .pd(10px 25px);
+
+        .restrito-responsivo(@restrito-responsivo); 
+        .restrito-responsivo(@a) when (@a=off){
+            .dn !important;
+        }
+    }
+
+
+    //--------------------------------------
+    body{
+        .fundo(@menu[@responsivo][fundo]);
+    }
+
+    #container{
+        .fundo(#fff);
+        transition: transform 0.8s cubic-bezier(.2,1,.3,1);
+        .pr;
+        z-index: 5;
+        .h(100vh);
+        overflow-y: scroll;
+        .sombra(0 0 0 @p0);
+    }
+
+    .travar{
+        #container{
+            .h(100vh);
+            .ofh;
+            transform: scale(.8) translateX(-350px) translateZ(0)!important;
+            .sombra(5px 5px 10px @p30);
+
+        }
+
+        .fechar-menu{
+            .scale(1);
+            .op(1);
+            .tdelay(0.3s);
+        }
+    }
+
+    .fechar-menu{
+        .pa-tr(0px,0px,10);
+        .scale(0);
+        .op(0);
+        .ease;
+        user-select:none;
+        svg {
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            -webkit-transform: translate3d(0, 0, 0);
+            -moz-transform: translate3d(0, 0, 0);
+            -o-transform: translate3d(0, 0, 0);
+            -ms-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        path {
+            fill: none;
+            -webkit-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            -moz-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            -o-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            -ms-transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            transition: stroke-dashoffset 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25), stroke-dasharray 0.5s cubic-bezier(0.25, -0.25, 0.75, 1.25);
+            stroke-width: 40px;
+            stroke-linecap: round;
+            stroke: @menu[@botao][ativo];
+            stroke-dashoffset: 0px;
+            transition-delay: 0.3s;
+
+        }
+        path#top,
+        path#bottom {
+            stroke-dasharray: 240px 950px;
+        }
+        path#middle {
+            stroke-dasharray: 240px 240px;
+        }
+        .cross path#top,
+        .cross path#bottom {
+            stroke-dashoffset: -650px;
+            stroke-dashoffset: -650px;
+        }
+        .cross path#middle {
+            stroke-dashoffset: -115px;
+            stroke-dasharray: 1px 220px;
+        }
+    }
+
+    .pmenu{
+        .fs(@menu[@responsivo][@link][tamanho]);
+        a{
+            .fonte;
+            .ease-out;
+            .c(@menu[@responsivo][@link][cor]) !important; 
+
+            .fw(@menu[font-weight]);
+            text-transform: @menu[maiuscula];
+        }
+
+    }
+
+    .psubmenu{
+        .fs(@submenu[@responsivo][@link][tamanho]);
+
+        a{
+            .c(@submenu[@responsivo][@link][cor]) !important;
+            .fw(@submenu[font-weight]);
+            text-transform: @submenu[maiuscula];
+        }
+    }
+
+    .busca-responsivo{
+        .fundo(@menu[@responsivo][fundo]);
+        .placeholder(@menu[@responsivo][@link][cor]); 
+
+        form{
+            .bd(@menu[@responsivo][@link][cor]);
+        }
+
+        i{
+            .c(@menu[@responsivo][@link][cor]);
+        }
+
+        input{
+            .c(@menu[@responsivo][@link][cor]);
+        }
+    }
+
+    #abrir-contato-responsivo{
+        .c(@menu[@responsivo][@link][cor]);
+        .bd(@menu[@responsivo][@link][cor]);
+
+        &.active{
+            .fundo(@menu[@contato][@botao][fundo-ativo]);
+            .c(@menu[@contato][@botao][fundo-ativo]);
+        }
+    }
+
+    .contato-responsivo{
+        .bg-color(@menu[@contato][fundo]);
+        .c(@menu[@contato][texto]);
+
+        a{
+            .c(@menu[@contato][texto]) !important;
+        }
+
+        i{
+            .fs(@menu[@responsivo][@icone][tamanho]);
+            .c(@menu[@responsivo][@icone][cor]);
+        }
+    }
+
+    .redes-responsivo{
+        .bdt(@menu[@responsivo][@link][cor]);
+
+        a{
+            .bd(@menu[@responsivo][@link][cor],2px);
+        }
+    }
+
+    .acesso-restrito{
+        .c(@menu[@contato][texto]);
+        a{
+            .c(@menu[@contato][texto]) !important;
+        }
+    }
+}

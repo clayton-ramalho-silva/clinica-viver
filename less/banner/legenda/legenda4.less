@@ -1,0 +1,75 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner4(){
+
+    @media only screen and (min-width:1024px){
+
+        .flex-meio;
+        .ac;
+
+        .slogan{
+            .box;
+            .w(95%);
+            .mw(@banner[@legenda][largura]);
+
+            .bdt(#fff);
+            .bdb(#fff);
+            .pdt(@espaco * 2);
+            .pdb(@espaco * 2);
+            .rotatey(90deg);
+            animation: legenda 0.7s 0.2s ease-out forwards;
+        }
+
+
+        .titulo-banner{
+            .full;
+            .ac;
+        }
+
+        .titulo-banner, .subtitulo-banner, .barra-link{
+            .op(0);
+            animation: legenda 0.5s 0.7s ease-out forwards;
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .flex-meio;
+
+        .pd(15px);
+
+        .slogan{
+            .aic;
+            .bdt(#fff);
+            .bdb(#fff);
+            .pdt(@espacom);
+            .pdb(@espacom);
+            .pdr(@espacom);
+            .pdl(@espacom);
+            .bloco-1;
+            .rotatey(90deg);
+            animation: legenda 0.5s ease-out forwards;
+        }
+        .titulo-banner{
+            .full;
+            .ac;
+        }
+        .subtitulo-banner{
+            .full;
+            .ac;
+        }
+
+        .link{
+            .bt-extra-pequeno !important;
+        }
+
+        .titulo-banner, .subtitulo-banner, .barra-link{
+            .op(0);
+            animation: legenda 0.5s 0.5s ease-out forwards;
+        }
+    }
+
+    @keyframes legenda{
+        to{.rotatey(0); .op;}
+    }
+}

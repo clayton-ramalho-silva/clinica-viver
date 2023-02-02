@@ -1,0 +1,26 @@
+<div class="banner-interna"></div>
+<div class="interna interna-ebook">
+    <div class="breadcrumb"><div class="wrap-breadcrumb">{BREADCRUMB}</div></div>
+    {CONTENT}
+
+    <div class="voltar">
+        <span>
+            [BACK]&laquo; Voltar[/BACK]
+        </span>
+    </div>
+
+</div>
+
+
+[JS]
+<script>
+         $(function () {
+                 $('#mainBlock').find('.interna').each(function (i) {
+            var str = $(this).find('h2.tit-ebook');
+            var texto = $(str).text();
+            var solucao = $(this).find('#curso');
+            $(solucao).val(texto);
+        });
+    });
+ </script>
+[/JS]

@@ -1,0 +1,64 @@
+//@import "../reset"; 
+//@import "../helpers"; 
+
+.galeria2(
+@item:@galeria[item],
+@gap:@galeria[gap],
+@cor-icone:@galeria[icone]
+){
+
+    ul{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            grid-template-columns: repeat(2,1fr);
+        }
+    }
+
+    li{
+        .size(100%);
+        .db;
+        .radius(if((@radius-padrao-botoes > 25px), 25px, @radius-padrao-botoes));
+        .ofh;
+    }
+
+    a{
+        .fl;
+        .pr;
+
+        i{
+            .pa-tl(-30%);
+            .size(100%);
+            .flex-meio;
+            .fundo(@p70);
+            .fs(20px);
+            .ease-out;
+            .op(0);
+            .c(@cor-icone);
+            &:before{
+                .circle(50px);
+                .bd(@cor-icone);
+            }
+        }
+
+        &:hover{
+            i{
+                top:0;
+                .op;
+            }
+        }
+
+    }
+
+
+
+    b{
+        .dn;
+    }
+
+    img{
+        .fl;
+    }
+}

@@ -1,0 +1,25 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.noticia-completa1(){
+    
+    .imagem-noticia{
+        .fr;
+        .mgl(@espaco * 2);
+        .mgb(@espaco);
+        
+        img{
+            .fl;
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+
+        .imagem-noticia{
+            .full;
+            .flex-meio;
+            .mgl(0);
+        }
+    }
+}

@@ -1,0 +1,127 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+//TEASER 3 ---------------------------------------------------------------------------------------------------------------------------------
+
+.teaser28(
+@item:4,
+@tamanho-imagem:40px,
+@cor-titulo:@cor1,
+@tamanho-titulo:25px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:15px,
+@gap:25px,
+
+@modo:1,
+
+//modo1
+@fundo:@cor-titulo,
+
+//modo2
+@cor-borda:@cor-titulo
+
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    }
+
+
+    h4{
+        .fs(@tamanho-titulo);
+        .tu;
+        .fw(700);
+        .c(@cor-titulo);
+    }
+
+    h5{
+        .dn;
+    }
+
+    article{
+        .pr;
+        .df;
+    }
+
+    .servico-info{
+        .full;
+        .c(@cor-texto);
+        .fs(@tamanho-texto);
+        .df;
+        .column;
+        .sc;
+
+        span{
+            .dn;
+        }
+    }
+
+    figure{
+        .mw(@tamanho-imagem);
+        .mgr(@espaco);
+        .pd(20px);
+        .radius(500px);
+    }
+
+    img{
+        .fl;
+    }
+
+    .link{
+        .pa-tl;
+        .size(100%);
+        .fs(0);
+    }
+
+    .modo(@modo);
+    .modo(@a) when (@a=1){
+        article{
+
+            figure{
+                .fundo(@fundo);
+                .ease;
+            }
+            &:hover {
+                figure{
+                    .scale(1.1);
+                }
+            }
+        }
+    }
+
+    .modo(@a) when (@a=2){
+
+        article{
+
+            &:hover {
+                figure{
+                    animation: pulse 0.5s;
+                    box-shadow: 0 0 0 10px fade(@cor-borda,0);
+                }
+            }
+
+            figure{
+                .bd(@cor-borda);
+
+
+            }
+        }
+    }
+
+    @keyframes pulse {
+        0% {
+            box-shadow: 0 0 0 0 @cor-borda;
+        }
+    }
+}

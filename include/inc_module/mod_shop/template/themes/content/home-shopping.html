@@ -1,0 +1,48 @@
+<div class="banner">{BANNER}</div>
+
+<div class="home">
+
+    <div class="content">
+
+        <div class="left">
+            <div class="categorias">
+                <h3><i class="icon-menu-6"></i> Categorias</h3>
+                <nav>{SHOP_CATEGORIES}</nav>
+            </div>
+            {SERVICOS}
+        </div>
+
+        <div class="cnt-right">
+             <!--{SHOW_CONTENT:CP,2}-->
+            {CONTENT}{SHOP_PRODUCTLIST}
+        </div>
+
+    </div>
+</div>
+{PARALLAX}
+
+[JS]
+<script>
+$().ready(function () {
+
+    $('.categorias h3').click(function () {
+        if ($('.categorias ').hasClass('cat-on')) {
+            $('.categorias').removeClass('cat-on')
+        } else {
+            $('.categorias').addClass('cat-on')
+        }
+    });
+
+    $('.bt-abrir-categoria').click(function() {
+
+        $('.bt-abrir-categoria').removeClass('on');
+        $('.shop-subcategories').slideUp('fast');
+        if($(this).next().is(':hidden') == true) {
+            $(this).addClass('on');
+            $(this).next().slideDown('fast');
+        }
+    });
+
+});
+</script>
+[/JS]

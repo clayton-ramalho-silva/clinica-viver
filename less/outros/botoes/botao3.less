@@ -1,0 +1,24 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.botao3(
+@fundo:@cor1,
+@hover:darken(@fundo,20),
+)
+{
+    .bd(@fundo);
+    .c(@fundo);
+    background: none;
+    .ease-out;
+    .dib;
+
+    &:hover{
+        .bd(@hover);
+        .c(@hover);
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+
+}

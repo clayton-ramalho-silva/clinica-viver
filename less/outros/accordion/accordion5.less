@@ -1,0 +1,61 @@
+//@import "../conf-site";
+//@import "../helpers";
+//@import "../formulario/formulario";
+
+
+
+//Tabs
+
+.accordion5(){
+
+    .accordion{
+        .pr;
+        .mgb(@espaco);
+        .mw(700px);
+
+        &:last-of-type{
+            .mgb(0);
+        }
+
+        &:before{
+            .ab;
+            .pa-tl;
+            .size(100%);
+        }
+
+        @media only screen and (min-width:1024px){
+            &:nth-of-type(odd){
+                .fr;
+            }
+        }
+    }
+    .accordionButton{
+        i{
+            .fs(50px);
+            .c(@accordion[@icone][cor]);
+            .mgr(30px);
+            .ease-out;
+            .fw(400);
+            &:before{
+                content:"\f059";
+            }
+
+            @media only screen and (max-width:1023px){
+                .fs(30px);
+                .mgr(10px);
+            }
+        }
+
+    }
+
+    .accordionContent{
+        .mgt(@espacom);
+        .pd(@espacom);
+        .pdl(80px);
+        .db !important;
+ 
+        @media only screen and (max-width:1023px){ 
+            .pdl(40px);
+        }
+    }
+} 

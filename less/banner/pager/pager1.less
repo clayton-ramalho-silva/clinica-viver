@@ -1,0 +1,27 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.pager1(){
+    .bx-pager{
+        .pa-br(@banner[@pager][posicao],0,900);
+        .full;
+        a{  
+            .size(15px);
+            .mgl(2.5px);
+            .mgr(2.5px);
+            .box;
+            text-indent:-99999px;
+            .fundo(@banner[@pager][cor]);
+            .bd(@banner[@pager][borda]);
+            .radius(@banner[@pager][radius]);
+
+            &:hover{
+                .fundo(@banner[@pager][hover]);
+            }        
+        }
+
+        .active{
+            .fundo(@banner[@pager][ativo]);
+        } 
+    }
+}

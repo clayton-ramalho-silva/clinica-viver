@@ -1,0 +1,64 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.menu4(){
+    .pmenu{
+        a{
+            .ofh;
+            .linha(@logo[altura]);
+            .radius(0);
+            &:after{
+                .ab;
+                .full;
+                .h(6px);
+                .ease-out;
+                .cb;
+                .translatey(1px);
+                .fundo(@menu[@link][fundo]);
+            }
+        }
+    }
+    li{
+        &:hover{
+            &>a{
+                .c(@menu[@link][hover]); 
+
+                &:after{
+                    .translatey(-5px);
+                    .fundo(@menu[@link][fundo]);
+                }
+            }
+        }
+    }
+
+    .psubmenu{
+        border-top-left-radius:0px;
+        border-top-right-radius:0px;
+
+        li{ 
+            a{
+                &:after{
+                    .dn;
+                }
+            }
+        }
+
+        .tipo-submenu(@tipo-submenu);
+
+        .tipo-submenu(@a) when (@a=3){
+            .radius(if((@submenu[radius] > 25px), 25px, @submenu[radius])) !important;
+        }
+    } 
+
+    .ativo{
+        a{
+            .c(@menu[@link][ativo]);
+            &:after{
+                .translatey(-5px);
+                .fundo(@menu[@link][ativo]);
+            }
+        }
+    }
+
+}

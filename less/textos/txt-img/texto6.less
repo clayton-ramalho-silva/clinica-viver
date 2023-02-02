@@ -1,0 +1,117 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+.texto6(
+@titulo:@texto[titulo];
+@subtitulo:@texto[subtitulo];
+@borda:@texto[borda];
+@radius:@texto[radius];
+@botao:@texto[botao];
+){
+
+    .flex-meio;
+    @media only screen and (max-width:1023px){
+        .pd(0) !important;
+    }
+
+    section{
+        .full;
+        .mw(1920px);
+        .df;
+
+        @media only screen and (max-width:1023px){
+            .wrap;
+            .column;
+        }
+    }
+
+    @media only screen and (min-width:1024px){
+
+        .subtitulo{
+            align-items: flex-start;
+        }
+
+    }
+
+    .texto{
+        @media only screen and (min-width:1024px){
+            .w(50%);
+            .box;
+            .pd(25px 25px 25px 100px);
+            .df;
+            .column;
+            .sc;
+            .mw(@site-size/2);
+        }
+
+        @media only screen and (max-width:1023px){
+            .bloco-1;
+            .pd(50px 25px);
+        }
+    }
+
+    figure{
+        .w(50%);
+        min-height: 70vh;
+        background-size: cover;
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .flex-meio;
+        }
+
+    }
+
+    img{    }
+
+
+    h2{
+        .c(@titulo) !important;
+        .fs(40px);
+        .al;
+        .fw(400);
+
+        @media only screen and (max-width:1023px){
+            .fs(30px) !important;
+        }
+    }
+
+    h3{
+        .c(@subtitulo) !important;
+        .fs(25px);
+        .al;
+
+        @media only screen and (max-width:1023px){
+            .fs(18px) !important;
+        }
+    }
+
+    ul{
+        .pdl(15px);
+    }
+
+    li{
+        list-style: disc;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+
+        @media only screen and (max-width:1023px){
+            .flex-meio;
+        }
+    }
+
+    .link{
+        .bt-pequeno;
+        .botao1(@fundo:@borda,@cor-texto:@botao);
+    }
+
+    @media only screen and (max-width:1023px){
+        .pdl(10px);
+        .pdr(10px);
+    }
+}
+

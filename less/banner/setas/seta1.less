@@ -1,0 +1,28 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.seta1(){
+    .bx-prev, .bx-next{
+        .pa;
+        top:50%;
+        z-index: 999;
+        .fs(@banner[@seta][@icone][fonte]);
+        .size(@banner[@seta][@icone][tamanho]);
+        .c(@banner[@seta][cor]);
+        .mgt(-@banner[@seta][@icone][tamanho]/2);
+        .flex-meio;
+        .op(0.7);
+        .ease-out;
+        &:hover{
+            .op;
+        }
+    }
+
+    .bx-next{
+        right:0;
+    }
+
+    .bx-prev{
+        left:0;
+    }
+}

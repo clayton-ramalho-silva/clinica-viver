@@ -1,0 +1,114 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser16(
+@item:3,
+@cor-titulo:#fff,
+@tamanho-titulo:18px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:13px,
+@fundo:@cor1,
+@altura:40%,
+@gap:25px,
+@radius:@radius-padrao-botoes
+)
+{
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(500px);
+        } 
+    } 
+
+    h4{
+        .c(@cor-titulo);
+        .fs(@tamanho-titulo);
+        .tu;
+        .fw(700);
+    }
+
+    h5{
+        .dn;
+    }
+
+    article{
+        .pr;
+        .ac;
+        .full;
+        .radius(if((@radius > 25px), 25px, @radius));
+        .ofh;
+        .fundo(@fundo);
+
+
+        &:hover{
+            img{
+                filter:grayscale(100%);
+                .translatey(-@altura);
+            }
+        }
+
+
+        @media only screen and (max-width:1023px){
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+    }
+
+    .bloco-link{
+        .pdt(25px);
+        .flex-meio;
+    }
+
+    .link{
+        .botao13(#fff,#fff);
+    }
+
+    img{
+        filter: grayscale(0);
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+        .pr;
+        z-index: 1
+
+    } 
+    .servico-info{
+        .pa-tl;
+        .df;
+        .column;
+        justify-content: flex-end;
+
+        .size(100%);
+        .fs(@tamanho-texto);
+        .pd(25px);
+        .box;
+
+        transition: all .8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        @media only screen and (min-width:1024px){
+            //.h(@altura);
+        }
+
+        @media only screen and (max-width:1023px){
+            .pd(20px);
+        }
+
+        p, span{
+            .pdt(5px);
+            text-overflow: ellipsis; 
+            .ofh;
+            white-space: nowrap; 
+            .full;
+            .c(fade(@cor-texto,70));
+
+        }
+    }
+}

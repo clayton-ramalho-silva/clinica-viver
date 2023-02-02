@@ -1,0 +1,27 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.pager2(){
+    .bx-pager{
+        .pa-br(@banner[@pager][posicao],0,900);
+        .full;
+        a{  
+            .fs(@banner[@pager][tamanho]);
+            .c(@banner[@pager][cor]);
+            .fw(900);
+            .mg(0 5px);
+            &:before{
+                content: '0';
+            }
+
+            &:hover{
+                .c(@banner[@pager][hover]);
+            }        
+        }
+
+        .active{
+            .scale(1.5);
+            .c(@banner[@pager][ativo]);
+        }
+    } 
+}

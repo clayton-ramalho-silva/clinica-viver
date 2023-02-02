@@ -1,0 +1,67 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h1-9(){
+
+    h1{
+        .linha(@titulo[@h1][altura]);
+
+        span{
+            .df;
+            .column;
+            align-items: flex-start;
+
+            &:after{
+                .ab;
+                .size(50px,5px);
+                .radius(@radius-padrao-botoes);
+                .fundo(@titulo[@h1][fundo]);
+                .mgt(-5px);
+
+            }
+        }
+
+        @media only screen and (max-width:1023px){
+            .h(auto);
+            .lh(1.2);
+            .pdt(15px);
+            .pdb(15px);
+            .bdt(fade((@titulo[@h1][cor]),10));
+
+            span{
+                &:after{
+                    .mgt(10px);
+                }
+            }
+        }
+    }
+
+    h5{
+        .mgt(@espaco);
+
+        @media only screen and (max-width:1023px){
+            .mgt(5px);
+        }
+    }
+
+    .breadcrumb{
+        .fundo(@breadcrumb[fundo]);
+        .linha(50px);
+    }
+
+    .direcao-titulo(@titulo[@h1][direcao]);
+    .direcao-titulo(@a) when (@a=center){
+        h1{
+            .ac;
+
+            span{
+
+                .aic;
+            }
+        }
+        h5{
+            .ac;
+        }
+    }
+}

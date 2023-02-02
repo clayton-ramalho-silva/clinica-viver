@@ -1,0 +1,72 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.formulario1(
+@modo:1,
+@cor:@cor1,
+@borda:#ccc,
+@fundo:#fff,
+@filtro:on,
+@obrigado:#fff
+){
+
+    .bloco(2);
+
+    .modo(@modo);
+    .modo(@a) when (@a=1){
+        .campos1(@fundo:@fundo,@borda:@borda,@cor:@cor);
+    }
+    .modo(@a) when (@a=2){
+        .campos2(@cor:@cor);
+    }
+
+    .modo(@a) when (@a=3){
+        .campos3(@cor:@cor);
+    }
+
+    .modo(@a) when (@a=4){
+        .campos4(@fundo:@fundo,@cor:@cor);
+    }
+
+    .modo(@a) when (@a=5){
+        .campos5(@fundo:@fundo,@cor:@cor);
+    }
+
+    h2{
+        .fb(100%);
+        .ac;
+    }
+
+    h3{
+        .fb(100%);
+        .ac;
+    }
+
+    section{
+        .mw(600px);
+    }
+
+    p{
+        .flex-meio;
+    }
+
+    [type=submit]{ 
+        .radius(@formulario[@campos][radius]);
+        .bt-pequeno;
+    }
+
+    .filtro(@filtro);
+    .filtro(@a) when (@a=on){
+        .escurecer;
+    }
+
+    .obrigado{
+        .ac;
+        .c(@obrigado);
+
+        h4{
+            .c(@obrigado);
+            .mgb(25px);
+        }
+    }
+} 

@@ -1,0 +1,135 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser9(
+@cor-borda:#fff,
+@cor-titulo:@cor1,
+@tamanho-titulo:45px,
+@cor-texto:@cor-titulo,
+@tamanho-texto:20px
+)
+{
+
+    .grid{
+        .pdb(@espaco);
+        .fl;
+    }
+
+    article{
+        .full;
+        .fl;
+        .df;
+        @media only screen and(min-width:1024px){
+            .sb;
+            .mgb(-@espaco);
+
+            &:first-of-type{
+                img{
+                    .sombra(0 0 0 0 transparent);
+                }
+            } 
+
+            &:nth-of-type(even){
+                .servico-info{
+                    justify-content: flex-end;
+                    .ar;
+                }
+                figure{
+                    order:1;
+                }
+
+            }
+        }
+    }
+
+    figure{
+        .w(55%);
+    }
+
+    img{
+        .fl;
+        .sombra(0 0 0 25px @cor-borda);
+    }
+
+    .bloco-link{
+        .df;
+        .mgt(10px);
+        order:2;
+    }
+
+    .link{
+        .botao4(@cor-titulo);
+        .bt-extra-pequeno;
+    }
+
+    .servico-info{
+        .df;
+        .wrap;
+        .pd(@espaco * 2);
+        .box;
+        .size(45%,100%);
+        .mgt(auto);
+        .mgb(auto);
+        
+        p, span{
+            order:0;
+            .c(@cor-texto);
+            .fs(@tamanho-texto);
+            letter-spacing: 10px;
+            .mgb(10px);
+        }
+    }
+
+    h4{
+        .full;
+        .c(@cor-titulo);
+        .fs(@tamanho-titulo);
+        .fw(700);
+        letter-spacing: 5px;
+        .tu;
+        order:1
+    }
+
+
+    h5{
+        .dn;
+    }
+
+    @media only screen and(max-width:1023px){
+
+        .grid{
+            .flex-meio;
+        }
+
+        figure{
+            .full;
+        }
+
+        img{
+            .sombra(0 0 0 0 transparent) !important;
+        }
+
+        article{
+            .mw(704px);
+            .mgb(45px);
+            .column;
+            .flex-meio;
+            .ac;
+        }
+        
+        .servico-info{
+            .full;
+            .pd(@espacom 0 0 0);
+            .flex-meio;
+
+            p, span{
+                .mgb(5px);
+                .fs(18px);
+            }
+        }
+
+        h4{
+            .fs(25px);
+        }
+    }
+}

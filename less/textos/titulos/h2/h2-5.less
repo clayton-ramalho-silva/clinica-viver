@@ -1,0 +1,39 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-5(
+){
+    .flex-meio;
+    .column;
+    h2{ 
+        .full;
+        .df;
+        .sc;
+        .aic;
+        &:after{
+            .w(10%);
+            .ab;
+            .bdb(@subtitulo[borda]);
+            .mgl(@espacom);
+        }
+
+        &:before{
+            .w(10%);
+            .ab;
+            .bdb(@subtitulo[borda]);
+            .mgr(@espacom);
+        }
+    }    
+
+    h3{ 
+        .mgt(5px);
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h1-1(){
+
+    h1{
+
+        @media only screen and (min-width:1024px){
+            .linha(@titulo[@h1][altura]);
+        }
+
+        .bdt(fade((@titulo[@h1][cor]),10));
+
+        @media only screen and (max-width:1023px){
+            .pdt(10px);
+            .pdb(10px);
+        }
+
+
+    }
+    @media only screen and (min-width:1024px){
+        .breadcrumb{
+            .pa-tl(20px);
+        }
+
+    }
+
+    .ativar-breadcrumb(@breadcrumb-interna);
+    .ativar-breadcrumb(@a) when (@a=on){
+        h1{
+            .pdt(20px);
+        }
+    }
+
+
+    .direcao-titulo(@titulo[@h1][direcao]);
+    .direcao-titulo(@a) when (@a=center){
+        h1{
+            .ac;
+        }
+
+        .breadcrumb{
+            .ac;
+        }
+    }
+}

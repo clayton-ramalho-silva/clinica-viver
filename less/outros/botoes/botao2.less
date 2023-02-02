@@ -1,0 +1,29 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+
+.botao2(
+@fundo:@cor1,
+@cor-texto:#fff,
+@sombra:#000,
+@hover:darken(@fundo,10),
+@hover-texto:@cor-texto
+)
+{
+    .bg-color(@fundo);
+    .c(@cor-texto);
+    .ease-out;
+    .dib;
+    .sombra(0 0 0px 0px fade(@sombra,0));
+
+    &:hover{
+        .bg-color(@hover);
+        .c(@hover-texto);
+        .sombra(0 0 0 5px fade(@sombra,35));
+    }
+
+    &:active{
+        transform: scale(0.96);
+    }
+
+}

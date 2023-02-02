@@ -1,0 +1,403 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+@import "menu1";
+@import "menu2";
+@import "menu3";
+@import "menu4";
+@import "menu5";
+@import "menu6";
+@import "menu7";
+@import "menu8";
+@import "menu9";
+@import "menu10";
+@import "menu11";
+@import "menu12";
+
+
+@import "submenu1";
+@import "submenu2";
+@import "submenu3";
+@import "submenu4";
+
+@import "menu-fixo";
+
+@import "menu-responsivo1";
+@import "menu-responsivo2";
+
+@import "botao-responsivo/botao-menu1";
+@import "botao-responsivo/botao-menu2";
+@import "botao-responsivo/botao-menu3";
+@import "botao-responsivo/botao-menu4";
+@import "botao-responsivo/botao-menu5";
+
+.menu{
+    //Tipo de Menu----------------------------
+    .tipo-menu(@tipo-menu);
+    .tipo-menu(@a) when (@a=1){
+        .menu1;
+    }
+    .tipo-menu(@a) when (@a=2){
+        .menu2;
+    }
+    .tipo-menu(@a) when (@a=3){
+        .menu3;
+    }
+    .tipo-menu(@a) when (@a=4){
+        .menu4;
+    }
+
+    .tipo-menu(@a) when (@a=5){
+        .menu5;
+    }
+
+    .tipo-menu(@a) when (@a=6){
+        .menu6;
+    }
+
+    .tipo-menu(@a) when (@a=7){
+        .menu7;
+    }
+
+    .tipo-menu(@a) when (@a=8){
+        .menu8;
+    }
+
+    .tipo-menu(@a) when (@a=11){
+        .menu11;
+    }
+
+
+
+    //Tipo de submenu----------------------------
+    .tipo-submenu(@tipo-submenu);
+
+    .tipo-submenu(@a) when (@a=1){
+        .submenu1;
+    }
+    .tipo-submenu(@a) when (@a=2){
+        .submenu2;
+    }
+    .tipo-submenu(@a) when (@a=3){
+        .submenu3;
+    }
+    .tipo-submenu(@a) when (@a=4){
+        .submenu4;
+    }
+
+} 
+
+.tipo-menu(@tipo-menu);
+.tipo-menu(@a) when (@a=9){
+    .menu9;
+}
+
+.tipo-menu(@a) when (@a=10){
+    .menu10;
+}
+
+.tipo-menu(@a) when (@a=12){
+    .menu12;
+}
+
+.tipo-menu-responsivo(@tipo-menu-responsivo);
+.tipo-menu-responsivo(@a) when (@a=0){
+
+}
+
+.tipo-menu-responsivo(@a) when (@a=1){
+    .menu-responsivo1;
+}
+
+.tipo-menu-responsivo(@a) when (@a=2){
+    .menu-responsivo2;
+}
+
+//CONFIGURACOES DO MENU PRINCIPAL
+
+@media only screen and (min-width:1024px){
+    .pmenu{
+        letter-spacing:@menu[espacamento];
+        a{
+            .fs(@menu[@link][tamanho]);
+            .ease;
+            .db;
+            .linha(@menu[@link][altura]);
+            .c(@menu[@link][cor]); 
+            .pdl(@menu[@link][padding]); 
+            .pdr(@menu[@link][padding]); 
+            .radius(@menu[@link][radius]);
+            .fw(@menu[font-weight]);
+            text-transform: @menu[maiuscula];
+        }
+        li{
+            .fl;
+            .pr;
+            width: auto;
+            .mgl(@menu[margem]);
+            .mgr(@menu[margem]);
+
+            &:hover > .psubmenu{
+                .vv
+            }
+        }
+        i{
+            .fs(15px);
+            .mgl(10px);
+        }
+    }
+
+    .psubmenu{
+        .vh;
+        .pa;
+        z-index: 999;
+        .box;
+        .ease-out;
+        .w(@submenu[largura]);
+        .pd(@submenu[padding]);
+        .fundo(@submenu[fundo]); 
+        .radius(if((@submenu[radius] > 25px), 25px, @submenu[radius]));
+
+        letter-spacing: @submenu[espacamento];
+
+        .sombra-submenu(@sombra-submenu);
+        .sombra-submenu(@a) when (@a=on){
+            .sombra(2px 2px 2px 0 #000);
+        }
+        li{ 
+            .full;
+            .mgl(0px);
+            .mgr(0px);
+        }  
+        a{
+            .bloco-1;
+            .fs(@submenu[@link][tamanho]) !important; 
+            .linha(@submenu[@link][altura]) !important;
+            .c(@submenu[@link][cor]) !important;
+            .pdl(@submenu[@link][padding]) !important;
+            .pdr(@submenu[@link][padding]) !important;
+            .radius(@submenu[@link][radius]) !important;
+            border:none !important;
+            .fw(@submenu[font-weight]);
+            text-transform: @submenu[maiuscula];
+
+            &:hover{
+                .fundo(@submenu[@link][fundo]) !important;
+                .c(@submenu[@link][hover]) !important;
+            }
+        }
+
+        i{
+            .dn;
+        }
+        .direcao-submenu(@submenu[direcao]);
+        .direcao-submenu(@a) when (@a=left){
+            left:0;
+            a{
+                .al;
+            }
+        }
+        .direcao-submenu(@a) when (@a=right){
+            right:0;
+            a{
+                .ar;
+            }
+        }
+    }
+
+}  
+ 
+
+
+//Responsivo
+
+
+@media only screen and (min-width:1024px){
+    .menu-toggle{
+        .dn;
+    }
+    .overlay{
+        .dn;
+        .vh;
+    }    
+    .button_container{
+        .dn !important;
+    }
+}
+
+.button_container{
+    .tipo-menu(@tipo-botao-responsivo);
+    .tipo-menu(@a) when (@a=1){
+        .botao-menu1;
+    }
+
+    .tipo-menu(@a) when (@a=2){
+        .botao-menu2;
+    }
+    
+    .tipo-menu(@a) when (@a=3){
+        .botao-menu3;
+    }
+
+    .tipo-menu(@a) when (@a=4){
+        .botao-menu4;
+    }
+
+    .tipo-menu(@a) when (@a=5){
+        .botao-menu5;
+    }
+}
+
+@media only screen and (max-width:1023px){
+
+    .logo-responsivo(@logo-responsivo);
+    .logo-responsivo(@a) when (@a=on){
+
+        .logo{
+            .bg('logo-resp.png',center);
+        }
+    }
+
+    .menu{
+        .dn !important; 
+    }
+
+    .button_container {
+        .size(35px);
+        cursor: pointer;
+        transition: opacity .25s ease;
+        .flex-meio;
+        .pf-tr(25px,15px,1);
+        .fundo(@menu[@botao][fundo]);
+
+        i{
+            .c(@menu[@botao][cor]);
+            .fs(25px);
+        }
+    }
+
+
+    .pmenu{
+        a{
+            .fs(@menu[@responsivo][@link][tamanho]);
+            .c(@menu[@responsivo][@link][cor]) !important; 
+        }
+
+    }
+
+    .psubmenu{
+
+        a{
+            .fs(@submenu[@responsivo][@link][tamanho]);
+            .c(@submenu[@responsivo][@link][cor]) !important; 
+
+        }
+    }
+
+    .busca-responsivo{
+        .fundo(@menu[@responsivo][fundo]);
+        .placeholder(@menu[@responsivo][@link][cor]); 
+
+        form{
+            .bd(@menu[@responsivo][@link][cor]);
+        }
+
+        i{
+            .c(@menu[@responsivo][@link][cor]);
+        }
+
+        input{
+            .c(@menu[@responsivo][@link][cor]);
+        }
+    } 
+
+    #abrir-contato-responsivo{
+        .c(@menu[@contato][@botao][cor]);
+        .bd(@menu[@contato][@botao][cor]);
+
+        &.active{
+            .fundo(@menu[@contato][@botao][fundo-ativo]);
+            .c(@menu[@contato][@botao][ativo]);
+        }
+    }
+
+    .contato-responsivo{
+        .bg-color(@menu[@contato][fundo]);
+        .c(@menu[@contato][texto]);
+
+        a{
+            .c(@menu[@contato][texto]) !important;
+        }
+
+        i{
+            .fs(@menu[@responsivo][@link][tamanho]);
+            .c(@menu[@responsivo][@link][cor]);
+        }
+    }
+
+    .redes-responsivo{
+        .bdt(@menu[@responsivo][@link][cor]);
+
+        a{
+            .bd(@menu[@responsivo][@link][cor],2px);
+        }
+    }
+
+    .acesso-restrito{
+        .c(@menu[@contato][texto]);
+        a{
+            .c(@menu[@contato][texto]) !important;
+        }
+    }
+}
+
+//ELEMENTOS DO MENU -------------------------------------------------------------------------
+.contato-responsivo(@contato-responsivo); 
+.contato-responsivo(@a) when (@a=off){
+    .contato-responsivo{
+        .dn !important;
+    }
+
+    #abrir-contato-responsivo{
+        .dn !important;
+    }
+}
+@media only screen and (max-width:1023px){
+
+    .restrito-responsivo(@restrito-responsivo); 
+    .restrito-responsivo(@a) when (@a=off){
+        .acesso-restrito{
+            .dn !important;
+        }
+    }
+}
+.busca-responsivo(@busca-responsivo); 
+.busca-responsivo(@a) when (@a=off){
+    .busca-responsivo{
+        .dn !important;
+    }
+}
+
+
+.telefone-responsivo{
+    a{
+        .fs(@menu[@contato][telefone]);
+    }
+}
+.whatsapp-responsivo{
+    a{
+        .fs(@menu[@contato][telefone]);
+    }
+
+    .fs(@menu[@contato][telefone]);
+}
+
+.email-responsivo{
+    a{
+        .fs(@menu[@contato][email]);
+    }
+}
+
+.endereco-responsivo{
+    .fs(@menu[@contato][endereco]);
+}

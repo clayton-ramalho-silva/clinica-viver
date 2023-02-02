@@ -1,0 +1,31 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h2-2(
+){
+    .df;
+    .wrap;
+    .al;
+    .bdl(@subtitulo[borda],5px);
+    .pdl(@espaco);
+
+    h2{ 
+        .full;
+    }    
+    
+    h3{
+        .full;
+        .mgt(5px);
+        .mgb(5px);
+
+    }
+
+    .inverter-sub(@subtitulo[inverter]);
+    .inverter-sub(@a) when (@a=on){
+        h2{
+            order:1;
+        }
+    }
+
+}

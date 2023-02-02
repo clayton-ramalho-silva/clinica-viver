@@ -1,0 +1,45 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.topo8(){
+    .pa-tl(0,0,100) !important;
+
+    @media only screen and (min-width:1024px){
+
+        &:after{
+            .pa-bl;
+            .ab;
+            .size(100%,1px);
+            .fundo(@topo[borda]);
+        }
+
+        .topo{
+            .full-max;
+
+            &:before{
+                .pa-tl(0,0,-1);
+                .ab;
+                .w(30%);
+                .h(100vh);
+                .fundo(@topo[fundo]);
+            }
+        }
+
+        .topo-interna{
+
+            &:before{
+                .h(100%);
+            }
+            .logo{
+                .fundo(@topo[fundo]);
+                .bdr(@topo[fundo],25px);
+            }
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .topo-interna{
+            .full;
+        }
+    }
+}

@@ -1,0 +1,48 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner5(){
+
+    .flex-meio;
+
+    .slogan{
+        .bd(#fff,5px);
+        .pd(45px);
+        .flex-meio;            
+        .pr;
+        .mw(@banner[@legenda][largura]);
+        .ease-out;
+        .ac;
+        animation: legenda 0.4s 0.4s ease-out forwards;
+        .rotatex(90deg);
+        .op(0);
+
+        a{
+            .pa-tl;
+            .size(100%);
+            .box;
+            background: none !important;
+            .fs(0px);
+            .pd(0);
+        }
+
+        &:hover{
+            .bd(@cor1,5px);
+        }
+
+        .barra-link{
+            .mgt(0);
+        }
+        @media only screen and (max-width:1023px){
+            .bd(#fff,2px);
+            .pd(15px);
+        }
+    }
+
+    .pd(15px);
+
+
+    @keyframes legenda{
+        to{.rotatex(0); .op;}
+    }
+}

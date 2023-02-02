@@ -1,0 +1,229 @@
+//@import "../conf-site";
+//@import "../helpers";
+ 
+@media only screen and (min-width:1024px){
+    .menu-fixo{
+        .full !important;
+        .center-flex;
+        top:-@logo[@fixo][altura]; 
+        left:0 !important; 
+        .fundo(@menu[@fixo][fundo]);
+        .ease-out;
+
+        .menu{
+            .full-max;
+            .dn;
+            .op(0);
+            .sb;
+            .aic;
+        } 
+
+        .barra-topo{
+            .dn;
+            .op(0);
+            .h(@topo[@barra-topo][@menu-fixo][altura]);
+        }
+
+        .logo{
+            .size(@logo[@fixo][largura],@logo[@fixo][altura]);
+
+            .logo-topo-branco-fixo(@logo-branco-topo-fixo);
+
+            .logo-topo-branco-fixo(@a) when (@a=off){
+                .clear-invert;
+            }
+
+            .logo-topo-branco-fixo(@a) when (@a=on){
+                .invert;
+            }
+
+        }
+    }
+
+    .logo-topo-fixo(@logo-topo-fixo);
+    .logo-topo-fixo(@a) when (@a=on){
+        .menu-fixo{
+            .logo{
+                .bg('logo-fixo.png',center);
+            }
+        }
+    }
+
+
+    .scroll-to-fixed-fixed {
+        .bdb(@menu[@fixo][borda],2px);
+
+        .barra-topo-menu-fixo(@barra-topo-menu-fixo);
+        .barra-topo-menu-fixo(@a) when (@a=on){
+            .barra-topo{
+                .df; 
+                .op; 
+                .pr !important;
+            }
+        }
+        .menu{
+            .df; 
+            .op;
+
+            .pmenu{
+                border:none !important;
+
+                a{
+                    .c(@menu[@fixo][cor]);
+                    .fs(@menu[@fixo][fonte]); 
+                }
+
+                li{
+                    &:hover > a{
+                        .c(@menu[@fixo][hover]); 
+                        border-color:(@menu[@fixo][hover]) !important;
+
+                        &:after{
+                            .fundo(@menu[@fixo][fundo-link]);
+                        }
+
+                        &:before{
+                            .fundo(@menu[@fixo][fundo-link]);
+                        }
+
+                        .tipo-menu(@a) when (@a=2){
+                            .fundo(@menu[@fixo][fundo-link]);
+                        }
+                        .tipo-menu(@a) when (@a=3){
+                            .fundo(@menu[@fixo][fundo-link]);
+                        }
+                    }
+                }
+
+                .psubmenu{
+                    li{
+                        &:hover > a{
+                            border: none !important;
+                            .c(@submenu[@link][cor]) !important;
+                        }
+                    }
+
+                    a{
+                        .linha(@submenu[@link][altura]) !important;
+                        min-height: @submenu[@link][altura] !important;
+
+                    }
+                }
+            }
+
+            .ativo{
+                a{
+                    .c(@menu[@fixo][ativo]);
+
+                    &:after{
+                        .fundo(@menu[@fixo][ativo]);
+                    }
+
+                    &:before{
+                        .fundo(@menu[@fixo][ativo]);
+                    }
+                }
+            }
+
+            .tipo-menu(@tipo-menu);
+
+            /*Menu 2 -------------------*/
+            .tipo-menu(@a) when (@a=2){
+                .pmenu{
+                    li{
+                        &:hover > a{
+                            .fundo(@menu[@fixo][fundo-link]);
+                        }
+                    }
+                }
+            }
+
+            /*Menu 3 -------------------*/
+            .tipo-menu(@a) when (@a=3){
+                .pmenu{
+                    .mg(0) !important;
+                    a{
+                        .linha(@logo[@fixo][altura]) !important;
+                        background:none;
+                    }
+
+                    li{
+                        &:hover > a{
+                            .fundo(@menu[@fixo][fundo-link]);
+                        }
+                    }
+                }
+                .psubmenu{
+                    top:(@logo[@fixo][altura]) !important;
+                }
+            }
+
+            /*Menu 4 -------------------*/
+            .tipo-menu(@a) when (@a=4){
+                .pmenu{
+                    a{
+                        .linha(@logo[@fixo][altura]) !important;
+                        min-height: @logo[@fixo][altura];
+                    }
+                    .psubmenu{
+                        top:(@logo[@fixo][altura]) !important;
+                    }
+                }
+            }
+
+            /*Menu 5-------------------*/
+            .tipo-menu(@a) when (@a=5){
+                .pmenu{
+                    a{
+                        .linha(@logo[@fixo][altura]) !important;
+                        min-height: @logo[@fixo][altura];
+                    }
+                }
+                .psubmenu{
+                    top:(@logo[@fixo][altura]) !important;
+                }
+            }
+
+            /*Menu 6 -------------------*/
+            .tipo-menu(@a) when (@a=6){
+                .pmenu{
+                    li{
+                        &:hover > a{
+                            .bd(@menu[@fixo][hover]) !important;
+                            .c(@menu[@fixo][hover]) !important;
+                        }
+                    }
+                }
+
+                .psubmenu{
+                    li{
+                        &:hover > a{
+                            border: none !important;
+                            .c(@submenu[@link][cor]) !important;
+                        }
+                    }
+                }
+            }
+
+            /*Menu 7 -------------------*/
+            .tipo-menu(@a) when (@a=7){
+                .pmenu{
+                    a{
+                        .linha(@logo[@fixo][altura]) !important;
+                        min-height: @logo[@fixo][altura];
+                        border:none !important;
+                    }
+                }
+                .psubmenu{
+                    top:@logo[@fixo][altura];
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:1023px){
+    .menu-fixo{
+        .dn !important;
+    }
+}

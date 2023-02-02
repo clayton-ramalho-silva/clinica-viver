@@ -1,0 +1,76 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.contato2(){
+
+
+
+    .bloco-formulario{
+        .mw(@site-size/2+15px);
+        .w(50%);
+        .box;
+        .pdr(@espaco * 2);
+        .pdl(@espacom);
+        .mgt(@espaco * 2);
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .pdr(@espacom);
+            .mg-auto;
+        }
+    } 
+
+    .info-contato{
+        .mw(@site-size/2);
+        .w(50%);
+        .pdr(15px);
+        .box;
+        .mgt(@espaco * 2);
+
+        @media only screen and (max-width:1023px){
+            .full;
+            .pdl(15px);
+            .mg(50px auto 0);
+        }
+
+        article{
+            .fl;
+            .bloco-1;
+            .fundo(@formulario[@contato][fundo]);
+            .pd(40px);
+            .radius(if((@formulario[@campos][radius] > 25px), 25px, @formulario[@campos][radius]));
+
+            @media only screen and (max-width:1023px){
+                .pd(20px);
+            }
+        }
+
+        h2{
+            .dn;
+        }
+
+        p{
+            .pdl(0) !important;
+            .mgb(@espacom);
+            i{
+                .dn;
+            }
+        }
+    }
+    
+    .redes-contato{
+        b{
+            .mgb(5px);
+        }
+    }
+
+    b{
+        .lh(20px);
+        .db;
+        .full;
+        .tu;
+        letter-spacing: 2px;
+        .c(@formulario[@contato][@titulo][cor]);
+        .fs(@formulario[@contato][@titulo][tamanho]);
+    }
+}

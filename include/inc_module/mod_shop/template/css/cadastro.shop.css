@@ -1,0 +1,42 @@
+/*.tipo-cadastro{width:100%}
+.tipo-cadastro span{padding:5px 5px 3px 5px; background:#f6f6f6; display:inline-block; border-radius:6px; line-height:1.5}
+.tipo-cadastro label{float:left; padding:0 20px 0 0}
+.tipo-cadastro input[type=radio]{width:auto; margin:5px 8px 5px 5px}
+*/
+/* .formulario-shop{width:992px; margin:0 auto; display:block} */
+/*.formulario-shop{width:100%}
+.campos-empresa{display:none}
+.formulario-shop p{width:100%; float:left; padding:0 0 13px}
+.formulario-shop input, .formulario-shop select, .formulario-shop textarea{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box}
+.formulario-shop strong{width:100%; padding:0 0 3px; float:left}
+.formulario-shop .campo1{width:100%}
+.formulario-shop .campo2-l{width:49%; margin:0 2% 0 0}
+.formulario-shop .campo2-r{width:49%; margin:0}
+.formulario-shop .campo3-l{width:32%; margin:0 2% 0 0}
+.formulario-shop .campo3-m{width:32%; margin:0}
+.formulario-shop .campo3-r{width:32%; margin:0 0 0 2%}
+.formulario-shop .campo4-l{width:24%; margin:0 2% 0 0}
+.formulario-shop .campo4-r{width:23%; margin:0}
+.formulario-shop i{position:absolute; bottom:21px; right:10px; width:18px; height:18px; background-image:url(../images/img-error-form.png); background-repeat:no-repeat; background-position:0 18px}
+.formulario-shop i.erro{background-position:0 top}
+.formulario-shop i.valid{background-position:0 bottom}
+
+@media only screen and (max-width:800px){
+.formulario-shop .campo2-l{width:48%; margin:0 4% 0 0}
+.formulario-shop .campo2-r{width:48%; margin:0}
+.formulario-shop .campo3-l{width:31%; margin:0 3% 0 0}
+.formulario-shop .campo3-m{width:32%; margin:0}
+.formulario-shop .campo3-r{width:31%; margin:0 0 0 3%}
+.formulario-shop .campo4-l{width:23%; margin:0 4% 0 0}
+.formulario-shop .campo4-r{width:21%; margin:0}
+}
+
+@media only screen and (max-width:555px){
+.formulario-shop .campo2-l, .formulario-shop .campo2-r, .formulario-shop .campo3-l, .formulario-shop .campo3-m, .formulario-shop .campo3-r, .formulario-shop .campo4-l, .formulario-shop .campo4-r{width:100%; margin:0}
+}
+*/
+/* Informações da tela de Login */
+/*.shop_login_left, .shop_login_right{width:46%; background:#eee; border-radius:6px; padding:10px; box-sizing:border-box; -webkit-box-sizing:border-box;}
+.shop_login_left{margin:0 8% 0 0}
+
+.fl{float:left}*/

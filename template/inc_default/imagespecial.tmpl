@@ -1,0 +1,106 @@
+<!--IMAGE_SETTINGS_START//-->
+; this is formatted like WIN.INI
+; please: do not use comments for value lines
+; settings will overwrite CP settings
+;width		= 100
+;height		= 100
+;width_zoom	= 600
+;height_zoom	= 600
+;col			= 1
+;space		= 10
+;zoom		= 1
+;lightbox	= 1
+;nocaption	= 0
+; 0 = no center, 1 = horizontal/vertical, 2 = horizontal, 3 = vertical
+;center		= 2
+;crop		= 0
+;crop_zoom	= 0
+;fx1			= 0
+;fx2			= 0
+;fx3			= 0
+; InfoText render: plain, html, markdown, textile
+text_render	= plain
+<!--IMAGE_SETTINGS_END//-->
+
+<!--IMAGES_HEADER_START//-->
+
+<div class="bloco-images baid{ID}">
+
+    <section>
+    [TITLE]<div class="subtitulo">[/TITLE]
+       [TITLE]<h2>{TITLE}</h2>[/TITLE]
+        [SUBTITLE]<h3>{SUBTITLE}</h3>[/SUBTITLE]
+    [TITLE]</div>[/TITLE]
+            [TITLE]<div class="divider"></div>[/TITLE]
+        [TEXT]
+        <div class="txt">
+            {TEXT}
+        </div>
+        [/TEXT]
+        <div class="grid [COLUNAS]col{COLUNAS}[/COLUNAS]">
+
+<!--IMAGES_HEADER_END//-->
+ 
+
+<!--IMAGES_ENTRY_START//-->
+        <article>
+            <figure>{IMAGE}</figure>
+            <div class="servico-info">
+
+                [CAPTION]<h4>{CAPTION}</h4>[/CAPTION]
+                [INFOTEXT]{INFOTEXT}[/INFOTEXT]
+                [URL]<div class="bloco-link"><a href="{URL}" class="link">{BOTAO}</a></div>[/URL]
+            </div>
+        </article>
+
+<!--IMAGES_ENTRY_END//-->
+
+
+<!--IMAGES_ENTRY_SPACER_START//-->
+
+	<!-- space between images {SPACE}px -->
+
+<!--IMAGES_ENTRY_SPACER_END//-->
+
+
+<!--IMAGES_ROW_SPACER_START//-->
+
+	<!-- space between image rows {SPACE}px -->
+
+<!--IMAGES_ROW_SPACER_END//-->
+
+
+<!--IMAGES_FOOTER_START//-->
+    </div>
+    [LINK]<div class="clear"><a href="{LINK}" class="link-geral">{BOTAO}</a></div>[/LINK]
+    </section>
+
+</div>
+
+	<!-- 
+
+		Thumbnail image: {THUMB_NAME}
+		  ID/Hash/Ext:      {THUMB_ID}/{THUMB_HASH}/{THUMB_EXT}
+		  relative:         {THUMB_REL}
+		  absolute:         {THUMB_ABS}
+		  height/width:     {THUMB_HEIGHT}px/{THUMB_WIDTH}px
+		  height/width max: {THUMB_HEIGHT_MAX}px/{THUMB_WIDTH_MAX}px
+		  columns:          {THUMB_COLUMNS}
+		
+		If you are not sure wrap zoomed image:
+		[ZOOM]
+		Zoomed (big) image: {IMAGE_NAME}
+		  ID/Hash/Ext:      {IMAGE_ID}/{IMAGE_HASH}/{IMAGE_EXT}
+		  relative:         {IMAGE_REL}
+		  absolute:         {IMAGE_ABS}
+		  height/width:     {IMAGE_HEIGHT}px/{IMAGE_WIDTH}px
+		[/ZOOM]
+		
+		Image URL: {IMAGE_URL}, Target: {IMAGE_TARGET}
+		
+		[EFFECT_1]Yes Effect 1[/EFFECT_1]
+		[EFFECT_2]Yes Effect 2[/EFFECT_2]
+		[EFFECT_3]Yes Effect 3[/EFFECT_3]
+
+	//-->
+<!--IMAGES_FOOTER_END//-->

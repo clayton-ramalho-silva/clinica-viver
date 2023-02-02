@@ -1,0 +1,23 @@
+//@import "../conf-site";
+
+
+.botao-menu1(){
+    .size(35px);
+    cursor: pointer;
+    .flex-meio;
+    .pf-tr(25px,15px,1);
+
+
+    i{
+        .c(@menu[@botao][icone]);
+        .fs(25px);
+        .ease;
+    }
+
+    &:hover{
+        i{
+            .c(@menu[@botao][hover]);
+        }
+    }
+
+}

@@ -1,0 +1,158 @@
+//@import "../conf-site";
+//@import "../helpers";
+
+.teaser1(
+@item:3,
+@cor-titulo:@cor1,
+@tamanho-titulo:20px,
+@cor-texto:@cor-fonte-site,
+@tamanho-texto:15px,
+@gap:25px,
+@radius:@radius-padrao-botoes,
+@modo:1
+)   
+{
+
+    .grid{
+        .dg;
+        grid-template-columns: repeat(@item,1fr);
+        gap:@gap;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+            .sc;
+            .mgl(auto);
+            .mgr(auto);
+            .mw(700px);
+        }
+    } 
+
+    article{
+        .ac;
+        .pr;
+        .full;
+
+        figure{
+            .flex-meio;
+            .full;
+        }
+
+        img{
+            .radius(if((@radius > 25px), 25px, @radius));
+            .ease-out;
+        }
+        @media only screen and (min-width:1024px){
+
+            &:hover{
+                img{
+                    .scale(1.05);
+                }
+            }
+        }
+    }
+
+
+
+
+    h4{
+        .c(@cor-titulo);
+        .fs(@tamanho-titulo);
+        .fw(700);
+        .fl;
+        .full;
+        letter-spacing: 2px;
+        .tu;
+    }
+
+    h5{
+        .dn;
+    }
+
+    .servico-info{
+        .df;
+        .column;
+        .full;
+        .mgt(20px);
+        .fl;
+        .c(@cor-texto);
+        .fs(@tamanho-texto);
+
+        p, span{
+            .pdt(@espacom);
+        }
+    }
+
+    .link{
+        .pa-tl;
+        .size(100%);
+        .fs(0);
+        .mg(0) !important;
+    }
+
+
+    //variacoes----------------------------
+
+    .n-columns(@item);
+    .n-columns(@a) when (@a < 2){
+        @media only screen and (min-width:601px){
+
+            article{
+                .df;
+                .al;
+            }
+
+            figure{
+                .mw(350px);
+            }
+
+            .servico-info{
+                .pdl(@espaco);
+                .sc;
+                .mgt(0);
+            }
+        }
+    }
+
+
+    @media only screen and (max-width:600px){
+
+        figure{
+            .flex-meio;
+        }
+
+        article{
+            .mgb(@gap);
+
+            &:last-of-type{
+                .mgb(0);
+            }
+        }
+
+        .servico-info{
+            .aic;
+        }
+    }
+
+    .modo(@modo);
+    .modo(@a) when (@a=2){
+        @media only screen and (min-width:601px){
+
+            article{
+                .df;
+                .al;
+            }
+
+            figure{
+                .mw(350px);
+            }
+
+            .servico-info{
+                .pdl(@espaco);
+                .sc;
+                .mgt(0);
+            }
+        }
+    }
+
+} 

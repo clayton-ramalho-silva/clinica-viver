@@ -1,0 +1,198 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+@import "txt-img/texto1";
+@import "txt-img/texto2";
+@import "txt-img/texto3";
+@import "txt-img/texto4";
+@import "txt-img/texto5";
+@import "txt-img/texto6";
+
+@import "img-fundo/img-fundo1";
+@import "img-fundo/img-fundo2";
+@import "img-fundo/img-fundo3";
+@import "img-fundo/img-fundo4";
+
+@import "quem-somos/quem-somos1";
+@import "quem-somos/quem-somos2";
+@import "quem-somos/quem-somos3";
+//@import "quem-somos/quem-somos4";
+
+
+.quem-somos{
+    .bloco(@quem-somos[espaco]);
+    .c(@quem-somos[texto]);
+
+    h2{
+        .fs(@quem-somos[@titulo][tamanho]);
+        .c(@quem-somos[@titulo][cor]);
+
+    }
+
+    h3{
+        .fs(@quem-somos[@subtitulo][tamanho]);
+        .c(@quem-somos[@subtitulo][cor]);
+    }
+
+
+    .modo(@modo-quem-somos);
+
+    .modo(@a) when (@a=1){
+        .quem-somos1;
+    }
+    .modo(@a) when (@a=2){
+        .quem-somos2;
+    }
+    .modo(@a) when (@a=3){
+        .quem-somos3;
+    }
+/*    .modo(@a) when (@a=4){
+        .quem-somos4; 
+    }*/
+
+
+}
+
+
+.modelo-texto-1{
+    .texto1;
+}
+
+.modelo-texto-2{
+    .texto2;
+}
+
+.modelo-texto-3{
+    .texto3;
+}
+
+.modelo-texto-4{
+    .texto4;
+}
+
+.modelo-texto-5{
+    .texto5;
+}
+
+.modelo-texto-6{
+    .texto6;
+}
+
+.img-fundo{
+    .bloco(3,3,trasparent);
+}
+
+
+//Cor dos Textos do Blocos (Todos os Titulos, textos e links) --------------------
+.txt-cor(@a){
+    .c(@a);
+
+    h2{
+        .c(@a);
+    }
+    h3{
+        .c(@a);
+    }
+    h4{
+        .c(@a);
+    }
+    h5{
+        .c(@a);
+    }
+
+    a{
+        .c(@a);
+    }
+}
+
+
+//TEXTO COM IMAGEM --------------------------------------------------------------------------------------------------------
+
+.bloco-texto-imagem{ 
+    .bloco(2,2,transparent);
+
+    img{
+        .box;
+    }
+}
+
+.texto-imagem{
+    .df;
+
+    @media only screen and (max-width:1023px){
+        .wrap;
+    }
+}
+
+.imagem-esquerda{ 
+    img{
+
+        @media only screen and (min-width:1024px){
+            .mw(none);
+            .mgr(@espaco * 2);
+            .mgb(@espaco);
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .full;
+        .flex-meio;
+        .mgb(@espaco);
+    }
+}
+
+.imagem-direita{ 
+    order:1;
+
+    img{
+        @media only screen and (min-width:1024px){
+            .mw(none);
+            .mgl(@espaco * 2);
+            .mgb(@espaco);
+        }
+    }
+
+    @media only screen and (max-width:1023px){
+        .full;
+        .flex-meio;
+        .mgb(@espaco);
+    }
+
+}
+
+.imagem-acima-left{ 
+    .full;
+    .mgb(@espaco);
+}
+
+.imagem-acima-center{ 
+    .full;
+    .mgb(@espaco);
+    .ac;
+}
+
+.imagem-acima-right{ 
+    .full;
+    .mgb(@espaco);
+    .ar;
+}
+
+.imagem-abaixo-left{ 
+    .full;
+    .mgt(@espaco);
+}
+.imagem-abaixo-center{ 
+    .full;
+    .mgt(@espaco);
+    .ac
+}
+.imagem-abaixo-right{ 
+    .full;
+    .mgt(@espaco);
+    .ar;
+}
+
+.popup{
+    .pd(@espacom * 2);
+}

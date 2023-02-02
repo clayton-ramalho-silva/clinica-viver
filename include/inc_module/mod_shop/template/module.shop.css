@@ -1,0 +1,732 @@
+/* module Shop backend CSS */
+/*
+label {
+	cursor:	pointer;
+}
+
+.editform {
+	background:#F3F5F8;
+	border-top:1px solid #92A1AF;
+	border-bottom:1px solid #92A1AF;
+	margin:0 0 5px 0;
+	padding:10px 8px 15px 8px;
+}
+
+form.editform1 {
+	margin:0 0 0 0;
+	padding:10px 8px 10px 8px;
+}
+
+table.shop {
+
+	margin: 8px 0 3px 0;
+
+}
+
+table.shop tr {
+
+
+	
+}
+table.shop tr.adsAltRow {
+
+	background-color: #F3F5F8;
+	
+}
+table.shop tr:hover, #tabela-usuários tr:hover{
+	background-color: #FFCC33;
+}
+.tit-tabela:hover{background-color:#C2D6B4 !important}
+
+table.shop th, .tit-tabela-shop {
+	padding:4px 0 4px 3px;
+	text-align:left;
+	font-size:11px;
+	color: #000;
+}
+
+table.shop th.listDate {
+	text-align: center;
+	padding: 2px 3px 3px 3px;
+}
+table.shop td.listDate {
+	padding: 3px;
+	text-align: center;
+	width: 50px;
+}
+table.shop th.listFormat {
+	padding: 2px 5px 3px 3px;
+}
+table.shop td.listFormat {
+	padding: 3px 5px 3px 3px;
+}
+table.shop td.listNumber {
+	padding: 3px 5px 3px 3px;
+	text-align:	right;
+}
+
+input.disabled {
+	background-color:#F3F5F8;
+	border:1px inset #F3F5F8;
+	padding: 1px 3px 1px 3px;
+	color: #666666;
+}
+
+input.width40	{	width:	40px;	}
+input.width45	{	width:	45px;	}
+input.width60	{	width:	60px;	}
+input.width77	{	width:	77px;	}
+input.width375, textarea.width375	{	width:	375px;	}
+input.width80	{	width:	80px;	}
+input.width100	{	width:	100px;	}
+input.width250	{	width:	250px;	}
+
+
+
+input.right, textarea.right {
+	text-align: right;
+}
+
+td.colorfield {
+	border: 1px solid #BBBBBB;
+	background-color: #F3F5F8;
+}
+
+input.width400, textarea.width400 {
+	width:	400px;
+}
+
+td.upload input {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	width: 220px;
+}
+
+td.newimage {
+	padding: 0 0 0 23px;
+	background-image: url(../../../../img/famfamfam/image_add.gif);
+	background-repeat:no-repeat;
+	background-position: 4px;
+}
+td.newflash {
+	padding: 0 0 0 23px;
+	background-image: url(../../../../img/famfamfam/film_add.gif);
+	background-repeat:no-repeat;
+	background-position: 4px;
+}
+td.newcss {
+	padding: 0 0 0 23px;
+	background-image: url(../../../../img/famfamfam/css_add.gif);
+	background-repeat:no-repeat;
+	background-position: 4px;
+}
+td.warning {
+	padding: 0 20px 15px 20px;
+	background-image: url(../../../../img/famfamfam/icon_alert.gif);
+	background-repeat: no-repeat;
+	background-position: 0px -1px;
+	color: #CC3300;
+	font-weight: bold;
+}
+td.warning1 {
+	padding: 5px 20px 5px 20px;
+	background-image: url(../../../../img/famfamfam/icon_alert.gif);
+	background-repeat: no-repeat;
+	background-position: 0px 4px;
+	color: #CC3300;
+}
+input.rt {
+	padding: 2px;
+	margin-top: 3px;
+	font-weight: bold;
+	line-height: 100%;
+	font-size: 12px;
+	border:1px inset #F3F5F8;
+	background-color: #F7F7F7;
+}
+textarea.code {
+	font-family: "Courier New", Courier, mono;
+	font-size: 12px;
+}
+
+*/
+
+/* ======== CONFIGURAÇÕES ESCLUSIVAS DO SHOP ======== */
+.show td.currency pre {
+	margin: 0;
+	padding: 0;
+	width: 100px;
+	text-align: right;
+}
+.show td.email pre {
+	margin: 0;
+	padding: 5px;
+	overflow: auto;
+	height: 344px;
+	border: 1px solid #ABADB3;
+}
+.show td.email pre table{
+	width:100%
+}
+.show td.chatlist {
+	color: #406C94;
+	vertical-align: top;
+	padding: 2px 8px 0 0;
+	text-align: right;
+	white-space: nowrap;
+}
+.show th {
+	color: #406C94;
+	vertical-align: top;
+	padding: 1px 4px 2px 0;
+	text-align: left;
+	white-space: nowrap;
+	font-weight: normal;
+	border-bottom: 1px solid #92A1AF;
+}
+.show {
+	border-top: 1px solid #92A1AF;
+	border-bottom: 1px solid #92A1AF;
+	margin: 0 0 5px 0;
+	padding: 10px 8px 15px 8px;
+}
+.show td.chatlist {
+	color: #406C94;
+	vertical-align: top;
+	padding: 2px 8px 0 0;
+	text-align: right;
+	white-space: nowrap;
+}
+.show th.right {
+	text-align: right;
+	padding-left: 4px;
+}
+.show tr.product td {
+	vertical-align: top;
+	padding: 3px 4px 3px 0;
+}
+
+.show tr.product.linetop, 
+.show tr.product.linebottom {
+	background-color: #F3F5F8;
+}
+.show tr.product.linetop td {
+	border-top: 1px solid #92A1AF;
+	padding-bottom: 0;
+}
+.show tr.product.total {
+	background-color: #EAFFD5;
+}
+.show tr.product.total td {
+	padding-bottom: 0;
+}
+.show tr.product.total td.chatlist {
+	padding-top: 5px;
+}
+.show tr.product.linebottom td {
+	border-bottom: 1px solid #92A1AF;
+}
+.show tr.product.total.end td {
+	border-bottom: 2px solid #92A1AF;
+	padding-bottom: 4px;
+	font-weight: bold;
+}
+.show tr.product.linetop td.chatlist,
+
+.show tr.product.linebottom td.chatlist {
+	padding-top: 4px;
+}
+.show tr.product td.number {
+	text-align: right;
+}
+
+.show td label {
+	padding: 0 6px 0 4px;
+	font-size: 12px;
+}
+/* ====== FIM CONFIGURAÇÕES ESCLUSIVAS DO SHOP ====== */
+
+
+/* ====== INÍCIO DAS CONFIGURAÇÕES PERSONALIZADAS ====== */
+
+body, span, p, form, img, a, input, select, textarea, html, button{margin:0; padding:0; border:none; outline:none}
+ul, ol, li{list-style-type:none;padding:0; margin:0;}
+input::-moz-focus-inner{padding:0; border:0;}button::-moz-focus-inner{padding:0; border:0;}
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; line-height:normal; font-weight:normal; font-family:fonte;}
+.al{text-align:left;}.ac{text-align:center;}.ar{text-align:right;}.fl{float:left;}.fr{float:right !important;}.cb{clear:both;}.pr{position:relative;}.db{display:block;}
+
+@font-face {
+    font-family: fonte;
+    src: url('fonts/avant-garde.eot');
+    src: url('fonts/avant-garde.eot?#iefix') format('embedded-opentype'),
+		 url('fonts/avant-garde.woff2') format('woff2'),
+	     url('fonts/avant-garde.woff') format('woff'),
+         url('fonts/avant-garde.ttf') format('truetype'),
+		 url('fonts/avant-garde.svg#fonte') format('svg');
+    font-weight:normal;
+    font-style:normal;
+}
+
+/* ============ Configurações Gerais ============ */
+
+/* -- Títulos -- */
+.titulo{font-size:22px; color:#333333; font-family: fonte; font-weight:bold; padding:3px 0 7px; text-transform:uppercase}
+.tit{width:100%;}
+.tit .bt-filtro{width:33px; height:33px; background:url(images/ico-filtro.png) no-repeat center center #ffffff; position:absolute; top:13px; right:11px; border-radius:50%; cursor:pointer; border:1px solid #C3C3C3; box-shadow:0 0 4px #B3B3B3; transition:all ease-in-out 0.3s}
+.tit.filtro-aberto .bt-filtro{transform:rotate(180deg)}
+.tit h3{font-family:fonte; color:#D96D00; font-size:22px; float:left; font-weight:normal; padding:1px 0 7px; margin:18px 0 20px}
+
+
+/* -- DIV Principal -- */
+.content-modulo-shop{font-size:12px; width:100%}
+.content-modulo-shop input, .content-modulo-shop select, .content-modulo-shop textarea{padding:7px; border:1px solid #ccc; border-radius:4px; background-color:#F9F9F9}
+
+
+/* -- Link das Categorias -- */
+.shop-categories a{font-family:fonte;text-transform:uppercase; display:block; float:left; text-decoration:none; font-size:13px; color:#878787; width:100%; border-left:4px solid #000;  transition:all 0.1s linear; box-sizing:border-box; -webkit-box-sizing:border-box; padding:0 0 0 12px; margin:0 0 17px;line-height:13px;}
+.shop-categories a:hover, .shop-categories .active a{border-left:10px solid #E77817;}
+
+
+/* -- Colunas -- */
+.tit-colunas{width:100%; padding:9px 0 6px; background:#A9C596; box-sizing:border-box; -webkit-box-sizing:border-box; border-radius:8px; border:1px solid #97B982; font-size:16px; color:#000000; font-family:fonte; margin:0 0 5px}
+.tit-colunas > div{box-sizing:border-box; -webkit-box-sizing:border-box;}
+
+
+/* -- Lista de resultados (pedidos, produtos, etc) -- */
+.lista-resultado{width:100%; background:#ffffff; padding:10px 0; border-bottom:1px dotted #AAA; transition:all ease-out 0.2s;} 
+.lista-resultado:hover{background:#EFEFEF}
+.lista-resultado > div{box-sizing:border-box; -webkit-box-sizing:border-box;}
+.lista-resultado select{padding:4px; border:1px solid #ccc; border-radius:4px; width:100%}
+
+
+/* -- Botão de Ações -- */
+.lista-resultado button{width:26px; height:26px; border-radius:50%; background:url(images/bg-menu.png) no-repeat center center #F0F0E1; border:none; cursor:pointer; transition:all ease-out 0.3s; margin:0 10px 0 0;}
+.lista-resultado button.ativo, .lista-resultado button:hover{background-color:#DFDFD0;}
+.lista-resultado button.ativo{transition:all ease-out 0.3s; transform:rotate(90deg);}
+
+
+/* -- Menu de opções -- */
+.opcoes-lista{padding:7px 0; display:none; position:absolute; top:39px; right:1px; background:#F0F0E1; box-shadow:2px 2px 2px #666; border-radius:4px; z-index:1000}
+.opcoes-lista.fundo{top:auto; bottom:41px;}
+.opcoes-lista a{font-size:13px; padding:0 19px; height:37px; line-height:37px; margin:2px 0; float:left; width:100%; box-sizing:border-box; -webkit-box-sizing:border-box;}
+.opcoes-lista a:hover, .lista-arquivos .opcoes-lista a:hover{text-decoration:none; color:#000; background:#DFDFD0; color:#333333;}
+
+
+/* -- Busca -- */
+.busca-pedidos{padding:8px; background:#DDD; border-radius:4px; margin:5px 0 0; transition:all ease-out 0.3s;}
+.busca-pedidos span{float:left; position:relative}
+.busca-pedidos i{width:21px; height:22px; background:url(images/ico-busca.png) no-repeat; position:absolute; top:5px; left:6px}
+.busca-pedidos input[type=text]{background:#FFFFFF; border-radius:4px; border:0; padding:9px 9px 7px 35px; width:240px; box-sizing:border-box; -webkit-box-sizing:border-box; float:left}
+.busca-pedidos.busca-func input[type=text]{width:239px;}
+.busca-pedidos input[type=submit]{font-family:fonte; font-size:15px; color:#FFF; background:#475203; border-radius:4px; height:32px; line-height:36px; padding:0 18px; margin:0 0 0 8px;text-align:center; border:none; float:left; cursor:pointer}
+
+.tit .busca{width:366px; height:0; overflow:hidden; position:absolute; top:56px; right:0; margin:0; box-sizing:border-box; -webkit-box-sizing:border-box; background:#D2D2D2; padding:0 8px; transition:all ease-out 0.3s; border-radius:4px;}
+.tit .busca-produtos{width:628px; overflow:hidden; margin:0 0 13px; box-sizing:border-box; -webkit-box-sizing:border-box; background:#D2D2D2; padding:0 8px; transition:all ease-out 0.3s; border-radius:4px;}
+.tit .busca span{float:left; position:relative}
+.tit .busca i{width:21px; height:22px; background:url(images/ico-busca.png) no-repeat; position:absolute; top:5px; left:6px}
+.tit .busca-produtos i{width:21px; height:22px; background:url(images/ico-busca.png) no-repeat; position:absolute; top:13px; left:6px}
+.tit .busca input[type=text], .tit .busca-produtos input[type=text]{background:#FFFFFF; border-radius:4px; border:0; padding:9px 9px 7px 35px; width:240px; box-sizing:border-box; -webkit-box-sizing:border-box; float:left; margin:8px 0; width:253px;}
+.tit .busca-produtos select{background:#FFFFFF; border-radius:4px; border:0; padding:7px 9px 7px 7px; width:240px; box-sizing:border-box; -webkit-box-sizing:border-box; float:left; margin:8px 0 8px 8px; width:253px;}
+.tit .busca input[type=submit], .tit .busca-produtos input[type=submit]{font-family:fonte; font-size:15px; color:#FFF; background:#475203; border-radius:4px; height:32px; line-height:36px; padding:0 18px; margin:8px 0 8px 8px; text-align:center; border:none; float:left; cursor:pointer}
+.tit .busca i{top:13px;}
+.filtro-aberto .busca{height:48px;}
+
+/* -- Mensagem padrão para quando não resultado -- */
+.mensagem-vazio{width:100%; text-align:center; font-family:fonte; font-size:17px; padding:40px 0 30px}
+
+/* -- Botões de Criação e Filtro -- */
+.opcoes-acao{padding:8px; width:320px; background:#E8E8E8; border-radius:4px;}
+.acao-produtos{width:350px;}
+.add-acao a{float:left; background:#537c26; padding:0 15px; height:37px; line-height:42px; font-size:16px; color:#fff; font-family:fonte; border-radius:4px; margin:0 14px 0 0; border-bottom:3px solid #3B581B;}
+.add-acao a:hover{text-decoration:none; background:#65962E; border-bottom:3px solid #517728}
+.add-acao img{float:left; margin:12px 10px 0 0}
+
+/* Configuração dos Campos de Erro */
+.error, .valid{background-image:url(images/img-error-input.png); background-repeat:no-repeat; color:#333}
+.error{background-position:right 8px; border-color:#B20000 !important;}
+.valid{background-position:right -75px; border-color:#238C00 !important;}
+select.error, select.valid{background-image:none}
+label.error{}
+form.cmxform span.error, span.error{color:#f00; font-style:italic; font-size:10px; margin:0;}
+
+
+/* ============================================= */
+
+/* ===== Pedidos ===== */
+
+/* -- Lista de Pedidos -- */
+/* Colunas Com Preço */
+.colunas-pedidos a:hover{text-decoration:none; color:#59B200}
+.colunas-pedidos .col1-cp{width:11%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-pedidos .col1-cp img{float:left; margin:5px 7px 0 0}
+.colunas-pedidos .col2-cp{width:9%; padding:0 10px 0 5px; height:26px; line-height:28px; text-align:center}
+.colunas-pedidos .col3-cp{width:42%; padding:0 5px; height:26px; line-height:28px;}
+.colunas-pedidos .col4-cp{width:14%; padding:0 5px; height:26px; line-height:28px; text-align:center}
+.colunas-pedidos .col5-cp{width:19%; padding:0 5px; height:26px; line-height:28px; text-align:center}
+.colunas-pedidos .col6-cp{width:4%;}
+
+/* Colunas Sem Preço */
+.colunas-pedidos .col1-sp{width:11%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-pedidos .col1-sp img{float:left; margin:5px 7px 0 0}
+.colunas-pedidos .col2-sp{width:9%; padding:0 10px 0 5px; height:26px; line-height:28px; text-align:center}
+.colunas-pedidos .col3-sp{width:57%; padding:0 5px; height:26px; line-height:28px;}
+.colunas-pedidos .col5-sp{width:19%; padding:0 5px; height:26px; line-height:28px; text-align:center}
+.colunas-pedidos .col6-sp{width:4%;}
+
+/*-- Página de informações do Pedido --*/
+.box-info-pedido, .box-info-cliente, .box-info-produtos{width:342px; margin:0 43px 0 0; box-sizing:border-box; -webkit-box-sizing:border-box; padding:16px 18px 18px; background:#F7F7F7; font-size:16px; line-height:1.5;  color:#333; border:1px solid #EEEEEE; box-shadow:1px 1px 4px #ccc}
+.box-info-cliente{width:594px; margin:0; font-size:13px; padding:17px 20px 18px; min-height:199px;}
+.box-info-cliente p{float:left; width:100%; padding:0 0 3px;}
+.box-info-cliente strong{float:left; width:84px; padding:0 8px 0 0; text-align:right; font-weight:normal}
+.box-info-cliente h4{padding:0 0 17px}
+.box-info-cliente span{width:100%; text-transform:uppercase; border-bottom:1px solid #DDDDDD; padding:0 0 8px; margin:0 0 10px; float:left}
+.box-info-cliente .editar-dados-cliente{width:35px; height:35px; position:absolute; top:10px; right:10px; background:url(../template/images/bt-editar.png) no-repeat;}
+
+.tabs-dados-clientes i{width:100%; height:21px; position:absolute; bottom:5px; left:0; cursor:pointer; background:url(../template/images/bt-abrir-tab.png) no-repeat center center; transition:all linear 0.3s}
+.tabs-dados-clientes.abrir i{-webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); writing-mode: lr-tb;}
+.tabs-dados-clientes i.ativo{bottom:9px; background:url(../template/images/bt-fechar-tab.png) no-repeat center center}
+.content-dados-clientes{display:none; padding:0 0 15px}
+
+.box-info-pedido strong, .box-info-cliente strong{color:#000}
+
+.box-info-pedido{font-size:13px; padding:12px 19px 22px; max-height:210px;}
+.box-info-pedido strong{width:52px; text-align:right; float:left; font-weight:normal; padding:0 6px 0 0}
+.box-info-pedido h3{font-size:17px; color:#333333; padding:0 0 10px}
+.box-info-pedido h3 b{color:#D8AB39; font-size:24px; position:relative; top:1px; padding:0 0 0 5px;}
+
+.status-pedido{width:100%; padding:19px 0 0; margin:27px 0 0; border-top:1px solid #DDDDDD; color:#333333; font-size:13px;}
+.status-pedido select{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; height:41px; font-size:15px; font-family:fonte; text-transform:uppercase; padding:10px 10px 7px; background:#fff; transition:linear 0.6s all}
+.status-pedido span{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; height:41px; line-height:43px; font-size:15px; font-family:fonte; text-transform:uppercase; padding:0 12px; color:#333; float:left; border-radius:4px;}
+.status-pedido i{width:20px; height:20px; position:absolute; top:50px; right:22px; background:url(images/status-loader.gif) no-repeat #fff; border:2px solid #fff; border-radius:8px; display:none; transition:all 0.2s linear}
+.status-pedido i.atualizado{background:url(images/status-ok.png) no-repeat #fff;}
+.status-pedido option{background:#fff; color:#333; font-style:normal;font-weight:normal; margin:5px; padding:5px; display:table !important; height:100px !important; line-height:120px !important}
+.status-pedido h5{color:#333333; font-size:15px; padding:0 0 7px}
+
+.colunas{width:100%; padding:13px 0 10px; background:#E6E6D0; box-sizing:border-box; -webkit-box-sizing:border-box; border-radius:8px; border:1px solid #D6D6C5; font-size:18px; color:#333; font-family:fonte; margin:0 0 5px}
+
+.box-info-produtos{width:100%; margin:42px 0; padding:20px 22px 20px}
+.box-info-produtos h4{padding:0 0 28px}
+.box-info-produtos .colunas{font-size:15px; text-transform:uppercase; padding:17px 0 10px; margin:0}
+.dados-pedido{width:100%; border-bottom:1px solid #DDDDDD; box-sizing:border-box; -webkit-box-sizing:border-box; font-size:14px; line-height:1.5; padding: 13px 0}
+.dados-pedido strong{font-size:11px}
+.produto-col1-cp{width:565px; text-align:left; padding:0 5px 0 15px}
+.produto-col2-cp{width:105px; text-align:center; padding:0 5px}
+.produto-col3-cp{width:105px; text-align:center; padding:0 5px}
+.produto-col4-cp{width:100px; text-align:center; padding:0 5px}
+.produto-col5-cp{width:115px; text-align:right; padding:0 5px}
+
+.produto-col1-sp{width:625px; text-align:left; padding:0 5px 0 15px}
+.produto-col2-sp{width:125px; text-align:center; padding:0 5px}
+.produto-col3-sp{width:125px; text-align:center; padding:0 5px}
+
+.produto-recarga{line-height:1.5 !important; display:table !important}
+.cartao-recarga{width:100%; height:60px; display:table-cell; vertical-align:middle}
+.cartao-recarga b{font-size:11px;}
+
+.total-info-produtos{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; text-align:right; font-family:fonte; font-size:15px; text-transform:uppercase; margin:15px 0 0; padding:0 18px 0 0}
+.total-info-produtos b{font-size:18px; position:relative; top:1px; padding:0 0 0 4px;}
+.entrega-info-produtos{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; text-align:right; padding:0 0 10px 0;}
+.entrega-info-produtos span{float:right; background:#E6E6D0; width:132px; border:1px solid #D6D6C5; text-align:center; height:31px; line-height:36px; border-radius:6px; font-family:fonte; font-size:14px; color:#333333}
+
+.content-tabs{width:708px; margin:0 auto; padding:15px 0 0}
+
+.lista-tabs-emails{width:100%}
+.tabs-emails{width:100%; margin:0 0 31px; box-shadow:1px 1px 4px #ccc}
+.tabs-emails.abrir-tabs{box-shadow:0 0 15px #ccc}
+.tabs-emails i{width:21px; height:21px; position:absolute; top:20px; right:20px; background:url(../template/images/bt-abrir-tab.png) no-repeat center center; transition:all linear 0.3s}
+.abrir-tabs .botao-tabs-email i{-webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); writing-mode: lr-tb;}
+.tabs-emails.abrir-tabs i.ativo{background:url(../template/images/bt-fechar-tab.png) no-repeat center center}
+.tabs-emails .botao-tabs-email{width:100%; height:60px; box-sizing:border-box; -webkit-box-sizing:border-box; border:1px solid #DDDDDD; border-left:7px solid #D8AB39; font-family:fonte; font-size:12px; line-height:63px; text-transform:uppercase; background:#F7F7F7; padding:0 0 0 23px; cursor:pointer}
+.tabs-emails .content-tabs-email{width:708px; display:none; background:#F7F7F7; padding:30px 136px 35px}
+
+/* ===== Fim dos Pedidos ===== */
+
+
+/* ===== Produtos ===== */
+
+/* -- Lista de Produtos -- */
+.filtro-status{width:140px; padding:1px 0 0}
+.filtro-status input[type=checkbox]{float:left; margin:2px 0 0}
+.filtro-status img{float:left; margin:0 0 0 7px}
+.filtro-ativo{width:47px;}
+.total-produtos{width:140px; padding:5px 0 0}
+
+/* Colunas Com Preço */
+.colunas-produtos a:hover{text-decoration:none; color:#59B200}
+.colunas-produtos .col1-cp{width:10%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-produtos .col1-cp img{float:left; padding:5px 7px 0 0; cursor:pointer}
+.colunas-produtos .col2-cp{width:40%; padding:0 10px 0 5px; height:26px; line-height:28px;}
+.colunas-produtos .col2-cp a{float:left}
+.colunas-produtos .col3-cp{width:26%; padding:0 10px 0 5px; height:26px; line-height:28px;}
+.colunas-produtos .col4-cp{width:10%; padding:0 5px; height:26px; line-height:28px;}
+.colunas-produtos .col5-cp{width:8%; padding:0 5px; height:26px; line-height:28px; text-align:center;}
+.colunas-produtos .col5-cp.multi-preco{line-height:normal; margin:-2px 0 0}
+.colunas-produtos .col6-cp{width:9%; padding:0 5px; height:26px; line-height:28px; text-align:center}
+.colunas-produtos .col7-cp{width:4%;}
+
+/* Colunas Sem Preço */
+.colunas-produtos .col1-sp{width:10%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-produtos .col1-sp img{float:left; padding:5px 7px 0 0}
+.colunas-produtos .col1-sp a{float:left}
+.colunas-produtos .col2-sp{width:46%; padding:0 10px 0 5px; height:26px; line-height:28px;}
+.colunas-produtos .col3-sp{width:29%; padding:0 5px; height:26px; line-height:28px;}
+.colunas-produtos .col5-sp{width:10%; padding:0 5px; height:26px; line-height:28px;}
+
+/* ===== Fim dos Produtos ===== */
+
+
+/* ===== Categorias ===== */
+
+/* -- Lista de Categorias -- */
+.colunas-categorias a:hover{text-decoration:none; color:#59B200}
+.colunas-categorias .col1{width:56%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-categorias .col1 img{float:left; padding:5px 7px 0 0; cursor:pointer}
+.colunas-categorias .col1 a{float:left}
+.colunas-categorias .col2{width:30%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-categorias .col3{width:8%; padding:0 0 0 15px; height:26px; line-height:28px; text-align:center}
+
+/* -- Página de edição de Categorias -- */
+.box-categorias{width:100%;}
+.box-categorias-l{width:48%; margin:0 4% 0 0}
+.box-categorias-r{width:48%}
+.box-categorias p{width:100%; float:left; margin:0 0 12px}
+.box-categorias b{color:#C03; font-size:11px; float:right}
+.box-categorias strong{width:100%; float:left; padding:0 0 4px; font-size:12px;}
+.box-categorias-info strong{width:auto; float:none; padding:0; font-size:11px}
+.box-categorias-check strong{width:auto; float:none; padding:0}
+.box-categorias input, .box-categorias textarea, .box-categorias select{width:100%; border-radius:4px; padding:8px; float:left; border:1px solid #ccc; box-sizing:border-box; -webkit-box-sizing:border-box; background:#EEEEEE}
+.box-categorias textarea[name=cat_seo_desc]{height:100px;}
+#cke_cat_info{float:left}
+.box-categorias-info{width:100%; background:#f5f5f5; border-radius:4px; padding:5px 5px 4px; box-sizing:border-box; -webkit-box-sizing:border-box; margin:5px 0 12px; border:1px solid #f0f0f0}
+.botoes-acao{padding:15px 0 0}
+.botoes-acao input{width:auto !important; margin:0 0 0 10px; border:1px solid #537C26}
+.box-categorias-check{padding:15px 15px 0 0}
+.box-categorias-check input{width:auto !important; float:none}
+.box-categorias-ativo{padding:4px 15px 0 0;}
+.box-categorias-ativo strong{float:left; padding:3px 0 0}
+.box-categorias-ativo input[type=checkbox]{margin:5px 0 0 7px}
+.box-categorias-ordem input[type=text]{width:60px !important;}
+
+/* ===== Fim das Categorias ===== */
+
+
+/* ===== Usuários ===== */
+
+/* -- Lista de Usuários -- */
+.colunas-usuarios a:hover{text-decoration:none; color:#59B200}
+.colunas-usuarios .col1{width:52%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-usuarios .col1 img{float:left; padding:5px 7px 0 0; cursor:pointer}
+.colunas-usuarios .col1 a{float:left}
+.colunas-usuarios .col2{width:30%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-usuarios .col3{width:12%; padding:0 0 0 15px; height:26px; line-height:28px; text-align:center}
+
+/* -- Página de edição de Usuários -- */
+.box-categorias{width:100%;}
+.box-categorias-l{width:48%; margin:0 4% 0 0}
+.box-categorias-r{width:48%}
+.box-categorias p{width:100%; float:left; margin:0 0 12px}
+.box-categorias b{color:#C03; font-size:11px; float:right}
+.box-categorias strong{width:100%; float:left; padding:0 0 4px; font-size:12px;}
+.box-categorias-info strong{width:auto; float:none; padding:0; font-size:11px}
+.box-categorias-check strong{width:auto; float:none; padding:0}
+.box-categorias input, .box-categorias textarea, .box-categorias select{width:100%; border-radius:4px; padding:8px; float:left; border:1px solid #ccc; box-sizing:border-box; -webkit-box-sizing:border-box; background:#EEEEEE}
+.box-categorias textarea[name=cat_seo_desc]{height:100px;}
+#cke_cat_info{float:left}
+.box-categorias-info{width:100%; background:#f5f5f5; border-radius:4px; padding:5px 5px 4px; box-sizing:border-box; -webkit-box-sizing:border-box; margin:5px 0 12px; border:1px solid #f0f0f0}
+.botoes-acao{padding:15px 0 0}
+.botoes-acao input{width:auto !important; margin:0 0 0 10px; border:1px solid #537C26}
+.box-categorias-check{padding:15px 15px 0 0}
+.box-categorias-check input{width:auto !important; float:none}
+.box-categorias-ativo{padding:4px 15px 0 0;}
+
+.box-categorias-ativo strong{float:left; padding:3px 0 0}
+.box-categorias-ativo input[type=checkbox]{margin:5px 0 0 7px}
+.box-categorias-ordem input[type=text]{width:60px !important;}
+.tipo-cadastro{background:#E8E8E8; padding:10px 5px 8px 15px; border-radius:6px; margin:6px 0 0; width:220px}
+.tipo-cadastro strong{font-family:fonte; float:left; width:100%; padding:0 0 7px; font-size:15px; font-weight:normal}
+.tipo-cadastro label{float:left; padding:0 10px 0 0}
+.tipo-cadastro input[type=radio]{float:left; margin:1px 5px 0 0}
+
+/* ===== Fim dos Usuários ===== */
+
+
+/* ===== Configurações ===== */
+
+.content-configuracoes{width:100%}
+.content-configuracoes h3{font-size:18px; background:#fff; padding:0 16px 0 0; margin:-36px 0 0; float:left}
+.content-configuracoes h3 b{font-size:14px; color:#666; padding:0 0 0 4px; font-weight:normal}
+.content-configuracoes h3 span{position:relative; width:13px; height:13px; background:url(images/ico-tooltip.png) no-repeat; display:inline-block; margin:0 0 -2px 3px}
+.content-configuracoes h3 i{display:none; position:absolute; top:13px; left:0; font-size:11px; font-family:verdana; font-style:normal; width:317px; background:#333; padding:8px 10px 8px; border-radius:4px; line-height:1.4; font-weight:bold; color:#fff; height:auto !important}
+.content-configuracoes h3 span:hover i{display:block}
+.content-configuracoes .cke{float:left}
+.content-configuracoes p{float:left; width:100%; padding:0 0 16px}
+.content-configuracoes p.col2{width:47%;}
+.content-configuracoes p.col3{width:31%;}
+.content-configuracoes strong{float:left; width:100%; padding:0 0 5px; font-size:12px;}
+.content-configuracoes input[type=text], .content-configuracoes textarea{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box; float:left}
+.box-config{width:100%; border-top:3px solid #333; padding:26px 0 0; margin:35px 0 0}
+.overflow{width:100%; overflow-x:hidden}
+.config-shop p{width:100%}
+.config-shop-left{width:48%; margin:0; display:flex; justify-content:space-between; flex-wrap:wrap}
+.config-shop-left input[type=checkbox]{float:left; margin:0 5px 0 0}
+.config-shop-left label{font-size:11px;}
+.config-shop-right{width:50%}
+
+.config-shop-full{width:100%}
+.config-shop-usuario{width:103%}
+.config-shop-usuario .col2{width:50% !important}
+.config-shop-usuario input[type=text], .config-shop-usuario textarea{width:94%}
+
+.config-shop input[type=checkbox]{float:left; margin:1px 5px 0 0}
+.config-shop .pagseguro{background:#eee; padding:7px 0 8px 8px; border-radius:6px}
+.config-shop .pagseguro label{font-size:12px}
+.config-shop .pagseguro span{float:left; width:100%; padding-top:5px; font-size:11px; font-weight:bold; color:#f00}
+.config-shop .pagseguro.on{border-radius:6px 6px 0 0}
+.config-shop .campo-texto-pagseguro{opacity:0; padding:5px 11px 0px 11px; background:#eee; border-radius: 0 0 6px 6px;}
+.config-shop .campo-texto-pagseguro p.col2{width:48%}
+
+
+.config-status{width:103%}
+.config-status .status-desabilitado{background-color:#FCFCFC !important}
+.config-status p{width:97%; background:#f9f9f9; border:1px solid #DDDDDD; border-radius:2px; margin:0 0 16px; padding:0; box-sizing:border-box; -webkit-box-sizing:border-box; height:38px;}
+.config-status p b{width:15px; height:36px; float:left; margin:0 8px 0 0}
+.config-status p b.draggable{border-right:1px solid #EEEEEE; display:block; background:url(images/bg-drag-status.png) no-repeat 6px center #f9f9f9; cursor:pointer}
+.config-status p.ui-sortable-placeholder{height:34px; background:#fafafa; border:1px dashed #ddd}
+.config-status input[type=text]{width:89%; border:1px solid #E8E8E8; background-color:#fff; padding:3px 3px 3px 8px; margin:5px 0 0;}
+.config-status input[type=checkbox]{float:left; margin:13px 10px 0 2px; position:relative}
+.config-status input[type=checkbox]+label:before{width:20px; height:20px;}
+.config-status i{float:right; width:14px; height:14px; margin:12px 10px 0; cursor:pointer; background:url(images/bt-deletar-status.png) no-repeat;}
+.add-status{width:100%; padding:12px 0 5px;}
+.bt-add-status{background:#333; display:table; margin:0 auto; border-radius:4px; background:#636363; padding:11px 40px 6px; font-size:16px; color:#fff; font-family:fonte; border-bottom:3px solid #303030;}
+.bt-add-status:hover{background:#838383; border-bottom:3px solid #303030; color:#fff; text-decoration:none}
+.config-termos span{padding:6px 2px 5px 0; border-radius:4px; float:left; margin:0 0 10px}
+.config-termos label{float:left; padding:0 7px}
+.config-termos input[type=radio]{float:left; margin:1px 4px 0 0}
+.campo-texto-preco, .campo-texto-logado, .campo-aid-aprovacao, .campo-compra-logado{display:none}
+.campo-texto-preco textarea{height:48px}
+
+/* ===== Fim das Configurações ===== */
+
+/* -- Shop Cart -- */
+.cart-small{position:absolute; top:-80px; right:0;font-family:fonte; font-size:20px; color:#fff;}
+.cart-small span{padding:3px 39px 0 31px; background:url(../../images/bt-cart-small.png) no-repeat left -90px; display:block; margin:10px 0 0 0; height:auto; float:right;}
+.cart-small a{padding:13px 0 0 29px; background:url(../../images/bt-cart-small.png) no-repeat; text-decoration:none; color:#fff;}
+.cart-small a:hover{opacity:0.8;}
+
+
+/* -- Módulo de Usuários -- */
+.box-user{width:100%; padding:10px; background:#fafafa; margin:10px 0; box-sizing:border-box; -webkit-box-sizing:border-box; border-radius:6px}
+.tabs-shop ul, .tabs-shop ol, .tabs-shop li{list-style-type:none;padding:0; margin:0;}
+.tabs-shop ul{margin:0 0 10px; float:left; border-bottom:1px solid #aaa; width:100%}
+.tabs-shop li{height:32px; float:left; position:relative; box-sizing:border-box; -webkit-box-sizing:border-box;}
+.tabs-shop li a{float:left; background:#ddd; width:99%; line-height:29px; text-align:center; font-size:11px; padding:2px 0 0; border-radius:4px 4px 0 0; border:1px solid #ccc; border-bottom:0; font-family:Verdana, Geneva, sans-serif;; text-transform:uppercase; color:#666; box-sizing:border-box; -webkit-box-sizing:border-box;}
+
+.box-arquivos li{width:100%; float:left; padding:0 0 8px; border-bottom:1px dotted #ccc; margin:0 0 8px}
+.box-arquivos .del-file{width:12px; height:12px; background:url(images/ico-del-file.png) no-repeat; margin:2px 7px 0 0}
+
+.tabs-shop.sem-boleto li{width:20%;}
+
+.tabs-shop li a:hover{text-decoration:none; color:#325676}
+.tabs-shop .activeTab a{background:#fff; border:1px solid #aaa; border-bottom:1px solid #fff; color:#BF0000}
+.form-atualizar-usuario{width:100%; box-sizing:border-box; -webkit-box-sizing:border-box}
+.form-atualizar-usuario h3{margin:0; margin:0 0 12px; padding:5px 5px 5px 10px; float:left; width:100%; background:#dddddd; box-sizing:border-box; -webkit-box-sizing:border-box; text-transform:uppercase; border-radius:4px; font-size:13px}
+.form-atualizar-usuario p{float:left; padding:0 0 12px}
+.form-atualizar-usuario strong{width:100%; padding:0 0 4px 0; font-size:12px; float:left; box-sizing:border-box; -webkit-box-sizing:border-box}
+.form-atualizar-usuario span{margin:0 auto; display:table; padding:15px 0 0}
+.form-atualizar-usuario input, .form-atualizar-usuario select, .form-atualizar-usuario textarea{width:100%; padding:8px; background-color:#fff; border-radius:4px; border:1px solid #ccc; box-sizing:border-box; -webkit-box-sizing:border-box}
+.form-atualizar-usuario input[id=nome_user], .form-atualizar-usuario input[id=login_user], .form-atualizar-usuario input[id=senha_user], .form-atualizar-usuario input[id=email_user], .form-atualizar-usuario input[id=fone_user], .form-atualizar-usuario input[id=cpf_user]{border-right:5px solid #f00}
+.form-atualizar-usuario .textarea{margin:5px 0 0 !important}
+.form-atualizar-usuario .campo1{width:100%; margin:0}
+.form-atualizar-usuario .campo1-pessoas{width:100%; margin:0; padding:0}
+.form-atualizar-usuario .campo1-pessoas input[type=text]{margin:0 0 10px}
+.form-atualizar-usuario .campo2-l{width:49%; margin:0 2% 0 0}
+.form-atualizar-usuario .campo2-r{width:49%; margin:0}
+.form-atualizar-usuario .campo3-l{width:32%; margin:0 2% 0 0}
+.form-atualizar-usuario .campo3-m{width:32%; margin:0}
+.form-atualizar-usuario .campo3-r{width:32%; margin:0 0 0 2%}
+.form-atualizar-usuario .campo4-l{width:24%; margin:0 1.6% 0 0}
+.form-atualizar-usuario .campo4-r{width:23%; margin:0}
+.form-atualizar-usuario .campo5-l{width:36%; margin:0 2% 0 0}
+.form-atualizar-usuario .campo5-r{width:11%; margin:0}
+.status-user{width:auto; padding:7px 10px 5px; background:#f6f6f6; border-radius:4px;}
+.status-user input{width:auto; margin:1px 5px 0 0; float:left}
+.status-user strong{width:auto; padding:0 6px 0 0;}
+.status-user label{float:left; line-height:16px}
+.form-atualizar-usuario .mensagem-erro{position:absolute; top:0; right:0; color:#B20000; font-weight:bold; font-style:normal}
+
+.form-atualizar-usuario input[id=atualizar]{width:114px; height:31px; line-height:15px; background:#2C690D; float:left; margin:0 10px 0 0; color:#fff; font-weight:bold; font-size:14px; border:1px solid #15541F; cursor:pointer}
+.form-atualizar-usuario input[id=voltar]{width:90px; height:31px; line-height:15px; background:#ACACAC; float:left; color:#fff; font-weight:bold; font-size:14px; border:1px solid #A3A3A3; cursor:pointer}
+
+/* -- Módulo de Boleto -- */
+.pedido-cartao{font-size:11px; width:210px; margin:15px 15px 0 0; padding:10px; float:left; line-height:150%; background:#f8f8f8; border:1px solid #f3f3f3; margin:15px 15px 0 0}
+.pedido-cartao h3{font-size:11px; margin:0 0 6px; border-bottom:1px solid #666666; padding:0 0 3px 0; color:#666666}
+.row-boleto input[type=radio]{margin:0 1px 0 3px !important}
+.row-boleto label{cursor:default !important}
+.ul-paginate{width:100%; float:left; padding:4px 0 9px}
+#selecione{font-size:11px}
+#modal{padding:12px}
+textarea[id=mensagem]{width:430px; font-size:12px; border:1px solid #ccc; border-radius:6px}
+
+
+.tamanhos{width:100%; float:left}
+.tamanhos-l{width:50%; padding:8px 14px 0; height:116px; box-sizing:border-box; -webkit-box-sizing:border-box; float:left; background:#fcfcfc}
+.tamanhos-r{width:50%; padding:8px 14px 0; height:116px; box-sizing:border-box; -webkit-box-sizing:border-box; float:left; background:#fcfcfc}
+.tamanhos strong{font-size:10px; color:#406C94; font-weight:normal; width:106px; float:left; line-height:28px; text-align:right}
+.tamanhos .ativo{background:#f3f3f3}
+.tamanhos .ativo input[type=text]{background:#fff; color:#333; border:1px solid #ccc}
+.tamanhos p{width:100%; float:left; margin:0 0 10px}
+.tamanhos input[type=radio]{float:left; margin:3px 0 0;}
+.tamanhos label{float:left; padding:0 0 0 9px; font-size:13px;}
+
+
+#tabela-info-produtos input[type=text], .tamanhos input[type=text]{border-radius:4px; padding:6px; border:1px solid #ccc}
+.tamanhos input[type=text]{color:#aaa; background:#fcfcf; border:1px solid #ececec; width:218px}
+#tabela-info-produtos input[id=shopprod_name1]{width:589px !important}
+#tabela-info-produtos input[id=shopprod_ordernumber]{width:238px !important}
+#tabela-info-produtos input[id=shopprod_model]{width:237px !important}
+
+
+/* -- Lista de Pedidos -- */
+.lista-pedidos{width:100%}
+
+
+/* Configurações de paginate */
+.ul-paginate{width:100%; padding:25px 0 10px}
+.content-afiliados .ul-paginate{width:auto; float:left; padding:42px 0 0}
+.apn_navi{margin:0 auto; width:auto; display:table; font-size:15px; font-family:fonte;}
+.content-afiliados .apn_navi{margin:0;}
+.apn_next, .apn_prev{float:left; width:32px; height:32px; border:1px solid #DDDDDD; text-align:center; background:#e8e8e8; background:-moz-linear-gradient(top, #e8e8e8 0%, #fafafa 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(100%,#fafafa)); background:-webkit-linear-gradient(top, #e8e8e8 0%,#fafafa 100%); background:-o-linear-gradient(top, #e8e8e8 0%,#fafafa 100%); background:-ms-linear-gradient(top, #e8e8e8 0%,#fafafa 100%); background:linear-gradient(to bottom, #e8e8e8 0%,#fafafa 100%); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8e8e8', endColorstr='#fafafa',GradientType=0 ); margin:0 5px; font-size:15px; font-weight:bold; border-radius:4px; font-size:22px; line-height:33px !important}
+.apn_next a, .apn_prev a{width:32px; height:32px; line-height:35px; float:left;}
+.apn_navi a, .apn_navi span{width:32px; height:32px; line-height:35px; text-align:center; display:block; float:left; background:#e8e8e8; background:-moz-linear-gradient(top, #e8e8e8 0%, #fafafa 100%); background:-webkit-gradient(linear, left top, left bottom, color-stop(0%,#e8e8e8), color-stop(100%,#fafafa)); background:-webkit-linear-gradient(top, #e8e8e8 0%,#fafafa 100%); background:-o-linear-gradient(top, #e8e8e8 0%,#fafafa 100%); background:-ms-linear-gradient(top, #e8e8e8 0%,#fafafa 100%); background:linear-gradient(to bottom, #e8e8e8 0%,#fafafa 100%); filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#e8e8e8', endColorstr='#fafafa',GradientType=0 ); color:#000; border:1px solid #DDDDDD; margin:0 4px; border-radius:4px}
+.apn_navi span{color:#59B200;}
+.apn_prev a:hover, .apn_next a:hover, .apn_navi a:hover{text-decoration:none; color:#59B200;}
+
+/* Upload de Arquivo - Produtos */
+.upload-arquivo{padding:7px 8px 5px; background:#EEEEEE; box-sizing:border-box; -webkit-box-sizing:border-box; border-radius:4px; margin:0 17px 0 0}
+.upload-arquivo input[type=file]{border:1px solid #ccc; background:#fff; border-radius:5px; padding:1px; width:220px; float:left}
+.upload-arquivo input[type=submit]{float:left; background:#537C26; margin:0 0 0 6px; border:none; border-radius:5px; color:#fff; text-align:center; height:24px; line-height:26px; cursor:pointer; font-size:12px; padding:0 8px; font-family:fonte;}
+.upload-arquivo strong{color:#464646; font-size:11px; float:left; width:100%; padding:0 0 3px}
+
+/* -- Módulo de Fretes -- */
+.colunas-fretes a:hover{text-decoration:none; color:#59B200}
+.colunas-fretes .col1{width:6%; padding:0 0 0 15px; height:26px; line-height:28px;}
+.colunas-fretes .col1 img{float:left; padding:5px 7px 0 0; cursor:pointer}
+.colunas-fretes .col1 a{float:left}
+.colunas-fretes .col2{width:19%; padding:0 0 0 15px; height:26px; line-height:28px; text-align:center}
+.colunas-fretes .col3{width:55%; padding:0 0 0 15px; height:26px; line-height:28px}
+.colunas-fretes .col4{width:19%; padding:0 0 0 15px; height:26px; line-height:28px}
+
+.acao-fretes{width:100%; padding:10px; margin-bottom:15px; box-sizing:border-box;}
+.acao-fretes .add-acao{width:83%; padding-right:3%}
+.acao-fretes .filtro-status{width:14%; border-left:1px solid #dad3d3; padding-left:3%; box-sizing:border-box; height:55px}
+.acao-fretes p{float:left;}
+.acao-fretes strong{width:100%; float:left; padding-bottom:3px;}
+
+.acao-fretes p{float:left}
+.acao-fretes select{padding:8px !important;}
+.acao-fretes input{padding:8px 8px 10px !important;}
+.acao-fretes p.col2{width:40%}
+.acao-fretes p.col3{width:20%}
+.acao-fretes p.col3 select, .acao-fretes p.col3 input{width:90%}
+.acao-fretes p.col2 select{width:95%}
+.acao-fretes input[type=submit]{margin:18px 0 0 10%; background:#537C26; color:#fff; border:1px solid #537C26; font-size:14px}

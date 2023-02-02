@@ -1,0 +1,80 @@
+//@import "../conf-site";
+//@import "../reset";
+//@import "../helpers";
+
+
+.texto1(
+@titulo:@texto[titulo];
+@subtitulo:@texto[subtitulo];
+@borda:@texto[borda];
+@radius:@texto[radius];
+@botao:@texto[botao];
+){
+    .bloco(2);
+
+    section{
+        .df;
+
+        gap:50px;
+
+        @media only screen and (max-width:1023px){
+            .df;
+            .wrap;
+        }
+
+    }
+
+    img{
+        .fl;
+        .radius(@radius);
+        @media only screen and (min-width:1024px){
+            .mw(none);
+        }
+    }
+
+    h2{
+        .c(@titulo) !important;
+        .al;
+        .fs(40px);
+        .fw(400);
+
+        @media only screen and (max-width:1023px){
+            .fs(30px) !important;
+        }
+    }
+
+    h3{
+        .al;
+        .c(@subtitulo) !important;
+
+        @media only screen and (max-width:1023px){
+            .fs(20px) !important;
+        }
+    }
+
+    ul{
+        .pdl(15px);
+    }
+
+    li{
+        list-style: disc;
+    }
+
+    .bloco-link{
+        .mgt(@espaco);
+    }
+
+    .link{
+        .bt-pequeno;
+        .botao1(@fundo:@borda,@cor-texto:@botao);
+    }
+
+    @media only screen and (max-width:1023px){
+        figure{
+            .full;
+            .flex-meio;
+        }
+    }
+
+}
+

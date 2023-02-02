@@ -1,0 +1,77 @@
+//@import "../../conf-site";
+//@import "../../helpers";
+
+.legenda-banner3(){
+    @media only screen and (min-width:1024px){
+
+        .direcao-legenda-slogan(@banner[@legenda][direcao]);
+        .direcao-legenda-slogan(@a) when (@a=left){
+            .slogan{
+                .mgl(@espaco);
+            }
+        }
+
+        .direcao-legenda-slogan(@a) when (@a=center){
+            .aic;
+            .ac;
+        }
+
+        .direcao-legenda-slogan(@a) when (@a=right){
+            align-items: flex-end;
+            .ar;
+            .mgr(@espaco);
+        }
+
+        .direcao-v-legenda-slogan(@banner[@legenda][alinhamento]);
+        .direcao-v-legenda-slogan(@a) when (@a=center){
+            .sc;
+        }
+
+        .slogan{
+            .pd(@espaco * 2);
+            .radius(if((@radius-padrao-botoes > 25px), 25px, @radius-padrao-botoes));
+            .mw(@banner[@legenda][largura]);
+            .fundo(@banner[@legenda][fundo]);
+
+            .scale(1.05);
+            .op(0);
+            animation: legenda 0.5s 0.5s ease-out forwards;
+
+            .banner-legenda-blur(@banner-legenda-blur);
+            .banner-legenda-blur(@a) when (@a=on){
+                backdrop-filter: blur(5px);
+            }
+
+        }
+
+    }
+
+    @media only screen and (max-width:1023px){
+        .sc;
+        .aic;
+        .ac;
+        .slogan{
+            .pd(@espaco);
+            .box;
+            .fundo(@banner[@legenda][fundo]);
+            .mw(90%);
+            .scale(1.05);
+            .op(0);
+            animation: legenda 0.5s 0.5s ease-out forwards;
+
+            .banner-legenda-blur(@banner-legenda-blur);
+            .banner-legenda-blur(@a) when (@a=on){
+                backdrop-filter: blur(5px);
+            }
+        }
+
+        .link{
+            .bt-extra-pequeno !important;
+        }
+    }
+
+    @keyframes legenda{
+        to{.scale(1); .op;}
+    }
+
+}

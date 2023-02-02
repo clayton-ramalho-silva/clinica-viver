@@ -1,0 +1,31 @@
+//@import "../../../conf-site";
+//@import "../../../reset";
+//@import "../../../helpers";
+
+.h1-2(){
+
+    h1{
+        .fundo(@titulo[@h1][fundo]);
+
+        @media only screen and (min-width:1024px){
+            .linha(@titulo[@h1][altura]);
+        }
+
+
+        @media only screen and (max-width:1023px){
+            .pdt(15px);
+            .pdb(15px);
+        }
+    }
+    
+    h5{
+        .pdt(@espacom);
+    }
+
+    .breadcrumb{
+        .pa-tl;
+        .linha(@titulo[@h1][altura]) !important;
+        .ar;
+
+    }
+}
