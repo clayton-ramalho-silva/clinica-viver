@@ -1,0 +1,33 @@
+OBS:
+Este ToDo tem como referência o PDF de Ajustes que o Fábio enviou.
+O PDF possui 22 paginas. Vou separar por paginas
+Vou marcar apenas o que está pendente.
+
+Pagina 01, 02, 03 - (do PDF)
+ - Botão Linguas
+ - Botão do whatsapp com 3 Unidades
+ - Texto no Rodapé: precisa definir layout
+
+Pagina 04
+- Botão Agendar com formulários separados
+- Pagina Desospitalizar: Criei a página, porém o link no bloco da home não está funcionando.
+
+Pagina 06, 07, 08, 09, 10: OK
+
+Pagina 11: OK
+
+Pagina 12
+- Padronizar tamanho das imagens das Unidades ná pagina de listagem
+
+Paginas 13, 14, 15, 16, 17, 18, 19: Pendentes
+- Todas são referentes a páginas internas das unidades. Arrumar Layout.
+
+Pagina 20
+- Depende dos formulários das unidades.
+
+Pagina 21
+- Colocar um separador entre os blocos. Que tipo de separador?
+
+Pagina 22: OK
+
+
