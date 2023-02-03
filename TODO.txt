@@ -5,7 +5,7 @@ Vou marcar apenas o que está pendente.
 
 Pagina 01, 02, 03 - (do PDF)
  - Botão Linguas
- - Botão do whatsapp com 3 Unidades
+ - Botão do whatsapp com 3 Unidades - OK
  - Texto no Rodapé: precisa definir layout
 
 Pagina 04
